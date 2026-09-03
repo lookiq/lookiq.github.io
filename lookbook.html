@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOOKIQ | Editorial Lookbooks & Shop The Look</title>
+  <meta name="description" content="Explore curated seasonal fashion lookbooks. Effortlessly shop complete coordinated outfits on Amazon with one click.">
+  <link rel="canonical" href="https://lookiq.vercel.app/lookbook.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Announcement Bar (SVG Vector) -->
+  <aside class="announcement-bar">
+    <div class="inner">
+      <span class="announcement-text">
+        <svg class="announcement-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <strong class="highlight">Lookbook Edition:</strong> Complete Curated Outfits Available on Amazon US
+      </span>
+      <span class="disclosure-badge">Amazon Associate Partner</span>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="LOOKIQ Home">
+        <div class="logo-mark">
+          <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
+            <defs>
+              <linearGradient id="lbFemmeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff4ee"/>
+                <stop offset="25%" stop-color="#e8baa0"/>
+                <stop offset="55%" stop-color="#d49b6a"/>
+                <stop offset="80%" stop-color="#e5be85"/>
+                <stop offset="100%" stop-color="#ad6e47"/>
+              </linearGradient>
+              <radialGradient id="lbFemmeNoir" cx="50%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#241e22"/>
+                <stop offset="60%" stop-color="#141113"/>
+                <stop offset="100%" stop-color="#080708"/>
+              </radialGradient>
+            </defs>
+            <rect x="3" y="3" width="58" height="58" rx="22" fill="url(#lbFemmeNoir)" stroke="url(#lbFemmeGold)" stroke-width="1.6"/>
+            <circle cx="32" cy="32" r="25.5" fill="none" stroke="url(#lbFemmeGold)" stroke-width="0.6" stroke-dasharray="1.5 2.5" stroke-opacity="0.6"/>
+            <path d="M22 17 C22 17, 22 37, 22 40 C22 43.5, 24.5 44.5, 27 44.5 H34" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="17" r="1.8" fill="url(#lbFemmeGold)"/>
+            <ellipse cx="36.5" cy="30" rx="10.5" ry="12" stroke="url(#lbFemmeGold)" stroke-width="3.4"/>
+            <path d="M42 37 Q46 41, 48 46" stroke="url(#lbFemmeGold)" stroke-width="3.6" stroke-linecap="round"/>
+            <path d="M36.5 22.5 L37.7 26.5 L41.5 27.5 L37.7 28.5 L36.5 32.5 L35.3 28.5 L31.5 27.5 L35.3 26.5 Z" fill="url(#lbFemmeGold)"/>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-text">LOOKIQ</span>
+          <span class="logo-sub">LOOKBOOK • THE CHIC EDIT</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="lookbook.html" class="nav-link active">Lookbook</a>
+        <a href="index.html#catalog" class="nav-link">Curated Finds</a>
+        <a href="guides.html" class="nav-link">Style Guides</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html#catalog" class="btn-primary" style="padding: 10px 22px; font-size: 0.85rem;">Shop All Finds</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section" style="padding: 40px 0 40px; background: var(--bg-secondary); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container" style="text-align: center; max-width: 700px;">
+        <span class="section-tag">Seasonal Curation</span>
+        <h1 class="hero-title" style="font-size: 2.8rem; margin-bottom: 16px;">The Editorial <span>Lookbooks</span></h1>
+        <p class="hero-desc">Every piece in these outfits is carefully coordinated from top-rated Amazon finds, designed to give you designer-level aesthetics on an everyday budget.</p>
+      </div>
+    </section>
+
+    <!-- Lookbook Grid -->
+    <section class="lookbook-section">
+      <div class="container">
+        <div class="outfits-grid" id="outfits-grid" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="amazon-disclosure-box">
+        <p><strong>Amazon Associates Disclosure:</strong> LOOKIQ earns commissions on qualifying purchases made through Amazon links on this page. All prices and availability are accurate at time of publication and subject to change by Amazon.</p>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 LOOKIQ. All rights reserved.</span>
+        <a href="index.html">← Back to Main Storefront</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Outfit Modal -->
+  <div class="modal-backdrop" id="outfit-modal" aria-modal="true" role="dialog">
+    <div class="modal-dialog" style="max-width: 900px;">
+      <button class="modal-close-btn">&times;</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
