@@ -29,6 +29,28 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "prod-dresstells-01",
+    asin: "B0CPBCKFCP",
+    title: "DRESSTELLS Vintage A-Line Cocktail & Bridesmaid Dress",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Trending Wedding Guest",
+    price: 42.99,
+    originalPrice: 59.99,
+    rating: 4.8,
+    reviewsCount: 14820,
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80",
+    tags: ["Cocktail Dress", "Wedding Guest", "Dusty Rose", "Viral Fashion"],
+    shortDesc: "Flattering 1950s tea-length vintage A-line cocktail dress with delicate cap sleeves and pleated bodice. The ultimate wedding guest staple.",
+    features: [
+      "Feminine cap sleeve with sweetheart pleated neckline",
+      "Concealed back zipper & elegant tea-length swing skirt",
+      "Breathable high-density stretch blend (94% Nylon, 6% Spandex)",
+      "Standard US sizing: XS to 3XL (Over 40+ seasonal colors)"
+    ],
+    amazonLink: "https://amzn.to/464BuFu"
+  },
+  {
     id: "prod-01",
     asin: "B09W2K8Z5Y",
     title: "The Oversized Wool-Blend Trench Coat",
