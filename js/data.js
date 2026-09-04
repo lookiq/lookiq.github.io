@@ -74,36 +74,36 @@ const PRODUCTS = [
   },
   {
     id: "prod-01",
-    asin: "B09W2K8Z5Y",
-    title: "The Oversized Wool-Blend Trench Coat",
+    asin: "B0CCJF2N2B",
+    title: "Farktop Oversized Long Double-Breasted Trench Coat",
     category: "women",
     subCategory: "Outerwear",
     badge: "Editor's Pick",
-    price: 68.99,
-    originalPrice: 98.00,
+    price: 39.99,
+    originalPrice: 65.00,
     rating: 4.8,
     reviewsCount: 3420,
-    image: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80",
+    image: "assets/outfit-manhattan-trench.jpg",
     tags: ["Quiet Luxury", "Capsule Wardrobe", "Trending"],
-    shortDesc: "Timeless double-breasted silhouette with storm flap and tie belt. Perfect elevated staple for seasonal layering.",
+    shortDesc: "Timeless double-breasted silhouette with lapel collar and storm flap. Perfect elevated staple for seasonal layering.",
     features: [
-      "Relaxed tailored fit with belt",
-      "Mid-weight water-resistant blend",
+      "Relaxed tailored fit with waist tie belt",
+      "Mid-weight windproof blend",
       "True to US sizing (XS - XXL)",
       "Amazon Prime Eligible"
     ],
-    amazonLink: getAffiliateLink("B09W2K8Z5Y")
+    amazonLink: getAffiliateLink("B0CCJF2N2B")
   },
   {
     id: "prod-02",
-    asin: "B08R6M4V2X",
-    title: "Classic Retro Minimalist Sneaker",
+    asin: "B0CH9FJY8V",
+    title: "Adokoo Classic Minimalist White Leather Sneakers",
     category: "shoes",
     subCategory: "Footwear",
     badge: "Amazon's Choice",
-    price: 49.50,
-    originalPrice: 75.00,
-    rating: 4.9,
+    price: 25.99,
+    originalPrice: 39.99,
+    rating: 4.6,
     reviewsCount: 12580,
     image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
     tags: ["Everyday", "Dupe Alert", "Streetwear"],
@@ -114,39 +114,39 @@ const PRODUCTS = [
       "Fits true to standard US women's sizes",
       "Over 12,000+ 5-star ratings"
     ],
-    amazonLink: getAffiliateLink("B08R6M4V2X")
+    amazonLink: getAffiliateLink("B0CH9FJY8V")
   },
   {
     id: "prod-03",
-    asin: "B0B8K3P7QD",
-    title: "Structured Vegan Leather Shoulder Bag",
+    asin: "B0D99Q3PDV",
+    title: "Soft Vegan Leather Slouchy Hobo Shoulder Bag",
     category: "accessories",
     subCategory: "Bags",
     badge: "TikTok Viral",
-    price: 38.99,
-    originalPrice: 55.00,
+    price: 28.90,
+    originalPrice: 42.00,
     rating: 4.7,
     reviewsCount: 5210,
     image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
     tags: ["Quiet Luxury", "Budget Dupe", "Must Have"],
-    shortDesc: "Sleek 90s crescent shoulder bag with gold-tone hardware. Looks like an $800 Italian designer piece for under $40.",
+    shortDesc: "Sleek crescent slouchy hobo shoulder bag with roomy interior. Looks like an expensive Italian designer piece for under $30.",
     features: [
       "Premium scratch-resistant vegan leather",
       "Secure magnetic zip closure",
       "Fits iPhone Pro Max, wallet & cosmetics",
       "High-converting US viral find"
     ],
-    amazonLink: getAffiliateLink("B0B8K3P7QD")
+    amazonLink: getAffiliateLink("B0D99Q3PDV")
   },
   {
     id: "prod-04",
-    asin: "B09T5W6L1Z",
-    title: "Pleated High-Waisted Wide Leg Trouser",
+    asin: "B0DHRD1LWQ",
+    title: "NIMIN High-Waisted Wide Leg Work Trouser Pants",
     category: "women",
     subCategory: "Bottoms",
     badge: "Best Seller",
-    price: 35.99,
-    originalPrice: 48.00,
+    price: 38.99,
+    originalPrice: 49.99,
     rating: 4.6,
     reviewsCount: 8940,
     image: "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=800&q=80",
@@ -158,7 +158,7 @@ const PRODUCTS = [
       "Multiple inseam lengths (Petite & Regular)",
       "Over 8,000+ verified customer reviews"
     ],
-    amazonLink: getAffiliateLink("B09T5W6L1Z")
+    amazonLink: getAffiliateLink("B0DHRD1LWQ")
   },
   {
     id: "prod-05",
@@ -383,36 +383,36 @@ const OUTFITS = [
     id: "outfit-01",
     title: "The Manhattan Quiet Luxury Look",
     tag: "Trending",
-    description: "An effortless blend of tailored wool trench, wide-leg trousers, clean minimal sneakers, and a structured designer-inspired bag.",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+    description: "An effortless blend of tailored oversized trench coat, pleated wide-leg trousers, clean minimal white sneakers, and a slouchy vegan leather bag.",
+    image: "assets/outfit-manhattan-trench.jpg",
     items: [
       {
-        name: "Oversized Wool-Blend Trench Coat",
+        name: "Farktop Oversized Long Double-Breasted Trench Coat",
         category: "Coat",
-        price: "$68.99",
-        asin: "B09W2K8Z5Y",
-        amazonLink: getAffiliateLink("B09W2K8Z5Y")
+        price: "$39.99",
+        asin: "B0CCJF2N2B",
+        amazonLink: getAffiliateLink("B0CCJF2N2B")
       },
       {
-        name: "Pleated High-Waisted Wide Leg Trouser",
+        name: "NIMIN High-Waisted Wide Leg Work Trouser Pants",
         category: "Pants",
-        price: "$35.99",
-        asin: "B09T5W6L1Z",
-        amazonLink: getAffiliateLink("B09T5W6L1Z")
-      },
-      {
-        name: "Structured Vegan Leather Shoulder Bag",
-        category: "Bag",
         price: "$38.99",
-        asin: "B0B8K3P7QD",
-        amazonLink: getAffiliateLink("B0B8K3P7QD")
+        asin: "B0DHRD1LWQ",
+        amazonLink: getAffiliateLink("B0DHRD1LWQ")
       },
       {
-        name: "Classic Retro Minimalist Sneaker",
+        name: "Soft Vegan Leather Slouchy Hobo Shoulder Bag",
+        category: "Bag",
+        price: "$28.90",
+        asin: "B0D99Q3PDV",
+        amazonLink: getAffiliateLink("B0D99Q3PDV")
+      },
+      {
+        name: "Adokoo Classic Minimalist White Leather Sneakers",
         category: "Shoes",
-        price: "$49.50",
-        asin: "B08R6M4V2X",
-        amazonLink: getAffiliateLink("B08R6M4V2X")
+        price: "$25.99",
+        asin: "B0CH9FJY8V",
+        amazonLink: getAffiliateLink("B0CH9FJY8V")
       }
     ]
   },
