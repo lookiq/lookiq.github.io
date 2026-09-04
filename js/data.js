@@ -30,7 +30,7 @@ function getAffiliateLink(asin, fallbackUrl) {
 const PRODUCTS = [
   {
     id: "prod-dresstells-01",
-    asin: "B0CPBCKFCP",
+    asin: "B07RKLN54Z",
     title: "DRESSTELLS Vintage A-Line Cocktail & Bridesmaid Dress",
     category: "women",
     subCategory: "Dresses",
@@ -48,7 +48,7 @@ const PRODUCTS = [
       "Breathable high-density stretch blend (94% Nylon, 6% Spandex)",
       "Standard US sizing: XS to 3XL (Over 40+ seasonal colors)"
     ],
-    amazonLink: "https://amzn.to/464BuFu"
+    amazonLink: "https://amzn.to/3T8vGYF"
   },
   {
     id: "prod-01",
