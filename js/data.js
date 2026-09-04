@@ -228,25 +228,25 @@ const PRODUCTS = [
   },
   {
     id: "prod-05",
-    asin: "B07H4V1K9M",
-    title: "Men's Heavyweight Fleece Oversized Hoodie",
+    asin: "B00JUMDZTC",
+    title: "Hanes Men's Ultimate Heavyweight Fleece Pullover Hoodie",
     category: "men",
     subCategory: "Tops",
-    badge: "Amazon's Choice",
-    price: 42.00,
-    originalPrice: 58.00,
-    rating: 4.8,
-    reviewsCount: 14200,
-    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
+    badge: "Amazon Essential",
+    price: 33.00,
+    originalPrice: 42.00,
+    rating: 4.6,
+    reviewsCount: 48200,
+    image: "assets/hanes-mens-hoodie.jpg",
     tags: ["Streetwear", "Everyday", "Men"],
-    shortDesc: "Premium 400 GSM heavyweight cotton fleece with structured drop shoulders. Clean minimal streetwear staple.",
+    shortDesc: "Classic 9.7 oz heavyweight fleece hoodie crafted with patented low-pill, high-stitch density fabric. The ultimate casual layering piece.",
     features: [
-      "400 GSM premium cotton-poly blend",
-      "Double-lined hood with metal eyelets",
-      "Shrink-resistant wash finish",
-      "Ideal for modern boxy streetwear fit"
+      "9.7 oz heavyweight cotton-rich fleece",
+      "Jersey-lined hood with metal eyelets",
+      "Roomy front kangaroo pouch pocket",
+      "Ribbed cuffs and waistband for shape retention"
     ],
-    amazonLink: getAffiliateLink("B07H4V1K9M")
+    amazonLink: getAffiliateLink("B00JUMDZTC")
   },
   {
     id: "prod-06",
@@ -294,25 +294,25 @@ const PRODUCTS = [
   },
   {
     id: "prod-08",
-    asin: "B0B6V8F51G",
-    title: "Men's Relaxed Fit Tapered Chino Trouser",
+    asin: "B07BJKZGRR",
+    title: "Amazon Essentials Men's Slim-Fit Stretch Casual Chino Pant",
     category: "men",
     subCategory: "Bottoms",
-    badge: "Top Rated",
-    price: 39.99,
-    originalPrice: 50.00,
-    rating: 4.6,
-    reviewsCount: 6800,
-    image: "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=800&q=80",
-    tags: ["Smart Casual", "Men", "Office"],
-    shortDesc: "Comfort stretch twill with clean tailored lines. Perfect bridge between casual everyday and smart dinner attire.",
+    badge: "Amazon #1 Best Seller",
+    price: 22.60,
+    originalPrice: 32.00,
+    rating: 4.5,
+    reviewsCount: 31800,
+    image: "assets/amazon-mens-chino.jpg",
+    tags: ["Everyday", "Smart Casual", "Men"],
+    shortDesc: "Comfort-stretch cotton twill chino with a modern slim fit through the thigh and leg. Perfect transition piece from casual workday to weekend.",
     features: [
-      "98% Cotton with 2% Spandex stretch",
-      "Tailored taper at the ankle",
-      "Deep reinforced pockets",
-      "Machine washable & wrinkle-treated"
+      "98% Cotton, 2% Elastane all-day comfort stretch",
+      "Tailored slim taper at the ankle",
+      "Deep reinforced front and welt back pockets",
+      "Machine washable & wrinkle-resistant finish"
     ],
-    amazonLink: getAffiliateLink("B0B6V8F51G")
+    amazonLink: getAffiliateLink("B07BJKZGRR")
   },
   {
     id: "prod-09",
@@ -382,25 +382,47 @@ const PRODUCTS = [
   },
   {
     id: "prod-12",
-    asin: "B08D2J5G6X",
-    title: "Minimalist Leather Strap Dress Watch",
+    asin: "B07Q7NQ3WB",
+    title: "OLEVS Ultra-Thin Minimalist Men's Leather Dress Watch",
     category: "accessories",
     subCategory: "Watches",
-    badge: "Amazon's Choice",
-    price: 32.50,
-    originalPrice: 48.00,
+    badge: "Top Rated",
+    price: 29.99,
+    originalPrice: 45.00,
     rating: 4.7,
-    reviewsCount: 4300,
-    image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+    reviewsCount: 9400,
+    image: "assets/burei-mens-watch.jpg",
     tags: ["Quiet Luxury", "Everyday", "Men"],
-    shortDesc: "Ultra-thin 40mm minimalist dial with genuine stitched leather strap. Perfect for both office wear and weekend brunch.",
+    shortDesc: "Classic minimalist analog dial with date window and genuine embossed leather strap. Water-resistant up to 30M.",
     features: [
-      "Japanese quartz precision movement",
-      "Scratch-resistant mineral crystal",
-      "Water resistant to 30 meters",
-      "Clean Scandinavian aesthetic"
+      "Ultra-thin 6.5mm slim stainless steel case",
+      "Scratch-resistant coated glass crystal",
+      "Genuine breathable stitched leather strap",
+      "Precision Japanese quartz movement with auto-calendar"
     ],
-    amazonLink: getAffiliateLink("B08D2J5G6X")
+    amazonLink: getAffiliateLink("B07Q7NQ3WB")
+  },
+  {
+    id: "prod-fracora-01",
+    asin: "B0BVQC4TLH",
+    title: "FRACORA Men's Minimalist White Leather Tennis Sneakers",
+    category: "shoes",
+    subCategory: "Footwear",
+    badge: "Trending Pick",
+    price: 26.99,
+    originalPrice: 39.99,
+    rating: 4.5,
+    reviewsCount: 4800,
+    image: "assets/fracora-mens-sneakers.jpg",
+    tags: ["Streetwear", "Minimalist", "Men", "White Sneakers"],
+    shortDesc: "Clean, low-top white casual sneakers with cushioned insole and non-slip rubber cupsole. The quintessential smart-casual men's sneaker.",
+    features: [
+      "Durable wipe-clean vegan leather upper",
+      "Breathable fabric lining & cushioned footbed",
+      "Sturdy vulcanized rubber outsole for grip",
+      "Classic versatile low-profile design"
+    ],
+    amazonLink: getAffiliateLink("B0BVQC4TLH")
   }
 ];
 
@@ -523,29 +545,36 @@ const OUTFITS = [
     id: "outfit-03",
     title: "The Clean Urban Minimalist (Men's)",
     tag: "Men's Edit",
-    description: "Modern street essentials combining a 400 GSM heavyweight fleece hoodie, relaxed tapered chinos, and a minimalist dress watch.",
-    image: "https://images.unsplash.com/photo-1507680434567-5739c80be1ac?auto=format&fit=crop&w=1000&q=80",
+    description: "Modern street essentials combining a heavyweight fleece pullover hoodie, slim-fit stretch chinos, clean minimalist white leather sneakers, and a classic leather dress watch.",
+    image: "assets/outfit-urban-minimalist-men.jpg",
     items: [
       {
-        name: "Men's Heavyweight Fleece Hoodie",
+        name: "Hanes Men's Ultimate Heavyweight Fleece Pullover Hoodie",
         category: "Top",
-        price: "$42.00",
-        asin: "B07H4V1K9M",
-        amazonLink: getAffiliateLink("B07H4V1K9M")
+        price: "$33.00",
+        asin: "B00JUMDZTC",
+        amazonLink: getAffiliateLink("B00JUMDZTC")
       },
       {
-        name: "Men's Relaxed Fit Tapered Chino",
+        name: "Amazon Essentials Men's Slim-Fit Stretch Casual Chino Pant",
         category: "Bottom",
-        price: "$39.99",
-        asin: "B0B6V8F51G",
-        amazonLink: getAffiliateLink("B0B6V8F51G")
+        price: "$22.60",
+        asin: "B07BJKZGRR",
+        amazonLink: getAffiliateLink("B07BJKZGRR")
       },
       {
-        name: "Minimalist Leather Strap Dress Watch",
+        name: "FRACORA Men's Minimalist White Leather Tennis Sneakers",
+        category: "Shoes",
+        price: "$26.99",
+        asin: "B0BVQC4TLH",
+        amazonLink: getAffiliateLink("B0BVQC4TLH")
+      },
+      {
+        name: "OLEVS Ultra-Thin Minimalist Men's Leather Dress Watch",
         category: "Watch",
-        price: "$32.50",
-        asin: "B08D2J5G6X",
-        amazonLink: getAffiliateLink("B08D2J5G6X")
+        price: "$29.99",
+        asin: "B07Q7NQ3WB",
+        amazonLink: getAffiliateLink("B07Q7NQ3WB")
       }
     ]
   }
