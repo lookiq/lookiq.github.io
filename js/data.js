@@ -73,6 +73,72 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B09NY52NP7")
   },
   {
+    id: "prod-ekouaer-01",
+    asin: "B0GY34D6CM",
+    title: "Ekouaer Swimsuit Beach Dress Shirt Cover-Up",
+    category: "women",
+    subCategory: "Cover-Ups",
+    badge: "Vacation Must-Have",
+    price: 19.99,
+    originalPrice: 29.99,
+    rating: 4.6,
+    reviewsCount: 8900,
+    image: "assets/ekouaer-coverup.jpg",
+    tags: ["Resort Wear", "Beach Cover-Up", "Summer"],
+    shortDesc: "Casual hooded swimsuit cover-up with full front zipper and short sleeves. Made of ultra-soft, breathable terry cloth fabric perfect for poolside relaxation.",
+    features: [
+      "Front full zipper closure for easy wear",
+      "Functional drawstring hood & deep side pockets",
+      "Ultra-absorbent soft terry cotton blend",
+      "Available in vibrant vacation colors"
+    ],
+    amazonLink: "https://amzn.to/4yj1hFV"
+  },
+  {
+    id: "prod-furtalk-01",
+    asin: "B0852HCQ18",
+    title: "FURTALK Foldable Wide-Brim Straw UV Sun Hat",
+    category: "accessories",
+    subCategory: "Hats",
+    badge: "Amazon #1 Best Seller",
+    price: 27.99,
+    originalPrice: 35.99,
+    rating: 4.6,
+    reviewsCount: 24100,
+    image: "assets/furtalk-sun-hat.jpg",
+    tags: ["Summer Essential", "UPF 50+", "Travel"],
+    shortDesc: "Packable, roll-up wide brim Panama straw hat with UPF 50+ sun protection. The quintessential summer holiday companion.",
+    features: [
+      "Certified UPF 50+ maximum UV blocking",
+      "Foldable and crush-resistant travel design",
+      "Adjustable inner hook-and-loop sweatband",
+      "Removable wind lanyard for breezy beach days"
+    ],
+    amazonLink: getAffiliateLink("B0852HCQ18")
+  },
+  {
+    id: "prod-straw-tote-01",
+    asin: "B07Q7ZJQ5V",
+    title: "Womens Large Straw Summer Beach Shoulder Tote",
+    category: "accessories",
+    subCategory: "Bags",
+    badge: "Trending Pick",
+    price: 19.59,
+    originalPrice: 29.99,
+    rating: 4.5,
+    reviewsCount: 6850,
+    image: "assets/straw-beach-tote.jpg",
+    tags: ["Handmade", "Beach Bag", "Boho Chic"],
+    shortDesc: "Handwoven natural straw shoulder bag featuring colorful playful tassel pom-poms. Roomy enough for beach towels, sunglasses, and vacation essentials.",
+    features: [
+      "100% natural hand-braided corn husk straw",
+      "Zipper top closure to secure all valuables",
+      "Detachable festive rainbow pom-pom charm",
+      "Fully lined interior with slip organization pocket"
+    ],
+    amazonLink: "https://amzn.to/4xC9O6N"
+  },
+  {
     id: "prod-01",
     asin: "B0CCJF2N2B",
     title: "Farktop Oversized Long Double-Breasted Trench Coat",
