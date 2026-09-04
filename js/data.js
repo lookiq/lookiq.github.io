@@ -431,6 +431,16 @@ const OUTFITS = [
  */
 const GUIDES = [
   {
+    id: "dresstells-review",
+    title: "Viral Review: Why This $42 Amazon Wedding Guest Dress Is Breaking TikTok",
+    date: "Trending Pick",
+    readTime: "4 min read",
+    author: "LOOKIQ Fashion Editors",
+    excerpt: "We tested the viral DRESSTELLS vintage tea-length cocktail dress in Dusty Rose. Here's why 14,000+ buyers are obsessed with the flattering A-line fit.",
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80",
+    tags: ["Product Review", "Wedding Guest", "Dusty Rose"]
+  },
+  {
     id: "guide-01",
     title: "10 Timeless Capsule Wardrobe Staples Under $50 on Amazon",
     date: "October 2026",
