@@ -51,6 +51,28 @@ const PRODUCTS = [
     amazonLink: "https://amzn.to/3T8vGYF"
   },
   {
+    id: "prod-eomenie-01",
+    asin: "B09NY52NP7",
+    title: "Eomenie Tummy Control Cutout One-Piece Swimsuit",
+    category: "women",
+    subCategory: "Swimwear",
+    badge: "Amazon #1 Best Seller",
+    price: 35.99,
+    originalPrice: 49.99,
+    rating: 4.3,
+    reviewsCount: 36450,
+    image: "assets/eomenie-swimsuit.jpg",
+    tags: ["Swimwear", "Resort Wear", "Tummy Control", "Viral TikTok"],
+    shortDesc: "Amazon's most viral tummy control monokini. Features cross-over scallop cutout bodice, adjustable halter straps, and flattering ruched high-waist design.",
+    features: [
+      "Flattering cross wrap front with modest midriff cutout",
+      "Built-in tummy control ruched panel with full rear coverage",
+      "Removable push-up padded cups & adjustable neck tie",
+      "Quick-dry chlorine resistant stretch fabric (82% Nylon, 18% Spandex)"
+    ],
+    amazonLink: getAffiliateLink("B09NY52NP7")
+  },
+  {
     id: "prod-01",
     asin: "B09W2K8Z5Y",
     title: "The Oversized Wool-Blend Trench Coat",
@@ -320,6 +342,43 @@ const PRODUCTS = [
  * Curated "Shop The Look" Outfits (High Conversion Multi-Item Bundles)
  */
 const OUTFITS = [
+  {
+    id: "outfit-resort-01",
+    title: "The Amalfi Coast Resort & Beach Edit",
+    tag: "Trending Resort",
+    description: "Chic Mediterranean resort ensemble featuring Amazon's #1 viral tummy control cutout swimsuit, breezy linen beach shirt, woven straw tote, and UV sun hat.",
+    image: "assets/outfit-amalfi-resort.jpg",
+    items: [
+      {
+        name: "Eomenie Tummy Control Cutout One-Piece Swimsuit",
+        category: "Swimwear",
+        price: "$35.99",
+        asin: "B09NY52NP7",
+        amazonLink: getAffiliateLink("B09NY52NP7")
+      },
+      {
+        name: "Ekouaer Casual Button-Down Beach Shirt Cover-Up",
+        category: "Cover-Up",
+        price: "$24.99",
+        asin: "B08N4Z2TSH",
+        amazonLink: getAffiliateLink("B08N4Z2TSH")
+      },
+      {
+        name: "FURTALK Foldable Wide-Brim Straw UV Sun Hat",
+        category: "Sun Hat",
+        price: "$21.99",
+        asin: "B0852HCQ18",
+        amazonLink: getAffiliateLink("B0852HCQ18")
+      },
+      {
+        name: "Handwoven Summer Straw Beach Shoulder Tote",
+        category: "Beach Bag",
+        price: "$26.99",
+        asin: "B004K9PAOS",
+        amazonLink: getAffiliateLink("B004K9PAOS")
+      }
+    ]
+  },
   {
     id: "outfit-01",
     title: "The Manhattan Quiet Luxury Look",
