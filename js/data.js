@@ -272,25 +272,25 @@ const PRODUCTS = [
   },
   {
     id: "prod-07",
-    asin: "B0892KQ71T",
-    title: "Ribbed Seamless Knit Square-Neck Bodysuit",
+    asin: "B0CCDW18FN",
+    title: "QINSEN Seamless Square-Neck Ribbed Bodysuit",
     category: "women",
     subCategory: "Tops",
     badge: "TikTok Viral",
     price: 24.99,
     originalPrice: 32.00,
     rating: 4.7,
-    reviewsCount: 18900,
+    reviewsCount: 22400,
     image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
     tags: ["Dupe Alert", "Essential", "Sculpt"],
-    shortDesc: "Double-layered compressive knit with a sculpting contour. The famous designer dupe with 18k+ reviews.",
+    shortDesc: "Double-layered compressive knit with a sculpting contour. The famous designer dupe with 20k+ reviews.",
     features: [
       "Double lined for 100% zero see-through",
       "Snug compression snatch effect",
       "Thong bottom with snap closure",
       "Available in 18 curated seasonal shades"
     ],
-    amazonLink: getAffiliateLink("B0892KQ71T")
+    amazonLink: getAffiliateLink("B0CCDW18FN")
   },
   {
     id: "prod-08",

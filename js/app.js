@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Category filter
       const matchCat = currentCategory === "all" || 
                        product.category === currentCategory ||
+                       (currentCategory === "men" && product.tags.some(t => t.toLowerCase() === "men")) ||
                        (currentCategory === "dupes" && product.tags.some(t => t.toLowerCase().includes("dupe")));
       
       // Search query
