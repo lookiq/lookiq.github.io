@@ -35,12 +35,12 @@ const PRODUCTS = [
     category: "women",
     subCategory: "Dresses",
     badge: "Trending Wedding Guest",
-    price: 42.99,
+    price: 43.99,
     originalPrice: 59.99,
-    rating: 4.8,
-    reviewsCount: 14820,
+    rating: 4.2,
+    reviewsCount: 23310,
     image: "assets/dresstells-cocktail-dress.png",
-    tags: ["Cocktail Dress", "Wedding Guest", "Dusty Rose", "Viral Fashion"],
+    tags: ["Cocktail Dress", "Wedding Guest", "Classic Red", "Viral Fashion"],
     shortDesc: "Flattering 1950s tea-length vintage A-line cocktail dress with delicate cap sleeves and pleated bodice. The ultimate wedding guest staple.",
     features: [
       "Feminine cap sleeve with sweetheart pleated neckline",
@@ -432,13 +432,13 @@ const OUTFITS = [
 const GUIDES = [
   {
     id: "dresstells-review",
-    title: "Viral Review: Why This $42 Amazon Wedding Guest Dress Is Breaking TikTok",
+    title: "Viral Review: Why This $44 Amazon Wedding Guest Dress Is Breaking TikTok",
     date: "Trending Pick",
     readTime: "4 min read",
     author: "LOOKIQ Fashion Editors",
-    excerpt: "We tested the viral DRESSTELLS vintage tea-length cocktail dress in Dusty Rose. Here's why 14,000+ buyers are obsessed with the flattering A-line fit.",
+    excerpt: "We tested the viral DRESSTELLS vintage tea-length cocktail dress in Classic Red. Here's why 23,000+ buyers are obsessed with the flattering A-line fit.",
     image: "assets/dresstells-cocktail-dress.png",
-    tags: ["Product Review", "Wedding Guest", "Dusty Rose"]
+    tags: ["Product Review", "Wedding Guest", "Classic Red"]
   },
   {
     id: "guide-01",
