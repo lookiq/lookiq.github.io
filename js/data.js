@@ -101,8 +101,8 @@ const PRODUCTS = [
     category: "shoes",
     subCategory: "Footwear",
     badge: "Amazon's Choice",
-    price: 25.99,
-    originalPrice: 39.99,
+    price: 21.99,
+    originalPrice: 25.99,
     rating: 4.6,
     reviewsCount: 12580,
     image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
@@ -410,7 +410,7 @@ const OUTFITS = [
       {
         name: "Adokoo Classic Minimalist White Leather Sneakers",
         category: "Shoes",
-        price: "$25.99",
+        price: "$21.99",
         asin: "B0CH9FJY8V",
         amazonLink: getAffiliateLink("B0CH9FJY8V")
       }
