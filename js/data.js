@@ -39,7 +39,7 @@ const PRODUCTS = [
     originalPrice: 59.99,
     rating: 4.8,
     reviewsCount: 14820,
-    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80",
+    image: "assets/dresstells-cocktail-dress.png",
     tags: ["Cocktail Dress", "Wedding Guest", "Dusty Rose", "Viral Fashion"],
     shortDesc: "Flattering 1950s tea-length vintage A-line cocktail dress with delicate cap sleeves and pleated bodice. The ultimate wedding guest staple.",
     features: [
@@ -437,7 +437,7 @@ const GUIDES = [
     readTime: "4 min read",
     author: "LOOKIQ Fashion Editors",
     excerpt: "We tested the viral DRESSTELLS vintage tea-length cocktail dress in Dusty Rose. Here's why 14,000+ buyers are obsessed with the flattering A-line fit.",
-    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80",
+    image: "assets/dresstells-cocktail-dress.png",
     tags: ["Product Review", "Wedding Guest", "Dusty Rose"]
   },
   {
