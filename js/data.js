@@ -357,11 +357,11 @@ const OUTFITS = [
         amazonLink: getAffiliateLink("B09NY52NP7")
       },
       {
-        name: "Ekouaer Casual Button-Down Beach Shirt Cover-Up",
+        name: "Ekouaer Swimsuit Beach Dress Shirt Cover-Up",
         category: "Cover-Up",
-        price: "$26.99",
-        asin: "B08N4Z2TSH",
-        amazonLink: getAffiliateLink("B08N4Z2TSH")
+        price: "$19.99",
+        asin: "B0GY34D6CM",
+        amazonLink: "https://amzn.to/4yj1hFV"
       },
       {
         name: "FURTALK Foldable Wide-Brim Straw UV Sun Hat",
