@@ -57,7 +57,7 @@ const PRODUCTS = [
     category: "women",
     subCategory: "Swimwear",
     badge: "Amazon #1 Best Seller",
-    price: 35.99,
+    price: 36.99,
     originalPrice: 49.99,
     rating: 4.3,
     reviewsCount: 36450,
@@ -352,21 +352,21 @@ const OUTFITS = [
       {
         name: "Eomenie Tummy Control Cutout One-Piece Swimsuit",
         category: "Swimwear",
-        price: "$35.99",
+        price: "$36.99",
         asin: "B09NY52NP7",
         amazonLink: getAffiliateLink("B09NY52NP7")
       },
       {
         name: "Ekouaer Casual Button-Down Beach Shirt Cover-Up",
         category: "Cover-Up",
-        price: "$24.99",
+        price: "$26.99",
         asin: "B08N4Z2TSH",
         amazonLink: getAffiliateLink("B08N4Z2TSH")
       },
       {
         name: "FURTALK Foldable Wide-Brim Straw UV Sun Hat",
         category: "Sun Hat",
-        price: "$21.99",
+        price: "$27.99",
         asin: "B0852HCQ18",
         amazonLink: getAffiliateLink("B0852HCQ18")
       },
