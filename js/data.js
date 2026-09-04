@@ -371,11 +371,11 @@ const OUTFITS = [
         amazonLink: getAffiliateLink("B0852HCQ18")
       },
       {
-        name: "Handwoven Summer Straw Beach Shoulder Tote",
+        name: "Womens Large Straw Summer Beach Shoulder Tote",
         category: "Beach Bag",
-        price: "$26.99",
-        asin: "B004K9PAOS",
-        amazonLink: getAffiliateLink("B004K9PAOS")
+        price: "$19.59",
+        asin: "B07Q7ZJQ5V",
+        amazonLink: "https://amzn.to/4xC9O6N"
       }
     ]
   },
