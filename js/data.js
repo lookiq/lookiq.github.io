@@ -184,15 +184,15 @@ const PRODUCTS = [
   },
   {
     id: "prod-06",
-    asin: "B092LQ9B1C",
-    title: "14K Gold-Plated Chunky Huggie Hoop Earrings",
+    asin: "B08CTB2H6T",
+    title: "PAVOI 14K Gold Plated Thick Huggie Hoop Earrings",
     category: "accessories",
     subCategory: "Jewelry",
-    badge: "Under $20",
-    price: 14.99,
-    originalPrice: 22.00,
+    badge: "Under $15",
+    price: 12.95,
+    originalPrice: 17.99,
     rating: 4.9,
-    reviewsCount: 28400,
+    reviewsCount: 48400,
     image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80",
     tags: ["Budget Luxury", "Jewelry", "Gift Idea"],
     shortDesc: "Hypoallergenic, lightweight chunky tube hoops plated in 14K real gold. Doesn't tarnish or irritate sensitive ears.",
@@ -202,7 +202,7 @@ const PRODUCTS = [
       "Secure snap-bar clasp",
       "Consistently ranked #1 in Fashion Jewelry"
     ],
-    amazonLink: getAffiliateLink("B092LQ9B1C")
+    amazonLink: getAffiliateLink("B08CTB2H6T")
   },
   {
     id: "prod-07",
@@ -250,15 +250,15 @@ const PRODUCTS = [
   },
   {
     id: "prod-09",
-    asin: "B08XZ3N71K",
-    title: "Chunky Lug Sole Platform Chelsea Boots",
+    asin: "B08KHXGR58",
+    title: "Soda Pilot Women's Chunky Lug Sole Chelsea Booties",
     category: "shoes",
     subCategory: "Boots",
     badge: "Fall Essential",
-    price: 54.99,
-    originalPrice: 79.00,
+    price: 39.98,
+    originalPrice: 59.99,
     rating: 4.7,
-    reviewsCount: 7120,
+    reviewsCount: 21500,
     image: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=800&q=80",
     tags: ["Fall/Winter", "Trending", "Boots"],
     shortDesc: "Weatherproof ankle boots with an aggressive lug sole and elastic side goring. Effortlessly pairs with dresses or jeans.",
@@ -268,19 +268,19 @@ const PRODUCTS = [
       "Pull-on tab for easy entry",
       "High comfort memory footbed"
     ],
-    amazonLink: getAffiliateLink("B08XZ3N71K")
+    amazonLink: getAffiliateLink("B08KHXGR58")
   },
   {
     id: "prod-10",
-    asin: "B09H3M541L",
-    title: "Vintage Oval UV400 Tortoise Sunglasses",
+    asin: "B0H3V269HQ",
+    title: "SOJOS Small Oval Polarized Retro Tortoise Sunglasses",
     category: "accessories",
     subCategory: "Eyewear",
-    badge: "Under $15",
-    price: 13.99,
-    originalPrice: 19.99,
+    badge: "Under $20",
+    price: 19.99,
+    originalPrice: 26.99,
     rating: 4.8,
-    reviewsCount: 9600,
+    reviewsCount: 14200,
     image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80",
     tags: ["Old Money", "Summer/Fall", "Accessory"],
     shortDesc: "Chic 90s aesthetic oval frames with scratch-resistant polarized lenses. Adds instant celebrity off-duty vibes.",
@@ -290,29 +290,29 @@ const PRODUCTS = [
       "Includes microfiber pouch & cloth",
       "High perceived luxury value"
     ],
-    amazonLink: getAffiliateLink("B09H3M541L")
+    amazonLink: getAffiliateLink("B0H3V269HQ")
   },
   {
     id: "prod-11",
-    asin: "B07Z8L241V",
-    title: "Knit Oversized Batwing Sleeve Turtleneck",
+    asin: "B07XKH9K5M",
+    title: "ANRABESS Oversized Turtleneck Batwing Ribbed Knit Sweater",
     category: "women",
     subCategory: "Sweaters",
     badge: "Best Seller",
     price: 39.99,
     originalPrice: 59.99,
     rating: 4.8,
-    reviewsCount: 22100,
+    reviewsCount: 38400,
     image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80",
     tags: ["Fall/Winter", "Cozy", "Viral"],
-    shortDesc: "Plush chunky knit with ribbed cuffs and slouchy cowl neck. The #1 sweater on Amazon with over 20,000 reviews.",
+    shortDesc: "Plush chunky knit with ribbed cuffs and slouchy cowl neck. The #1 sweater on Amazon with tens of thousands of reviews.",
     features: [
       "Cloud-soft hypoallergenic yarn",
       "Cozy side-split hem design",
       "Flattering draped fit for all body types",
       "Over 30+ colors available on Amazon"
     ],
-    amazonLink: getAffiliateLink("B07Z8L241V")
+    amazonLink: getAffiliateLink("B07XKH9K5M")
   },
   {
     id: "prod-12",
@@ -421,35 +421,35 @@ const OUTFITS = [
     title: "The Autumn Weekend Chai Look",
     tag: "Cozy Autumn",
     description: "Ultra-comfortable knit batwing turtleneck paired with lug sole chelsea boots, gold huggie earrings, and vintage oval shades.",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/outfit-autumn-chai.jpg",
     items: [
       {
-        name: "Knit Oversized Batwing Turtleneck",
+        name: "ANRABESS Oversized Turtleneck Batwing Ribbed Knit Sweater",
         category: "Knitwear",
         price: "$39.99",
-        asin: "B07Z8L241V",
-        amazonLink: getAffiliateLink("B07Z8L241V")
+        asin: "B07XKH9K5M",
+        amazonLink: getAffiliateLink("B07XKH9K5M")
       },
       {
-        name: "Chunky Lug Sole Platform Chelsea Boots",
+        name: "Soda Pilot Women's Chunky Lug Sole Chelsea Booties",
         category: "Boots",
-        price: "$54.99",
-        asin: "B08XZ3N71K",
-        amazonLink: getAffiliateLink("B08XZ3N71K")
+        price: "$39.98",
+        asin: "B08KHXGR58",
+        amazonLink: getAffiliateLink("B08KHXGR58")
       },
       {
-        name: "14K Gold-Plated Chunky Huggie Hoops",
+        name: "PAVOI 14K Gold Plated Thick Huggie Hoop Earrings",
         category: "Jewelry",
-        price: "$14.99",
-        asin: "B092LQ9B1C",
-        amazonLink: getAffiliateLink("B092LQ9B1C")
+        price: "$12.95",
+        asin: "B08CTB2H6T",
+        amazonLink: getAffiliateLink("B08CTB2H6T")
       },
       {
-        name: "Vintage Oval UV400 Tortoise Sunglasses",
+        name: "SOJOS Small Oval Polarized Retro Tortoise Sunglasses",
         category: "Eyewear",
-        price: "$13.99",
-        asin: "B09H3M541L",
-        amazonLink: getAffiliateLink("B09H3M541L")
+        price: "$19.99",
+        asin: "B0H3V269HQ",
+        amazonLink: getAffiliateLink("B0H3V269HQ")
       }
     ]
   },
