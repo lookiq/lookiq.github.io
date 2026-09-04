@@ -383,7 +383,7 @@ const PRODUCTS = [
   {
     id: "prod-12",
     asin: "B07Q7NQ3WB",
-    title: "OLEVS Ultra-Thin Minimalist Men's Leather Dress Watch",
+    title: "BUREI Ultra-Thin Minimalist Men's Leather Watch",
     category: "accessories",
     subCategory: "Watches",
     badge: "Top Rated",
@@ -570,7 +570,7 @@ const OUTFITS = [
         amazonLink: getAffiliateLink("B0BVQC4TLH")
       },
       {
-        name: "OLEVS Ultra-Thin Minimalist Men's Leather Dress Watch",
+        name: "BUREI Ultra-Thin Minimalist Men's Leather Watch",
         category: "Watch",
         price: "$29.99",
         asin: "B07Q7NQ3WB",
