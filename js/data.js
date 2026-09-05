@@ -193,7 +193,7 @@ const PRODUCTS = [
     originalPrice: 25.99,
     rating: 4.6,
     reviewsCount: 12580,
-    image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
+    image: "assets/adokoo-sneakers.jpg",
     tags: ["Everyday", "Dupe Alert", "Streetwear"],
     shortDesc: "Crisp white vegan leather sneaker with cushioned memory foam insole. The ultimate street-smart wardrobe anchor.",
     features: [
