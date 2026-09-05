@@ -3,16 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOOKIQ | Editorial Lookbooks & Shop The Look</title>
-  <meta name="description" content="Explore curated seasonal fashion lookbooks. Effortlessly shop complete coordinated outfits on Amazon with one click.">
+  
+  <!-- High Commercial Intent Long-Tail SEO Meta Tags -->
+  <title>Amazon Fashion Lookbook | Curated Outfits &amp; Quiet Luxury Styles - LOOKIQ</title>
+  <meta name="description" content="Shop complete curated outfits on Amazon with one click. Explore Quiet Luxury street style, minimalist men's fashion, fall capsule wardrobes, and resort lookbooks. Verified US Prime deals.">
+  <meta name="keywords" content="quiet luxury chic outfit ideas on amazon, minimalist men's street style outfit amazon, best amazon fall capsule wardrobe under $150, shop the look amazon, curated outfits amazon, amazon fashion lookbook, viral amazon dupes, capsule wardrobe amazon">
+  <meta name="author" content="LOOKIQ Curation Team">
   <link rel="canonical" href="https://lookiq.github.io/lookbook.html">
+
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Amazon Fashion Lookbook | Shop Curated Outfits - LOOKIQ">
+  <meta property="og:description" content="Explore editorial fashion lookbooks. Effortlessly shop complete coordinated outfits on Amazon with one click.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://lookiq.github.io/lookbook.html">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LOOKIQ | Amazon Fashion Lookbook">
+  <meta name="twitter:description" content="Curated seasonal fashion lookbooks. Shop complete coordinated outfits on Amazon with one click.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://lookiq.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Lookbook & Shop The Look",
+            "item": "https://lookiq.github.io/lookbook.html"
+          }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "name": "LOOKIQ Editorial Lookbooks & Curated Outfits",
+        "url": "https://lookiq.github.io/lookbook.html",
+        "description": "Editorial fashion lookbooks featuring complete multi-item outfit bundles curated directly from top-rated Amazon fashion listings.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "LOOKIQ",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://lookiq.github.io/assets/favicon.svg"
+          }
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Announcement Bar (SVG Vector) -->
-  <aside class="announcement-bar">
+  <aside class="announcement-bar" aria-label="Announcement Bar">
     <div class="inner">
       <span class="announcement-text">
         <svg class="announcement-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -20,7 +82,7 @@
         </svg>
         <strong class="highlight">Lookbook Edition:</strong> Complete Curated Outfits Available on Amazon US
       </span>
-      <span class="disclosure-badge">Amazon Associate Partner</span>
+      <span class="disclosure-badge">Amazon Associate Partner • Verified US Deals</span>
     </div>
   </aside>
 
@@ -58,7 +120,7 @@
           <span class="logo-sub">LOOKBOOK • THE CHIC EDIT</span>
         </div>
       </a>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
         <a href="lookbook.html" class="nav-link active">Lookbook</a>
         <a href="index.html#catalog" class="nav-link">Curated Finds</a>
@@ -71,19 +133,24 @@
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero-section" style="padding: 40px 0 40px; background: var(--bg-secondary); border-bottom: 1px solid var(--border-subtle);">
-      <div class="container" style="text-align: center; max-width: 700px;">
-        <span class="section-tag">Seasonal Curation</span>
-        <h1 class="hero-title" style="font-size: 2.8rem; margin-bottom: 16px;">The Editorial <span>Lookbooks</span></h1>
-        <p class="hero-desc">Every piece in these outfits is carefully coordinated from top-rated Amazon finds, designed to give you designer-level aesthetics on an everyday budget.</p>
+      <div class="container" style="text-align: center; max-width: 760px;">
+        <span class="section-tag">Seasonal Curation &amp; Style Formulas</span>
+        <h1 class="hero-title" style="font-size: clamp(2.2rem, 4vw, 2.8rem); margin-bottom: 16px;">
+          The Editorial <span>Lookbooks</span>
+        </h1>
+        <p class="hero-desc">
+          Every piece in these outfits is carefully coordinated from top-rated Amazon finds, designed to give you designer-level aesthetics on an everyday budget. Click any look to shop every individual piece directly on Amazon.
+        </p>
       </div>
     </section>
 
     <!-- Lookbook Grid -->
-    <section class="lookbook-section">
+    <section class="lookbook-section" style="padding: 50px 0;">
       <div class="container">
         <div class="outfits-grid" id="outfits-grid" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));">
-          <!-- Populated by app.js -->
+          <!-- Populated dynamically by app.js with verified altText & decoding=async -->
         </div>
       </div>
     </section>
@@ -93,11 +160,11 @@
   <footer class="site-footer">
     <div class="container">
       <div class="amazon-disclosure-box">
-        <p><strong>Amazon Associates Disclosure:</strong> LOOKIQ earns commissions on qualifying purchases made through Amazon links on this page. All prices and availability are accurate at time of publication and subject to change by Amazon.</p>
+        <p><strong>Amazon Associates Disclosure:</strong> LOOKIQ earns commissions on qualifying purchases made through Amazon links on this page at zero additional cost to you. All prices and availability are accurate at time of publication and subject to change by Amazon.</p>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 LOOKIQ. All rights reserved.</span>
-        <a href="index.html">← Back to Main Storefront</a>
+        <a href="index.html">&larr; Back to Main Storefront</a>
       </div>
     </div>
   </footer>
@@ -110,7 +177,7 @@
     </div>
   </div>
 
-  <script src="js/data.js?v=3.2"></script>
-  <script src="js/app.js?v=3.2"></script>
+  <script src="js/data.js?v=4.0"></script>
+  <script src="js/app.js?v=4.0"></script>
 </body>
 </html>

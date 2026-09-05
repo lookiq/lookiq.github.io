@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
               </svg>
             </button>
-            <img src="${product.image}" alt="${product.title}" loading="lazy">
+            <img src="${product.image}" alt="${product.altText || product.title}" loading="lazy" decoding="async">
             <div class="quick-view-overlay">
               <button class="btn-quick-view" onclick="openQuickView('${product.id}')">Quick View</button>
             </div>
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="outfit-img-wrap">
             <span class="outfit-badge">${outfit.tag}</span>
             <span class="outfit-items-count">${outfit.items.length} Pieces</span>
-            <img src="${outfit.image}" alt="${outfit.title}" loading="lazy">
+            <img src="${outfit.image}" alt="${outfit.altText || outfit.title}" loading="lazy" decoding="async">
           </div>
           <div class="outfit-body">
             <h4 class="outfit-title">${outfit.title}</h4>
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <article class="guide-card">
           <div class="guide-img-wrap">
-            <img src="${guide.image}" alt="${guide.title}" loading="lazy">
+            <img src="${guide.image}" alt="${guide.altText || guide.title}" loading="lazy" decoding="async">
           </div>
           <div class="guide-body">
             <div class="guide-meta">
@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modalBody.innerHTML = `
       <div class="quickview-layout">
         <div class="quickview-img">
-          <img src="${product.image}" alt="${product.title}">
+          <img src="${product.image}" alt="${product.altText || product.title}" decoding="async">
         </div>
         <div class="quickview-details">
           <span class="quickview-badge">${product.badge}</span>
