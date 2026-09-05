@@ -337,28 +337,6 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B08KHXGR58")
   },
   {
-    id: "prod-10",
-    asin: "B0H3V269HQ",
-    title: "SOJOS Small Oval Polarized Retro Tortoise Sunglasses",
-    category: "accessories",
-    subCategory: "Eyewear",
-    badge: "Under $20",
-    price: 19.99,
-    originalPrice: 26.99,
-    rating: 4.8,
-    reviewsCount: 14200,
-    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80",
-    tags: ["Old Money", "Summer/Fall", "Accessory"],
-    shortDesc: "Chic 90s aesthetic oval frames with scratch-resistant polarized lenses. Adds instant celebrity off-duty vibes.",
-    features: [
-      "100% UV400 protective lenses",
-      "Reinforced metal hinge construction",
-      "Includes microfiber pouch & cloth",
-      "High perceived luxury value"
-    ],
-    amazonLink: getAffiliateLink("B0H3V269HQ")
-  },
-  {
     id: "prod-11",
     asin: "B07XKH9K5M",
     title: "ANRABESS Oversized Turtleneck Batwing Ribbed Knit Sweater",
@@ -508,7 +486,7 @@ const OUTFITS = [
     id: "outfit-02",
     title: "The Autumn Weekend Chai Look",
     tag: "Cozy Autumn",
-    description: "Ultra-comfortable knit batwing turtleneck paired with lug sole chelsea boots, gold huggie earrings, and vintage oval shades.",
+    description: "Ultra-comfortable knit batwing turtleneck paired with chunky lug sole chelsea boots and 14K gold huggie earrings.",
     image: "assets/outfit-autumn-chai.jpg",
     items: [
       {
@@ -531,13 +509,6 @@ const OUTFITS = [
         price: "$12.95",
         asin: "B08CTB2H6T",
         amazonLink: getAffiliateLink("B08CTB2H6T")
-      },
-      {
-        name: "SOJOS Small Oval Polarized Retro Tortoise Sunglasses",
-        category: "Eyewear",
-        price: "$19.99",
-        asin: "B0H3V269HQ",
-        amazonLink: getAffiliateLink("B0H3V269HQ")
       }
     ]
   },

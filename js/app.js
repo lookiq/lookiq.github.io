@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderOutfits();
   renderGuides();
   setupEventListeners();
+  handleDeepLink();
+  window.addEventListener("hashchange", handleDeepLink);
 
   /**
    * Render Product Cards
@@ -71,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const starIcons = renderStarRating(product.rating);
 
       return `
-        <div class="product-card" data-id="${product.id}">
+        <div class="product-card" id="${product.id}" data-id="${product.id}">
           <div class="product-image-wrap">
             <span class="product-badge">${product.badge}</span>
             <button class="wishlist-btn ${isSaved ? 'active' : ''}" onclick="toggleWishlist('${product.id}', event)" title="Save to Favorites">
@@ -234,6 +236,30 @@ document.addEventListener("DOMContentLoaded", () => {
         closeModal();
       }
     });
+  }
+
+  /**
+   * Handle Direct Product URL Deep Linking
+   */
+  function handleDeepLink() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const hash = window.location.hash.replace("#", "");
+    const targetId = urlParams.get("product") || (hash.startsWith("prod-") ? hash : null);
+
+    if (targetId && PRODUCTS.some(p => p.id === targetId)) {
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.style.boxShadow = "0 0 0 3px var(--accent-gold), 0 10px 30px rgba(212, 155, 106, 0.4)";
+          setTimeout(() => {
+            el.style.transition = "box-shadow 1.5s ease";
+            el.style.boxShadow = "";
+          }, 3500);
+        }
+        openQuickView(targetId);
+      }, 350);
+    }
   }
 
   /**
