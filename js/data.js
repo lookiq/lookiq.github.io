@@ -237,7 +237,7 @@ const PRODUCTS = [
     originalPrice: 49.99,
     rating: 4.6,
     reviewsCount: 8940,
-    image: "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=800&q=80",
+    image: "assets/nimin-trouser-pants.jpg",
     tags: ["Office Chic", "Capsule Wardrobe", "Trending"],
     shortDesc: "Flowy, elegant drape with front pleats and side pockets. Instantly elevates casual t-shirts or silk blouses.",
     features: [
