@@ -33,43 +33,700 @@
 
   <!-- Schema.org JSON-LD for Google Rich Snippets -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://lookiq.github.io/#website",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://lookiq.github.io/#website",
+      "name": "LOOKIQ",
+      "url": "https://lookiq.github.io/",
+      "description": "Smart, curated fashion finds, quiet luxury capsule wardrobes, and viral outfit guides for Amazon shoppers in the USA.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://lookiq.github.io/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
         "name": "LOOKIQ",
         "url": "https://lookiq.github.io/",
-        "description": "Smart, curated fashion finds, quiet luxury capsule wardrobes, and viral outfit guides for Amazon shoppers in the USA.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://lookiq.github.io/?s={search_term_string}",
-          "query-input": "required name=search_term_string"
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lookiq.github.io/assets/favicon.svg"
+        }
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lookiq.github.io/#organization",
+      "name": "LOOKIQ",
+      "url": "https://lookiq.github.io/",
+      "logo": "https://lookiq.github.io/assets/favicon.svg",
+      "sameAs": [
+        "https://pinterest.com/lookiqfashion",
+        "https://tiktok.com/@lookiqfashion"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://lookiq.github.io/#curated-products",
+      "name": "Trending on Amazon US - Curated Fashion Finds",
+      "description": "Handpicked viral Amazon fashion essentials, quiet luxury dupes, and wardrobe staples with verified buyer ratings.",
+      "numberOfItems": 18,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-dresstells-01",
+            "name": "DRESSTELLS Vintage A-Line Cocktail & Bridesmaid Dress",
+            "description": "Flattering 1950s tea-length vintage A-line cocktail dress with delicate cap sleeves and pleated bodice. The ultimate wedding guest staple.",
+            "image": "https://lookiq.github.io/assets/dresstells-cocktail-dress.png",
+            "sku": "B07RKLN54Z",
+            "brand": {
+              "@type": "Brand",
+              "name": "DRESSTELLS"
+            },
+            "category": "women",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.2,
+              "reviewCount": 23310,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "43.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://amzn.to/3T8vGYF",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
         },
-        "publisher": {
-          "@type": "Organization",
-          "name": "LOOKIQ",
-          "url": "https://lookiq.github.io/",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://lookiq.github.io/assets/favicon.svg"
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-10",
+            "name": "SOJOS Small Oval Polarized Retro Tortoise Sunglasses",
+            "description": "Chic 90s vintage narrow oval tortoise frames with UV400 polarized brown lenses. Adds instant Old Money and celebrity off-duty vibes.",
+            "image": "https://lookiq.github.io/assets/sojos-retro-sunglasses.png",
+            "sku": "B0H3V41YPX",
+            "brand": {
+              "@type": "Brand",
+              "name": "SOJOS"
+            },
+            "category": "accessories",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.5,
+              "reviewCount": 14200,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "15.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0H3V41YPX/?tag=likeefashionh-20&linkCode=ogi&th=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-eomenie-01",
+            "name": "Eomenie Tummy Control Cutout One-Piece Swimsuit",
+            "description": "Amazon's most viral tummy control monokini. Features cross-over scallop cutout bodice, adjustable halter straps, and flattering ruched high-waist design.",
+            "image": "https://lookiq.github.io/assets/eomenie-swimsuit.jpg",
+            "sku": "B09NY52NP7",
+            "brand": {
+              "@type": "Brand",
+              "name": "Eomenie"
+            },
+            "category": "women",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.3,
+              "reviewCount": 36450,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "36.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B09NY52NP7/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-ekouaer-01",
+            "name": "Ekouaer Swimsuit Beach Dress Shirt Cover-Up",
+            "description": "Breezy lightweight boyfriend-style button-down beach coverup shirt dress. Features an open V-neck, cuffed roll-up sleeves, and curved side slits.",
+            "image": "https://lookiq.github.io/assets/ekouaer-coverup.jpg",
+            "sku": "B0GY34D6CM",
+            "brand": {
+              "@type": "Brand",
+              "name": "Ekouaer"
+            },
+            "category": "women",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.2,
+              "reviewCount": 21513,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "16.14",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://amzn.to/4yj1hFV",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-furtalk-01",
+            "name": "FURTALK Foldable Wide-Brim Straw UV Sun Hat",
+            "description": "Packable, roll-up wide brim Panama straw hat with UPF 50+ sun protection. The quintessential summer holiday companion.",
+            "image": "https://lookiq.github.io/assets/furtalk-sun-hat.jpg",
+            "sku": "B0852HCQ18",
+            "brand": {
+              "@type": "Brand",
+              "name": "FURTALK"
+            },
+            "category": "accessories",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.6,
+              "reviewCount": 24100,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "27.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0852HCQ18/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-straw-tote-01",
+            "name": "Womens Large Straw Summer Beach Shoulder Tote",
+            "description": "Handwoven natural straw shoulder bag featuring colorful playful tassel pom-poms. Roomy enough for beach towels, sunglasses, and vacation essentials.",
+            "image": "https://lookiq.github.io/assets/straw-beach-tote.jpg",
+            "sku": "B07Q7ZJQ5V",
+            "brand": {
+              "@type": "Brand",
+              "name": "Womens"
+            },
+            "category": "accessories",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.5,
+              "reviewCount": 6850,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "19.59",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://amzn.to/4xC9O6N",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-01",
+            "name": "Farktop Oversized Long Double-Breasted Trench Coat",
+            "description": "Timeless double-breasted silhouette with lapel collar and storm flap. Perfect elevated staple for seasonal layering.",
+            "image": "https://lookiq.github.io/assets/outfit-manhattan-trench.jpg",
+            "sku": "B0CCJF2N2B",
+            "brand": {
+              "@type": "Brand",
+              "name": "Farktop"
+            },
+            "category": "women",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.8,
+              "reviewCount": 3420,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "39.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0CCJF2N2B/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-02",
+            "name": "Adokoo Classic Minimalist White Leather Sneakers",
+            "description": "Crisp white vegan leather sneaker with cushioned memory foam insole. The ultimate street-smart wardrobe anchor.",
+            "image": "https://lookiq.github.io/assets/adokoo-sneakers.jpg",
+            "sku": "B0CH9FJY8V",
+            "brand": {
+              "@type": "Brand",
+              "name": "Adokoo"
+            },
+            "category": "shoes",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.6,
+              "reviewCount": 12580,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "21.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0CH9FJY8V/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-03",
+            "name": "Soft Vegan Leather Slouchy Hobo Shoulder Bag",
+            "description": "Sleek crescent slouchy hobo shoulder bag with roomy interior. Looks like an expensive Italian designer piece for under $30.",
+            "image": "https://lookiq.github.io/assets/slouchy-hobo-bag.jpg",
+            "sku": "B0D99Q3PDV",
+            "brand": {
+              "@type": "Brand",
+              "name": "Soft"
+            },
+            "category": "accessories",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.7,
+              "reviewCount": 5210,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "28.90",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0D99Q3PDV/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-04",
+            "name": "NIMIN High-Waisted Wide Leg Work Trouser Pants",
+            "description": "Flowy, elegant drape with front pleats and side pockets. Instantly elevates casual t-shirts or silk blouses.",
+            "image": "https://lookiq.github.io/assets/nimin-trouser-pants.jpg",
+            "sku": "B0DHRD1LWQ",
+            "brand": {
+              "@type": "Brand",
+              "name": "NIMIN"
+            },
+            "category": "women",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.6,
+              "reviewCount": 8940,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "38.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0DHRD1LWQ/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-05",
+            "name": "Hanes Men's Ultimate Heavyweight Fleece Pullover Hoodie",
+            "description": "Classic 9.7 oz heavyweight fleece hoodie crafted with patented low-pill, high-stitch density fabric. The ultimate casual layering piece.",
+            "image": "https://lookiq.github.io/assets/hanes-mens-hoodie.jpg",
+            "sku": "B00JUMDZTC",
+            "brand": {
+              "@type": "Brand",
+              "name": "Hanes"
+            },
+            "category": "men",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.6,
+              "reviewCount": 48200,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "33.00",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B00JUMDZTC/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-06",
+            "name": "PAVOI 14K Gold Plated Thick Huggie Hoop Earrings",
+            "description": "Hypoallergenic, lightweight chunky tube hoops plated in 14K real gold. Doesn't tarnish or irritate sensitive ears.",
+            "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80",
+            "sku": "B08CTB2H6T",
+            "brand": {
+              "@type": "Brand",
+              "name": "PAVOI"
+            },
+            "category": "accessories",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.9,
+              "reviewCount": 48400,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "12.95",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B08CTB2H6T/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-07",
+            "name": "QINSEN Square-Neck Workout Jumpsuit Romper",
+            "description": "Double-layered compressive knit with square neckline and bodycon biker shorts. The viral TikTok workout romper with tummy control.",
+            "image": "https://lookiq.github.io/assets/qinsen-workout-romper.jpg",
+            "sku": "B0BXS1MBM9",
+            "brand": {
+              "@type": "Brand",
+              "name": "QINSEN"
+            },
+            "category": "women",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.6,
+              "reviewCount": 22400,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "24.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0BXS1MBM9/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-08",
+            "name": "Amazon Essentials Men's Slim-Fit Stretch Casual Chino Pant",
+            "description": "Comfort-stretch cotton twill chino with a modern slim fit through the thigh and leg. Perfect transition piece from casual workday to weekend.",
+            "image": "https://lookiq.github.io/assets/amazon-mens-chino.jpg",
+            "sku": "B07BJKZGRR",
+            "brand": {
+              "@type": "Brand",
+              "name": "Amazon"
+            },
+            "category": "men",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.5,
+              "reviewCount": 31800,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "22.60",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B07BJKZGRR/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-09",
+            "name": "Soda Pilot Women's Chunky Lug Sole Chelsea Booties",
+            "description": "Weatherproof ankle boots with an aggressive lug sole and elastic side goring. Effortlessly pairs with dresses or jeans.",
+            "image": "https://lookiq.github.io/assets/soda-chelsea-booties.jpg",
+            "sku": "B08KHXGR58",
+            "brand": {
+              "@type": "Brand",
+              "name": "Soda"
+            },
+            "category": "shoes",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.7,
+              "reviewCount": 21500,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "39.98",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B08KHXGR58/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-11",
+            "name": "ANRABESS Oversized Turtleneck Batwing Ribbed Knit Sweater",
+            "description": "Plush chunky knit with ribbed cuffs and slouchy cowl neck. The #1 sweater on Amazon with tens of thousands of reviews.",
+            "image": "https://lookiq.github.io/assets/anrabess-turtleneck-sweater.jpg",
+            "sku": "B07XKH9K5M",
+            "brand": {
+              "@type": "Brand",
+              "name": "ANRABESS"
+            },
+            "category": "women",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.8,
+              "reviewCount": 38400,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "39.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B07XKH9K5M/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-12",
+            "name": "BUREI Ultra-Thin Minimalist Men's Leather Watch",
+            "description": "Classic minimalist analog dial with date window and genuine embossed leather strap. Water-resistant up to 30M.",
+            "image": "https://lookiq.github.io/assets/burei-mens-watch.jpg",
+            "sku": "B07Q7NQ3WB",
+            "brand": {
+              "@type": "Brand",
+              "name": "BUREI"
+            },
+            "category": "accessories",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.7,
+              "reviewCount": 9400,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "29.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B07Q7NQ3WB/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "item": {
+            "@type": "Product",
+            "@id": "https://lookiq.github.io/#prod-fracora-01",
+            "name": "FRACORA Men's Minimalist White Leather Tennis Sneakers",
+            "description": "Clean, low-top white casual sneakers with cushioned insole and non-slip rubber cupsole. The quintessential smart-casual men's sneaker.",
+            "image": "https://lookiq.github.io/assets/fracora-mens-sneakers.jpg",
+            "sku": "B0BVQC4TLH",
+            "brand": {
+              "@type": "Brand",
+              "name": "FRACORA"
+            },
+            "category": "shoes",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.5,
+              "reviewCount": 4800,
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "26.99",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0BVQC4TLH/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon.com"
+              }
+            }
           }
         }
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://lookiq.github.io/#organization",
-        "name": "LOOKIQ",
-        "url": "https://lookiq.github.io/",
-        "logo": "https://lookiq.github.io/assets/favicon.svg",
-        "sameAs": [
-          "https://pinterest.com/lookiqfashion",
-          "https://tiktok.com/@lookiqfashion"
-        ]
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

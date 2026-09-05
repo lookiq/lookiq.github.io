@@ -33,42 +33,299 @@
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://lookiq.github.io/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Lookbook & Shop The Look",
-            "item": "https://lookiq.github.io/lookbook.html"
-          }
-        ]
-      },
-      {
-        "@type": "CollectionPage",
-        "name": "LOOKIQ Editorial Lookbooks & Curated Outfits",
-        "url": "https://lookiq.github.io/lookbook.html",
-        "description": "Editorial fashion lookbooks featuring complete multi-item outfit bundles curated directly from top-rated Amazon fashion listings.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "LOOKIQ",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://lookiq.github.io/assets/favicon.svg"
-          }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://lookiq.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lookbook & Shop The Look",
+          "item": "https://lookiq.github.io/lookbook.html"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "name": "LOOKIQ Editorial Lookbooks & Curated Outfits",
+      "url": "https://lookiq.github.io/lookbook.html",
+      "description": "Editorial fashion lookbooks featuring complete multi-item outfit bundles curated directly from top-rated Amazon fashion listings.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "LOOKIQ",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lookiq.github.io/assets/favicon.svg"
         }
       }
-    ]
-  }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://lookiq.github.io/lookbook.html#curated-outfits",
+      "name": "LOOKIQ Editorial Outfit Lookbooks",
+      "description": "Complete coordinated multi-piece fashion bundles curated directly from top-rated Amazon fashion listings.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://lookiq.github.io/lookbook.html#outfit-resort-01",
+            "name": "The Amalfi Coast Resort & Beach Edit",
+            "description": "Chic Mediterranean resort ensemble featuring Amazon's #1 viral tummy control cutout swimsuit, breezy linen beach shirt, woven straw tote, and UV sun hat.",
+            "image": "https://lookiq.github.io/assets/outfit-amalfi-resort.jpg",
+            "keywords": "Trending Resort",
+            "about": [
+              {
+                "@type": "Product",
+                "name": "Eomenie Tummy Control Cutout One-Piece Swimsuit",
+                "category": "Swimwear",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "36.99",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B09NY52NP7/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "Ekouaer Swimsuit Beach Dress Shirt Cover-Up",
+                "category": "Cover-Up",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "16.14",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://amzn.to/4yj1hFV"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "FURTALK Foldable Wide-Brim Straw UV Sun Hat",
+                "category": "Sun Hat",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "27.99",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B0852HCQ18/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "Womens Large Straw Summer Beach Shoulder Tote",
+                "category": "Beach Bag",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "19.59",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://amzn.to/4xC9O6N"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://lookiq.github.io/lookbook.html#outfit-01",
+            "name": "The Manhattan Quiet Luxury Look",
+            "description": "An effortless blend of tailored oversized trench coat, pleated wide-leg trousers, clean minimal white sneakers, and a slouchy vegan leather bag.",
+            "image": "https://lookiq.github.io/assets/outfit-manhattan-trench.jpg",
+            "keywords": "Trending",
+            "about": [
+              {
+                "@type": "Product",
+                "name": "Farktop Oversized Long Double-Breasted Trench Coat",
+                "category": "Coat",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "39.99",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B0CCJF2N2B/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "NIMIN High-Waisted Wide Leg Work Trouser Pants",
+                "category": "Pants",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "38.99",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B0DHRD1LWQ/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "Soft Vegan Leather Slouchy Hobo Shoulder Bag",
+                "category": "Bag",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "28.90",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B0D99Q3PDV/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "Adokoo Classic Minimalist White Leather Sneakers",
+                "category": "Shoes",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "21.99",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B0CH9FJY8V/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://lookiq.github.io/lookbook.html#outfit-02",
+            "name": "The Autumn Weekend Chai Look",
+            "description": "Ultra-comfortable knit batwing turtleneck paired with chunky lug sole chelsea boots, 14K gold huggie earrings, and vintage tortoise oval shades.",
+            "image": "https://lookiq.github.io/assets/outfit-autumn-chai.jpg",
+            "keywords": "Cozy Autumn",
+            "about": [
+              {
+                "@type": "Product",
+                "name": "ANRABESS Oversized Turtleneck Batwing Ribbed Knit Sweater",
+                "category": "Knitwear",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "39.99",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B07XKH9K5M/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "Soda Pilot Women's Chunky Lug Sole Chelsea Booties",
+                "category": "Boots",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "39.98",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B08KHXGR58/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "PAVOI 14K Gold Plated Thick Huggie Hoop Earrings",
+                "category": "Jewelry",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "12.95",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B08CTB2H6T/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "SOJOS Small Oval Polarized Retro Tortoise Sunglasses",
+                "category": "Eyewear",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "15.99",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B0H3V41YPX/?tag=likeefashionh-20&linkCode=ogi&th=1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "CreativeWork",
+            "@id": "https://lookiq.github.io/lookbook.html#outfit-03",
+            "name": "The Clean Urban Minimalist (Men's)",
+            "description": "Modern street essentials combining a heavyweight fleece pullover hoodie, slim-fit stretch chinos, clean minimalist white leather sneakers, and a classic leather dress watch.",
+            "image": "https://lookiq.github.io/assets/outfit-urban-minimalist-men.jpg",
+            "keywords": "Men's Edit",
+            "about": [
+              {
+                "@type": "Product",
+                "name": "Hanes Men's Ultimate Heavyweight Fleece Pullover Hoodie",
+                "category": "Top",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "33.00",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B00JUMDZTC/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "Amazon Essentials Men's Slim-Fit Stretch Casual Chino Pant",
+                "category": "Bottom",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "22.60",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B07BJKZGRR/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "FRACORA Men's Minimalist White Leather Tennis Sneakers",
+                "category": "Shoes",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "26.99",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B0BVQC4TLH/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              },
+              {
+                "@type": "Product",
+                "name": "BUREI Ultra-Thin Minimalist Men's Leather Watch",
+                "category": "Watch",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "USD",
+                  "price": "29.99",
+                  "availability": "https://schema.org/InStock",
+                  "url": "https://www.amazon.com/dp/B07Q7NQ3WB/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
