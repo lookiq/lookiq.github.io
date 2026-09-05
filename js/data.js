@@ -101,18 +101,18 @@ const PRODUCTS = [
     category: "women",
     subCategory: "Cover-Ups",
     badge: "Vacation Must-Have",
-    price: 19.99,
-    originalPrice: 29.99,
-    rating: 4.6,
-    reviewsCount: 8900,
-    image: "assets/ekouaer-coverup.jpg",
-    tags: ["Resort Wear", "Beach Cover-Up", "Summer"],
-    shortDesc: "Casual hooded swimsuit cover-up with full front zipper and short sleeves. Made of ultra-soft, breathable terry cloth fabric perfect for poolside relaxation.",
+    price: 16.14,
+    originalPrice: 19.99,
+    rating: 4.2,
+    reviewsCount: 21513,
+    image: "assets/ekouaer-coverup.jpg?v=2",
+    tags: ["Resort Wear", "Beach Cover-Up", "Summer", "Vacation Chic"],
+    shortDesc: "Breezy lightweight boyfriend-style button-down beach coverup shirt dress. Features an open V-neck, cuffed roll-up sleeves, and curved side slits.",
     features: [
-      "Front full zipper closure for easy wear",
-      "Functional drawstring hood & deep side pockets",
-      "Ultra-absorbent soft terry cotton blend",
-      "Available in vibrant vacation colors"
+      "Flattering deep V-neck with lapel collar & chest pocket",
+      "Roll-up 3/4 sleeves with button tabs for versatile styling",
+      "Ultra-soft, lightweight & breathable textured fabric",
+      "Asymmetrical curved hem with leg-lengthening side slits"
     ],
     amazonLink: "https://amzn.to/4yj1hFV"
   },
@@ -447,7 +447,7 @@ const OUTFITS = [
       {
         name: "Ekouaer Swimsuit Beach Dress Shirt Cover-Up",
         category: "Cover-Up",
-        price: "$19.99",
+        price: "$16.14",
         asin: "B0GY34D6CM",
         amazonLink: "https://amzn.to/4yj1hFV"
       },
