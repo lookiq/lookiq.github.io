@@ -325,7 +325,7 @@ const PRODUCTS = [
     originalPrice: 32.00,
     rating: 4.5,
     reviewsCount: 31800,
-    image: "assets/amazon-mens-chino.jpg",
+    image: "assets/amazon-mens-chino.jpg?v=2",
     tags: ["Everyday", "Smart Casual", "Men"],
     shortDesc: "Comfort-stretch cotton twill chino with a modern slim fit through the thigh and leg. Perfect transition piece from casual workday to weekend.",
     features: [
