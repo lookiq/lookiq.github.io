@@ -369,7 +369,7 @@ const PRODUCTS = [
     originalPrice: 59.99,
     rating: 4.8,
     reviewsCount: 38400,
-    image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80",
+    image: "assets/anrabess-turtleneck-sweater.jpg",
     tags: ["Fall/Winter", "Cozy", "Viral"],
     shortDesc: "Plush chunky knit with ribbed cuffs and slouchy cowl neck. The #1 sweater on Amazon with tens of thousands of reviews.",
     features: [
