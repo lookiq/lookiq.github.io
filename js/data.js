@@ -347,7 +347,7 @@ const PRODUCTS = [
     originalPrice: 59.99,
     rating: 4.7,
     reviewsCount: 21500,
-    image: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=800&q=80",
+    image: "assets/soda-chelsea-booties.jpg",
     tags: ["Fall/Winter", "Trending", "Boots"],
     shortDesc: "Weatherproof ankle boots with an aggressive lug sole and elastic side goring. Effortlessly pairs with dresses or jeans.",
     features: [
