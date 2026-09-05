@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   renderOutfits();
   renderGuides();
+  initTrendingTicker();
   setupEventListeners();
   handleDeepLink();
   window.addEventListener("hashchange", handleDeepLink);
@@ -396,6 +397,44 @@ document.addEventListener("DOMContentLoaded", () => {
     if (categoryTabs[0]) categoryTabs[0].classList.add("active");
     renderProducts();
   };
+
+  /**
+   * Auto-Rotating Trending Ticker
+   */
+  function initTrendingTicker() {
+    const tickerItems = document.querySelectorAll(".ticker-item");
+    if (tickerItems.length <= 1) return;
+
+    let currentIndex = 0;
+    let tickerInterval = null;
+
+    function showNextTicker() {
+      tickerItems[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % tickerItems.length;
+      tickerItems[currentIndex].classList.add("active");
+    }
+
+    function startTicker() {
+      if (!tickerInterval) {
+        tickerInterval = setInterval(showNextTicker, 3800);
+      }
+    }
+
+    function stopTicker() {
+      if (tickerInterval) {
+        clearInterval(tickerInterval);
+        tickerInterval = null;
+      }
+    }
+
+    startTicker();
+
+    const tickerWrap = document.querySelector(".trending-ticker-wrap");
+    if (tickerWrap) {
+      tickerWrap.addEventListener("mouseenter", stopTicker);
+      tickerWrap.addEventListener("mouseleave", startTicker);
+    }
+  }
 
   /**
    * Click / Outbound Conversion Analytics Tracking
