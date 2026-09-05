@@ -127,7 +127,7 @@ const PRODUCTS = [
     originalPrice: 35.99,
     rating: 4.6,
     reviewsCount: 24100,
-    image: "assets/furtalk-sun-hat.jpg",
+    image: "assets/furtalk-sun-hat.jpg?v=2",
     tags: ["Summer Essential", "UPF 50+", "Travel"],
     shortDesc: "Packable, roll-up wide brim Panama straw hat with UPF 50+ sun protection. The quintessential summer holiday companion.",
     features: [
