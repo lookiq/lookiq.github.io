@@ -215,7 +215,7 @@ const PRODUCTS = [
     originalPrice: 42.00,
     rating: 4.7,
     reviewsCount: 5210,
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+    image: "assets/slouchy-hobo-bag.jpg",
     tags: ["Quiet Luxury", "Budget Dupe", "Must Have"],
     shortDesc: "Sleek crescent slouchy hobo shoulder bag with roomy interior. Looks like an expensive Italian designer piece for under $30.",
     features: [
