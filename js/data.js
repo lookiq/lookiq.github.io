@@ -51,6 +51,28 @@ const PRODUCTS = [
     amazonLink: "https://amzn.to/3T8vGYF"
   },
   {
+    id: "prod-10",
+    asin: "B0H3V41YPX",
+    title: "SOJOS Small Oval Polarized Retro Tortoise Sunglasses",
+    category: "accessories",
+    subCategory: "Eyewear",
+    badge: "Under $20",
+    price: 15.99,
+    originalPrice: 19.99,
+    rating: 4.5,
+    reviewsCount: 14200,
+    image: "assets/sojos-retro-sunglasses.png",
+    tags: ["Old Money", "Summer/Fall", "Accessory", "Viral Dupes"],
+    shortDesc: "Chic 90s vintage narrow oval tortoise frames with UV400 polarized brown lenses. Adds instant Old Money and celebrity off-duty vibes.",
+    features: [
+      "100% UV400 protective polarized TAC brown lenses",
+      "Premium gloss tortoise shell acetate narrow oval frame",
+      "Reinforced metal hinges with ergonomic curved temples",
+      "Includes microfiber cleaning pouch, cloth & protective box"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0H3V41YPX/?tag=likeefashionh-20&linkCode=ogi&th=1"
+  },
+  {
     id: "prod-eomenie-01",
     asin: "B09NY52NP7",
     title: "Eomenie Tummy Control Cutout One-Piece Swimsuit",
@@ -486,7 +508,7 @@ const OUTFITS = [
     id: "outfit-02",
     title: "The Autumn Weekend Chai Look",
     tag: "Cozy Autumn",
-    description: "Ultra-comfortable knit batwing turtleneck paired with chunky lug sole chelsea boots and 14K gold huggie earrings.",
+    description: "Ultra-comfortable knit batwing turtleneck paired with chunky lug sole chelsea boots, 14K gold huggie earrings, and vintage tortoise oval shades.",
     image: "assets/outfit-autumn-chai.jpg",
     items: [
       {
@@ -509,6 +531,13 @@ const OUTFITS = [
         price: "$12.95",
         asin: "B08CTB2H6T",
         amazonLink: getAffiliateLink("B08CTB2H6T")
+      },
+      {
+        name: "SOJOS Small Oval Polarized Retro Tortoise Sunglasses",
+        category: "Eyewear",
+        price: "$15.99",
+        asin: "B0H3V41YPX",
+        amazonLink: "https://www.amazon.com/dp/B0H3V41YPX/?tag=likeefashionh-20&linkCode=ogi&th=1"
       }
     ]
   },
