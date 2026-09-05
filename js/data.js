@@ -294,25 +294,25 @@ const PRODUCTS = [
   },
   {
     id: "prod-07",
-    asin: "B0CCDW18FN",
-    title: "QINSEN Seamless Square-Neck Ribbed Bodysuit",
+    asin: "B0BXS1MBM9",
+    title: "QINSEN Square-Neck Workout Jumpsuit Romper",
     category: "women",
-    subCategory: "Tops",
+    subCategory: "Activewear",
     badge: "TikTok Viral",
     price: 24.99,
     originalPrice: 32.00,
-    rating: 4.7,
+    rating: 4.6,
     reviewsCount: 22400,
-    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
-    tags: ["Dupe Alert", "Essential", "Sculpt"],
-    shortDesc: "Double-layered compressive knit with a sculpting contour. The famous designer dupe with 20k+ reviews.",
+    image: "assets/qinsen-workout-romper.jpg",
+    tags: ["Dupe Alert", "Workout", "Sculpt"],
+    shortDesc: "Double-layered compressive knit with square neckline and bodycon biker shorts. The viral TikTok workout romper with tummy control.",
     features: [
-      "Double lined for 100% zero see-through",
-      "Snug compression snatch effect",
-      "Thong bottom with snap closure",
-      "Available in 18 curated seasonal shades"
+      "Double lined for 100% squat-proof coverage",
+      "Wide comfortable tank straps with square neck",
+      "Built-in tummy control bodycon snatch fit",
+      "Moisture-wicking, 4-way stretch ribbed fabric"
     ],
-    amazonLink: getAffiliateLink("B0CCDW18FN")
+    amazonLink: getAffiliateLink("B0BXS1MBM9")
   },
   {
     id: "prod-08",
