@@ -295,10 +295,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!product || !quickViewModal) return;
 
     const modalBody = quickViewModal.querySelector(".modal-body");
+    const safeTitle = (product.altText || product.title).replace(/'/g, "\\'");
+    
     modalBody.innerHTML = `
       <div class="quickview-layout">
-        <div class="quickview-img">
-          <img src="${product.image}" alt="${product.altText || product.title}" decoding="async">
+        <div class="quickview-img zoomable-img-box" id="qv-zoom-container" onclick="openLightbox('${product.image}', '${safeTitle}')" title="Click to expand fullscreen">
+          <div class="zoom-lens-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            <span>Roll over to zoom • Click to expand</span>
+          </div>
+          <img src="${product.image}" alt="${product.altText || product.title}" id="qv-zoom-target" decoding="async">
         </div>
         <div class="quickview-details">
           <span class="quickview-badge">${product.badge}</span>
@@ -323,6 +334,23 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
+
+    // Attach interactive Pan-Zoom events
+    const zoomBox = document.getElementById("qv-zoom-container");
+    const zoomImg = document.getElementById("qv-zoom-target");
+    if (zoomBox && zoomImg) {
+      zoomBox.addEventListener("mousemove", (e) => {
+        const rect = zoomBox.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        zoomImg.style.transformOrigin = `${x}% ${y}%`;
+        zoomImg.style.transform = "scale(2.25)";
+      });
+      zoomBox.addEventListener("mouseleave", () => {
+        zoomImg.style.transform = "scale(1)";
+        zoomImg.style.transformOrigin = "center center";
+      });
+    }
 
     quickViewModal.classList.add("active");
   };
