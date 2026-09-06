@@ -106,6 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
               </svg>
               <span>Check Price on Amazon</span>
             </a>
+            <a href="products/${product.id}.html" class="product-view-details-link" style="display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; margin-top: 8px; padding: 7px 12px; font-size: 0.82rem; font-weight: 600; color: var(--accent-gold); border: 1px solid var(--border-gold); border-radius: var(--radius-full); transition: all 0.2s ease; text-decoration: none;">
+              <span>Read Full Review &amp; Fit Guide</span> &rarr;
+            </a>
           </div>
         </div>
       `;

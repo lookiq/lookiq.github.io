@@ -2195,3 +2195,5 @@ input, select {
   color: var(--accent-gold);
   transform: scale(1.15);
 }
+
+.product-view-details-link:hover { background: var(--accent-gold); color: #101014 !important; border-color: var(--accent-gold) !important; }
