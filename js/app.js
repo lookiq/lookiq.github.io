@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="stars">${starIcons}</div>
               <span class="reviews-count">(${product.reviewsCount.toLocaleString()})</span>
             </div>
-            <h4 class="product-title" title="${product.title}">${product.title}</h4>
+            <h4 class="product-title" title="${product.title}"><a href="products/${product.id}.html" style="color: inherit; text-decoration: none;">${product.title}</a></h4>
             <div class="product-tags">
               ${product.tags.map(tag => `<span class="product-tag">${tag}</span>`).join("")}
             </div>
@@ -327,6 +327,9 @@ document.addEventListener("DOMContentLoaded", () => {
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
             </svg>
             <span>View Current Price on Amazon</span>
+          </a>
+          <a href="products/${product.id}.html" class="quickview-details-link" style="display: block; text-align: center; margin-top: 10px; font-size: 0.84rem; color: var(--accent-gold); font-weight: 600; text-decoration: underline;">
+            View Dedicated Product Page &amp; Full Reviews &rarr;
           </a>
           <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 10px; text-align: center;">
             Prime eligible • Free Returns available on Amazon.com
