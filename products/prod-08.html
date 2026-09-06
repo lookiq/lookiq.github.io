@@ -312,8 +312,11 @@
       fill: currentColor;
     }
     .stock-guarantee-text {
-      text-align: center;
-      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 0.82rem;
       color: var(--text-muted);
       margin-top: -8px;
     }
@@ -358,6 +361,17 @@
       font-size: 0.92rem;
       color: var(--text-secondary);
       line-height: 1.6;
+    }
+    .styling-tip-title {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--text-primary);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .styling-tip-title svg {
+      color: var(--accent-gold);
     }
     .social-share-row {
       display: flex;
@@ -472,7 +486,7 @@
         </span>
         <div class="trending-ticker-track">
           <a href="../index.html#catalog" class="ticker-item active">
-            <span>🔥 Trending on Amazon US: Viral Fashion Finds &amp; Designer Dupes</span>
+            <span>Trending on Amazon US: Viral Fashion Finds &amp; Designer Dupes</span>
             <span class="ticker-arrow">&rarr;</span>
           </a>
         </div>
@@ -596,7 +610,12 @@
           <span>Check Current Price on Amazon</span>
           <span>&rarr;</span>
         </a>
-        <p class="stock-guarantee-text">⚡ Verified In Stock &bull; Ships directly from Amazon US</p>
+        <p class="stock-guarantee-text">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a7f37" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Verified In Stock &bull; Ships directly from Amazon US</span>
+        </p>
 
         <!-- Product Description -->
         <div class="product-section-block">
@@ -642,9 +661,14 @@
           </ul>
         </div>
 
-        <!-- Styling Tips -->
+        <!-- Styling Tips with crisp Gold Diamond SVG -->
         <div class="styling-tip-box">
-          <strong>✨ LOOKIQ Style &amp; Fit Advice:</strong><br>
+          <div class="styling-tip-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--accent-gold)">
+              <path d="M12 2L14.6 9.4L22 12L14.6 14.6L12 22L9.4 14.6L2 12L9.4 9.4L12 2Z"/>
+            </svg>
+            <span>LOOKIQ Style &amp; Fit Advice:</span>
+          </div>
           Essential for the smart-casual modern wardrobe. Layer under an unstructured overcoat or wear standalone with tailored stretch chinos and minimalist low-top leather sneakers.
         </div>
 
