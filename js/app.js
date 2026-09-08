@@ -526,7 +526,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!outfit) return;
 
     const baseUrl = "https://lookiq.github.io/";
-    const pageUrl = `${baseUrl}index.html#outfits`;
+    const pageUrl = `${baseUrl}lookbook.html#${outfitId}`;
     const imgUrl = outfit.image.startsWith("http") ? outfit.image : `${baseUrl}${outfit.image}`;
     const description = `${outfit.title} (${outfit.tag}) - Shop this complete aesthetic outfit capsule on LOOKIQ!`;
 
