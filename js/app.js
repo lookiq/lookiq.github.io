@@ -547,4 +547,51 @@ document.addEventListener("DOMContentLoaded", () => {
     const pinUrl = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(pageUrl)}&media=${encodeURIComponent(imgUrl)}&description=${encodeURIComponent(description)}`;
     window.open(pinUrl, "_blank", "width=750,height=600,toolbar=0,menubar=0,location=0,status=0,scrollbars=yes,resizable=yes");
   };
+
+  // Mobile Navigation Drawer Controller
+  const mobileToggleBtn = document.getElementById('mobile-menu-toggle');
+  const mobileCloseBtn = document.getElementById('mobile-drawer-close');
+  const mobileDrawer = document.getElementById('mobile-nav-drawer');
+  const mobileOverlay = document.getElementById('mobile-nav-overlay');
+
+  if (mobileToggleBtn && mobileDrawer && mobileOverlay) {
+    function openDrawer() {
+      mobileDrawer.classList.add('active');
+      mobileOverlay.classList.add('active');
+      mobileDrawer.setAttribute('aria-hidden', 'false');
+      mobileOverlay.setAttribute('aria-hidden', 'false');
+      mobileToggleBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      mobileDrawer.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      mobileDrawer.setAttribute('aria-hidden', 'true');
+      mobileOverlay.setAttribute('aria-hidden', 'true');
+      mobileToggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    mobileToggleBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openDrawer();
+    });
+
+    if (mobileCloseBtn) {
+      mobileCloseBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeDrawer();
+      });
+    }
+
+    mobileOverlay.addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('active')) {
+        closeDrawer();
+      }
+    });
+  }
 });
+

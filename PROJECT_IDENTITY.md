@@ -135,3 +135,46 @@ When generating code, modifying files, writing copy, or suggesting improvements 
 5. **Always test mobile responsiveness.** The site receives majority traffic from mobile devices (Pinterest, Instagram, TikTok).
 6. **Ensure clean relative pathing.** Product detail pages reside in `products/` (using `../` for root assets and styles), while root pages reside in `/`.
 7. **Write clean, semantic HTML5** with microdata / schema markup where applicable.
+8. **Strict Pinterest 2:3 Pin Ratio & Visual SEO:** Any future pin or feed asset MUST use exact 2:3 vertical aspect ratio (1000 × 1500 px) in `assets/pins/`. All automated feed items must follow the Pinterest Guided Search SEO formula (Title, Search-Intent Description, Visual Alt Text, Category Mapping).
+
+---
+
+## 8. Pinterest SEO & Automated Pin Publishing Standard (NON-NEGOTIABLE)
+
+For all future posts, product additions, or Pinterest auto-publish feeds (`feed.xml`), the following visual and SEO rules must be strictly enforced:
+
+### A. Mandatory 2:3 Vertical Pin Image Standard
+- **Exact Aspect Ratio:** `2:3` (Vertical / Portrait).
+- **Exact Dimensions:** `1000 × 1500 px` (Standard HD) or `2000 × 3000 px` (Ultra HD).
+- **Location:** All dedicated Pinterest pin images MUST be saved in `assets/pins/` (e.g., `assets/pins/prod-[name]-pin.jpg`).
+- **Composition Rules:** 
+  - Pure vertical composition with the product/model occupying the central 70% of the frame.
+  - Zero raw emojis or cluttered text overlays.
+  - Clean margins at top (for Pinterest UI) and bottom (for Pinterest action buttons).
+  - Background must align with LOOKIQ's luxury aesthetic: Cashmere Cream (`#faf8f5`), Warm Ivory, or Editorial Noir/Charcoal (`#141113`).
+
+### B. Pinterest Guided Search SEO Title Formula
+- **Character Count:** 40 to 70 characters (under 100 max). The most critical search keyword MUST be in the first 35 characters so it never gets truncated in the mobile Pinterest smart feed.
+- **Formula:** `[Primary Pinterest Search Keyword] + [Product Style / Benefit / Year] + [Price or Deal]`
+- **Examples:**
+  - *Viral Summer Maxi Dress Under $20 | Vacation Capsule Wardrobe*
+  - *Quiet Luxury Wool Trench Coat | High-End Fall Outfit Inspo*
+  - *Vintage 1950s Cocktail Tea Dress Under $50 | Amazon Wedding Guest Inspo*
+
+### C. Pinterest Search Intent Description Formula
+- **Character Count:** 150 to 350 characters (max 500 characters).
+- **Structure:**
+  1. **Hook & Problem Solver:** Mention the target lifestyle occasion, fit, or style trend (incorporating 2-3 secondary long-tail Pinterest keywords).
+  2. **Product Specification & Social Proof:** Mention fabric feel, pocket details, ratings (e.g., "4.4★ with 4,800+ verified ratings"), and Amazon Prime availability.
+  3. **High-Converting Call to Action (CTA):** Clear directive such as *"Tap to explore the full US sizing breakdown, fabric review, and capsule outfit styling on LOOKIQ &rarr;"*
+  4. **Niche Hashtag Bundle:** Exactly 4 to 6 hyper-targeted niche fashion hashtags (e.g., `#AmazonFashion #QuietLuxury #CapsuleWardrobe #VacationOutfit #OOTD`).
+
+### D. Visual AI & Accessibility Alt Text Formula
+- Pinterest's visual search engine (Lens) reads image alt text alongside its computer vision scanner.
+- **Formula:** Detailed visual description including garment type, silhouette, color, pattern, sleeve style, styling details, and occasion.
+- **Example:** `"Woman wearing olive green sleeveless loose pocket maxi dress with walking side split, styling casual summer capsule wardrobe with gold sandals and straw tote bag."`
+
+### E. Omnichannel Harmonization (Pinterest + Google + Meta)
+- **Pinterest Feed (`feed.xml`):** Injects the dedicated 2:3 pin image URL (`assets/pins/...`), Pinterest-optimized title, description, and visual alt text.
+- **Product Page OpenGraph & Twitter Cards:** Uses the 2:3 pin image or 1200×630 landscape image, ensuring optimal preview rendering across Facebook, Twitter/X, and iMessage.
+- **Product Page Schema.org (JSON-LD):** Maintains Google Rich Snippets (`Product`, `Offer`, `AggregateRating`) so Google Search displays the price, star rating, and in-stock status directly in search results.
