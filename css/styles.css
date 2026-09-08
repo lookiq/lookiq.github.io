@@ -2646,4 +2646,118 @@ input, select {
   fill: currentColor;
 }
 
+/* ==========================================================================
+   LOOKIQ Mobile Sticky Amazon Buy Bar (High-Converting Conversion Strip)
+   ========================================================================== */
+
+.mobile-sticky-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 18, 22, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(201, 151, 56, 0.35);
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    transform: translateY(115%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 10px 16px;
+    box-sizing: border-box;
+  }
+
+  .mobile-sticky-bar.visible {
+    transform: translateY(0);
+  }
+
+  .sticky-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .sticky-bar-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .sticky-bar-thumb {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-sm, 6px);
+    object-fit: cover;
+    border: 1px solid rgba(201, 151, 56, 0.3);
+    flex-shrink: 0;
+  }
+
+  .sticky-bar-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 2px;
+  }
+
+  .sticky-bar-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #faf8f5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25;
+  }
+
+  .sticky-bar-price {
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: var(--accent-gold, #c99738);
+    font-family: var(--font-serif, Georgia, serif);
+  }
+
+  .btn-sticky-buy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #ffa41c 0%, #ff8f00 100%);
+    color: #111111;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 9999px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(255, 164, 28, 0.4);
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn-sticky-buy:active {
+    transform: scale(0.96);
+  }
+
+  .btn-sticky-buy svg {
+    flex-shrink: 0;
+  }
+
+  /* Footer safe-area spacing when sticky bar is active on mobile */
+  body.has-sticky-bar {
+    padding-bottom: 72px;
+  }
+}
+
+
 

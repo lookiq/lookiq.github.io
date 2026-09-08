@@ -842,5 +842,59 @@
     });
   </script>
 
+
+  <!-- Mobile Sticky Amazon Action Bar -->
+  <div class="mobile-sticky-bar" id="mobile-sticky-bar" aria-label="Quick Amazon Buy Bar">
+    <div class="sticky-bar-inner">
+      <div class="sticky-bar-info">
+        <img src="../assets/furtalk-sun-hat.jpg?v=2" alt="FURTALK Foldable Wide-Brim Straw UV Sun Hat" class="sticky-bar-thumb" loading="lazy">
+        <div class="sticky-bar-text">
+          <span class="sticky-bar-title">FURTALK Foldable Wide-Brim Straw UV Sun Hat</span>
+          <span class="sticky-bar-price">$27.99</span>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B0852HCQ18/?tag=likeefashionh-20&linkCode=ogi&th=1&psc=1" target="_blank" rel="nofollow sponsored noopener" class="btn-sticky-buy">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+        </svg>
+        <span>Check Price</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Bar Visibility Controller -->
+  <script>
+    (function() {
+      const stickyBar = document.getElementById('mobile-sticky-bar');
+      const mainCta = document.querySelector('.btn-amazon-cta-large');
+      if (!stickyBar || !mainCta) return;
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+              stickyBar.classList.add('visible');
+              document.body.classList.add('has-sticky-bar');
+            } else {
+              stickyBar.classList.remove('visible');
+              document.body.classList.remove('has-sticky-bar');
+            }
+          });
+        }, { threshold: 0 });
+        observer.observe(mainCta);
+      } else {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 450) {
+            stickyBar.classList.add('visible');
+            document.body.classList.add('has-sticky-bar');
+          } else {
+            stickyBar.classList.remove('visible');
+            document.body.classList.remove('has-sticky-bar');
+          }
+        }, { passive: true });
+      }
+    })();
+  </script>
+
 </body>
 </html>
