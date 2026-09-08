@@ -176,20 +176,39 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
     }
     .dupe-stat-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 10px;
       background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      padding: 8px 16px;
+      border: 1px solid rgba(201, 151, 56, 0.22);
+      padding: 7px 18px 7px 10px;
       border-radius: var(--radius-full);
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 600;
+      letter-spacing: 0.015em;
       color: var(--text-primary);
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all var(--transition-normal);
+    }
+    .dupe-stat-pill:hover {
+      border-color: var(--accent-gold);
+      box-shadow: 0 4px 14px rgba(201, 151, 56, 0.15);
+      transform: translateY(-2px);
+    }
+    .dupe-stat-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(201, 151, 56, 0.1);
+      border: 1px solid rgba(201, 151, 56, 0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      flex-shrink: 0;
     }
     .dupes-filter-bar {
       display: flex;
@@ -405,22 +424,44 @@
         Verified high-rating Amazon alternatives that mirror iconic four-figure luxury silhouettes without the astronomical price tag. Each piece has been cross-examined for fabric drape, durability, customer sentiment, and verified Prime shipping.
       </p>
 
-      <!-- Stat Badges -->
+      <!-- Stat Badges (Clean Vector UI/UX - Zero Emojis) -->
       <div class="dupe-stat-pills">
         <div class="dupe-stat-pill">
-          <span>💎</span>
+          <span class="dupe-stat-icon" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="6 3 18 3 22 9 12 22 2 9 6 3"></polygon>
+              <line x1="2" y1="9" x2="22" y2="9"></line>
+              <line x1="12" y1="22" x2="7.5" y2="9"></line>
+              <line x1="12" y1="22" x2="16.5" y2="9"></line>
+            </svg>
+          </span>
           <span>Up to 98% Net Savings</span>
         </div>
         <div class="dupe-stat-pill">
-          <span>⭐</span>
+          <span class="dupe-stat-icon" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </span>
           <span>4.4+ Avg Customer Rating</span>
         </div>
         <div class="dupe-stat-pill">
-          <span>📦</span>
+          <span class="dupe-stat-icon" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </span>
           <span>Free Fast Prime Delivery &amp; Returns</span>
         </div>
         <div class="dupe-stat-pill">
-          <span>🔍</span>
+          <span class="dupe-stat-icon" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </span>
           <span>Verified Material &amp; Non-Sheer Fit Tests</span>
         </div>
       </div>
