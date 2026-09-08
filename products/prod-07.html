@@ -39,7 +39,7 @@
   <link rel="apple-touch-icon" href="../assets/favicon.svg">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="../css/styles.css?v=6.0">
+  <link rel="stylesheet" href="../css/styles.css?v=7.0">
 
   <!-- Schema.org JSON-LD Structured Data for Google Rich Results -->
   <script type="application/ld+json">
@@ -869,30 +869,33 @@
       const mainCta = document.querySelector('.btn-amazon-cta-large');
       if (!stickyBar || !mainCta) return;
 
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-              stickyBar.classList.add('visible');
-              document.body.classList.add('has-sticky-bar');
-            } else {
-              stickyBar.classList.remove('visible');
-              document.body.classList.remove('has-sticky-bar');
-            }
-          });
-        }, { threshold: 0 });
-        observer.observe(mainCta);
-      } else {
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 450) {
-            stickyBar.classList.add('visible');
-            document.body.classList.add('has-sticky-bar');
-          } else {
-            stickyBar.classList.remove('visible');
-            document.body.classList.remove('has-sticky-bar');
-          }
-        }, { passive: true });
+      function updateStickyBar() {
+        // Active on screens under 768px (Mobile/Tablet)
+        if (window.innerWidth > 768) {
+          stickyBar.classList.remove('visible');
+          document.body.classList.remove('has-sticky-bar');
+          return;
+        }
+
+        const rect = mainCta.getBoundingClientRect();
+        // Check if user has scrolled down past top hero section (> 260px)
+        const isScrolled = window.scrollY > 260;
+        // Check if main CTA is currently visible in viewport
+        const isMainCtaVisible = rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+
+        if (isScrolled && !isMainCtaVisible) {
+          stickyBar.classList.add('visible');
+          document.body.classList.add('has-sticky-bar');
+        } else {
+          stickyBar.classList.remove('visible');
+          document.body.classList.remove('has-sticky-bar');
+        }
       }
+
+      window.addEventListener('scroll', updateStickyBar, { passive: true });
+      window.addEventListener('resize', updateStickyBar, { passive: true });
+      // Initial check
+      updateStickyBar();
     })();
   </script>
 
