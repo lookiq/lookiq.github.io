@@ -423,6 +423,28 @@ const PRODUCTS = [
       "Classic versatile low-profile design"
     ],
     amazonLink: getAffiliateLink("B0BVQC4TLH")
+  },
+  {
+    id: "prod-grecerelle-01",
+    asin: "B0CR5D81C8",
+    title: "GRECERELLE Women's Casual Loose Pocket Split Maxi Dress",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Amazon's Choice",
+    price: 19.99,
+    originalPrice: 26.99,
+    rating: 4.4,
+    reviewsCount: 4850,
+    image: "assets/grecerelle-maxi-dress.jpg",
+    tags: ["Vacation Chic", "Resort Wear", "Everyday", "Maxi Dress"],
+    shortDesc: "Effortless, breezy sleeveless maxi dress featuring a relaxed silhouette, convenient side pockets, and flattering side walking split.",
+    features: [
+      "Ultra-soft breathable stretch knit fabric with wrinkle-free drape",
+      "Convenient deep functional side pockets & stylish side slit",
+      "Thoughtful modest armhole cut for confident all-day coverage",
+      "Versatile resort & summer staple for vacations, errands, or casual dining"
+    ],
+    amazonLink: getAffiliateLink("B0CR5D81C8")
   }
 ];
 
