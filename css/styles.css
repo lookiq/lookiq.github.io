@@ -1318,6 +1318,131 @@ input, select {
 }
 
 /* ==========================================================================
+   Quiet Luxury Numbered Pagination System
+   ========================================================================== */
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 52px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(201, 151, 56, 0.18);
+  width: 100%;
+}
+
+.pagination-info {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.pagination-info span {
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+.pagination-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.page-btn, .page-btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm, 10px);
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 151, 56, 0.22);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all var(--transition-fast, 0.2s cubic-bezier(0.16, 1, 0.3, 1));
+  user-select: none;
+  text-decoration: none;
+}
+
+.page-btn:hover:not(.active):not(:disabled),
+.page-btn-nav:hover:not(:disabled) {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(201, 151, 56, 0.2);
+}
+
+.page-btn.active {
+  background: var(--gold-gradient);
+  color: #08080b !important;
+  border-color: var(--accent-gold);
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(201, 151, 56, 0.38);
+  transform: scale(1.05);
+  cursor: default;
+  pointer-events: none;
+}
+
+.page-btn-nav {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0 18px;
+}
+
+.page-btn-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+  border-color: var(--border-subtle);
+  color: var(--text-muted);
+}
+
+.page-btn-nav svg {
+  color: inherit;
+  transition: transform var(--transition-fast);
+}
+
+.page-btn-nav:hover:not(:disabled) svg.arrow-prev {
+  transform: translateX(-3px);
+}
+
+.page-btn-nav:hover:not(:disabled) svg.arrow-next {
+  transform: translateX(3px);
+}
+
+@media (max-width: 600px) {
+  .pagination-container {
+    margin-top: 36px;
+    padding-top: 24px;
+    gap: 14px;
+  }
+  .page-btn, .page-btn-nav {
+    min-width: 38px;
+    height: 38px;
+    font-size: 0.82rem;
+    padding: 0 10px;
+  }
+  .page-btn-nav {
+    font-size: 0.74rem;
+    padding: 0 12px;
+  }
+}
+
+/* ==========================================================================
    Editorial Buying Guides & Articles
    ========================================================================== */
 .guides-section {

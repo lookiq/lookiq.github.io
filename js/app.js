@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentCategory = "all";
   let currentPriceFilter = "all";
   let searchQuery = "";
+  let currentPage = 1;
+  const itemsPerPage = 12;
   let wishlist = JSON.parse(localStorage.getItem("lookiq_wishlist")) || [];
 
   // DOM Elements
@@ -63,6 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return matchCat && matchSearch && matchPrice;
     });
 
+    const paginationContainer = document.getElementById("pagination-container");
+
     if (filtered.length === 0) {
       productsGrid.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
@@ -70,10 +74,22 @@ document.addEventListener("DOMContentLoaded", () => {
           <button class="btn-primary" onclick="resetFilters()">View All Collections</button>
         </div>
       `;
+      if (paginationContainer) paginationContainer.innerHTML = "";
       return;
     }
 
-    productsGrid.innerHTML = filtered.map(product => {
+    const totalItems = filtered.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    if (currentPage > totalPages) {
+      currentPage = 1;
+    }
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+    const paginated = filtered.slice(startIndex, endIndex);
+
+    productsGrid.innerHTML = paginated.map(product => {
       const isSaved = wishlist.includes(product.id);
       const starIcons = renderStarRating(product.rating);
 
@@ -121,7 +137,73 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
     }).join("");
+
+    renderPagination(totalItems, totalPages);
   }
+
+  /**
+   * Render Quiet Luxury Numbered Pagination Bar
+   */
+  function renderPagination(totalItems, totalPages) {
+    const paginationContainer = document.getElementById("pagination-container");
+    if (!paginationContainer) return;
+
+    if (totalPages <= 1) {
+      paginationContainer.innerHTML = "";
+      return;
+    }
+
+    const startNum = (currentPage - 1) * itemsPerPage + 1;
+    const endNum = Math.min(currentPage * itemsPerPage, totalItems);
+
+    let pagesHtml = "";
+    for (let p = 1; p <= totalPages; p++) {
+      const isActive = p === currentPage ? " active" : "";
+      pagesHtml += `
+        <button class="page-btn${isActive}" onclick="goToProductPage(${p})" aria-label="Go to Page ${p}" ${p === currentPage ? 'aria-current="page"' : ''}>
+          ${p}
+        </button>
+      `;
+    }
+
+    const prevDisabled = currentPage === 1 ? " disabled" : "";
+    const nextDisabled = currentPage === totalPages ? " disabled" : "";
+
+    paginationContainer.innerHTML = `
+      <div class="pagination-info">
+        Showing <span>${startNum}–${endNum}</span> of <span>${totalItems}</span> Curated Finds
+      </div>
+      <nav class="pagination-nav" aria-label="Catalog Page Navigation">
+        <button class="page-btn-nav" onclick="goToProductPage(${currentPage - 1})" ${prevDisabled} aria-label="Previous Page">
+          <svg class="arrow-prev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>PREV</span>
+        </button>
+        ${pagesHtml}
+        <button class="page-btn-nav" onclick="goToProductPage(${currentPage + 1})" ${nextDisabled} aria-label="Next Page">
+          <span>NEXT</span>
+          <svg class="arrow-next" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </nav>
+    `;
+  }
+
+  /**
+   * Jump to Specific Page & Smooth Scroll
+   */
+  window.goToProductPage = function(pageNumber) {
+    currentPage = pageNumber;
+    renderProducts();
+
+    const catalogElem = document.getElementById("catalog");
+    if (catalogElem) {
+      const topOffset = catalogElem.getBoundingClientRect().top + window.pageYOffset - 85;
+      window.scrollTo({ top: topOffset, behavior: "smooth" });
+    }
+  };
 
   /**
    * Render Lookbook / Outfit Bundles
@@ -214,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
         categoryTabs.forEach(t => t.classList.remove("active"));
         tab.classList.add("active");
         currentCategory = tab.dataset.category;
+        currentPage = 1;
         renderProducts();
       });
     });
@@ -222,6 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (searchInput) {
       searchInput.addEventListener("input", (e) => {
         searchQuery = e.target.value.trim();
+        currentPage = 1;
         renderProducts();
       });
     }
@@ -230,6 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (priceFilter) {
       priceFilter.addEventListener("change", (e) => {
         currentPriceFilter = e.target.value;
+        currentPage = 1;
         renderProducts();
       });
     }
@@ -445,6 +530,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentCategory = "all";
     currentPriceFilter = "all";
     searchQuery = "";
+    currentPage = 1;
     if (searchInput) searchInput.value = "";
     if (priceFilter) priceFilter.value = "all";
     categoryTabs.forEach(t => t.classList.remove("active"));
