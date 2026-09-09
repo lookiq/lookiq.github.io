@@ -29,6 +29,28 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "prod-elescat-01",
+    asin: "B09N72QM68",
+    title: "Elescat Women's Casual Sleeveless Summer Sundress with Pockets",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Viral Summer Favorite",
+    price: 24.99,
+    originalPrice: 32.99,
+    rating: 4.3,
+    reviewsCount: 18500,
+    image: "assets/elescat-summer-dress.png",
+    tags: ["Summer Dress", "Casual Chic", "Vacation Wear", "Sundress"],
+    shortDesc: "Effortless sleeveless casual sundress featuring a flattering scoop neckline, functional side pockets, and airy swing silhouette. The viral warm-weather staple for vacations and everyday styling.",
+    features: [
+      "Lightweight, ultra-soft breathable rayon blend with graceful natural drape",
+      "Dual deep functional side seam pockets for effortless convenience",
+      "Flattering scoop neckline and modest armhole cut for confident all-day coverage",
+      "Versatile swing flare silhouette pairs seamlessly with denim jackets, sandals, or sneakers"
+    ],
+    amazonLink: "https://amzn.to/3UG9Got"
+  },
+  {
     id: "prod-dresstells-01",
     asin: "B07RKLN54Z",
     title: "DRESSTELLS Vintage A-Line Cocktail & Bridesmaid Dress",

@@ -52,6 +52,12 @@
 
   <!-- Dedicated Standalone Product Review & Detail Pages -->
   <url>
+    <loc>https://lookiq.github.io/products/prod-elescat-01.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://lookiq.github.io/products/prod-dresstells-01.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
