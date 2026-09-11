@@ -120,7 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const chipsWrap = document.getElementById("active-filter-chips");
     if (!countBadge) return;
 
-    const hasActiveFilter = searchQuery || currentCategory !== "all" || currentPriceFilter !== "all" || currentSort !== "featured";
+    const activeFilterCount = (searchQuery ? 1 : 0) +
+                              (currentCategory !== "all" ? 1 : 0) +
+                              (currentPriceFilter !== "all" ? 1 : 0) +
+                              (currentSort !== "featured" ? 1 : 0);
 
     countBadge.innerHTML = `
       <span class="filter-count-micro-icon">
@@ -198,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </span>
         `;
       }
-      if (hasActiveFilter) {
+      if (activeFilterCount >= 2) {
         html += `
           <button class="btn-reset-all" onclick="resetFilters()" title="Reset all filters and view full collection">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
