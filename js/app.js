@@ -965,5 +965,128 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // ==========================================================================
+  // Hero Editorial Carousel Controller
+  // ==========================================================================
+  function initHeroCarousel() {
+    const carousel = document.getElementById("hero-carousel");
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll(".hero-slide");
+    const indicators = carousel.querySelectorAll(".indicator-bar");
+    const prevBtn = document.getElementById("hero-prev");
+    const nextBtn = document.getElementById("hero-next");
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+    let timer = null;
+    const interval = 4500; // 4.5s autoplay rotation
+
+    function showSlide(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+
+      slides.forEach((slide, i) => {
+        if (i === currentIndex) {
+          slide.classList.add("active");
+          slide.setAttribute("aria-hidden", "false");
+        } else {
+          slide.classList.remove("active");
+          slide.setAttribute("aria-hidden", "true");
+        }
+      });
+
+      indicators.forEach((bar, i) => {
+        if (i === currentIndex) {
+          bar.classList.add("active");
+          bar.setAttribute("aria-selected", "true");
+        } else {
+          bar.classList.remove("active");
+          bar.setAttribute("aria-selected", "false");
+        }
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      timer = setInterval(nextSlide, interval);
+    }
+
+    function stopAutoplay() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    // Prev / Next button clicks
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        nextSlide();
+        startAutoplay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        prevSlide();
+        startAutoplay();
+      });
+    }
+
+    // Indicator bar clicks
+    indicators.forEach((bar, i) => {
+      bar.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSlide(i);
+        startAutoplay();
+      });
+    });
+
+    // Pause on hover
+    carousel.addEventListener("mouseenter", stopAutoplay);
+    carousel.addEventListener("mouseleave", startAutoplay);
+
+    // Touch Swipe Support for Mobile & Tablet
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener("touchstart", (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+      stopAutoplay();
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) nextSlide();
+          else prevSlide();
+        }
+      }
+      startAutoplay();
+    }, { passive: true });
+
+    // Start rotation
+    startAutoplay();
+  }
+
+  // Initialize Hero Carousel
+  initHeroCarousel();
 });
 
