@@ -801,61 +801,12 @@ input, select {
   line-height: 1.65;
 }
 
-/* Quick-Trend Discovery Pills */
-.hero-discovery-wrap {
-  margin-top: 20px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(201, 151, 56, 0.18);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.discovery-title {
-  font-size: 0.74rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent-gold);
-  font-weight: 700;
-  display: block;
-}
-
-.discovery-pills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.discovery-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(201, 151, 56, 0.25);
-  border-radius: var(--radius-full);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: var(--transition-fast);
-}
-
-.discovery-pill:hover {
-  background: rgba(201, 151, 56, 0.18);
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
-  transform: translateY(-2px);
-}
-
 /* 3D Carousel Stage (Cover-Flow Curved Perspective) */
 .carousel-3d-stage {
   position: relative;
   width: 100%;
   max-width: 1400px;
-  margin: 25px auto 0;
+  margin: 15px auto 0;
   height: 480px;
   perspective: 1300px;
   perspective-origin: 50% 48%;
