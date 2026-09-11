@@ -29,7 +29,7 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
-    id: "prod-elescat-01",
+    id: "casual-summer-sundress",
     asin: "B09N72QM68",
     title: "Elescat Women's Casual Sleeveless Summer Sundress with Pockets",
     category: "women",
@@ -51,7 +51,7 @@ const PRODUCTS = [
     amazonLink: "https://amzn.to/3UG9Got"
   },
   {
-    id: "prod-dresstells-01",
+    id: "vintage-cocktail-dress",
     asin: "B07RKLN54Z",
     title: "DRESSTELLS Vintage A-Line Cocktail & Bridesmaid Dress",
     category: "women",
@@ -73,7 +73,7 @@ const PRODUCTS = [
     amazonLink: "https://amzn.to/3T8vGYF"
   },
   {
-    id: "prod-10",
+    id: "retro-oval-sunglasses",
     asin: "B0H3V41YPX",
     title: "SOJOS Small Oval Polarized Retro Tortoise Sunglasses",
     category: "accessories",
@@ -95,7 +95,7 @@ const PRODUCTS = [
     amazonLink: "https://www.amazon.com/dp/B0H3V41YPX/?tag=likeefashionh-20&linkCode=ogi&th=1"
   },
   {
-    id: "prod-eomenie-01",
+    id: "cutout-one-piece-swimsuit",
     asin: "B09NY52NP7",
     title: "Eomenie Tummy Control Cutout One-Piece Swimsuit",
     category: "women",
@@ -117,7 +117,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B09NY52NP7")
   },
   {
-    id: "prod-ekouaer-01",
+    id: "beach-shirt-coverup",
     asin: "B0GY34D6CM",
     title: "Ekouaer Swimsuit Beach Dress Shirt Cover-Up",
     category: "women",
@@ -139,7 +139,7 @@ const PRODUCTS = [
     amazonLink: "https://amzn.to/4yj1hFV"
   },
   {
-    id: "prod-furtalk-01",
+    id: "foldable-straw-sun-hat",
     asin: "B0852HCQ18",
     title: "FURTALK Foldable Wide-Brim Straw UV Sun Hat",
     category: "accessories",
@@ -183,7 +183,7 @@ const PRODUCTS = [
     amazonLink: "https://amzn.to/4xC9O6N"
   },
   {
-    id: "prod-01",
+    id: "oversized-trench-coat",
     asin: "B0CCJF2N2B",
     title: "Farktop Oversized Long Double-Breasted Trench Coat",
     category: "women",
@@ -205,7 +205,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B0CCJF2N2B")
   },
   {
-    id: "prod-02",
+    id: "classic-white-sneakers",
     asin: "B0CH9FJY8V",
     title: "Adokoo Classic Minimalist White Leather Sneakers",
     category: "shoes",
@@ -227,7 +227,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B0CH9FJY8V")
   },
   {
-    id: "prod-03",
+    id: "slouchy-hobo-shoulder-bag",
     asin: "B0D99Q3PDV",
     title: "Soft Vegan Leather Slouchy Hobo Shoulder Bag",
     category: "accessories",
@@ -249,7 +249,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B0D99Q3PDV")
   },
   {
-    id: "prod-04",
+    id: "pleated-wide-leg-trousers",
     asin: "B0DHRD1LWQ",
     title: "NIMIN High-Waisted Wide Leg Work Trouser Pants",
     category: "women",
@@ -271,7 +271,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B0DHRD1LWQ")
   },
   {
-    id: "prod-05",
+    id: "heavyweight-fleece-hoodie",
     asin: "B00JUMDZTC",
     title: "Hanes Men's Ultimate Heavyweight Fleece Pullover Hoodie",
     category: "men",
@@ -293,7 +293,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B00JUMDZTC")
   },
   {
-    id: "prod-06",
+    id: "gold-huggie-hoop-earrings",
     asin: "B08CTB2H6T",
     title: "PAVOI 14K Gold Plated Thick Huggie Hoop Earrings",
     category: "accessories",
@@ -315,7 +315,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B08CTB2H6T")
   },
   {
-    id: "prod-07",
+    id: "square-neck-workout-romper",
     asin: "B0BXS1MBM9",
     title: "QINSEN Square-Neck Workout Jumpsuit Romper",
     category: "women",
@@ -337,7 +337,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B0BXS1MBM9")
   },
   {
-    id: "prod-08",
+    id: "slim-fit-stretch-chinos",
     asin: "B07BJKZGRR",
     title: "Amazon Essentials Men's Slim-Fit Stretch Casual Chino Pant",
     category: "men",
@@ -359,7 +359,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B07BJKZGRR")
   },
   {
-    id: "prod-09",
+    id: "chunky-chelsea-booties",
     asin: "B08KHXGR58",
     title: "Soda Pilot Women's Chunky Lug Sole Chelsea Booties",
     category: "shoes",
@@ -381,7 +381,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B08KHXGR58")
   },
   {
-    id: "prod-11",
+    id: "oversized-turtleneck-sweater",
     asin: "B07XKH9K5M",
     title: "ANRABESS Oversized Turtleneck Batwing Ribbed Knit Sweater",
     category: "women",
@@ -403,7 +403,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B07XKH9K5M")
   },
   {
-    id: "prod-12",
+    id: "minimalist-mens-leather-watch",
     asin: "B07Q7NQ3WB",
     title: "BUREI Ultra-Thin Minimalist Men's Leather Watch",
     category: "accessories",
@@ -425,7 +425,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B07Q7NQ3WB")
   },
   {
-    id: "prod-fracora-01",
+    id: "mens-white-tennis-sneakers",
     asin: "B0BVQC4TLH",
     title: "FRACORA Men's Minimalist White Leather Tennis Sneakers",
     category: "shoes",
@@ -447,7 +447,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B0BVQC4TLH")
   },
   {
-    id: "prod-grecerelle-01",
+    id: "pocket-split-maxi-dress",
     asin: "B0CR5D81C8",
     title: "GRECERELLE Women's Casual Loose Pocket Split Maxi Dress",
     category: "women",

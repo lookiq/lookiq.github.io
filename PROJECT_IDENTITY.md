@@ -49,13 +49,13 @@ lookiq/
 │   └── main.js                 # Search, filtering, wishlist, and interactive components
 ├── assets/                     # High-resolution optimized product imagery
 └── products/                   # Individual Product Detail Pages (PDP)
-    ├── prod-01.html to prod-12.html
-    ├── prod-dresstells-01.html
-    ├── prod-ekouaer-01.html
-    ├── prod-eomenie-01.html
-    ├── prod-fracora-01.html
-    ├── prod-furtalk-01.html
-    ├── prod-grecerelle-01.html
+    ├── oversized-trench-coat.html to minimalist-mens-leather-watch.html
+    ├── vintage-cocktail-dress.html
+    ├── beach-shirt-coverup.html
+    ├── cutout-one-piece-swimsuit.html
+    ├── mens-white-tennis-sneakers.html
+    ├── foldable-straw-sun-hat.html
+    ├── pocket-split-maxi-dress.html
     └── straw-beach-tote.html
 ```
 
