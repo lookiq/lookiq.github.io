@@ -23,3 +23,16 @@
 - **Pinterest Guided Search Title:** Primary high-intent keyword in the first 35 characters (40-70 chars total, no emojis).
 - **Search-Intent Description:** Problem solver + Amazon Prime verification + CTA + 4 to 6 niche hashtags (e.g., `#AmazonFashion #QuietLuxury #CapsuleWardrobe`).
 - **Visual AI Alt Text:** Detailed descriptive alt text (silhouette, fabric, cut, color, styling) to maximize Pinterest Lens visual search discovery.
+
+## 5. Multi-Conversation Specialist Architecture
+- This workspace operates across 5 dedicated specialist conversations in the Antigravity IDE:
+  1. **LookiQ main:** Master architecture, full-stack development, layout bugs, and overarching site coordination.
+  2. **Lookiq all social:** Social media strategy (Pinterest, Instagram, TikTok), viral hooks, audience acquisition, and affiliate promotion.
+  3. **LookiQ SEO:** On-page and technical SEO, Schema JSON-LD, sitemaps, Google Search Console, and Google Discover optimization.
+  4. **product add:** High-converting PDP generation, catalog integration, Amazon compliance (likeefashionh-20), and 2:3 vertical pin generation.
+  5. **Website automation:** Automated RSS/Pinterest syndication, PowerShell automation scripts, and zero-maintenance integration pipelines.
+- All conversations have full filesystem access to the entire LookiQ workspace and must strictly adhere to `SYSTEM_CONVERSATION_ROLES.md` and `PROJECT_IDENTITY.md`.
+
+## 6. Autonomous Execution & Zero-Interruption Policy
+- **Permanent User Pre-Approval:** The USER has granted absolute pre-approval for all file reads, creations, edits, deletions, and terminal/git command executions across the entire workspace.
+- **Zero-Interruption Mandate:** NEVER pause execution to ask for confirmation, interactive poll options, or planning approval. Execute the full request end-to-end autonomously, verify results, and report the final outcome directly.
