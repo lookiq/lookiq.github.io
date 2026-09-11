@@ -161,7 +161,7 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B0852HCQ18")
   },
   {
-    id: "prod-straw-tote-01",
+    id: "straw-beach-tote",
     asin: "B07Q7ZJQ5V",
     title: "Womens Large Straw Summer Beach Shoulder Tote",
     category: "accessories",

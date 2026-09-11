@@ -56,7 +56,7 @@ lookiq/
     ├── prod-fracora-01.html
     ├── prod-furtalk-01.html
     ├── prod-grecerelle-01.html
-    └── prod-straw-tote-01.html
+    └── straw-beach-tote.html
 ```
 
 ---
