@@ -100,6 +100,36 @@
           "name": "Amazon.com"
         }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lookiq.github.io/products/oversized-trench-coat.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How oversized is the silhouette?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is designed with an intentional relaxed, street-style draped fit. If you want a tailored, fitted trench, size down one size; for a chic Parisian draped aesthetic, order your normal size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this trench coat water-resistant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It features a tight-weave cotton-poly blend suitable for light mist and breezy transitional weather, though it is primarily designed as a high-fashion layer rather than heavy rainwear."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it include a removable waist belt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it features a matching self-fabric tie belt and classic storm flap detailing for versatile styling cinched or open."
+          }
+        }
+      ]
     }
   ]
 }
@@ -334,6 +364,7 @@
       flex-direction: column;
       gap: 12px;
     }
+    .product-section-block h2,
     .product-section-block h3 {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -740,7 +771,7 @@
 
         <!-- Product Description -->
         <div class="product-section-block">
-          <h3>Editorial Overview</h3>
+          <h2>Editorial Overview</h2>
           <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">
             Timeless double-breasted silhouette with lapel collar and storm flap. Perfect elevated staple for seasonal layering.
           </p>
@@ -748,7 +779,7 @@
 
         <!-- Key Features Checklist -->
         <div class="product-section-block">
-          <h3>Why We Recommend It</h3>
+          <h2>Why We Recommend It</h2>
           <ul class="feature-list-check">
             
               <li>
@@ -783,6 +814,41 @@
         </div>
 
         <!-- Styling Tips with crisp Gold Diamond SVG -->
+        
+        <!-- Frequently Asked Questions Accordion -->
+        <div class="product-section-block product-faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion-group">
+            <details class="faq-accordion-item" open>
+              <summary class="faq-accordion-summary">
+                <span>How oversized is the silhouette?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>It is designed with an intentional relaxed, street-style draped fit. If you want a tailored, fitted trench, size down one size; for a chic Parisian draped aesthetic, order your normal size.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>Is this trench coat water-resistant?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>It features a tight-weave cotton-poly blend suitable for light mist and breezy transitional weather, though it is primarily designed as a high-fashion layer rather than heavy rainwear.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>Does it include a removable waist belt?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>Yes, it features a matching self-fabric tie belt and classic storm flap detailing for versatile styling cinched or open.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
         <div class="styling-tip-box">
           <div class="styling-tip-title">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--accent-gold)">

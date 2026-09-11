@@ -100,6 +100,36 @@
           "name": "Amazon.com"
         }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lookiq.github.io/products/mens-white-tennis-sneakers.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are these sneakers true to standard athletic sizing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, they fit true to standard US men's shoe sizing. If you have wide feet, choosing half a size up ensures optimal comfort."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What kind of traction do they provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The durable vulcanized rubber cupsole features a herringbone tread pattern that delivers steady grip on city streets and indoor floors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the interior lining breathable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it features a moisture-wicking textile lining and perforated tongue detailing for proper air circulation during extended wear."
+          }
+        }
+      ]
     }
   ]
 }
@@ -334,6 +364,7 @@
       flex-direction: column;
       gap: 12px;
     }
+    .product-section-block h2,
     .product-section-block h3 {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -740,7 +771,7 @@
 
         <!-- Product Description -->
         <div class="product-section-block">
-          <h3>Editorial Overview</h3>
+          <h2>Editorial Overview</h2>
           <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">
             Clean, low-top white casual sneakers with cushioned insole and non-slip rubber cupsole. The quintessential smart-casual men's sneaker.
           </p>
@@ -748,7 +779,7 @@
 
         <!-- Key Features Checklist -->
         <div class="product-section-block">
-          <h3>Why We Recommend It</h3>
+          <h2>Why We Recommend It</h2>
           <ul class="feature-list-check">
             
               <li>
@@ -783,6 +814,41 @@
         </div>
 
         <!-- Styling Tips with crisp Gold Diamond SVG -->
+        
+        <!-- Frequently Asked Questions Accordion -->
+        <div class="product-section-block product-faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion-group">
+            <details class="faq-accordion-item" open>
+              <summary class="faq-accordion-summary">
+                <span>Are these sneakers true to standard athletic sizing?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>Yes, they fit true to standard US men's shoe sizing. If you have wide feet, choosing half a size up ensures optimal comfort.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>What kind of traction do they provide?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>The durable vulcanized rubber cupsole features a herringbone tread pattern that delivers steady grip on city streets and indoor floors.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>Is the interior lining breathable?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>Yes, it features a moisture-wicking textile lining and perforated tongue detailing for proper air circulation during extended wear.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
         <div class="styling-tip-box">
           <div class="styling-tip-title">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--accent-gold)">

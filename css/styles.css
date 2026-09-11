@@ -3086,5 +3086,92 @@ input, select {
   }
 }
 
+/* ==========================================================================
+   LOOKIQ - Luxury Product FAQ Accordion & PDP Heading Hierarchy Styles
+   Zero-Emoji Policy • Accessible native details/summary • Quiet Luxury Palette
+   ========================================================================== */
+.product-section-block h2,
+.product-section-block h3 {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
 
+.product-faq-section {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
 
+.faq-accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.faq-accordion-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle, #eae4d8);
+  border-radius: var(--radius-sm, 8px);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-accordion-item[open] {
+  border-color: rgba(201, 151, 56, 0.45);
+  box-shadow: 0 4px 16px rgba(201, 151, 56, 0.08);
+}
+
+.faq-accordion-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  list-style: none;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.faq-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-accordion-summary:hover {
+  color: var(--accent-gold);
+}
+
+.faq-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--accent-gold);
+  transition: transform 0.25s ease;
+}
+
+.faq-accordion-item[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-accordion-body {
+  padding: 0 18px 16px 18px;
+  font-size: 0.91rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  border-top: 1px solid var(--border-light, #f5f1e8);
+  margin-top: -2px;
+  padding-top: 12px;
+}
+
+.faq-accordion-body p {
+  margin: 0;
+}

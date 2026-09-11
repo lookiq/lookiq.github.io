@@ -100,6 +100,36 @@
           "name": "Amazon.com"
         }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lookiq.github.io/products/casual-summer-sundress.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the sizing run for this Elescat summer dress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It fits true to size with a relaxed, flowy swing silhouette. If you prefer a more tailored fit through the bust, consider sizing down; otherwise, order your standard US size for breezy vacation comfort."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the fabric see-through, and are the pockets functional?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, the high-density rayon-blend fabric is opaque and soft to the touch. Both side seam pockets are deep and sturdy enough to hold a smartphone, keys, or sunglasses without sagging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should I care for and wash this dress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend machine washing on a cold, gentle cycle with like colors and hanging to dry or tumble drying on low to preserve the vibrant color and soft drape."
+          }
+        }
+      ]
     }
   ]
 }
@@ -409,6 +439,7 @@
       flex-direction: column;
       gap: 12px;
     }
+    .product-section-block h2,
     .product-section-block h3 {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -830,7 +861,7 @@
 
         <!-- Product Description -->
         <div class="product-section-block">
-          <h3>Editorial Overview</h3>
+          <h2>Editorial Overview</h2>
           <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">
             The <strong>Elescat Sleeveless Casual Summer Sundress</strong> is a genuine warm-weather essential on Amazon US. Cut in an effortless A-line swing silhouette with generous ease, it flows comfortably without clinging to midsection curves. The scoop neckline and modest armhole cut offer all-day coverage, while deep functional side seam pockets carry your essentials without disrupting the graceful hemline drape.
           </p>
@@ -838,7 +869,7 @@
 
         <!-- Key Features Checklist -->
         <div class="product-section-block">
-          <h3>Why We Recommend It</h3>
+          <h2>Why We Recommend It</h2>
           <ul class="feature-list-check">
             <li>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -869,13 +900,48 @@
 
         <!-- Sizing & Fit Advice -->
         <div class="product-section-block">
-          <h3>Sizing &amp; Fit Guide</h3>
+          <h2>Sizing &amp; Fit Guide</h2>
           <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.92rem;">
             <strong>Fit Profile:</strong> True to size with a breezy swing flare silhouette. The fabric contains gentle stretch for ease through the bust and shoulders. If you prefer a loose relaxed aesthetic for vacation or warmer days, take your normal size. Hits around or slightly above the knee depending on height (available in US XS through 3XL).
           </p>
         </div>
 
         <!-- Styling Tips with crisp Gold Diamond SVG -->
+        
+        <!-- Frequently Asked Questions Accordion -->
+        <div class="product-section-block product-faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion-group">
+            <details class="faq-accordion-item" open>
+              <summary class="faq-accordion-summary">
+                <span>How does the sizing run for this Elescat summer dress?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>It fits true to size with a relaxed, flowy swing silhouette. If you prefer a more tailored fit through the bust, consider sizing down; otherwise, order your standard US size for breezy vacation comfort.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>Is the fabric see-through, and are the pockets functional?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>No, the high-density rayon-blend fabric is opaque and soft to the touch. Both side seam pockets are deep and sturdy enough to hold a smartphone, keys, or sunglasses without sagging.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>How should I care for and wash this dress?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>We recommend machine washing on a cold, gentle cycle with like colors and hanging to dry or tumble drying on low to preserve the vibrant color and soft drape.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
         <div class="styling-tip-box">
           <div class="styling-tip-title">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--accent-gold)">

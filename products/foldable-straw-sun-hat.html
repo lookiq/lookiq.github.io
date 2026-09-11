@@ -100,6 +100,36 @@
           "name": "Amazon.com"
         }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lookiq.github.io/products/foldable-straw-sun-hat.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this straw hat genuinely packable and crush-resistant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the paper straw braid is flexible and rolls easily into a beach bag or suitcase, snapping back into its elegant shape with gentle finger smoothing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What UV protection does it offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The hat provides certified UPF 50+ sun protection with a wide 3.2-inch brim that shields your face, neck, and shoulders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the head circumference adjustable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, an interior adjustable sweatband strap allows you to customize the fit for head circumferences between 21.6 and 22.8 inches (Medium/Large)."
+          }
+        }
+      ]
     }
   ]
 }
@@ -334,6 +364,7 @@
       flex-direction: column;
       gap: 12px;
     }
+    .product-section-block h2,
     .product-section-block h3 {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -740,7 +771,7 @@
 
         <!-- Product Description -->
         <div class="product-section-block">
-          <h3>Editorial Overview</h3>
+          <h2>Editorial Overview</h2>
           <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">
             Packable, roll-up wide brim Panama straw hat with UPF 50+ sun protection. The quintessential summer holiday companion.
           </p>
@@ -748,7 +779,7 @@
 
         <!-- Key Features Checklist -->
         <div class="product-section-block">
-          <h3>Why We Recommend It</h3>
+          <h2>Why We Recommend It</h2>
           <ul class="feature-list-check">
             
               <li>
@@ -783,6 +814,41 @@
         </div>
 
         <!-- Styling Tips with crisp Gold Diamond SVG -->
+        
+        <!-- Frequently Asked Questions Accordion -->
+        <div class="product-section-block product-faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion-group">
+            <details class="faq-accordion-item" open>
+              <summary class="faq-accordion-summary">
+                <span>Is this straw hat genuinely packable and crush-resistant?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>Yes, the paper straw braid is flexible and rolls easily into a beach bag or suitcase, snapping back into its elegant shape with gentle finger smoothing.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>What UV protection does it offer?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>The hat provides certified UPF 50+ sun protection with a wide 3.2-inch brim that shields your face, neck, and shoulders.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>Is the head circumference adjustable?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>Yes, an interior adjustable sweatband strap allows you to customize the fit for head circumferences between 21.6 and 22.8 inches (Medium/Large).</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
         <div class="styling-tip-box">
           <div class="styling-tip-title">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--accent-gold)">

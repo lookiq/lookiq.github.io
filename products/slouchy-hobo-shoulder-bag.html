@@ -100,6 +100,36 @@
           "name": "Amazon.com"
         }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lookiq.github.io/products/slouchy-hobo-shoulder-bag.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How soft is the vegan leather?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is crafted from ultra-pliant, butter-soft washed vegan leather that creates an effortless designer slouch drape reminiscent of luxury Italian brands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What pockets does it feature inside?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The lined interior features a central zippered divider compartment, a zippered wall security pocket, and two open organizational slip pockets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it be worn as both a shoulder bag and crossbody?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It includes an integrated wide shoulder strap for comfortable arm/shoulder carry, plus a detachable, adjustable long strap for crossbody convenience."
+          }
+        }
+      ]
     }
   ]
 }
@@ -334,6 +364,7 @@
       flex-direction: column;
       gap: 12px;
     }
+    .product-section-block h2,
     .product-section-block h3 {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -740,7 +771,7 @@
 
         <!-- Product Description -->
         <div class="product-section-block">
-          <h3>Editorial Overview</h3>
+          <h2>Editorial Overview</h2>
           <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">
             Sleek crescent slouchy hobo shoulder bag with roomy interior. Looks like an expensive Italian designer piece for under $30.
           </p>
@@ -748,7 +779,7 @@
 
         <!-- Key Features Checklist -->
         <div class="product-section-block">
-          <h3>Why We Recommend It</h3>
+          <h2>Why We Recommend It</h2>
           <ul class="feature-list-check">
             
               <li>
@@ -783,6 +814,41 @@
         </div>
 
         <!-- Styling Tips with crisp Gold Diamond SVG -->
+        
+        <!-- Frequently Asked Questions Accordion -->
+        <div class="product-section-block product-faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion-group">
+            <details class="faq-accordion-item" open>
+              <summary class="faq-accordion-summary">
+                <span>How soft is the vegan leather?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>It is crafted from ultra-pliant, butter-soft washed vegan leather that creates an effortless designer slouch drape reminiscent of luxury Italian brands.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>What pockets does it feature inside?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>The lined interior features a central zippered divider compartment, a zippered wall security pocket, and two open organizational slip pockets.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>Can it be worn as both a shoulder bag and crossbody?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>It includes an integrated wide shoulder strap for comfortable arm/shoulder carry, plus a detachable, adjustable long strap for crossbody convenience.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
         <div class="styling-tip-box">
           <div class="styling-tip-title">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--accent-gold)">

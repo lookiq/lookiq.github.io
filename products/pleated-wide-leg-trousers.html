@@ -100,6 +100,36 @@
           "name": "Amazon.com"
         }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lookiq.github.io/products/pleated-wide-leg-trousers.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the inseam length, and do they work for petite heights?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The trousers have an approximate 30.5-inch inseam. For average heights (5'4\" to 5'8\"), they fall cleanly over heels or sneakers. Petite shoppers under 5'3\" may prefer a slight platform shoe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the waistband stretchy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The front waistband features a clean tailored look with belt loops, while the back features discreet elastic stretch for all-day waist comfort."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the fabric wrinkle easily after sitting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The high-grade polyester-spandex twill blend is wrinkle-resistant with a graceful fluid drape that stays crisp throughout workday commutes."
+          }
+        }
+      ]
     }
   ]
 }
@@ -334,6 +364,7 @@
       flex-direction: column;
       gap: 12px;
     }
+    .product-section-block h2,
     .product-section-block h3 {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -740,7 +771,7 @@
 
         <!-- Product Description -->
         <div class="product-section-block">
-          <h3>Editorial Overview</h3>
+          <h2>Editorial Overview</h2>
           <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">
             Flowy, elegant drape with front pleats and side pockets. Instantly elevates casual t-shirts or silk blouses.
           </p>
@@ -748,7 +779,7 @@
 
         <!-- Key Features Checklist -->
         <div class="product-section-block">
-          <h3>Why We Recommend It</h3>
+          <h2>Why We Recommend It</h2>
           <ul class="feature-list-check">
             
               <li>
@@ -783,6 +814,41 @@
         </div>
 
         <!-- Styling Tips with crisp Gold Diamond SVG -->
+        
+        <!-- Frequently Asked Questions Accordion -->
+        <div class="product-section-block product-faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion-group">
+            <details class="faq-accordion-item" open>
+              <summary class="faq-accordion-summary">
+                <span>What is the inseam length, and do they work for petite heights?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>The trousers have an approximate 30.5-inch inseam. For average heights (5'4" to 5'8"), they fall cleanly over heels or sneakers. Petite shoppers under 5'3" may prefer a slight platform shoe.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>Is the waistband stretchy?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>The front waistband features a clean tailored look with belt loops, while the back features discreet elastic stretch for all-day waist comfort.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>Does the fabric wrinkle easily after sitting?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>The high-grade polyester-spandex twill blend is wrinkle-resistant with a graceful fluid drape that stays crisp throughout workday commutes.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
         <div class="styling-tip-box">
           <div class="styling-tip-title">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--accent-gold)">

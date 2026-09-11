@@ -37,3 +37,14 @@
 - **Permanent User Pre-Approval:** The USER has granted absolute pre-approval for all file reads, creations, updates, code modifications, testing, and terminal/git command executions across the entire workspace.
 - **Zero-Interruption Mandate:** NEVER pause execution to ask for routine confirmation, interactive poll options, or planning approval during development, building, or refactoring. Execute tasks end-to-end autonomously, verify results, and report final outcomes directly.
 - **STRICT DELETION PROTECTION (User Confirmation Mandatory):** NEVER delete, remove, or destroy any existing project files, pages, media assets, or folders without explicit prior permission and confirmation from the USER. File deletion is the SOLE exception to autonomous execution.
+
+## 7. Master Fashion AI Photography Prompts
+- All product image and Pinterest pin generations MUST strictly adhere to the master prompt templates defined in `FASHION_AI_PHOTOGRAPHY_PROMPTS.md`.
+- Available styles:
+  1. Adult Fashion — Model Style (2:3 Pinterest Pin & Homepage Hero)
+  2. Adult Fashion — Flat-lay Style (4:5 or 1:1 PDP & Shop Catalog)
+  3. Adult Fashion — Combination Style (4:5 Lookbook & Outfit Pairing)
+  4. Children's Products — Flatlay Plain (Clean, strictly no human faces/figures)
+  5. Children's Products — Styled Flatlay with Props (Cozy, aesthetic props, strictly no human faces/figures)
+- Garment integrity: Maintain 100% fidelity to the original color, pattern, fabric weave, and silhouette.
+

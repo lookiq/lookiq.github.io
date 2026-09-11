@@ -100,6 +100,36 @@
           "name": "Amazon.com"
         }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lookiq.github.io/products/retro-oval-sunglasses.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are the lenses truly polarized with full UV protection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the lenses offer certified UV400 protection, filtering 100% of harmful UVA and UVB rays while reducing glare from roads, water, and reflective surfaces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What size face do these oval frames best suit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "These narrow oval frames measure 51mm lens width and 34mm height, making them universally flattering for small to medium face shapes and providing a clean 90s vintage silhouette."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What accessories are included in the package?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each pair includes a soft microfiber storage pouch, a lint-free microfiber cleaning cloth, and a rigid protective gift box."
+          }
+        }
+      ]
     }
   ]
 }
@@ -334,6 +364,7 @@
       flex-direction: column;
       gap: 12px;
     }
+    .product-section-block h2,
     .product-section-block h3 {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -740,7 +771,7 @@
 
         <!-- Product Description -->
         <div class="product-section-block">
-          <h3>Editorial Overview</h3>
+          <h2>Editorial Overview</h2>
           <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">
             Chic 90s vintage narrow oval tortoise frames with UV400 polarized brown lenses. Adds instant Old Money and celebrity off-duty vibes.
           </p>
@@ -748,7 +779,7 @@
 
         <!-- Key Features Checklist -->
         <div class="product-section-block">
-          <h3>Why We Recommend It</h3>
+          <h2>Why We Recommend It</h2>
           <ul class="feature-list-check">
             
               <li>
@@ -783,6 +814,41 @@
         </div>
 
         <!-- Styling Tips with crisp Gold Diamond SVG -->
+        
+        <!-- Frequently Asked Questions Accordion -->
+        <div class="product-section-block product-faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion-group">
+            <details class="faq-accordion-item" open>
+              <summary class="faq-accordion-summary">
+                <span>Are the lenses truly polarized with full UV protection?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>Yes, the lenses offer certified UV400 protection, filtering 100% of harmful UVA and UVB rays while reducing glare from roads, water, and reflective surfaces.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>What size face do these oval frames best suit?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>These narrow oval frames measure 51mm lens width and 34mm height, making them universally flattering for small to medium face shapes and providing a clean 90s vintage silhouette.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>What accessories are included in the package?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>Each pair includes a soft microfiber storage pouch, a lint-free microfiber cleaning cloth, and a rigid protective gift box.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
         <div class="styling-tip-box">
           <div class="styling-tip-title">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--accent-gold)">

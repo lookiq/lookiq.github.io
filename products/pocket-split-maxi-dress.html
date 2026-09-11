@@ -100,6 +100,36 @@
           "name": "Amazon.com"
         }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://lookiq.github.io/products/pocket-split-maxi-dress.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does the side split show too much leg when sitting or walking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The subtle side split begins slightly below the knee, providing breezy freedom of movement while remaining modest and comfortable for all occasions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the dress be worn with a normal bra?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the classic short sleeve and round neckline design allows you to wear standard everyday undergarments without exposed straps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the length fit different heights?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For heights between 5'3\" and 5'7\", the maxi dress hits just above the ankle or top of the foot. It pairs beautifully with flat sandals or wedge heels."
+          }
+        }
+      ]
     }
   ]
 }
@@ -334,6 +364,7 @@
       flex-direction: column;
       gap: 12px;
     }
+    .product-section-block h2,
     .product-section-block h3 {
       font-family: var(--font-serif);
       font-size: 1.25rem;
@@ -740,7 +771,7 @@
 
         <!-- Product Description -->
         <div class="product-section-block">
-          <h3>Editorial Overview</h3>
+          <h2>Editorial Overview</h2>
           <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">
             The <strong>GRECERELLE Sleeveless Pocket Maxi Dress</strong> is a genuine warm-weather staple on Amazon US. Cut in an effortless column silhouette with generous ease, it flows comfortably without clinging to midsection curves. The side walking slit provides breezy breathability, while the discreetly placed side pockets are deep enough for a smartphone without drooping.
           </p>
@@ -748,7 +779,7 @@
 
         <!-- Key Features Checklist -->
         <div class="product-section-block">
-          <h3>Why We Recommend It</h3>
+          <h2>Why We Recommend It</h2>
           <ul class="feature-list-check">
             <li>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -779,13 +810,48 @@
 
         <!-- Sizing & Fit Advice -->
         <div class="product-section-block">
-          <h3>Sizing &amp; Fit Guide</h3>
+          <h2>Sizing &amp; Fit Guide</h2>
           <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.92rem;">
             <strong>Fit Profile:</strong> Generous relaxed fit. If you prefer a loose, flowy aesthetic for resort or beach days, take your normal size. If you desire a slightly closer drape around the bust, size down one size. Length reaches the ankle for heights 5'5"–5'8".
           </p>
         </div>
 
         <!-- Styling Tips with crisp Gold Diamond SVG -->
+        
+        <!-- Frequently Asked Questions Accordion -->
+        <div class="product-section-block product-faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion-group">
+            <details class="faq-accordion-item" open>
+              <summary class="faq-accordion-summary">
+                <span>Does the side split show too much leg when sitting or walking?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>The subtle side split begins slightly below the knee, providing breezy freedom of movement while remaining modest and comfortable for all occasions.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>Can the dress be worn with a normal bra?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>Yes, the classic short sleeve and round neckline design allows you to wear standard everyday undergarments without exposed straps.</p>
+              </div>
+            </details>
+            <details class="faq-accordion-item">
+              <summary class="faq-accordion-summary">
+                <span>How does the length fit different heights?</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>For heights between 5'3" and 5'7", the maxi dress hits just above the ankle or top of the foot. It pairs beautifully with flat sandals or wedge heels.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
         <div class="styling-tip-box">
           <div class="styling-tip-title">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--accent-gold)">
