@@ -39,8 +39,13 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="assets/favicon.svg">
 
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=8.1">
+  <link rel="stylesheet" href="css/styles.css?v=8.2">
 
   <!-- Schema.org JSON-LD for Google Rich Snippets -->
   <script type="application/ld+json">
@@ -1405,7 +1410,15 @@
 
         <!-- Filter Status & Active Filter Chips Bar -->
         <div class="filter-status-bar" id="filter-status-bar" aria-live="polite">
-          <span class="filter-count-badge" id="filter-count-badge">Showing <strong>20</strong> Curated Finds</span>
+          <span class="filter-count-badge" id="filter-count-badge">
+            <span class="filter-count-micro-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <span>Showing <strong>20</strong> of 20 Curated Finds</span>
+          </span>
           <div class="active-filter-chips" id="active-filter-chips"></div>
         </div>
 

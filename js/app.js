@@ -109,7 +109,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const hasActiveFilter = searchQuery || currentCategory !== "all" || currentPriceFilter !== "all" || currentSort !== "featured";
 
-    countBadge.innerHTML = `Showing <strong>${filteredCount}</strong> of ${totalCount} Curated Finds`;
+    countBadge.innerHTML = `
+      <span class="filter-count-micro-icon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+      <span>Showing <strong>${filteredCount}</strong> of ${totalCount} Curated Finds</span>
+    `;
 
     if (chipsWrap) {
       let html = "";
