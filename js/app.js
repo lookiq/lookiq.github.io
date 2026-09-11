@@ -967,59 +967,153 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
-  // Hero Editorial Carousel Controller
+  // 3D Curved Perspective Runway Showcase Controller
   // ==========================================================================
-  function initHeroCarousel() {
-    const carousel = document.getElementById("hero-carousel");
-    if (!carousel) return;
+  function init3DCurvedCarousel() {
+    const stage = document.getElementById("stage");
+    if (!stage) return;
 
-    const slides = carousel.querySelectorAll(".hero-slide");
-    const indicators = carousel.querySelectorAll(".indicator-bar");
-    const prevBtn = document.getElementById("hero-prev");
-    const nextBtn = document.getElementById("hero-next");
-    if (!slides.length) return;
+    const cards = Array.from(stage.querySelectorAll(".card-3d"));
+    if (!cards.length) return;
 
-    let currentIndex = 0;
+    const total = cards.length;
+    let activeIndex = 0;
     let timer = null;
-    const interval = 4500; // 4.5s autoplay rotation
+    const interval = 5500; // 5.5s gentle auto-rotation
 
-    function showSlide(index) {
-      if (index < 0) index = slides.length - 1;
-      if (index >= slides.length) index = 0;
-      currentIndex = index;
+    const detailTag = document.getElementById("detail-tag");
+    const detailTitle = document.getElementById("detail-title");
+    const detailMeta = document.getElementById("detail-meta");
+    const detailLink = document.getElementById("detail-link");
 
-      slides.forEach((slide, i) => {
-        if (i === currentIndex) {
-          slide.classList.add("active");
-          slide.setAttribute("aria-hidden", "false");
-        } else {
-          slide.classList.remove("active");
-          slide.setAttribute("aria-hidden", "true");
+    const prevBtn = document.getElementById("carousel-prev");
+    const nextBtn = document.getElementById("carousel-next");
+
+    const products = [
+      {
+        num: '#01',
+        category: 'OUTERWEAR • THE LOOK FOR LESS',
+        title: 'Farktop Double-Breasted Long Trench Coat',
+        meta: 'Verified Amazon Prime Deal • <strong>$39.99</strong> (Save $1,400+ vs Burberry)',
+        link: 'products/oversized-trench-coat.html'
+      },
+      {
+        num: '#02',
+        category: 'EYEWEAR • CELINE TRIOMPHE TWIN',
+        title: 'SOJOS Retro Oval Polarized Sunglasses',
+        meta: 'Verified UV400 Protection • <strong>$15.99</strong> (Save $334 vs Luxury)',
+        link: 'products/retro-oval-sunglasses.html'
+      },
+      {
+        num: '#03',
+        category: 'BAGS • THE ROW BOURSE TWIN',
+        title: 'Soft Vegan Leather Slouchy Hobo Shoulder Bag',
+        meta: 'Ultra-Soft Aesthetic Drape • <strong>$28.90</strong> (Save $1,420 vs Luxury)',
+        link: 'products/slouchy-hobo-shoulder-bag.html'
+      },
+      {
+        num: '#04',
+        category: 'KNITWEAR • AUTUMN CAPSULE',
+        title: 'ANRABESS Chunky Batwing Turtleneck Sweater',
+        meta: 'Heavyweight Ribbed Knit • <strong>$39.99</strong> (4.6★ 8,900+ Reviews)',
+        link: 'products/oversized-turtleneck-sweater.html'
+      },
+      {
+        num: '#05',
+        category: 'PANTS • CAPSULE ESSENTIAL',
+        title: 'Nimin High-Waisted Wide-Leg Pleated Trousers',
+        meta: 'Flattering Drape with Pockets • <strong>$34.99</strong> (4.7★ 4,120+ Reviews)',
+        link: 'products/pleated-wide-leg-trousers.html'
+      },
+      {
+        num: '#06',
+        category: 'RESORT • SUMMER CHIC',
+        title: 'Ekouaer Casual Button-Down Beach Shirt Coverup',
+        meta: 'Breezy Linen Feel • <strong>$29.99</strong> (4.8★ 7,300+ Reviews)',
+        link: 'products/beach-shirt-coverup.html'
+      },
+      {
+        num: '#07',
+        category: 'SHOES • BESTSELLING BOOT',
+        title: 'SODA Chance Lug Sole Chelsea Ankle Booties',
+        meta: 'Elastic Gore Pull-On • <strong>$34.50</strong> (4.7★ 9,400+ Reviews)',
+        link: 'products/chunky-chelsea-booties.html'
+      },
+      {
+        num: '#08',
+        category: 'JEWELRY • EVERYDAY STAPLE',
+        title: 'PAVOI 14K Gold Plated Thick Huggie Hoop Earrings',
+        meta: 'Hypoallergenic Classic • <strong>$12.95</strong> (4.9★ 45,000+ Reviews)',
+        link: 'products/gold-huggie-hoop-earrings.html'
+      }
+    ];
+
+    function getMetrics() {
+      const w = window.innerWidth;
+      if (w < 600) {
+        return { xStep: 135, zStep: 60, yStep: 8, maxDist: 2 };
+      } else if (w < 992) {
+        return { xStep: 175, zStep: 70, yStep: 10, maxDist: 3 };
+      } else {
+        return { xStep: 215, zStep: 80, yStep: 12, maxDist: 3 };
+      }
+    }
+
+    function updateCarousel() {
+      const { xStep, zStep, yStep, maxDist } = getMetrics();
+
+      cards.forEach((card, i) => {
+        let diff = i - activeIndex;
+        if (diff > total / 2) diff -= total;
+        if (diff < -total / 2) diff += total;
+
+        const absDiff = Math.abs(diff);
+
+        if (absDiff > maxDist) {
+          card.style.opacity = "0";
+          card.style.pointerEvents = "none";
+          card.style.transform = `translateX(${diff * (xStep + 20)}px) translateZ(-420px) rotateY(${diff * -22}deg) scale(0.45)`;
+          card.setAttribute("aria-hidden", "true");
+          return;
         }
+
+        const xOffset = diff * xStep;
+        const zOffset = -Math.pow(absDiff, 1.35) * zStep;
+        const yRotation = diff * -20;
+        const yOffset = Math.pow(absDiff, 1.5) * yStep;
+        const scale = Math.max(0.65, 1 - absDiff * 0.12);
+        const opacity = Math.max(0.2, 1 - absDiff * 0.22);
+        const zIndex = 50 - Math.round(absDiff * 10);
+
+        card.style.opacity = opacity;
+        card.style.zIndex = zIndex;
+        card.style.pointerEvents = "auto";
+        card.style.filter = absDiff === 0 ? "none" : "brightness(0.72) blur(0.3px)";
+        card.style.transform = `translateX(${xOffset}px) translateY(${yOffset}px) translateZ(${zOffset}px) rotateY(${yRotation}deg) scale(${scale})`;
+        card.setAttribute("aria-hidden", absDiff === 0 ? "false" : "true");
       });
 
-      indicators.forEach((bar, i) => {
-        if (i === currentIndex) {
-          bar.classList.add("active");
-          bar.setAttribute("aria-selected", "true");
-        } else {
-          bar.classList.remove("active");
-          bar.setAttribute("aria-selected", "false");
-        }
-      });
+      // Update active detail panel
+      if (products[activeIndex] && detailTitle) {
+        const cur = products[activeIndex];
+        if (detailTag) detailTag.innerText = `${cur.num} • ${cur.category}`;
+        detailTitle.innerText = cur.title;
+        if (detailMeta) detailMeta.innerHTML = cur.meta;
+        if (detailLink) detailLink.href = cur.link;
+      }
     }
 
-    function nextSlide() {
-      showSlide(currentIndex + 1);
+    function goTo(index) {
+      activeIndex = (index + total) % total;
+      updateCarousel();
     }
 
-    function prevSlide() {
-      showSlide(currentIndex - 1);
-    }
+    function next() { goTo(activeIndex + 1); }
+    function prev() { goTo(activeIndex - 1); }
 
     function startAutoplay() {
       stopAutoplay();
-      timer = setInterval(nextSlide, interval);
+      timer = setInterval(next, interval);
     }
 
     function stopAutoplay() {
@@ -1029,11 +1123,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Prev / Next button clicks
     if (nextBtn) {
       nextBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        nextSlide();
+        next();
         startAutoplay();
       });
     }
@@ -1041,52 +1134,86 @@ document.addEventListener("DOMContentLoaded", () => {
     if (prevBtn) {
       prevBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        prevSlide();
+        prev();
         startAutoplay();
       });
     }
 
-    // Indicator bar clicks
-    indicators.forEach((bar, i) => {
-      bar.addEventListener("click", (e) => {
-        e.preventDefault();
-        showSlide(i);
-        startAutoplay();
+    // Card click interaction: center item navigates, side items bring to center
+    cards.forEach((card, i) => {
+      card.addEventListener("click", () => {
+        if (i === activeIndex) {
+          window.location.href = products[i].link;
+        } else {
+          goTo(i);
+          startAutoplay();
+        }
       });
     });
 
-    // Pause on hover
-    carousel.addEventListener("mouseenter", stopAutoplay);
-    carousel.addEventListener("mouseleave", startAutoplay);
+    // Touch & Mouse Dragging across stage
+    let startX = 0;
+    let isDragging = false;
 
-    // Touch Swipe Support for Mobile & Tablet
-    let touchStartX = 0;
-    let touchEndX = 0;
+    stage.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      stopAutoplay();
+    });
 
-    carousel.addEventListener("touchstart", (e) => {
-      if (e.changedTouches && e.changedTouches[0]) {
-        touchStartX = e.changedTouches[0].screenX;
+    window.addEventListener("mouseup", () => {
+      if (isDragging) {
+        isDragging = false;
+        startAutoplay();
       }
+    });
+
+    stage.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 55) {
+        if (dx < 0) next();
+        else prev();
+        isDragging = false;
+        startAutoplay();
+      }
+    });
+
+    // Mobile & Tablet Touch
+    stage.addEventListener("touchstart", (e) => {
+      if (e.touches && e.touches[0]) startX = e.touches[0].clientX;
       stopAutoplay();
     }, { passive: true });
 
-    carousel.addEventListener("touchend", (e) => {
-      if (e.changedTouches && e.changedTouches[0]) {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 40) {
-          if (diff > 0) nextSlide();
-          else prevSlide();
-        }
+    stage.addEventListener("touchend", (e) => {
+      if (!e.changedTouches || !e.changedTouches[0]) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) {
+        if (dx < 0) next();
+        else prev();
       }
       startAutoplay();
     }, { passive: true });
 
-    // Start rotation
+    // Keyboard navigation
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { next(); startAutoplay(); }
+      if (e.key === "ArrowLeft") { prev(); startAutoplay(); }
+    });
+
+    // Pause on hover
+    stage.addEventListener("mouseenter", stopAutoplay);
+    stage.addEventListener("mouseleave", startAutoplay);
+
+    // Responsive recalculation on resize
+    window.addEventListener("resize", updateCarousel);
+
+    // Initial render and autoplay start
+    updateCarousel();
     startAutoplay();
   }
 
-  // Initialize Hero Carousel
-  initHeroCarousel();
+  // Initialize 3D Curved Runway Showcase
+  init3DCurvedCarousel();
 });
 

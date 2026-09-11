@@ -45,7 +45,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=8.2">
+  <link rel="stylesheet" href="css/styles.css?v=9.0">
 
   <!-- Schema.org JSON-LD for Google Rich Snippets -->
   <script type="application/ld+json">
@@ -959,149 +959,152 @@
   
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-pill">
-            <span class="dot"></span>
-            <span>The Fall/Winter 2026 Collection • Curated for Amazon US</span>
-          </div>
-          <h1 class="hero-title">
-            Smart Fashion Finds &amp; <span>Curated Amazon Outfits</span>
-          </h1>
-          <p class="hero-desc">
-            Curated with an eye for quiet luxury and timeless confidence. Discover editorial outfit lookbooks, verified capsule staples under $150, and viral designer lookalikes directly on Amazon US.
-          </p>
-          <div class="hero-buttons">
-            <a href="#catalog" class="btn-primary">
-              <span>Explore Curated Finds</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-            <a href="#outfits" class="btn-secondary">
-              Shop The Look
-            </a>
-          </div>
+    <!-- Hero Section: 3D Curved Perspective Runway -->
+    <section class="hero-section hero-3d-showcase" id="hero-runway">
+      <div class="container hero-intro-center">
+        <div class="hero-pill">
+          <span class="dot"></span>
+          <span>3D Curated Runway &bull; The Fall/Winter 2026 Edit</span>
+        </div>
+        <h1 class="hero-title">
+          Smart Fashion Finds &amp; <span>Curated Amazon Outfits</span>
+        </h1>
+        <p class="hero-desc">
+          Curated with an eye for quiet luxury and timeless confidence. Discover editorial outfit lookbooks, verified capsule staples under $150, and viral designer lookalikes directly on Amazon US.
+        </p>
 
-          <!-- Trending Quick Discovery Pills -->
-          <div class="hero-discovery-wrap">
-            <span class="discovery-title">Trending Right Now:</span>
-            <div class="discovery-pills">
-              <a href="shop.html?category=outerwear" class="discovery-pill">Trench Coats</a>
-              <a href="guides.html" class="discovery-pill">Fall Capsule &lt;$150</a>
-              <a href="look-for-less.html" class="discovery-pill">$15 Designer Dupes</a>
-              <a href="shop.html?category=shoes" class="discovery-pill">Minimalist Sneakers</a>
-              <a href="shop.html?category=bags" class="discovery-pill">Slouchy Bags</a>
-            </div>
+        <!-- Trending Quick Discovery Pills -->
+        <div class="hero-discovery-wrap">
+          <span class="discovery-title">Trending Right Now:</span>
+          <div class="discovery-pills">
+            <a href="shop.html?category=outerwear" class="discovery-pill">Trench Coats</a>
+            <a href="guides.html" class="discovery-pill">Fall Capsule &lt;$150</a>
+            <a href="look-for-less.html" class="discovery-pill">$15 Designer Dupes</a>
+            <a href="shop.html?category=shoes" class="discovery-pill">Minimalist Sneakers</a>
+            <a href="shop.html?category=bags" class="discovery-pill">Slouchy Bags</a>
           </div>
+        </div>
+      </div>
 
-          <!-- Trust & Social Proof Strip -->
-          <div class="hero-trust-strip">
-            <div class="trust-stars" aria-label="5 Star Rating">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <span class="trust-text">
-              <strong>4.8 / 5.0</strong> Quality Rating &bull; 14,000+ Verified Amazon Reviews &bull; US Prime
+      <!-- 3D Curved Perspective Carousel Stage -->
+      <div class="carousel-3d-stage" id="stage" role="region" aria-roledescription="carousel" aria-label="3D Curated Product Runway">
+        <!-- Circular Floating Arrows (Clean Vector SVGs - Zero Emojis) -->
+        <button class="nav-arrow prev" id="carousel-prev" aria-label="Previous Curated Product" title="Previous Product">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="nav-arrow next" id="carousel-next" aria-label="Next Curated Product" title="Next Product">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+
+        <div class="carousel-3d-track" id="track">
+          <!-- 8 3D Curated Cards -->
+          <article class="card-3d" data-index="0" role="group" aria-roledescription="slide" aria-label="1 of 8: Farktop Double-Breasted Long Trench Coat">
+            <img src="assets/outfit-manhattan-trench.webp" alt="Farktop Double-Breasted Long Trench Coat" fetchpriority="high" decoding="async">
+            <span class="card-badge-num">#01</span>
+            <span class="card-badge-price">$39.99</span>
+            <span class="card-badge-rating">
+              <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.8 (3,420+)</span>
             </span>
-          </div>
+          </article>
+
+          <article class="card-3d" data-index="1" role="group" aria-roledescription="slide" aria-label="2 of 8: SOJOS Retro Oval Polarized Sunglasses">
+            <img src="assets/sojos-retro-sunglasses.webp" alt="SOJOS Retro Oval Polarized Sunglasses" loading="lazy" decoding="async">
+            <span class="card-badge-num">#02</span>
+            <span class="card-badge-price">$15.99</span>
+            <span class="card-badge-rating">
+              <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.7 (14.2k)</span>
+            </span>
+          </article>
+
+          <article class="card-3d" data-index="2" role="group" aria-roledescription="slide" aria-label="3 of 8: Soft Vegan Leather Slouchy Hobo Shoulder Bag">
+            <img src="assets/slouchy-hobo-bag.webp" alt="Soft Vegan Leather Slouchy Hobo Shoulder Bag" loading="lazy" decoding="async">
+            <span class="card-badge-num">#03</span>
+            <span class="card-badge-price">$28.90</span>
+            <span class="card-badge-rating">
+              <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.8 (2,850+)</span>
+            </span>
+          </article>
+
+          <article class="card-3d" data-index="3" role="group" aria-roledescription="slide" aria-label="4 of 8: ANRABESS Chunky Batwing Turtleneck Sweater">
+            <img src="assets/outfit-autumn-chai.webp" alt="ANRABESS Chunky Batwing Turtleneck Sweater" loading="lazy" decoding="async">
+            <span class="card-badge-num">#04</span>
+            <span class="card-badge-price">$39.99</span>
+            <span class="card-badge-rating">
+              <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.6 (8,900+)</span>
+            </span>
+          </article>
+
+          <article class="card-3d" data-index="4" role="group" aria-roledescription="slide" aria-label="5 of 8: Nimin High-Waisted Wide-Leg Pleated Trousers">
+            <img src="assets/nimin-trouser-pants.webp" alt="Nimin High-Waisted Wide-Leg Pleated Trousers" loading="lazy" decoding="async">
+            <span class="card-badge-num">#05</span>
+            <span class="card-badge-price">$34.99</span>
+            <span class="card-badge-rating">
+              <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.7 (4,120+)</span>
+            </span>
+          </article>
+
+          <article class="card-3d" data-index="5" role="group" aria-roledescription="slide" aria-label="6 of 8: Ekouaer Casual Button-Down Beach Shirt Coverup">
+            <img src="assets/outfit-amalfi-resort.webp" alt="Ekouaer Casual Button-Down Beach Shirt Coverup" loading="lazy" decoding="async">
+            <span class="card-badge-num">#06</span>
+            <span class="card-badge-price">$29.99</span>
+            <span class="card-badge-rating">
+              <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.8 (7,300+)</span>
+            </span>
+          </article>
+
+          <article class="card-3d" data-index="6" role="group" aria-roledescription="slide" aria-label="7 of 8: SODA Chance Lug Sole Chelsea Ankle Booties">
+            <img src="assets/soda-chelsea-booties.webp" alt="SODA Chance Lug Sole Chelsea Ankle Booties" loading="lazy" decoding="async">
+            <span class="card-badge-num">#07</span>
+            <span class="card-badge-price">$34.50</span>
+            <span class="card-badge-rating">
+              <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.7 (9,400+)</span>
+            </span>
+          </article>
+
+          <article class="card-3d" data-index="7" role="group" aria-roledescription="slide" aria-label="8 of 8: PAVOI 14K Gold Plated Thick Huggie Hoop Earrings">
+            <img src="assets/pavoi-huggie-earrings.webp" alt="PAVOI 14K Gold Plated Thick Huggie Hoop Earrings" loading="lazy" decoding="async">
+            <span class="card-badge-num">#08</span>
+            <span class="card-badge-price">$12.95</span>
+            <span class="card-badge-rating">
+              <svg viewBox="0 0 24 24" width="12" height="12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.9 (45.0k)</span>
+            </span>
+          </article>
         </div>
+      </div>
 
-        <!-- Hero Editorial Carousel Visual -->
-        <div class="hero-visual">
-          <div class="hero-carousel" id="hero-carousel" aria-roledescription="carousel" aria-label="Curated Fashion Outfits">
-            <div class="hero-slides-track">
+      <!-- Active Selected Product Detail Panel Below 3D Runway -->
+      <div class="active-detail-panel" id="detail-panel">
+        <span class="detail-tag" id="detail-tag">#01 &bull; OUTERWEAR &bull; LOOK FOR LESS</span>
+        <h3 class="detail-title" id="detail-title">Farktop Double-Breasted Long Trench Coat</h3>
+        <p class="detail-meta" id="detail-meta">Verified Amazon Prime Deal &bull; <strong>$39.99</strong> (Save $1,400+ vs Burberry)</p>
+        <a href="products/oversized-trench-coat.html" class="detail-cta" id="detail-link">
+          <span>View Product Review &amp; Sizing</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
 
-              <!-- Slide 1: The Manhattan Trench Look -->
-              <article class="hero-slide active" data-index="0" aria-roledescription="slide" aria-label="1 of 3: The Manhattan Trench Look">
-                <a href="products/oversized-trench-coat.html" class="hero-slide-link" title="Explore The Manhattan Trench Look">
-                  <img src="assets/outfit-manhattan-trench.webp" alt="Model wearing Farktop Double-Breasted Trench Coat and Minimalist Accessories on Amazon" class="hero-slide-img" fetchpriority="high" decoding="async">
-                  <div class="hero-slide-pill">
-                    <span class="slide-live-dot"></span>
-                    <span>LOOK 01 &bull; THE TRENCH EDIT</span>
-                  </div>
-                  <div class="hero-floating-badge">
-                    <div class="info">
-                      <h4>The Manhattan Trench Look</h4>
-                      <p>Farktop Trench &bull; Slouchy Hobo &bull; White Sneakers</p>
-                    </div>
-                    <div class="badge-right">
-                      <span class="price">Under $70</span>
-                      <span class="view-cta">View Look &rarr;</span>
-                    </div>
-                  </div>
-                </a>
-              </article>
+      <p class="swipe-hint">&bull; Drag or Swipe Left / Right to Explore 3D Runway &bull;</p>
 
-              <!-- Slide 2: The Parisian Knit Capsule -->
-              <article class="hero-slide" data-index="1" aria-roledescription="slide" aria-label="2 of 3: The Parisian Knit Capsule">
-                <a href="products/oversized-turtleneck-sweater.html" class="hero-slide-link" title="Explore The Parisian Knit Capsule">
-                  <img src="assets/outfit-autumn-chai.webp" alt="Model wearing ANRABESS Chunky Turtleneck Sweater and Pleated Trousers on Amazon" class="hero-slide-img" loading="lazy" decoding="async">
-                  <div class="hero-slide-pill">
-                    <span class="slide-live-dot"></span>
-                    <span>LOOK 02 &bull; COZY KNIT EDIT</span>
-                  </div>
-                  <div class="hero-floating-badge">
-                    <div class="info">
-                      <h4>The Parisian Knit Capsule</h4>
-                      <p>ANRABESS Turtleneck &bull; Pleated Trousers &bull; Boots</p>
-                    </div>
-                    <div class="badge-right">
-                      <span class="price">Under $85</span>
-                      <span class="view-cta">View Look &rarr;</span>
-                    </div>
-                  </div>
-                </a>
-              </article>
-
-              <!-- Slide 3: The Amalfi Resort Edit -->
-              <article class="hero-slide" data-index="2" aria-roledescription="slide" aria-label="3 of 3: The Amalfi Resort Edit">
-                <a href="products/beach-shirt-coverup.html" class="hero-slide-link" title="Explore The Amalfi Resort Edit">
-                  <img src="assets/outfit-amalfi-resort.webp" alt="Model wearing Ekouaer Casual Beach Coverup and Straw Sun Hat on Amazon" class="hero-slide-img" loading="lazy" decoding="async">
-                  <div class="hero-slide-pill">
-                    <span class="slide-live-dot"></span>
-                    <span>LOOK 03 &bull; RESORT GLAM</span>
-                  </div>
-                  <div class="hero-floating-badge">
-                    <div class="info">
-                      <h4>The Amalfi Coast Resort Edit</h4>
-                      <p>Ekouaer Coverup &bull; Straw Sun Hat &bull; Beach Tote</p>
-                    </div>
-                    <div class="badge-right">
-                      <span class="price">Under $45</span>
-                      <span class="view-cta">View Look &rarr;</span>
-                    </div>
-                  </div>
-                </a>
-              </article>
-
-            </div>
-
-            <!-- Carousel Controls: Prev/Next Buttons -->
-            <button class="hero-carousel-nav prev" id="hero-prev" aria-label="Previous Curated Look" title="Previous Look">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-            </button>
-            <button class="hero-carousel-nav next" id="hero-next" aria-label="Next Curated Look" title="Next Look">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-
-            <!-- Progress Indicator Bars -->
-            <div class="hero-carousel-indicators" role="tablist" aria-label="Curated Look Slides">
-              <button class="indicator-bar active" data-slide="0" aria-label="Slide 1" role="tab" aria-selected="true"></button>
-              <button class="indicator-bar" data-slide="1" aria-label="Slide 2" role="tab" aria-selected="false"></button>
-              <button class="indicator-bar" data-slide="2" aria-label="Slide 3" role="tab" aria-selected="false"></button>
-            </div>
-          </div>
+      <!-- Trust & Social Proof Strip -->
+      <div class="hero-trust-strip center-strip">
+        <div class="trust-stars" aria-label="5 Star Rating">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#c99738"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
+        <span class="trust-text">
+          <strong>4.8 / 5.0</strong> Quality Rating &bull; 14,000+ Verified Amazon Reviews &bull; US Prime Delivery
+        </span>
       </div>
     </section>
 
@@ -1694,6 +1697,6 @@
 
   <!-- Scripts -->
   <script src="js/data.js?v=6.1"></script>
-  <script src="js/app.js?v=7.0"></script>
+  <script src="js/app.js?v=8.0"></script>
 </body>
 </html>
