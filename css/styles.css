@@ -1058,19 +1058,20 @@ input, select {
 
 .search-input-wrap input {
   width: 100%;
-  padding: 9px 16px 9px 38px;
+  padding: 10px 36px 10px 40px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-subtle);
   background: var(--bg-card);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-primary);
   outline: none;
-  transition: var(--transition-fast);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
 }
 
 .search-input-wrap input:focus {
   border-color: var(--accent-gold);
-  box-shadow: 0 0 0 3px rgba(197, 155, 99, 0.15);
+  box-shadow: 0 0 0 3px rgba(201, 151, 56, 0.18);
 }
 
 .search-input-wrap .search-icon {
@@ -1078,12 +1079,37 @@ input, select {
   left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-muted);
+  color: var(--accent-gold);
   pointer-events: none;
 }
 
+.search-clear-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.07);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.search-clear-btn:hover {
+  background: var(--accent-gold);
+  color: #ffffff;
+}
+
+.sort-select,
 .price-select {
-  padding: 9px 16px;
+  padding: 10px 16px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-subtle);
   background: var(--bg-card);
@@ -1091,6 +1117,128 @@ input, select {
   color: var(--text-primary);
   outline: none;
   cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.sort-select:focus,
+.price-select:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(201, 151, 56, 0.18);
+}
+
+.filter-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: -16px;
+  margin-bottom: 24px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+.filter-count-badge strong {
+  color: var(--accent-gold-dark);
+}
+
+.active-filter-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.filter-chip-remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-left: 2px;
+  font-size: 1rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.filter-chip-remove:hover {
+  color: #e60023;
+}
+
+.btn-reset-all {
+  background: none;
+  border: none;
+  color: var(--accent-gold-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.btn-reset-all:hover {
+  color: var(--accent-dark);
+}
+
+/* Empty Catalog State */
+.empty-catalog-card {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  max-width: 580px;
+  margin: 20px auto 40px;
+}
+
+.empty-catalog-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(201, 151, 56, 0.08);
+  border: 1px solid rgba(201, 151, 56, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--accent-gold);
+}
+
+.empty-catalog-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.empty-catalog-desc {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 22px;
 }
 
 /* Product Grid */

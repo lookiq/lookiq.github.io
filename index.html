@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -1367,25 +1367,46 @@
           </div>
 
           <div class="catalog-controls">
-            <!-- Search input -->
+            <!-- Search input with Instant Clear Button -->
             <div class="search-input-wrap">
               <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
-              <input type="text" id="search-input" placeholder="Search sweaters, boots, bags...">
+              <input type="text" id="search-input" placeholder="Search dresses, sunglasses, sneakers..." autocomplete="off" spellcheck="false" aria-label="Search curated fashion catalog">
+              <button class="search-clear-btn" id="search-clear-btn" type="button" aria-label="Clear search input" title="Clear search" style="display: none;" onclick="clearSearch()">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
             </div>
+
+            <!-- Sort Selector -->
+            <select class="price-select sort-select" id="sort-select" aria-label="Sort Catalog Items">
+              <option value="featured">Featured Picks</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Highest Rated (4.5+ Stars)</option>
+              <option value="reviews">Most Reviewed / Viral</option>
+            </select>
 
             <!-- Price Selector -->
             <select class="price-select" id="price-filter" aria-label="Filter by Price">
               <option value="all">All Prices</option>
+              <option value="under20">Under $20</option>
               <option value="under25">Under $25</option>
               <option value="under30">Under $30</option>
               <option value="25to50">$25 - $50</option>
-              <option value="30to60">$30 - $60</option>
               <option value="over50">$50+</option>
             </select>
           </div>
+        </div>
+
+        <!-- Filter Status & Active Filter Chips Bar -->
+        <div class="filter-status-bar" id="filter-status-bar" aria-live="polite">
+          <span class="filter-count-badge" id="filter-count-badge">Showing <strong>20</strong> Curated Finds</span>
+          <div class="active-filter-chips" id="active-filter-chips"></div>
         </div>
 
         <!-- Products Grid -->

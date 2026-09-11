@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // State
   let currentCategory = "all";
   let currentPriceFilter = "all";
+  let currentSort = "featured";
   let searchQuery = "";
   let currentPage = 1;
   const itemsPerPage = 12;
+  let searchDebounceTimer = null;
   let wishlist = JSON.parse(localStorage.getItem("lookiq_wishlist")) || [];
 
   // DOM Elements
@@ -18,11 +20,129 @@ document.addEventListener("DOMContentLoaded", () => {
   const guidesGrid = document.getElementById("guides-grid");
   const categoryTabs = document.querySelectorAll(".tab-btn");
   const searchInput = document.getElementById("search-input");
+  const searchClearBtn = document.getElementById("search-clear-btn");
   const priceFilter = document.getElementById("price-filter");
+  const sortSelect = document.getElementById("sort-select");
   const wishlistCounter = document.getElementById("wishlist-counter");
   const quickViewModal = document.getElementById("quickview-modal");
   const outfitModal = document.getElementById("outfit-modal");
   const modalCloseButtons = document.querySelectorAll(".modal-close-btn");
+
+  function escapeHtml(str) {
+    if (!str) return "";
+    return str.replace(/[&<>"']/g, m => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[m]));
+  }
+
+  function getCategoryName(cat) {
+    const map = {
+      'all': 'All Finds',
+      'under25': 'Under $25',
+      'women': "Women's Fashion",
+      'men': "Men's Fashion",
+      'shoes': 'Shoes & Footwear',
+      'accessories': 'Bags & Jewelry',
+      'dupes': 'Viral Dupes'
+    };
+    return map[cat] || cat;
+  }
+
+  function matchCategory(product, cat) {
+    if (cat === "all") return true;
+    if (cat === "under25") return product.price <= 25;
+    if (cat === "women") {
+      return product.category === "women" || (product.tags && product.tags.some(t => t.toLowerCase().includes("women") || t.toLowerCase().includes("dress") || t.toLowerCase().includes("romper")));
+    }
+    if (cat === "men") {
+      return product.category === "men" || (product.tags && product.tags.some(t => t.toLowerCase().includes("men")));
+    }
+    if (cat === "shoes") {
+      return (product.subCategory && product.subCategory.toLowerCase().includes("shoe")) ||
+             (product.tags && product.tags.some(t => t.toLowerCase().includes("sneaker") || t.toLowerCase().includes("boot")));
+    }
+    if (cat === "accessories") {
+      return product.category === "accessories" ||
+             (product.subCategory && (product.subCategory.toLowerCase().includes("bag") || product.subCategory.toLowerCase().includes("jewelry") || product.subCategory.toLowerCase().includes("eyewear") || product.subCategory.toLowerCase().includes("hat") || product.subCategory.toLowerCase().includes("watch")));
+    }
+    if (cat === "dupes") {
+      return (product.badge && product.badge.toLowerCase().includes("dupe")) ||
+             (product.tags && product.tags.some(t => t.toLowerCase().includes("dupe")));
+    }
+    return product.category === cat;
+  }
+
+  function matchSearch(product, query) {
+    if (!query) return true;
+    const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+    const corpus = [
+      product.title || "",
+      product.category || "",
+      product.subCategory || "",
+      (product.tags || []).join(" "),
+      product.shortDesc || "",
+      (product.features || []).join(" ")
+    ].join(" ").toLowerCase();
+    return terms.every(term => corpus.includes(term));
+  }
+
+  function matchPrice(product, price) {
+    if (price === "all") return true;
+    if (price === "under20") return product.price < 20;
+    if (price === "under25") return product.price <= 25;
+    if (price === "under30") return product.price < 30;
+    if (price === "25to50") return product.price >= 25 && product.price <= 50;
+    if (price === "30to60") return product.price >= 30 && product.price <= 60;
+    if (price === "over50") return product.price > 50;
+    if (price === "over60") return product.price > 60;
+    return true;
+  }
+
+  function updateFilterStatus(filteredCount, totalCount) {
+    const countBadge = document.getElementById("filter-count-badge");
+    const chipsWrap = document.getElementById("active-filter-chips");
+    if (!countBadge) return;
+
+    const hasActiveFilter = searchQuery || currentCategory !== "all" || currentPriceFilter !== "all" || currentSort !== "featured";
+
+    countBadge.innerHTML = `Showing <strong>${filteredCount}</strong> of ${totalCount} Curated Finds`;
+
+    if (chipsWrap) {
+      let html = "";
+      if (searchQuery) {
+        html += `
+          <span class="filter-chip">
+            <span>Query: &ldquo;${escapeHtml(searchQuery)}&rdquo;</span>
+            <button class="filter-chip-remove" onclick="clearSearch()" aria-label="Remove search filter">&times;</button>
+          </span>
+        `;
+      }
+      if (currentCategory !== "all") {
+        html += `
+          <span class="filter-chip">
+            <span>${getCategoryName(currentCategory)}</span>
+            <button class="filter-chip-remove" onclick="setCategory('all')" aria-label="Clear category filter">&times;</button>
+          </span>
+        `;
+      }
+      if (currentPriceFilter !== "all") {
+        html += `
+          <span class="filter-chip">
+            <span>Price: ${currentPriceFilter}</span>
+            <button class="filter-chip-remove" onclick="setPrice('all')" aria-label="Clear price filter">&times;</button>
+          </span>
+        `;
+      }
+      if (hasActiveFilter) {
+        html += `<button class="btn-reset-all" onclick="resetFilters()">Reset All</button>`;
+      }
+      chipsWrap.innerHTML = html;
+    }
+  }
 
   // Initialize
   updateWishlistCount();
@@ -41,42 +161,46 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!productsGrid) return;
 
     let filtered = PRODUCTS.filter(product => {
-      // Category filter
-      const matchCat = currentCategory === "all" || 
-                       product.category === currentCategory ||
-                       (currentCategory === "under25" && product.price <= 25) ||
-                       (currentCategory === "men" && product.tags.some(t => t.toLowerCase() === "men")) ||
-                       (currentCategory === "dupes" && product.tags.some(t => t.toLowerCase().includes("dupe")));
-      
-      // Search query
-      const matchSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          product.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())) ||
-                          product.subCategory.toLowerCase().includes(searchQuery.toLowerCase());
-
-      // Price filter
-      let matchPrice = true;
-      if (currentPriceFilter === "under25") matchPrice = product.price <= 25;
-      else if (currentPriceFilter === "under30") matchPrice = product.price < 30;
-      else if (currentPriceFilter === "25to50") matchPrice = product.price > 25 && product.price <= 50;
-      else if (currentPriceFilter === "30to60") matchPrice = product.price >= 30 && product.price <= 60;
-      else if (currentPriceFilter === "over50") matchPrice = product.price > 50;
-      else if (currentPriceFilter === "over60") matchPrice = product.price > 60;
-
-      return matchCat && matchSearch && matchPrice;
+      return matchCategory(product, currentCategory) &&
+             matchSearch(product, searchQuery) &&
+             matchPrice(product, currentPriceFilter);
     });
+
+    // Apply sorting
+    if (currentSort === "price-asc") {
+      filtered.sort((a, b) => a.price - b.price);
+    } else if (currentSort === "price-desc") {
+      filtered.sort((a, b) => b.price - a.price);
+    } else if (currentSort === "rating") {
+      filtered.sort((a, b) => b.rating - a.rating);
+    } else if (currentSort === "reviews") {
+      filtered.sort((a, b) => b.reviewsCount - a.reviewsCount);
+    }
 
     const paginationContainer = document.getElementById("pagination-container");
 
     if (filtered.length === 0) {
       productsGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-          <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 12px;">No fashion finds match your filter.</p>
-          <button class="btn-primary" onclick="resetFilters()">View All Collections</button>
+        <div class="empty-catalog-card">
+          <div class="empty-catalog-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <h3 class="empty-catalog-title">No Fashion Finds Matched</h3>
+          <p class="empty-catalog-desc">
+            We couldn't find any pieces matching <strong>&ldquo;${escapeHtml(searchQuery || getCategoryName(currentCategory))}&rdquo;</strong> in this filter range.
+          </p>
+          <button class="btn-primary" onclick="resetFilters()">Clear Filters &amp; View All</button>
         </div>
       `;
       if (paginationContainer) paginationContainer.innerHTML = "";
+      updateFilterStatus(0, PRODUCTS.length);
       return;
     }
+
+    updateFilterStatus(filtered.length, PRODUCTS.length);
 
     const totalItems = filtered.length;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -301,10 +425,32 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Live Search
+    // Live Search with Debounce & Clear Button Toggle
     if (searchInput) {
       searchInput.addEventListener("input", (e) => {
-        searchQuery = e.target.value.trim();
+        const val = e.target.value;
+        if (searchClearBtn) {
+          searchClearBtn.style.display = val ? "flex" : "none";
+        }
+        clearTimeout(searchDebounceTimer);
+        searchDebounceTimer = setTimeout(() => {
+          searchQuery = val.trim();
+          currentPage = 1;
+          renderProducts();
+        }, 120);
+      });
+    }
+
+    if (searchClearBtn) {
+      searchClearBtn.addEventListener("click", () => {
+        window.clearSearch();
+      });
+    }
+
+    // Sort Selector
+    if (sortSelect) {
+      sortSelect.addEventListener("change", (e) => {
+        currentSort = e.target.value;
         currentPage = 1;
         renderProducts();
       });
@@ -338,6 +484,74 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  /**
+   * Global Instant Filter & Search Control APIs
+   */
+  window.clearSearch = function() {
+    searchQuery = "";
+    if (searchInput) {
+      searchInput.value = "";
+      searchInput.focus();
+    }
+    if (searchClearBtn) {
+      searchClearBtn.style.display = "none";
+    }
+    currentPage = 1;
+    renderProducts();
+  };
+
+  window.setCategory = function(cat) {
+    currentCategory = cat;
+    categoryTabs.forEach(tab => {
+      if (tab.dataset.category === cat) {
+        tab.classList.add("active");
+      } else {
+        tab.classList.remove("active");
+      }
+    });
+    currentPage = 1;
+    renderProducts();
+  };
+
+  window.setPrice = function(price) {
+    currentPriceFilter = price;
+    if (priceFilter) {
+      priceFilter.value = price;
+    }
+    currentPage = 1;
+    renderProducts();
+  };
+
+  window.resetFilters = function() {
+    searchQuery = "";
+    currentCategory = "all";
+    currentPriceFilter = "all";
+    currentSort = "featured";
+    currentPage = 1;
+
+    if (searchInput) {
+      searchInput.value = "";
+    }
+    if (searchClearBtn) {
+      searchClearBtn.style.display = "none";
+    }
+    if (priceFilter) {
+      priceFilter.value = "all";
+    }
+    if (sortSelect) {
+      sortSelect.value = "featured";
+    }
+    categoryTabs.forEach(tab => {
+      if (tab.dataset.category === "all") {
+        tab.classList.add("active");
+      } else {
+        tab.classList.remove("active");
+      }
+    });
+
+    renderProducts();
+  };
 
   /**
    * Handle Direct Product URL Deep Linking
