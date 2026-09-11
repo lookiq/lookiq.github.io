@@ -39,7 +39,7 @@ const PRODUCTS = [
     originalPrice: 32.99,
     rating: 4.3,
     reviewsCount: 18500,
-    image: "assets/elescat-summer-dress.png",
+    image: "assets/elescat-summer-dress.webp",
     tags: ["Summer Dress", "Casual Chic", "Vacation Wear", "Sundress"],
     shortDesc: "Effortless sleeveless casual sundress featuring a flattering scoop neckline, functional side pockets, and airy swing silhouette. The viral warm-weather staple for vacations and everyday styling.",
     features: [
@@ -61,7 +61,7 @@ const PRODUCTS = [
     originalPrice: 59.99,
     rating: 4.2,
     reviewsCount: 23310,
-    image: "assets/dresstells-cocktail-dress.png",
+    image: "assets/dresstells-cocktail-dress.webp",
     tags: ["Cocktail Dress", "Wedding Guest", "Classic Red", "Viral Fashion"],
     shortDesc: "Flattering 1950s tea-length vintage A-line cocktail dress with delicate cap sleeves and pleated bodice. The ultimate wedding guest staple.",
     features: [
@@ -83,7 +83,7 @@ const PRODUCTS = [
     originalPrice: 19.99,
     rating: 4.5,
     reviewsCount: 14200,
-    image: "assets/sojos-retro-sunglasses.png",
+    image: "assets/sojos-retro-sunglasses.webp",
     tags: ["Old Money", "Summer/Fall", "Accessory", "Viral Dupes"],
     shortDesc: "Chic 90s vintage narrow oval tortoise frames with UV400 polarized brown lenses. Adds instant Old Money and celebrity off-duty vibes.",
     features: [
@@ -105,7 +105,7 @@ const PRODUCTS = [
     originalPrice: 49.99,
     rating: 4.3,
     reviewsCount: 36450,
-    image: "assets/eomenie-swimsuit.jpg",
+    image: "assets/eomenie-swimsuit.webp",
     tags: ["Swimwear", "Resort Wear", "Tummy Control", "Viral TikTok"],
     shortDesc: "Amazon's most viral tummy control monokini. Features cross-over scallop cutout bodice, adjustable halter straps, and flattering ruched high-waist design.",
     features: [
@@ -127,7 +127,7 @@ const PRODUCTS = [
     originalPrice: 19.99,
     rating: 4.2,
     reviewsCount: 21513,
-    image: "assets/ekouaer-coverup.jpg?v=2",
+    image: "assets/ekouaer-coverup.webp",
     tags: ["Resort Wear", "Beach Cover-Up", "Summer", "Vacation Chic"],
     shortDesc: "Breezy lightweight boyfriend-style button-down beach coverup shirt dress. Features an open V-neck, cuffed roll-up sleeves, and curved side slits.",
     features: [
@@ -149,7 +149,7 @@ const PRODUCTS = [
     originalPrice: 35.99,
     rating: 4.6,
     reviewsCount: 24100,
-    image: "assets/furtalk-sun-hat.jpg?v=2",
+    image: "assets/furtalk-sun-hat.webp",
     tags: ["Summer Essential", "UPF 50+", "Travel"],
     shortDesc: "Packable, roll-up wide brim Panama straw hat with UPF 50+ sun protection. The quintessential summer holiday companion.",
     features: [
@@ -171,7 +171,7 @@ const PRODUCTS = [
     originalPrice: 29.99,
     rating: 4.5,
     reviewsCount: 6850,
-    image: "assets/straw-beach-tote.jpg",
+    image: "assets/straw-beach-tote.webp",
     tags: ["Handmade", "Beach Bag", "Boho Chic"],
     shortDesc: "Handwoven natural straw shoulder bag featuring colorful playful tassel pom-poms. Roomy enough for beach towels, sunglasses, and vacation essentials.",
     features: [
@@ -193,7 +193,7 @@ const PRODUCTS = [
     originalPrice: 65.00,
     rating: 4.8,
     reviewsCount: 3420,
-    image: "assets/outfit-manhattan-trench.jpg",
+    image: "assets/outfit-manhattan-trench.webp",
     tags: ["Quiet Luxury", "Capsule Wardrobe", "Trending"],
     shortDesc: "Timeless double-breasted silhouette with lapel collar and storm flap. Perfect elevated staple for seasonal layering.",
     features: [
@@ -215,7 +215,7 @@ const PRODUCTS = [
     originalPrice: 25.99,
     rating: 4.6,
     reviewsCount: 12580,
-    image: "assets/adokoo-sneakers.jpg",
+    image: "assets/adokoo-sneakers.webp",
     tags: ["Everyday", "Dupe Alert", "Streetwear"],
     shortDesc: "Crisp white vegan leather sneaker with cushioned memory foam insole. The ultimate street-smart wardrobe anchor.",
     features: [
@@ -237,7 +237,7 @@ const PRODUCTS = [
     originalPrice: 42.00,
     rating: 4.7,
     reviewsCount: 5210,
-    image: "assets/slouchy-hobo-bag.jpg",
+    image: "assets/slouchy-hobo-bag.webp",
     tags: ["Quiet Luxury", "Budget Dupe", "Must Have"],
     shortDesc: "Sleek crescent slouchy hobo shoulder bag with roomy interior. Looks like an expensive Italian designer piece for under $30.",
     features: [
@@ -259,7 +259,7 @@ const PRODUCTS = [
     originalPrice: 49.99,
     rating: 4.6,
     reviewsCount: 8940,
-    image: "assets/nimin-trouser-pants.jpg",
+    image: "assets/nimin-trouser-pants.webp",
     tags: ["Office Chic", "Capsule Wardrobe", "Trending"],
     shortDesc: "Flowy, elegant drape with front pleats and side pockets. Instantly elevates casual t-shirts or silk blouses.",
     features: [
@@ -281,7 +281,7 @@ const PRODUCTS = [
     originalPrice: 42.00,
     rating: 4.6,
     reviewsCount: 48200,
-    image: "assets/hanes-mens-hoodie.jpg",
+    image: "assets/hanes-mens-hoodie.webp",
     tags: ["Streetwear", "Everyday", "Men"],
     shortDesc: "Classic 9.7 oz heavyweight fleece hoodie crafted with patented low-pill, high-stitch density fabric. The ultimate casual layering piece.",
     features: [
@@ -303,7 +303,7 @@ const PRODUCTS = [
     originalPrice: 17.99,
     rating: 4.9,
     reviewsCount: 48400,
-    image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80",
+    image: "assets/pavoi-huggie-earrings.webp",
     tags: ["Budget Luxury", "Jewelry", "Gift Idea"],
     shortDesc: "Hypoallergenic, lightweight chunky tube hoops plated in 14K real gold. Doesn't tarnish or irritate sensitive ears.",
     features: [
@@ -325,7 +325,7 @@ const PRODUCTS = [
     originalPrice: 32.00,
     rating: 4.6,
     reviewsCount: 22400,
-    image: "assets/qinsen-workout-romper.jpg",
+    image: "assets/qinsen-workout-romper.webp",
     tags: ["Dupe Alert", "Workout", "Sculpt"],
     shortDesc: "Double-layered compressive knit with square neckline and bodycon biker shorts. The viral TikTok workout romper with tummy control.",
     features: [
@@ -347,7 +347,7 @@ const PRODUCTS = [
     originalPrice: 32.00,
     rating: 4.5,
     reviewsCount: 31800,
-    image: "assets/amazon-mens-chino.jpg?v=3",
+    image: "assets/amazon-mens-chino.webp",
     tags: ["Everyday", "Smart Casual", "Men"],
     shortDesc: "Comfort-stretch cotton twill chino with a modern slim fit through the thigh and leg. Perfect transition piece from casual workday to weekend.",
     features: [
@@ -369,7 +369,7 @@ const PRODUCTS = [
     originalPrice: 59.99,
     rating: 4.7,
     reviewsCount: 21500,
-    image: "assets/soda-chelsea-booties.jpg",
+    image: "assets/soda-chelsea-booties.webp",
     tags: ["Fall/Winter", "Trending", "Boots"],
     shortDesc: "Weatherproof ankle boots with an aggressive lug sole and elastic side goring. Effortlessly pairs with dresses or jeans.",
     features: [
@@ -391,7 +391,7 @@ const PRODUCTS = [
     originalPrice: 59.99,
     rating: 4.8,
     reviewsCount: 38400,
-    image: "assets/anrabess-turtleneck-sweater.jpg",
+    image: "assets/anrabess-turtleneck-sweater.webp",
     tags: ["Fall/Winter", "Cozy", "Viral"],
     shortDesc: "Plush chunky knit with ribbed cuffs and slouchy cowl neck. The #1 sweater on Amazon with tens of thousands of reviews.",
     features: [
@@ -413,7 +413,7 @@ const PRODUCTS = [
     originalPrice: 45.00,
     rating: 4.7,
     reviewsCount: 9400,
-    image: "assets/burei-mens-watch.jpg",
+    image: "assets/burei-mens-watch.webp",
     tags: ["Quiet Luxury", "Everyday", "Men"],
     shortDesc: "Classic minimalist analog dial with date window and genuine embossed leather strap. Water-resistant up to 30M.",
     features: [
@@ -435,7 +435,7 @@ const PRODUCTS = [
     originalPrice: 39.99,
     rating: 4.5,
     reviewsCount: 4800,
-    image: "assets/fracora-mens-sneakers.jpg",
+    image: "assets/fracora-mens-sneakers.webp",
     tags: ["Streetwear", "Minimalist", "Men", "White Sneakers"],
     shortDesc: "Clean, low-top white casual sneakers with cushioned insole and non-slip rubber cupsole. The quintessential smart-casual men's sneaker.",
     features: [
@@ -457,7 +457,7 @@ const PRODUCTS = [
     originalPrice: 26.99,
     rating: 4.4,
     reviewsCount: 4850,
-    image: "assets/grecerelle-maxi-dress.jpg",
+    image: "assets/grecerelle-maxi-dress.webp",
     tags: ["Vacation Chic", "Resort Wear", "Everyday", "Maxi Dress"],
     shortDesc: "Effortless, breezy sleeveless maxi dress featuring a relaxed silhouette, convenient side pockets, and flattering side walking split.",
     features: [
@@ -479,7 +479,7 @@ const OUTFITS = [
     title: "The Amalfi Coast Resort & Beach Edit",
     tag: "Trending Resort",
     description: "Chic Mediterranean resort ensemble featuring Amazon's #1 viral tummy control cutout swimsuit, breezy linen beach shirt, woven straw tote, and UV sun hat.",
-    image: "assets/outfit-amalfi-resort.jpg",
+    image: "assets/outfit-amalfi-resort.webp",
     items: [
       {
         name: "Eomenie Tummy Control Cutout One-Piece Swimsuit",
@@ -516,7 +516,7 @@ const OUTFITS = [
     title: "The Manhattan Quiet Luxury Look",
     tag: "Trending",
     description: "An effortless blend of tailored oversized trench coat, pleated wide-leg trousers, clean minimal white sneakers, and a slouchy vegan leather bag.",
-    image: "assets/outfit-manhattan-trench.jpg",
+    image: "assets/outfit-manhattan-trench.webp",
     items: [
       {
         name: "Farktop Oversized Long Double-Breasted Trench Coat",
@@ -553,7 +553,7 @@ const OUTFITS = [
     title: "The Autumn Weekend Chai Look",
     tag: "Cozy Autumn",
     description: "Ultra-comfortable knit batwing turtleneck paired with chunky lug sole chelsea boots, 14K gold huggie earrings, and vintage tortoise oval shades.",
-    image: "assets/outfit-autumn-chai.jpg",
+    image: "assets/outfit-autumn-chai.webp",
     items: [
       {
         name: "ANRABESS Oversized Turtleneck Batwing Ribbed Knit Sweater",
@@ -590,7 +590,7 @@ const OUTFITS = [
     title: "The Clean Urban Minimalist (Men's)",
     tag: "Men's Edit",
     description: "Modern street essentials combining a heavyweight fleece pullover hoodie, slim-fit stretch chinos, clean minimalist white leather sneakers, and a classic leather dress watch.",
-    image: "assets/outfit-urban-minimalist-men.jpg",
+    image: "assets/outfit-urban-minimalist-men.webp",
     items: [
       {
         name: "Hanes Men's Ultimate Heavyweight Fleece Pullover Hoodie",
@@ -636,7 +636,7 @@ const GUIDES = [
     readTime: "4 min read",
     author: "LOOKIQ Style Editors",
     excerpt: "We tested the viral DRESSTELLS vintage tea-length cocktail dress in Classic Red. Here is why 23,000+ buyers are obsessed with its flattering A-line fit and travel-friendly stretch fabric.",
-    image: "assets/dresstells-cocktail-dress.png",
+    image: "assets/dresstells-cocktail-dress.webp",
     altText: "DRESSTELLS Vintage A-Line Cocktail Dress in Classic Red Editorial Review",
     tags: ["Product Review", "Wedding Guest", "Classic Red", "Under $50"]
   },
@@ -648,7 +648,7 @@ const GUIDES = [
     readTime: "6 min read",
     author: "LOOKIQ Fashion Editors",
     excerpt: "Building a versatile, quiet luxury autumn wardrobe doesn't require high four-figure budgets. Here are 4 tested Amazon staples that create over 10 elevated looks for under $150 total.",
-    image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80",
+    image: "assets/capsule-wardrobe-guide.webp",
     altText: "Best Amazon Fall Capsule Wardrobe Under 150 Dollars Minimalist Checklist",
     tags: ["Capsule Wardrobe", "Fall Fashion", "Budget Luxury", "Checklist"]
   },
@@ -660,7 +660,7 @@ const GUIDES = [
     readTime: "5 min read",
     author: "Elena Vance | Senior Stylist",
     excerpt: "Can a $25 Amazon romper really rival $80 designer shapewear? We put the QINSEN compression square-neck romper to the test for opacity, snatch contouring, and all-day comfort.",
-    image: "assets/qinsen-workout-romper.jpg",
+    image: "assets/qinsen-workout-romper.webp",
     altText: "Viral TikTok Square Neck Bodysuit Review Amazon QINSEN Shapewear Romper",
     tags: ["Viral Dupes", "TikTok Fashion", "Bodysuit", "Fit Test"]
   },
@@ -672,7 +672,7 @@ const GUIDES = [
     readTime: "5 min read",
     author: "LOOKIQ Curation Team",
     excerpt: "Mastering the old-money aesthetic on an Amazon budget comes down to tailored drape, neutral palettes, and refined accessories. Discover 5 chic outfit formulas tested by our editors.",
-    image: "assets/outfit-manhattan-trench.jpg",
+    image: "assets/outfit-manhattan-trench.webp",
     altText: "Quiet Luxury Chic Outfit Ideas on Amazon Old Money Aesthetic Guide",
     tags: ["Quiet Luxury", "Old Money", "Outfit Ideas", "Street Style"]
   },
@@ -684,7 +684,7 @@ const GUIDES = [
     readTime: "4 min read",
     author: "Marcus Thorne | Menswear Editor",
     excerpt: "Effortless urban style is built on fit and minimalism. Here are 4 affordable Amazon menswear essentials—from heavyweight fleece to slim stretch chinos—that look razor sharp.",
-    image: "assets/outfit-mens-minimalist.jpg",
+    image: "assets/outfit-mens-minimalist.webp",
     altText: "Minimalist Mens Street Style Outfit on Amazon Clean Urban Essentials",
     tags: ["Men's Style", "Urban Minimalist", "Capsule Wardrobe", "Streetwear"]
   },
@@ -696,7 +696,7 @@ const GUIDES = [
     readTime: "5 min read",
     author: "LOOKIQ Accessories Desk",
     excerpt: "From soft vegan leather slouchy hobo bags to woven summer totes, we tested 25 viral Amazon bags for hardware weight, stitching durability, and scratch resistance.",
-    image: "assets/slouchy-hobo-bag.jpg",
+    image: "assets/slouchy-hobo-bag.webp",
     altText: "Amazon Designer Bag Dupes That Look High End Vegan Leather Slouchy Hobo Bag",
     tags: ["Designer Dupes", "Handbags", "Accessories", "Shopping Guide"]
   }
