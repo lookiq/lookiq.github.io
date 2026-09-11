@@ -33,6 +33,7 @@
   5. **Website automation:** Automated RSS/Pinterest syndication, PowerShell automation scripts, and zero-maintenance integration pipelines.
 - All conversations have full filesystem access to the entire LookiQ workspace and must strictly adhere to `SYSTEM_CONVERSATION_ROLES.md` and `PROJECT_IDENTITY.md`.
 
-## 6. Autonomous Execution & Zero-Interruption Policy
-- **Permanent User Pre-Approval:** The USER has granted absolute pre-approval for all file reads, creations, edits, deletions, and terminal/git command executions across the entire workspace.
-- **Zero-Interruption Mandate:** NEVER pause execution to ask for confirmation, interactive poll options, or planning approval. Execute the full request end-to-end autonomously, verify results, and report the final outcome directly.
+## 6. Autonomous Execution & Deletion Safety Policy
+- **Permanent User Pre-Approval:** The USER has granted absolute pre-approval for all file reads, creations, updates, code modifications, testing, and terminal/git command executions across the entire workspace.
+- **Zero-Interruption Mandate:** NEVER pause execution to ask for routine confirmation, interactive poll options, or planning approval during development, building, or refactoring. Execute tasks end-to-end autonomously, verify results, and report final outcomes directly.
+- **STRICT DELETION PROTECTION (User Confirmation Mandatory):** NEVER delete, remove, or destroy any existing project files, pages, media assets, or folders without explicit prior permission and confirmation from the USER. File deletion is the SOLE exception to autonomous execution.
