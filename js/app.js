@@ -102,6 +102,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   }
 
+  function formatPriceLabel(priceKey) {
+    const map = {
+      'under20': 'Under $20',
+      'under25': 'Under $25',
+      'under30': 'Under $30',
+      '25to50': '$25 - $50',
+      '30to60': '$30 - $60',
+      'over50': '$50+',
+      'over60': '$60+'
+    };
+    return map[priceKey] || priceKey;
+  }
+
   function updateFilterStatus(filteredCount, totalCount) {
     const countBadge = document.getElementById("filter-count-badge");
     const chipsWrap = document.getElementById("active-filter-chips");
@@ -111,42 +124,90 @@ document.addEventListener("DOMContentLoaded", () => {
 
     countBadge.innerHTML = `
       <span class="filter-count-micro-icon">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
       </span>
-      <span>Showing <strong>${filteredCount}</strong> of ${totalCount} Curated Finds</span>
+      <span class="count-text-wrap">
+        <span>Showing</span>
+        <span class="count-pill-highlight"><strong>${filteredCount}</strong> of ${totalCount}</span>
+        <span class="count-suffix">Curated Finds</span>
+      </span>
     `;
 
     if (chipsWrap) {
       let html = "";
       if (searchQuery) {
         html += `
-          <span class="filter-chip">
-            <span>Query: &ldquo;${escapeHtml(searchQuery)}&rdquo;</span>
-            <button class="filter-chip-remove" onclick="clearSearch()" aria-label="Remove search filter">&times;</button>
+          <span class="filter-chip filter-chip-search">
+            <span class="chip-micro-icon">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <span class="chip-label">Search:</span>
+            <span class="chip-val">&ldquo;${escapeHtml(searchQuery)}&rdquo;</span>
+            <button class="filter-chip-remove" onclick="clearSearch()" aria-label="Remove search filter" title="Clear search">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </span>
         `;
       }
       if (currentCategory !== "all") {
         html += `
-          <span class="filter-chip">
-            <span>${getCategoryName(currentCategory)}</span>
-            <button class="filter-chip-remove" onclick="setCategory('all')" aria-label="Clear category filter">&times;</button>
+          <span class="filter-chip filter-chip-category">
+            <span class="chip-micro-icon">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+            </span>
+            <span class="chip-label">Category:</span>
+            <span class="chip-val">${getCategoryName(currentCategory)}</span>
+            <button class="filter-chip-remove" onclick="setCategory('all')" aria-label="Clear category filter" title="Clear category">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </span>
         `;
       }
       if (currentPriceFilter !== "all") {
         html += `
-          <span class="filter-chip">
-            <span>Price: ${currentPriceFilter}</span>
-            <button class="filter-chip-remove" onclick="setPrice('all')" aria-label="Clear price filter">&times;</button>
+          <span class="filter-chip filter-chip-price">
+            <span class="chip-micro-icon">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </span>
+            <span class="chip-label">Price:</span>
+            <span class="chip-val">${formatPriceLabel(currentPriceFilter)}</span>
+            <button class="filter-chip-remove" onclick="setPrice('all')" aria-label="Clear price filter" title="Clear price">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </span>
         `;
       }
       if (hasActiveFilter) {
-        html += `<button class="btn-reset-all" onclick="resetFilters()">Reset All</button>`;
+        html += `
+          <button class="btn-reset-all" onclick="resetFilters()" title="Reset all filters and view full collection">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+            <span>Reset All</span>
+          </button>
+        `;
       }
       chipsWrap.innerHTML = html;
     }

@@ -1205,46 +1205,75 @@ input, select {
   gap: 14px;
   margin-top: -16px;
   margin-bottom: 24px;
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(201, 151, 56, 0.22);
-  border-radius: var(--radius-md);
+  padding: 12px 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(250, 248, 245, 0.9) 100%);
+  border: 1px solid rgba(201, 151, 56, 0.28);
+  border-radius: var(--radius-lg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px rgba(20, 17, 19, 0.03), 0 1px 4px rgba(201, 151, 56, 0.06);
 }
 
 .filter-count-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-editorial, var(--font-serif));
-  font-size: 1.05rem;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
   font-weight: 500;
-  color: var(--text-primary);
-  letter-spacing: 0.02em;
+  color: var(--text-secondary);
 }
 
 .filter-count-micro-icon {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--bg-card);
-  border: 1px solid rgba(201, 151, 56, 0.28);
+  border: 1px solid rgba(201, 151, 56, 0.35);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--accent-gold);
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(201, 151, 56, 0.08);
+  box-shadow: 0 2px 8px rgba(201, 151, 56, 0.12);
+  transition: transform 0.2s ease;
 }
 
-.filter-count-badge strong {
-  color: var(--accent-gold-dark);
-  font-family: var(--font-editorial, var(--font-serif));
+.filter-status-bar:hover .filter-count-micro-icon {
+  transform: scale(1.05);
+}
+
+.count-text-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.count-pill-highlight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 3px 12px;
+  background: rgba(201, 151, 56, 0.12);
+  border: 1px solid rgba(201, 151, 56, 0.35);
+  border-radius: var(--radius-full);
   font-weight: 700;
-  font-size: 1.15rem;
-  padding: 0 1px;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.count-pill-highlight strong {
+  color: var(--accent-gold-dark);
+  font-weight: 800;
+  font-size: 0.96rem;
+}
+
+.count-suffix {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .active-filter-chips {
@@ -1257,48 +1286,109 @@ input, select {
 .filter-chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
+  gap: 7px;
+  padding: 5px 12px 5px 10px;
   border-radius: var(--radius-full);
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  font-size: 0.8rem;
+  border: 1px solid rgba(201, 151, 56, 0.32);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
   color: var(--text-primary);
-  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 12px rgba(201, 151, 56, 0.12);
+  transform: translateY(-1px);
+}
+
+.chip-micro-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(201, 151, 56, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.chip-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.chip-val {
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .filter-chip-remove {
-  background: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0;
   margin-left: 2px;
-  font-size: 1rem;
-  line-height: 1;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.filter-chip-remove svg {
+  stroke: currentColor;
 }
 
 .filter-chip-remove:hover {
-  color: #e60023;
+  background: #e60023;
+  color: #ffffff;
+  transform: rotate(90deg);
 }
 
 .btn-reset-all {
-  background: none;
-  border: none;
-  color: var(--accent-gold-dark);
-  font-size: 0.82rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(20, 17, 19, 0.05);
+  border: 1px solid rgba(20, 17, 19, 0.15);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
-  text-decoration: underline;
-  padding: 0;
-  transition: color 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-reset-all svg {
+  color: var(--accent-gold);
+  transition: transform 0.4s ease;
 }
 
 .btn-reset-all:hover {
-  color: var(--accent-dark);
+  background: var(--bg-dark);
+  color: #ffffff;
+  border-color: var(--bg-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-reset-all:hover svg {
+  color: var(--accent-gold-light);
+  transform: rotate(-180deg);
 }
 
 /* Empty Catalog State */
