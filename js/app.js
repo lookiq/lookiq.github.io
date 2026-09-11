@@ -1051,11 +1051,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function getMetrics() {
       const w = window.innerWidth;
       if (w < 600) {
-        return { xStep: 135, zStep: 60, yStep: 8, maxDist: 2 };
+        return { xStep: 145, zStep: 60, yStep: 8, maxDist: 2 };
       } else if (w < 992) {
-        return { xStep: 175, zStep: 70, yStep: 10, maxDist: 3 };
+        return { xStep: 195, zStep: 75, yStep: 11, maxDist: 3 };
       } else {
-        return { xStep: 215, zStep: 80, yStep: 12, maxDist: 3 };
+        return { xStep: 250, zStep: 95, yStep: 14, maxDist: 3 };
       }
     }
 
@@ -1068,11 +1068,19 @@ document.addEventListener("DOMContentLoaded", () => {
         if (diff < -total / 2) diff += total;
 
         const absDiff = Math.abs(diff);
+        const isActive = absDiff === 0;
+
+        card.classList.toggle("is-active", isActive);
 
         if (absDiff > maxDist) {
           card.style.opacity = "0";
           card.style.pointerEvents = "none";
-          card.style.transform = `translateX(${diff * (xStep + 20)}px) translateZ(-420px) rotateY(${diff * -22}deg) scale(0.45)`;
+          card.style.setProperty("--x", `${diff * (xStep + 25)}px`);
+          card.style.setProperty("--y", `0px`);
+          card.style.setProperty("--z", `-450px`);
+          card.style.setProperty("--ry", `${diff * -22}deg`);
+          card.style.setProperty("--scale", "0.4");
+          card.style.transform = "";
           card.setAttribute("aria-hidden", "true");
           return;
         }
@@ -1088,9 +1096,19 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.opacity = opacity;
         card.style.zIndex = zIndex;
         card.style.pointerEvents = "auto";
-        card.style.filter = absDiff === 0 ? "none" : "brightness(0.72) blur(0.3px)";
-        card.style.transform = `translateX(${xOffset}px) translateY(${yOffset}px) translateZ(${zOffset}px) rotateY(${yRotation}deg) scale(${scale})`;
-        card.setAttribute("aria-hidden", absDiff === 0 ? "false" : "true");
+        card.style.filter = isActive ? "none" : "brightness(0.72) blur(0.3px)";
+
+        // Set CSS custom variables for dynamic 3D geometry & smooth CSS hover
+        card.style.setProperty("--x", `${xOffset}px`);
+        card.style.setProperty("--y", `${yOffset}px`);
+        card.style.setProperty("--z", `${zOffset}px`);
+        card.style.setProperty("--ry", `${yRotation}deg`);
+        card.style.setProperty("--scale", scale);
+
+        // Clear inline transform so CSS transform using var(--x, ...) and hover transitions take effect
+        card.style.transform = "";
+
+        card.setAttribute("aria-hidden", isActive ? "false" : "true");
       });
 
       // Update active detail panel
