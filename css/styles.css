@@ -133,6 +133,32 @@ input, select {
   margin-bottom: 8px;
 }
 
+/* Luxury Micro-Tag Badge */
+.section-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201, 151, 56, 0.08);
+  border: 1px solid rgba(201, 151, 56, 0.28);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 12px;
+}
+
+.section-tag-badge .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  box-shadow: 0 0 8px rgba(201, 151, 56, 0.7);
+  flex-shrink: 0;
+}
+
 .section-title {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 3.5vw, 2.75rem);
@@ -140,6 +166,21 @@ input, select {
   color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 12px;
+}
+
+.title-gold-italic {
+  font-style: italic;
+  background: linear-gradient(135deg, #c99738 0%, #a4761e 50%, #76510e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 1px 1px rgba(118, 81, 14, 0.12));
+}
+
+[data-theme="dark"] .title-gold-italic {
+  background: linear-gradient(135deg, #f5d67b 0%, #c99738 50%, #e5c158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-subtitle {
@@ -1261,7 +1302,118 @@ input, select {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
+  gap: 24px;
+}
+
+.section-header-text {
+  max-width: 680px;
+}
+
+/* Universal Secondary Button (Quiet Luxury Pill) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(201, 151, 56, 0.35);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #08080b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 151, 56, 0.28);
+}
+
+[data-theme="dark"] .btn-secondary {
+  background: rgba(26, 26, 32, 0.9);
+  border-color: rgba(201, 151, 56, 0.35);
+  color: #f4f4f6;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: var(--accent-gold);
+  color: #08080b;
+}
+
+/* Premium Section Header Explore Button (with Animated Vector Micro-Circle) */
+.btn-section-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px 8px 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(201, 151, 56, 0.35);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 3px 14px rgba(201, 151, 56, 0.1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .btn-section-explore {
+  background: rgba(22, 22, 27, 0.85);
+  color: #f4f4f6;
+  border-color: rgba(201, 151, 56, 0.35);
+}
+
+.btn-section-explore:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #08080b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(201, 151, 56, 0.35);
+}
+
+.btn-arrow-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(201, 151, 56, 0.12);
+  border: 1px solid rgba(201, 151, 56, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.btn-section-explore:hover .btn-arrow-circle {
+  background: #08080b;
+  border-color: #08080b;
+  color: var(--accent-gold);
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .btn-section-explore {
+    align-self: flex-start;
+  }
 }
 
 .outfits-grid {
