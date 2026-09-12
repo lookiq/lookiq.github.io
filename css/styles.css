@@ -545,18 +545,23 @@ input, select {
   width: 42px;
   height: 42px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid rgba(201, 151, 56, 0.28);
   color: var(--text-primary);
-  transition: var(--transition-fast);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  background: var(--bg-card);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
 .action-btn:hover {
   border-color: var(--accent-gold);
   color: var(--accent-gold);
-  transform: translateY(-1px);
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(201, 151, 56, 0.2);
 }
 
 .action-btn .badge-counter {
@@ -564,15 +569,16 @@ input, select {
   top: -4px;
   right: -4px;
   background: var(--accent-gold);
-  color: #fff;
+  color: #08080b;
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 800;
   width: 18px;
   height: 18px;
-  border-radius: var(--radius-full);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-menu-toggle {
@@ -1308,6 +1314,38 @@ input, select {
 
 .section-header-text {
   max-width: 680px;
+}
+
+/* Universal Primary Button (Liquid Gold Luxury) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #dfb76c 0%, #c99738 50%, #9a6e1a 100%);
+  color: #08080b;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(201, 151, 56, 0.45);
+  box-shadow: 0 4px 16px rgba(201, 151, 56, 0.28);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #fae188 0%, #dbab48 50%, #b27f20 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(201, 151, 56, 0.45);
+  color: #08080b;
+}
+
+[data-theme="dark"] .btn-primary {
+  background: linear-gradient(135deg, #f5d67b 0%, #c99738 50%, #a4761e 100%);
+  color: #08080b;
 }
 
 /* Universal Secondary Button (Quiet Luxury Pill) */
