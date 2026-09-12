@@ -4183,10 +4183,12 @@ input, select {
 .trending-ticker-wrap {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  overflow: visible;
+  gap: 12px;
   height: 28px;
   position: relative;
+  flex: 1;
+  max-width: 850px;
+  min-width: 0;
 }
 
 .trending-ticker-track {
@@ -4194,7 +4196,8 @@ input, select {
   height: 28px;
   display: flex;
   align-items: center;
-  min-width: 340px;
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
 }
 
