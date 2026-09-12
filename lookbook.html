@@ -348,46 +348,106 @@
 
   <!-- Announcement Bar (SVG Vector) -->
     <!-- Announcement & Dynamic Trending Ticker Bar -->
-  <aside class="announcement-bar" aria-label="Trending Announcements & Compliance">
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Trending Announcements &amp; Compliance">
     <div class="inner">
       <div class="trending-ticker-wrap">
         <span class="trending-pill-badge">
           <span class="trending-pulse-dot"></span>
           Trending Now
         </span>
-                <div class="trending-ticker-track" id="trending-ticker-track">
-          <a href="index.html#catalog" class="ticker-item active">
-            <span class="ticker-badge">TRENDING NOW</span>
-            <span>Viral Fashion Finds &amp; Designer Dupes on Amazon US</span>
-            <span class="ticker-arrow">&rarr;</span>
+        <div class="trending-ticker-track" id="trending-ticker-track">
+          <a href="products/chunky-chelsea-booties.html" class="ticker-item active">
+            <span class="ticker-tag">VIRAL BOOT</span>
+            <span class="ticker-text">SODA Lug Sole Chelsea Booties &bull; <strong>$34.50</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
           </a>
-          <a href="guides.html#viral-tiktok-square-neck-bodysuit-review" class="ticker-item">
-            <span class="ticker-badge">VIRAL EDIT</span>
-            <span>$25 TikTok Square-Neck Shapewear Romper Fit Test</span>
-            <span class="ticker-arrow">&rarr;</span>
+          <a href="products/oversized-trench-coat.html" class="ticker-item">
+            <span class="ticker-tag">CAPSULE STAPLE</span>
+            <span class="ticker-text">Double-Breasted Trench Coat &bull; <strong>$39.99</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
           </a>
-          <a href="guides.html#dresstells-review" class="ticker-item">
-            <span class="ticker-badge">TOP PICK</span>
-            <span>$44 Audrey Hepburn Vintage Cocktail Dress Review</span>
-            <span class="ticker-arrow">&rarr;</span>
+          <a href="products/retro-oval-sunglasses.html" class="ticker-item">
+            <span class="ticker-tag">QUIET LUXURY</span>
+            <span class="ticker-text">Retro Oval Sunglasses &bull; <strong>$14.99</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
           </a>
-          <a href="lookbook.html#outfit-01" class="ticker-item">
-            <span class="ticker-badge">STYLE GUIDE</span>
-            <span>Quiet Luxury Chic Street Style: Elevated Capsule Essentials</span>
-            <span class="ticker-arrow">&rarr;</span>
+          <a href="products/gold-huggie-hoop-earrings.html" class="ticker-item">
+            <span class="ticker-tag">EVERYDAY GLAM</span>
+            <span class="ticker-text">PAVOI 14K Gold Huggie Earrings &bull; <strong>$12.95</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
           </a>
-          <a href="lookbook.html#outfit-02" class="ticker-item">
-            <span class="ticker-badge">MEN'S EDIT</span>
-            <span>Clean Urban Minimalist Men's Street Style Edit</span>
-            <span class="ticker-arrow">&rarr;</span>
+          <a href="products/slouchy-hobo-shoulder-bag.html" class="ticker-item">
+            <span class="ticker-tag">STYLE TWIN</span>
+            <span class="ticker-text">Slouchy Vegan Leather Hobo Bag &bull; <strong>$28.90</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
           </a>
         </div>
+        <!-- Micro Controls -->
+        <div class="ticker-controls" aria-label="Ticker navigation">
+          <button class="ticker-nav-btn" id="ticker-prev-btn" aria-label="Previous announcement" title="Previous">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="ticker-nav-btn" id="ticker-next-btn" aria-label="Next announcement" title="Next">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
       </div>
-      <span class="disclosure-badge">Amazon Associate Partner � Verified US Prime Deals</span>
+
+      <!-- Prime Verified Trust Badge with Interactive Popover -->
+      <div class="disclosure-badge-container">
+        <button class="disclosure-badge" id="trust-popover-trigger" aria-expanded="false" aria-haspopup="true">
+          <svg class="trust-shield-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>Amazon Associate Partner &bull; Verified US Prime Deals</span>
+          <svg class="trust-chevron-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+
+        <div class="trust-popover-card" id="trust-popover" role="tooltip">
+          <div class="trust-popover-header">
+            <div class="trust-popover-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>LOOKIQ Trust &amp; Transparency Standard</span>
+            </div>
+          </div>
+          <ul class="trust-perks-list">
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <strong>Verified US Prime Deals</strong>
+                <p>Every curated staple is verified for fast Prime delivery &amp; authentic customer ratings.</p>
+              </div>
+            </li>
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              </div>
+              <div>
+                <strong>30-Day Free Prime Returns</strong>
+                <p>Fulfilled directly by Amazon US with zero-risk prepaid returns.</p>
+              </div>
+            </li>
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div>
+                <strong>FTC Compliance &amp; Ethics</strong>
+                <p>LOOKIQ earns qualifying commissions as an Amazon Associate at no extra cost to you.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </aside>
 
-  <!-- Header -->
+  <!-- Main Navigation Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-logo" aria-label="LOOKIQ Home">
@@ -396,18 +456,107 @@
         </div>
         <div class="logo-text-group">
           <span class="logo-text">LOOKIQ</span>
-          <span class="logo-sub">LOOKBOOK � THE CHIC EDIT</span>
+          <span class="logo-sub">LOOKBOOK &bull; THE CHIC EDIT</span>
         </div>
       </a>
+
       <nav class="main-nav" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">HOME</a>
-        <a href="look-for-less.html" class="nav-link">LOOK FOR LESS</a>
-        <a href="lookbook.html" class="nav-link active">LOOKBOOK</a>
-        <a href="shop.html" class="nav-link">SHOP</a>
+
+        <div class="nav-item-wrap">
+          <a href="look-for-less.html" class="nav-link">LOOK FOR LESS</a>
+          <div class="nav-dropdown dropdown-dupes" role="menu">
+            <div class="dropdown-header-bar">
+              <span class="dropdown-tag">Viral Style Twins</span>
+              <a href="look-for-less.html" class="dropdown-view-all">All 9 Dupes &rarr;</a>
+            </div>
+            <a href="products/oversized-trench-coat.html" class="dropdown-dupe-item">
+              <img src="assets/outfit-manhattan-trench.webp" alt="Burberry Dupe Trench Coat" loading="lazy" />
+              <div class="dropdown-dupe-info">
+                <h5>Burberry vs Farktop Trench</h5>
+                <div class="dropdown-dupe-meta">
+                  <span class="price">$39.99</span>
+                  <span class="savings">Save $2,550</span>
+                </div>
+              </div>
+            </a>
+            <a href="products/slouchy-hobo-shoulder-bag.html" class="dropdown-dupe-item">
+              <img src="assets/slouchy-hobo-bag.webp" alt="The Row Dupe Slouchy Hobo Bag" loading="lazy" />
+              <div class="dropdown-dupe-info">
+                <h5>The Row vs Slouchy Hobo</h5>
+                <div class="dropdown-dupe-meta">
+                  <span class="price">$28.90</span>
+                  <span class="savings">Save $1,461</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item-wrap">
+          <a href="lookbook.html" class="nav-link active">LOOKBOOK</a>
+          <div class="nav-dropdown dropdown-lookbook" role="menu">
+            <a href="lookbook.html#outfit-01" class="dropdown-look-card">
+              <img src="assets/outfit-manhattan-trench.webp" alt="Manhattan Trench Capsule" loading="lazy" />
+              <span>Manhattan Trench</span>
+            </a>
+            <a href="lookbook.html#outfit-02" class="dropdown-look-card">
+              <img src="assets/outfit-urban-minimalist-men.webp" alt="Urban Street Minimalist" loading="lazy" />
+              <span>Urban Minimalist</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-item-wrap">
+          <a href="shop.html" class="nav-link">SHOP</a>
+          <div class="nav-dropdown dropdown-categories" role="menu">
+            <a href="shop.html?category=under25" class="dropdown-cat-link">
+              <div class="dropdown-cat-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <span>Under $25 Deals</span>
+            </a>
+            <a href="shop.html?category=dupes" class="dropdown-cat-link">
+              <div class="dropdown-cat-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <span>Viral Dupes</span>
+            </a>
+            <a href="shop.html?category=women" class="dropdown-cat-link">
+              <div class="dropdown-cat-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </div>
+              <span>Women's Edit</span>
+            </a>
+            <a href="shop.html?category=men" class="dropdown-cat-link">
+              <div class="dropdown-cat-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+              </div>
+              <span>Men's Edit</span>
+            </a>
+          </div>
+        </div>
+
         <a href="guides.html" class="nav-link">GUIDES</a>
       </nav>
+
       <div class="header-actions">
-        <a href="shop.html" class="btn-primary" style="padding: 10px 22px; font-size: 0.85rem;">Shop All Finds</a>
+        <!-- Spotlight Quick Search Trigger -->
+        <button class="action-btn header-search-trigger" id="header-search-btn" title="Quick Search (Press / or Ctrl+K)" aria-label="Search Products">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Wishlist Button -->
+        <button class="action-btn wishlist-trigger" id="wishlist-header-btn" title="Saved Favorites" aria-label="Saved Favorites">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-counter" id="wishlist-counter">0</span>
+        </button>
+
         <!-- Mobile Hamburger Menu Button -->
         <button class="mobile-menu-toggle action-btn" id="mobile-menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

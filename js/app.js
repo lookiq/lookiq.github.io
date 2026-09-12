@@ -232,6 +232,10 @@ document.addEventListener("DOMContentLoaded", () => {
   renderOutfits();
   renderGuides();
   initTrendingTicker();
+  initHeaderScrollState();
+  initTrustBadge();
+  initSpotlightSearch();
+  initWishlistDrawer();
   setupEventListeners();
   handleDeepLink();
   window.addEventListener("hashchange", handleDeepLink);
@@ -703,6 +707,617 @@ document.addEventListener("DOMContentLoaded", () => {
     if (wishlistCounter) {
       wishlistCounter.textContent = wishlist.length;
     }
+    const drawerCount = document.getElementById("drawer-wishlist-count");
+    if (drawerCount) {
+      drawerCount.textContent = wishlist.length;
+    }
+  }
+
+  /**
+   * Quick View Modal Opener
+   */
+  window.openQuickView = function(productId) {
+    const product = PRODUCTS.find(p => p.id === productId);
+    if (!product || !quickViewModal) return;
+
+    const modalBody = quickViewModal.querySelector(".modal-body");
+    const safeTitle = (product.altText || product.title).replace(/'/g, "\\'");
+    
+    modalBody.innerHTML = `
+      <div class="quickview-layout">
+        <div class="quickview-img zoomable-img-box" id="qv-zoom-container" onclick="openLightbox('${product.image}', '${safeTitle}')" title="Click to expand fullscreen">
+          <div class="zoom-lens-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            <span>Roll over to zoom • Click to expand</span>
+          </div>
+          <img src="${product.image}" alt="${product.altText || product.title}" id="qv-zoom-target" decoding="async">
+        </div>
+        <div class="quickview-details">
+          <span class="quickview-badge">${product.badge}</span>
+          <h3 class="quickview-title">${product.title}</h3>
+          <div class="price-row" style="margin-bottom: 12px;">
+            <span class="current-price" style="font-size: 1.6rem;">${LOOKIQ_CONFIG.currency}${product.price.toFixed(2)}</span>
+            ${product.originalPrice ? `<span class="original-price">${LOOKIQ_CONFIG.currency}${product.originalPrice.toFixed(2)}</span>` : ""}
+          </div>
+          <p class="quickview-desc">${product.shortDesc}</p>
+          <ul class="quickview-features">
+            ${product.features.map(f => `<li>${f}</li>`).join("")}
+          </ul>
+          <a href="${product.amazonLink}" target="_blank" rel="nofollow sponsored noopener" class="btn-amazon-buy" style="margin-top: auto; padding: 14px 20px;" onclick="trackClick('${product.id}', 'quickview_btn')">
+            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px;">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+            <span>View Current Price on Amazon</span>
+          </a>
+          <button class="btn-quickview-pin" onclick="saveToPinterest('${product.id}', event)">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            <span>Save to Pinterest &bull; Pin Item</span>
+          </button>
+          <a href="products/${product.id}.html" class="quickview-details-link" style="display: block; text-align: center; margin-top: 10px; font-size: 0.84rem; color: var(--accent-gold); font-weight: 600; text-decoration: underline;">
+            View Dedicated Product Page &amp; Full Reviews &rarr;
+          </a>
+          <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 10px; text-align: center;">
+            Prime eligible • Free Returns available on Amazon.com
+          </p>
+        </div>
+      </div>
+    `;
+
+    // Attach interactive Pan-Zoom events
+    const zoomBox = document.getElementById("qv-zoom-container");
+    const zoomImg = document.getElementById("qv-zoom-target");
+    if (zoomBox && zoomImg) {
+      zoomBox.addEventListener("mousemove", (e) => {
+        const rect = zoomBox.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        zoomImg.style.transformOrigin = `${x}% ${y}%`;
+        zoomImg.style.transform = "scale(2.25)";
+      });
+      zoomBox.addEventListener("mouseleave", () => {
+        zoomImg.style.transform = "scale(1)";
+        zoomImg.style.transformOrigin = "center center";
+      });
+    }
+
+    quickViewModal.classList.add("active");
+  };
+
+  /**
+   * Shop The Look Outfit Modal Opener
+   */
+  window.openOutfitModal = function(outfitId) {
+    const outfit = OUTFITS.find(o => o.id === outfitId);
+    if (!outfit || !outfitModal) return;
+
+    const modalBody = outfitModal.querySelector(".modal-body");
+    modalBody.innerHTML = `
+      <div class="outfit-modal-layout">
+        <div class="outfit-modal-header">
+          <span class="section-tag">${outfit.tag}</span>
+          <h3>${outfit.title}</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">${outfit.description}</p>
+        </div>
+        <div class="outfit-modal-grid">
+          <div class="outfit-modal-img">
+            <img src="${outfit.image}" alt="${outfit.title}">
+            <button class="btn-pinterest-cta" style="margin-top: 14px; width: 100%;" onclick="saveOutfitToPinterest('${outfit.id}', event)">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+              <span>Save Full Look to Pinterest</span>
+            </button>
+          </div>
+          <div class="bundle-items-list">
+            <h4 style="font-size: 1.1rem; margin-bottom: 8px;">Complete the Outfit on Amazon:</h4>
+            ${outfit.items.map(item => `
+              <div class="bundle-item-card">
+                <div class="bundle-item-info">
+                  <h5>${item.name}</h5>
+                  <span>${item.category}</span>
+                </div>
+                <div class="bundle-item-action">
+                  <span class="bundle-item-price">${item.price}</span>
+                  <a href="${item.amazonLink}" target="_blank" rel="nofollow sponsored noopener" class="btn-bundle-buy">
+                    <span>Shop</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            `).join("")}
+            <div style="margin-top: 16px; padding: 14px; background: var(--bg-secondary); border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">
+              <strong style="color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.05em;">Style Tip:</strong> Adding all pieces to your Amazon cart qualifies for free US shipping and keeps your outfit coordinated effortlessly.
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    outfitModal.classList.add("active");
+  };
+
+  /**
+   * Close Any Open Modal
+   */
+  function closeModal() {
+    if (quickViewModal) quickViewModal.classList.remove("active");
+    if (outfitModal) outfitModal.classList.remove("active");
+  }
+
+  /**
+   * Elevated Auto-Rotating Trending Ticker with 3D Slide-Fade & Controls
+   */
+  function initTrendingTicker() {
+    const tickerItems = document.querySelectorAll(".ticker-item");
+    if (tickerItems.length <= 1) return;
+
+    let currentIndex = 0;
+    let tickerInterval = null;
+    let isPaused = false;
+
+    function goToTicker(nextIndex) {
+      const current = tickerItems[currentIndex];
+      const next = tickerItems[nextIndex];
+
+      current.classList.remove("active");
+      current.classList.add("exit");
+
+      setTimeout(() => {
+        current.classList.remove("exit");
+      }, 500);
+
+      next.classList.add("active");
+      currentIndex = nextIndex;
+    }
+
+    function showNextTicker() {
+      const nextIdx = (currentIndex + 1) % tickerItems.length;
+      goToTicker(nextIdx);
+    }
+
+    function showPrevTicker() {
+      const prevIdx = (currentIndex - 1 + tickerItems.length) % tickerItems.length;
+      goToTicker(prevIdx);
+    }
+
+    function startTicker() {
+      if (!tickerInterval && !isPaused) {
+        tickerInterval = setInterval(showNextTicker, 4500);
+      }
+    }
+
+    function stopTicker() {
+      if (tickerInterval) {
+        clearInterval(tickerInterval);
+        tickerInterval = null;
+      }
+    }
+
+    startTicker();
+
+    const tickerWrap = document.querySelector(".trending-ticker-wrap");
+    if (tickerWrap) {
+      tickerWrap.addEventListener("mouseenter", () => {
+        isPaused = true;
+        stopTicker();
+      });
+      tickerWrap.addEventListener("mouseleave", () => {
+        isPaused = false;
+        startTicker();
+      });
+    }
+
+    // Previous and Next button listeners
+    const prevBtn = document.getElementById("ticker-prev-btn");
+    const nextBtn = document.getElementById("ticker-next-btn");
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        showPrevTicker();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        showNextTicker();
+      });
+    }
+  }
+
+  /**
+   * Dynamic Sticky Header Scroll State
+   */
+  function initHeaderScrollState() {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 36) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Initial check
+    handleScroll();
+  }
+
+  /**
+   * Prime Verified Trust Popover Interactive Card
+   */
+  function initTrustBadge() {
+    const trigger = document.getElementById("trust-popover-trigger");
+    const popover = document.getElementById("trust-popover");
+    if (!trigger || !popover) return;
+
+    let timeoutId = null;
+
+    function openPopover() {
+      clearTimeout(timeoutId);
+      popover.classList.add("active");
+      trigger.setAttribute("aria-expanded", "true");
+    }
+
+    function closePopover() {
+      timeoutId = setTimeout(() => {
+        popover.classList.remove("active");
+        trigger.setAttribute("aria-expanded", "false");
+      }, 250);
+    }
+
+    trigger.addEventListener("mouseenter", openPopover);
+    trigger.addEventListener("mouseleave", closePopover);
+    popover.addEventListener("mouseenter", openPopover);
+    popover.addEventListener("mouseleave", closePopover);
+
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isActive = popover.classList.contains("active");
+      if (isActive) {
+        popover.classList.remove("active");
+        trigger.setAttribute("aria-expanded", "false");
+      } else {
+        openPopover();
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!popover.contains(e.target) && !trigger.contains(e.target)) {
+        popover.classList.remove("active");
+        trigger.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && popover.classList.contains("active")) {
+        popover.classList.remove("active");
+        trigger.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  /**
+   * Luxury Spotlight Quick Search Modal
+   */
+  function initSpotlightSearch() {
+    // Check if modal already in DOM, else inject
+    let overlay = document.getElementById("spotlight-modal");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "spotlight-modal";
+      overlay.className = "spotlight-modal-overlay";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute("aria-label", "Search Curated Collection");
+      overlay.innerHTML = `
+        <div class="spotlight-dialog">
+          <div class="spotlight-header">
+            <svg class="spotlight-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="spotlight-search-input" class="spotlight-input" placeholder="Search curated staples, dupes, bags, shoes..." autocomplete="off" />
+            <span class="spotlight-kbd">ESC</span>
+            <button class="spotlight-close-btn" id="spotlight-close" aria-label="Close search">&times;</button>
+          </div>
+          <div class="spotlight-body">
+            <div class="spotlight-quick-tags">
+              <span class="quick-tag-label">Popular:</span>
+              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Trench')">Trench</button>
+              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Dupe')">Dupe</button>
+              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Watch')">Watch</button>
+              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Sneakers')">Sneakers</button>
+              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Under $25')">Under $25</button>
+            </div>
+            <div class="spotlight-results" id="spotlight-results-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+    }
+
+    const searchInput = document.getElementById("spotlight-search-input");
+    const resultsContainer = document.getElementById("spotlight-results-list");
+    const closeBtn = document.getElementById("spotlight-close");
+
+    function openSearch() {
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+      setTimeout(() => {
+        if (searchInput) {
+          searchInput.focus();
+          searchInput.select();
+        }
+      }, 100);
+      renderSpotlightResults(searchInput ? searchInput.value : "");
+    }
+
+    function closeSearch() {
+      overlay.classList.remove("active");
+      document.body.style.overflow = "";
+      if (searchInput) searchInput.value = "";
+    }
+
+    window.openSpotlightSearch = openSearch;
+    window.closeSpotlightSearch = closeSearch;
+
+    window.runSpotlightSearch = function(tag) {
+      if (searchInput) {
+        searchInput.value = tag;
+        renderSpotlightResults(tag);
+        searchInput.focus();
+      }
+    };
+
+    function renderSpotlightResults(query) {
+      if (!resultsContainer) return;
+      const q = (query || "").trim().toLowerCase();
+
+      let matchedProducts = [];
+      if (!q) {
+        matchedProducts = PRODUCTS.slice(0, 5);
+      } else if (q === "under $25") {
+        matchedProducts = PRODUCTS.filter(p => p.price <= 25).slice(0, 6);
+      } else {
+        matchedProducts = PRODUCTS.filter(p => {
+          return (p.title && p.title.toLowerCase().includes(q)) ||
+                 (p.category && p.category.toLowerCase().includes(q)) ||
+                 (p.badge && p.badge.toLowerCase().includes(q)) ||
+                 (p.features && p.features.some(f => f.toLowerCase().includes(q))) ||
+                 (p.tags && p.tags.some(t => t.toLowerCase().includes(q)));
+        }).slice(0, 8);
+      }
+
+      if (matchedProducts.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="spotlight-empty-state">
+            <p>No curated pieces found matching "<strong>${escapeHtml(query)}</strong>"</p>
+            <a href="shop.html" class="btn-secondary" onclick="closeSpotlightSearch()" style="margin-top: 10px; display: inline-block;">Browse Full Shop Catalog &rarr;</a>
+          </div>
+        `;
+        return;
+      }
+
+      resultsContainer.innerHTML = matchedProducts.map(p => {
+        const affLink = getAffiliateLink(p.asin, p.amazonLink);
+        return `
+          <div class="spotlight-card">
+            <img src="${p.image}" alt="${p.title}" class="spotlight-thumb" loading="lazy" />
+            <div class="spotlight-info">
+              <span class="spotlight-category">${p.badge || p.category.toUpperCase()}</span>
+              <h4 class="spotlight-title">
+                <a href="products/${p.id}.html" onclick="closeSpotlightSearch()">${p.title}</a>
+              </h4>
+              <div class="spotlight-meta">
+                <span class="spotlight-price">$${p.price.toFixed(2)}</span>
+                <span class="spotlight-rating">${p.rating} ★ (${p.reviews.toLocaleString()} reviews)</span>
+              </div>
+            </div>
+            <div class="spotlight-action">
+              <a href="${affLink}" target="_blank" rel="nofollow sponsored" class="btn-spotlight-prime">Shop Prime &rarr;</a>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        renderSpotlightResults(e.target.value);
+      });
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", closeSearch);
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeSearch();
+    });
+
+    // Keyboard Shortcuts: '/' or 'Ctrl+K' or 'Cmd+K' to open; 'Escape' to close
+    document.addEventListener("keydown", (e) => {
+      const isInput = ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement.tagName);
+      if ((e.key === "/" && !isInput) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k")) {
+        e.preventDefault();
+        openSearch();
+      } else if (e.key === "Escape" && overlay.classList.contains("active")) {
+        closeSearch();
+      }
+    });
+
+    // Header search trigger button
+    const searchTrigger = document.getElementById("header-search-btn");
+    if (searchTrigger) {
+      searchTrigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        openSearch();
+      });
+    }
+  }
+
+  /**
+   * Luxury Slide-Out Wishlist Drawer (Offline localStorage Synchronized)
+   */
+  function initWishlistDrawer() {
+    let overlay = document.getElementById("wishlist-drawer-overlay");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "wishlist-drawer-overlay";
+      overlay.className = "wishlist-drawer-overlay";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute("aria-label", "Your Saved Favorites");
+      overlay.innerHTML = `
+        <div class="wishlist-drawer">
+          <div class="wishlist-drawer-header">
+            <div class="wishlist-drawer-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              <h3>Curated Wishlist (<span id="drawer-wishlist-count">0</span>)</h3>
+            </div>
+            <button class="wishlist-drawer-close" id="wishlist-drawer-close" aria-label="Close wishlist">&times;</button>
+          </div>
+          <div class="wishlist-drawer-body" id="wishlist-drawer-items">
+            <!-- Populated dynamically -->
+          </div>
+          <div class="wishlist-drawer-footer">
+            <a href="shop.html" class="btn-drawer-continue" onclick="closeWishlistDrawer()">Explore More Finds</a>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+    }
+
+    const drawerBody = document.getElementById("wishlist-drawer-items");
+    const closeBtn = document.getElementById("wishlist-drawer-close");
+
+    function openDrawer() {
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+      renderWishlistDrawerItems();
+    }
+
+    function closeDrawer() {
+      overlay.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    window.openWishlistDrawer = openDrawer;
+    window.closeWishlistDrawer = closeDrawer;
+
+    if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeDrawer();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && overlay.classList.contains("active")) {
+        closeDrawer();
+      }
+    });
+
+    function renderWishlistDrawerItems() {
+      if (!drawerBody) return;
+      const countEl = document.getElementById("drawer-wishlist-count");
+      if (countEl) countEl.textContent = wishlist.length;
+
+      if (wishlist.length === 0) {
+        drawerBody.innerHTML = `
+          <div class="wishlist-empty-state">
+            <div class="wishlist-empty-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h4>Your Closet is Empty</h4>
+            <p>Curate your personal capsule wardrobe by tapping the heart icon on any piece.</p>
+            <a href="shop.html" class="btn-primary" onclick="closeWishlistDrawer()" style="padding: 8px 18px; font-size: 0.8rem; text-decoration: none;">Browse Curated Finds</a>
+          </div>
+        `;
+        return;
+      }
+
+      const savedProducts = PRODUCTS.filter(p => wishlist.includes(p.id));
+
+      if (savedProducts.length === 0) {
+        drawerBody.innerHTML = `
+          <div class="wishlist-empty-state">
+            <div class="wishlist-empty-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h4>Your Closet is Empty</h4>
+            <p>Curate your personal capsule wardrobe by tapping the heart icon on any piece.</p>
+            <a href="shop.html" class="btn-primary" onclick="closeWishlistDrawer()" style="padding: 8px 18px; font-size: 0.8rem; text-decoration: none;">Browse Curated Finds</a>
+          </div>
+        `;
+        return;
+      }
+
+      drawerBody.innerHTML = savedProducts.map(p => {
+        const affLink = getAffiliateLink(p.asin, p.amazonLink);
+        return `
+          <div class="wishlist-item" id="wishlist-item-${p.id}">
+            <img src="${p.image}" alt="${p.title}" />
+            <div class="wishlist-item-details">
+              <h4>${p.title}</h4>
+              <div class="wishlist-item-price">$${p.price.toFixed(2)}</div>
+              <div class="wishlist-item-actions">
+                <a href="${affLink}" target="_blank" rel="nofollow sponsored" class="btn-wishlist-buy">
+                  <span>Shop Prime</span>
+                  <span>&rarr;</span>
+                </a>
+                <a href="products/${p.id}.html" class="btn-wishlist-details" onclick="closeWishlistDrawer()">Details</a>
+                <button class="btn-wishlist-remove" onclick="removeWishlistItem('${p.id}', event)" title="Remove from Wishlist" aria-label="Remove">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    window.removeWishlistItem = function(id, event) {
+      if (event) event.stopPropagation();
+      toggleWishlist(id);
+      renderWishlistDrawerItems();
+    };
+
+    const wishlistBtns = document.querySelectorAll(".action-btn[title='Saved Favorites'], #wishlist-header-btn");
+    wishlistBtns.forEach(btn => {
+      btn.onclick = function(e) {
+        if (e) e.preventDefault();
+        openWishlistDrawer();
+      };
+    });
   }
 
   /**
