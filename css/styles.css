@@ -4012,7 +4012,7 @@ input, select {
 }
 
 /* ============================================================
-   BACK TO TOP BUTTON — Quiet Luxury Floating Action
+   BACK TO TOP BUTTON ï¿½ Quiet Luxury Floating Action
    ============================================================ */
 .back-to-top {
   position: fixed;
@@ -4063,4 +4063,40 @@ input, select {
     width: 40px;
     height: 40px;
   }
+}
+
+/* Quiet Luxury Social Micro-Icon Bar (Rule 2 Compliance) */
+.footer-social-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.social-micro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card, rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(201, 151, 56, 0.25);
+  color: var(--accent-gold, #c99738);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-micro-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-gold, #c99738);
+  background: rgba(201, 151, 56, 0.14);
+  box-shadow: 0 4px 14px rgba(201, 151, 56, 0.22);
+  color: #fff2d6;
+}
+
+.social-micro-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
 }
