@@ -1,0 +1,45 @@
+{
+  "name": "LOOKIQ — Smart Fashion Finds",
+  "short_name": "LOOKIQ",
+  "description": "Curated quiet luxury fashion finds, Amazon outfit lookbooks, and style twins under $150.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08080b",
+  "theme_color": "#08080b",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["fashion", "lifestyle", "shopping"],
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/outfit-manhattan-trench.webp",
+      "sizes": "800x1200",
+      "type": "image/webp",
+      "label": "LOOKIQ curated fashion lookbook"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Shop The Look",
+      "short_name": "Shop",
+      "description": "Browse curated outfit lookbooks",
+      "url": "/lookbook.html",
+      "icons": [{ "src": "assets/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Look for Less",
+      "short_name": "Dupes",
+      "description": "Find designer lookalikes on Amazon",
+      "url": "/look-for-less.html",
+      "icons": [{ "src": "assets/favicon.svg", "sizes": "any" }]
+    }
+  ]
+}
