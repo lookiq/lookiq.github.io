@@ -794,11 +794,12 @@ input, select {
 }
 
 .hero-desc {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--text-secondary);
-  margin: 0 auto 22px;
-  max-width: 720px;
-  line-height: 1.65;
+  margin: 0 auto 14px;
+  max-width: 680px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 
 /* 3D Carousel Stage (Cover-Flow Curved Perspective) */
