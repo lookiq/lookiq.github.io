@@ -44,8 +44,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Preload Critical 3D Runway Hero Images -->
+  <link rel="preload" as="image" href="assets/outfit-manhattan-trench.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/sojos-retro-sunglasses.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/pavoi-huggie-earrings.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/slouchy-hobo-bag.webp" type="image/webp">
+
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=9.2">
+  <link rel="stylesheet" href="css/styles.css?v=9.3">
 
   <!-- Schema.org JSON-LD for Google Rich Snippets -->
   <script type="application/ld+json">
@@ -985,8 +991,8 @@
         </button>
 
         <div class="carousel-3d-track" id="track">
-          <!-- 8 3D Curated Cards -->
-          <article class="card-3d" data-index="0" role="group" aria-roledescription="slide" aria-label="1 of 8: Farktop Double-Breasted Long Trench Coat">
+          <!-- 8 3D Curated Cards (Pre-positioned for Instant 0-Lag 3D First Paint) -->
+          <article class="card-3d is-active" data-index="0" role="group" aria-roledescription="slide" aria-label="1 of 8: Farktop Double-Breasted Long Trench Coat" style="--x: 0px; --y: 0px; --z: 0px; --ry: 0deg; --scale: 1; opacity: 1; z-index: 50;">
             <img src="assets/outfit-manhattan-trench.webp" alt="Farktop Double-Breasted Long Trench Coat" fetchpriority="high" decoding="async">
             <span class="card-badge-num">#01</span>
             <span class="card-badge-price">$39.99</span>
@@ -996,8 +1002,8 @@
             </span>
           </article>
 
-          <article class="card-3d" data-index="1" role="group" aria-roledescription="slide" aria-label="2 of 8: SOJOS Retro Oval Polarized Sunglasses">
-            <img src="assets/sojos-retro-sunglasses.webp" alt="SOJOS Retro Oval Polarized Sunglasses" loading="lazy" decoding="async">
+          <article class="card-3d" data-index="1" role="group" aria-roledescription="slide" aria-label="2 of 8: SOJOS Retro Oval Polarized Sunglasses" style="--x: 250px; --y: 14px; --z: -95px; --ry: -20deg; --scale: 0.88; opacity: 0.78; z-index: 40;">
+            <img src="assets/sojos-retro-sunglasses.webp" alt="SOJOS Retro Oval Polarized Sunglasses" fetchpriority="high" decoding="async">
             <span class="card-badge-num">#02</span>
             <span class="card-badge-price">$15.99</span>
             <span class="card-badge-rating">
@@ -1006,8 +1012,8 @@
             </span>
           </article>
 
-          <article class="card-3d" data-index="2" role="group" aria-roledescription="slide" aria-label="3 of 8: Soft Vegan Leather Slouchy Hobo Shoulder Bag">
-            <img src="assets/slouchy-hobo-bag.webp" alt="Soft Vegan Leather Slouchy Hobo Shoulder Bag" loading="lazy" decoding="async">
+          <article class="card-3d" data-index="2" role="group" aria-roledescription="slide" aria-label="3 of 8: Soft Vegan Leather Slouchy Hobo Shoulder Bag" style="--x: 500px; --y: 39px; --z: -242px; --ry: -40deg; --scale: 0.76; opacity: 0.56; z-index: 30;">
+            <img src="assets/slouchy-hobo-bag.webp" alt="Soft Vegan Leather Slouchy Hobo Shoulder Bag" decoding="async">
             <span class="card-badge-num">#03</span>
             <span class="card-badge-price">$28.90</span>
             <span class="card-badge-rating">
@@ -1016,8 +1022,8 @@
             </span>
           </article>
 
-          <article class="card-3d" data-index="3" role="group" aria-roledescription="slide" aria-label="4 of 8: ANRABESS Chunky Batwing Turtleneck Sweater">
-            <img src="assets/outfit-autumn-chai.webp" alt="ANRABESS Chunky Batwing Turtleneck Sweater" loading="lazy" decoding="async">
+          <article class="card-3d" data-index="3" role="group" aria-roledescription="slide" aria-label="4 of 8: ANRABESS Chunky Batwing Turtleneck Sweater" style="--x: 750px; --y: 0px; --z: -450px; --ry: -60deg; --scale: 0.4; opacity: 0; z-index: 10; pointer-events: none;">
+            <img src="assets/outfit-autumn-chai.webp" alt="ANRABESS Chunky Batwing Turtleneck Sweater" decoding="async">
             <span class="card-badge-num">#04</span>
             <span class="card-badge-price">$39.99</span>
             <span class="card-badge-rating">
@@ -1026,8 +1032,8 @@
             </span>
           </article>
 
-          <article class="card-3d" data-index="4" role="group" aria-roledescription="slide" aria-label="5 of 8: Nimin High-Waisted Wide-Leg Pleated Trousers">
-            <img src="assets/nimin-trouser-pants.webp" alt="Nimin High-Waisted Wide-Leg Pleated Trousers" loading="lazy" decoding="async">
+          <article class="card-3d" data-index="4" role="group" aria-roledescription="slide" aria-label="5 of 8: Nimin High-Waisted Wide-Leg Pleated Trousers" style="--x: 1000px; --y: 0px; --z: -450px; --ry: -80deg; --scale: 0.4; opacity: 0; z-index: 10; pointer-events: none;">
+            <img src="assets/nimin-trouser-pants.webp" alt="Nimin High-Waisted Wide-Leg Pleated Trousers" decoding="async">
             <span class="card-badge-num">#05</span>
             <span class="card-badge-price">$34.99</span>
             <span class="card-badge-rating">
@@ -1036,8 +1042,8 @@
             </span>
           </article>
 
-          <article class="card-3d" data-index="5" role="group" aria-roledescription="slide" aria-label="6 of 8: Ekouaer Casual Button-Down Beach Shirt Coverup">
-            <img src="assets/outfit-amalfi-resort.webp" alt="Ekouaer Casual Button-Down Beach Shirt Coverup" loading="lazy" decoding="async">
+          <article class="card-3d" data-index="5" role="group" aria-roledescription="slide" aria-label="6 of 8: Ekouaer Casual Button-Down Beach Shirt Coverup" style="--x: -1000px; --y: 0px; --z: -450px; --ry: 80deg; --scale: 0.4; opacity: 0; z-index: 10; pointer-events: none;">
+            <img src="assets/outfit-amalfi-resort.webp" alt="Ekouaer Casual Button-Down Beach Shirt Coverup" decoding="async">
             <span class="card-badge-num">#06</span>
             <span class="card-badge-price">$29.99</span>
             <span class="card-badge-rating">
@@ -1046,8 +1052,8 @@
             </span>
           </article>
 
-          <article class="card-3d" data-index="6" role="group" aria-roledescription="slide" aria-label="7 of 8: SODA Chance Lug Sole Chelsea Ankle Booties">
-            <img src="assets/soda-chelsea-booties.webp" alt="SODA Chance Lug Sole Chelsea Ankle Booties" loading="lazy" decoding="async">
+          <article class="card-3d" data-index="6" role="group" aria-roledescription="slide" aria-label="7 of 8: SODA Chance Lug Sole Chelsea Ankle Booties" style="--x: -500px; --y: 39px; --z: -242px; --ry: 40deg; --scale: 0.76; opacity: 0.56; z-index: 30;">
+            <img src="assets/soda-chelsea-booties.webp" alt="SODA Chance Lug Sole Chelsea Ankle Booties" decoding="async">
             <span class="card-badge-num">#07</span>
             <span class="card-badge-price">$34.50</span>
             <span class="card-badge-rating">
@@ -1056,8 +1062,8 @@
             </span>
           </article>
 
-          <article class="card-3d" data-index="7" role="group" aria-roledescription="slide" aria-label="8 of 8: PAVOI 14K Gold Plated Thick Huggie Hoop Earrings">
-            <img src="assets/pavoi-huggie-earrings.webp" alt="PAVOI 14K Gold Plated Thick Huggie Hoop Earrings" loading="lazy" decoding="async">
+          <article class="card-3d" data-index="7" role="group" aria-roledescription="slide" aria-label="8 of 8: PAVOI 14K Gold Plated Thick Huggie Hoop Earrings" style="--x: -250px; --y: 14px; --z: -95px; --ry: 20deg; --scale: 0.88; opacity: 0.78; z-index: 40;">
+            <img src="assets/pavoi-huggie-earrings.webp" alt="PAVOI 14K Gold Plated Thick Huggie Hoop Earrings" fetchpriority="high" decoding="async">
             <span class="card-badge-num">#08</span>
             <span class="card-badge-price">$12.95</span>
             <span class="card-badge-rating">
