@@ -979,7 +979,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const total = cards.length;
     let activeIndex = 0;
     let timer = null;
-    const interval = 5500; // 5.5s gentle auto-rotation
+    const interval = 3400; // 3.4s fast & engaging auto-rotation
 
     const detailTag = document.getElementById("detail-tag");
     const detailTitle = document.getElementById("detail-title");
@@ -1189,7 +1189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stage.addEventListener("mousemove", (e) => {
       if (!isDragging) return;
       const dx = e.clientX - startX;
-      if (Math.abs(dx) > 55) {
+      if (Math.abs(dx) > 28) {
         if (dx < 0) next();
         else prev();
         isDragging = false;
@@ -1206,7 +1206,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stage.addEventListener("touchend", (e) => {
       if (!e.changedTouches || !e.changedTouches[0]) return;
       const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) {
+      if (Math.abs(dx) > 22) {
         if (dx < 0) next();
         else prev();
       }
