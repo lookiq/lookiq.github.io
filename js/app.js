@@ -979,7 +979,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const total = cards.length;
     let activeIndex = 0;
     let timer = null;
-    const interval = 3400; // 3.4s fast & engaging auto-rotation
+    const interval = 2000; // 2.0s continuous dynamic auto-rotation
 
     const detailTag = document.getElementById("detail-tag");
     const detailTitle = document.getElementById("detail-title");
@@ -1213,15 +1213,17 @@ document.addEventListener("DOMContentLoaded", () => {
       startAutoplay();
     }, { passive: true });
 
+    stage.addEventListener("touchcancel", () => {
+      startAutoplay();
+    }, { passive: true });
+
     // Keyboard navigation
     window.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") { next(); startAutoplay(); }
       if (e.key === "ArrowLeft") { prev(); startAutoplay(); }
     });
 
-    // Pause on hover
-    stage.addEventListener("mouseenter", stopAutoplay);
-    stage.addEventListener("mouseleave", startAutoplay);
+    // Continuous rotation - Never stop on simple hover (always stays active)
 
     // Responsive recalculation on resize
     window.addEventListener("resize", updateCarousel);
