@@ -1089,14 +1089,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const zOffset = -Math.pow(absDiff, 1.35) * zStep;
         const yRotation = diff * -20;
         const yOffset = Math.pow(absDiff, 1.5) * yStep;
-        const scale = Math.max(0.65, 1 - absDiff * 0.12);
-        const opacity = Math.max(0.2, 1 - absDiff * 0.22);
+        const scale = Math.max(0.68, 1 - absDiff * 0.11);
+        const opacity = Math.max(0.48, 1 - absDiff * 0.18);
         const zIndex = 50 - Math.round(absDiff * 10);
 
         card.style.opacity = opacity;
         card.style.zIndex = zIndex;
         card.style.pointerEvents = "auto";
-        card.style.filter = isActive ? "none" : "brightness(0.72) blur(0.3px)";
+        card.style.filter = isActive ? "none" : "brightness(0.96) contrast(1.04)";
 
         // Set CSS custom variables for dynamic 3D geometry & smooth CSS hover
         card.style.setProperty("--x", `${xOffset}px`);
