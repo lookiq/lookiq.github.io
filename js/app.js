@@ -1223,7 +1223,32 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "ArrowLeft") { prev(); startAutoplay(); }
     });
 
-    // Continuous rotation - Never stop on simple hover (always stays active)
+    // Pause on card / detail hover and resume immediately when cursor or finger leaves
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", stopAutoplay);
+      card.addEventListener("mouseleave", startAutoplay);
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener("mouseenter", stopAutoplay);
+      prevBtn.addEventListener("mouseleave", startAutoplay);
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("mouseenter", stopAutoplay);
+      nextBtn.addEventListener("mouseleave", startAutoplay);
+    }
+
+    const detailPanel = document.getElementById("detail-panel");
+    if (detailPanel) {
+      detailPanel.addEventListener("mouseenter", stopAutoplay);
+      detailPanel.addEventListener("mouseleave", startAutoplay);
+    }
+
+    // Tab visibility handling (pause when tab hidden, resume when active)
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopAutoplay();
+      else startAutoplay();
+    });
 
     // Responsive recalculation on resize
     window.addEventListener("resize", updateCarousel);
