@@ -1262,3 +1262,30 @@ document.addEventListener("DOMContentLoaded", () => {
   init3DCurvedCarousel();
 });
 
+
+/* ============================================================
+   BACK TO TOP — Quiet Luxury Floating Button Logic
+   ============================================================ */
+(function () {
+  // Inject button into every page
+  const btn = document.createElement('button');
+  btn.className = 'back-to-top';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.setAttribute('title', 'Back to top');
+  btn.innerHTML = <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>;
+  document.body.appendChild(btn);
+
+  // Show after 320px scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 320) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  // Smooth scroll to top on click
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
