@@ -56,21 +56,31 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cat === "all") return true;
     if (cat === "under25") return product.price <= 25;
     if (cat === "women") {
-      return product.category === "women" || (product.tags && product.tags.some(t => t.toLowerCase().includes("women") || t.toLowerCase().includes("dress") || t.toLowerCase().includes("romper")));
+      return product.category === "women" ||
+             (product.category !== "men" && (!product.tags || !product.tags.includes("Men")));
     }
     if (cat === "men") {
-      return product.category === "men" || (product.tags && product.tags.some(t => t.toLowerCase().includes("men")));
+      return product.category === "men" ||
+             (product.tags && product.tags.some(t => t.toLowerCase().includes("men"))) ||
+             (product.id && product.id.includes("mens"));
     }
     if (cat === "shoes") {
-      return (product.subCategory && product.subCategory.toLowerCase().includes("shoe")) ||
-             (product.tags && product.tags.some(t => t.toLowerCase().includes("sneaker") || t.toLowerCase().includes("boot")));
+      return product.category === "shoes" ||
+             (product.subCategory && /shoe|boot|footwear/i.test(product.subCategory)) ||
+             (product.tags && product.tags.some(t => /sneaker|boot|shoe|footwear/i.test(t)));
     }
     if (cat === "accessories") {
       return product.category === "accessories" ||
-             (product.subCategory && (product.subCategory.toLowerCase().includes("bag") || product.subCategory.toLowerCase().includes("jewelry") || product.subCategory.toLowerCase().includes("eyewear") || product.subCategory.toLowerCase().includes("hat") || product.subCategory.toLowerCase().includes("watch")));
+             (product.subCategory && /bag|jewelry|eyewear|hat|watch|tote/i.test(product.subCategory));
     }
     if (cat === "dupes") {
-      return (product.badge && product.badge.toLowerCase().includes("dupe")) ||
+      const dupeIds = [
+        "retro-oval-sunglasses", "classic-white-sneakers", "slouchy-hobo-shoulder-bag",
+        "square-neck-workout-romper", "oversized-trench-coat", "vintage-cocktail-dress",
+        "straw-beach-tote", "minimalist-mens-leather-watch", "mens-white-tennis-sneakers"
+      ];
+      return dupeIds.includes(product.id) ||
+             (product.badge && product.badge.toLowerCase().includes("dupe")) ||
              (product.tags && product.tags.some(t => t.toLowerCase().includes("dupe")));
     }
     return product.category === cat;
@@ -493,6 +503,17 @@ document.addEventListener("DOMContentLoaded", () => {
         tab.classList.add("active");
         currentCategory = tab.dataset.category;
         currentPage = 1;
+
+        // Auto-resolve filter conflicts so switching category never traps user in an empty state
+        const testMatches = PRODUCTS.filter(p => matchCategory(p, currentCategory) && matchPrice(p, currentPriceFilter) && matchSearch(p, searchQuery));
+        if (testMatches.length === 0) {
+          currentPriceFilter = "all";
+          if (priceFilter) priceFilter.value = "all";
+          searchQuery = "";
+          if (searchInput) searchInput.value = "";
+          if (searchClearBtn) searchClearBtn.style.display = "none";
+        }
+
         renderProducts();
       });
     });
@@ -583,6 +604,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     currentPage = 1;
+
+    // Auto-resolve filter conflicts so switching category never traps user in an empty state
+    const testMatches = PRODUCTS.filter(p => matchCategory(p, currentCategory) && matchPrice(p, currentPriceFilter) && matchSearch(p, searchQuery));
+    if (testMatches.length === 0) {
+      currentPriceFilter = "all";
+      if (priceFilter) priceFilter.value = "all";
+      searchQuery = "";
+      if (searchInput) searchInput.value = "";
+      if (searchClearBtn) searchClearBtn.style.display = "none";
+    }
+
     renderProducts();
   };
 
@@ -808,21 +840,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (quickViewModal) quickViewModal.classList.remove("active");
     if (outfitModal) outfitModal.classList.remove("active");
   }
-
-  /**
-   * Reset Filters helper
-   */
-  window.resetFilters = function() {
-    currentCategory = "all";
-    currentPriceFilter = "all";
-    searchQuery = "";
-    currentPage = 1;
-    if (searchInput) searchInput.value = "";
-    if (priceFilter) priceFilter.value = "all";
-    categoryTabs.forEach(t => t.classList.remove("active"));
-    if (categoryTabs[0]) categoryTabs[0].classList.add("active");
-    renderProducts();
-  };
 
   /**
    * Auto-Rotating Trending Ticker
