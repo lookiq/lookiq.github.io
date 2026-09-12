@@ -738,7 +738,7 @@ input, select {
    ========================================================================== */
 .hero-section.hero-3d-showcase {
   position: relative;
-  padding: 50px 0 85px;
+  padding: 50px 0 55px;
   overflow: hidden;
   background: radial-gradient(circle at 50% 8%, rgba(201, 151, 56, 0.12) 0%, rgba(8, 8, 11, 0) 72%);
 }
@@ -1083,12 +1083,6 @@ input, select {
   margin-top: 14px;
 }
 
-/* Trust Strip Centered */
-.center-strip {
-  justify-content: center;
-  margin-top: 22px;
-}
-
 /* Responsive Styles for 3D Runway */
 @media (max-width: 992px) {
   .carousel-3d-stage {
@@ -1107,7 +1101,7 @@ input, select {
 
 @media (max-width: 768px) {
   .hero-section.hero-3d-showcase {
-    padding: 30px 0 50px;
+    padding: 30px 0 38px;
   }
   .hero-title {
     font-size: clamp(1.8rem, 6vw, 2.3rem);
