@@ -2846,7 +2846,7 @@ input, select {
 }
 
 .quickview-features li::before {
-  content: '✓';
+  content: '\2713';
   color: #10b981;
   font-weight: bold;
 }
@@ -3135,12 +3135,12 @@ input, select {
   line-height: 1.6;
 }
 .pro-card ul li::before {
-  content: "✓ ";
+  content: "\2713\0020";
   color: #16a34a;
   font-weight: bold;
 }
 .con-card ul li::before {
-  content: "✕ ";
+  content: "\2715\0020";
   color: #dc2626;
   font-weight: bold;
 }
