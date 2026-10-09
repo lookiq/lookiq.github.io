@@ -1,0 +1,20 @@
+{
+  "affiliate_tag": "likeefashionh-20",
+  "base_url": "https://lookiq.github.io",
+  "site_name": "LOOKIQ",
+  "telegram_bot_token": "",
+  "telegram_authorized_users": [],
+  "webhook_url": "",
+  "default_category": "women",
+  "default_tags": ["Amazon Fashion", "Quiet Luxury", "Capsule Wardrobe", "Amazon Finds"],
+  "pin_dimensions": {
+    "width": 1000,
+    "height": 1500
+  },
+  "quiet_luxury_palette": {
+    "noir": "#08080b",
+    "charcoal": "#141113",
+    "cream": "#faf8f5",
+    "gold": "#c99738"
+  }
+}

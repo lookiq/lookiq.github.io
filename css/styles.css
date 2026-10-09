@@ -287,7 +287,8 @@ input, select {
     justify-content: center;
     gap: 10px;
   }
-  .announcement-bar .disclosure-badge {
+  .announcement-bar .disclosure-badge,
+  .social-links-announcement {
     display: none;
   }
 }
@@ -390,6 +391,70 @@ input, select {
   font-weight: 600;
   letter-spacing: 0.04em;
   flex-shrink: 0;
+}
+
+/* Announcement Bar Luxury Social Pill Badges */
+.social-links-announcement {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.social-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08) 0%, rgba(22, 18, 22, 0.9) 100%);
+  border: 1px solid rgba(201, 151, 56, 0.35);
+  color: #f7eedc;
+  padding: 4px 13px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: inset 0 1px 1px rgba(255, 242, 214, 0.15), 0 2px 8px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-pill-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 242, 214, 0.25), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.social-pill-link:hover {
+  background: radial-gradient(circle at 30% 30%, rgba(201, 151, 56, 0.22) 0%, rgba(22, 18, 22, 0.95) 100%);
+  border-color: rgba(245, 214, 123, 0.85);
+  box-shadow: 0 4px 16px rgba(201, 151, 56, 0.28), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transform: translateY(-1.5px);
+}
+
+.social-pill-link:hover::before {
+  left: 100%;
+}
+
+.social-pill-link svg {
+  color: var(--accent-gold);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.social-pill-link:hover svg {
+  transform: scale(1.15);
+  color: #fff2d6;
 }
 
 /* ==========================================================================
@@ -4069,7 +4134,7 @@ input, select {
 .footer-social-bar {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-top: 18px;
 }
 
@@ -4077,28 +4142,55 @@ input, select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--bg-card, rgba(255, 255, 255, 0.04));
-  border: 1px solid rgba(201, 151, 56, 0.25);
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.08) 0%, rgba(18, 15, 18, 0.95) 100%);
+  border: 1px solid rgba(201, 151, 56, 0.35);
   color: var(--accent-gold, #c99738);
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 1px rgba(255, 242, 214, 0.18), 0 3px 12px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-micro-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 242, 214, 0.3), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
 }
 
 .social-micro-btn:hover {
-  transform: translateY(-2px);
-  border-color: var(--accent-gold, #c99738);
-  background: rgba(201, 151, 56, 0.14);
-  box-shadow: 0 4px 14px rgba(201, 151, 56, 0.22);
-  color: #fff2d6;
+  transform: translateY(-3px) scale(1.08);
+  border-color: rgba(245, 214, 123, 0.85);
+  background: radial-gradient(circle at 35% 35%, rgba(201, 151, 56, 0.28) 0%, rgba(18, 15, 18, 0.95) 100%);
+  box-shadow: 0 8px 24px rgba(201, 151, 56, 0.32), inset 0 1px 2px rgba(255, 255, 255, 0.35);
+  color: #fff9ed;
+}
+
+.social-micro-btn:hover::before {
+  left: 120%;
 }
 
 .social-micro-btn svg {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-micro-btn:hover svg {
+  transform: scale(1.12);
 }
 
 
