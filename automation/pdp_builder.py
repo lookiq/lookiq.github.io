@@ -7,8 +7,12 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     Generates a full production-grade LookiQ Product Detail Page (PDP).
     """
     slug = product["slug"]
-    title = product["raw_title"]
     brand = product["brand"]
+    raw_title = product["raw_title"]
+    if raw_title.lower().startswith(brand.lower()):
+        title = raw_title
+    else:
+        title = f"{brand} {raw_title}"
     price = product["price"]
     price_num = re.sub(r'[^0-9.]', '', price) or "29.99"
     rating = product.get("rating", 4.5)
@@ -20,7 +24,7 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     bullets = product.get("bullets", [])
     bullets_html = "".join([f"<li>{b}</li>" for b in bullets[:4]]) or "<li>Ultra-soft premium fabric with tailored drape and all-day comfort.</li><li>Verified Amazon Prime deal with easy 30-day returns.</li>"
 
-    description = f"Curated Amazon fashion staple: {brand} {title}. Features premium tailoring, flattering silhouette, and verified customer ratings for {price}."
+    description = f"Curated Amazon fashion staple: {title}. Features premium tailoring, flattering silhouette, and verified customer ratings for {price}."
 
     html = f"""<!DOCTYPE html>
 <html lang="en">

@@ -114,25 +114,31 @@ def run_bot():
                 if text == "/start" or text == "/help":
                     welcome_text = (
                         "<b>LOOKIQ Automation Bot Active</b>\n\n"
-                        "Send me any Amazon product link (e.g. <code>https://amzn.to/...</code> or <code>https://amazon.com/...</code>).\n\n"
+                        "Send me any Amazon product link (e.g. <code>amzn.to</code>, <code>link.amazon</code>, <code>a.co</code>, or <code>amazon.com</code>).\n\n"
                         "I will automatically:\n"
                         "1. Generate a high-converting Product Page on LOOKIQ.\n"
                         "2. Format a luxury 2:3 Pinterest Pin image.\n"
                         "3. Inject into Pinterest Auto-Publish Feed.\n"
                         "4. Commit and push live to GitHub Pages.\n"
-                        "5. Generate ready-to-copy captions for Instagram, Facebook &amp; TikTok!"
+                        "5. Generate ready-to-copy captions for Instagram, Facebook, TikTok &amp; X (Twitter)!"
                     )
                     send_message(chat_id, welcome_text, token)
                     continue
 
                 # Check if text contains an Amazon link
-                url_match = re.search(r'(https?://(?:www\.)?(?:amazon\.com|amzn\.to)\S+)', text)
-                if not url_match:
-                    send_message(chat_id, "Please send a valid Amazon product URL (amazon.com or amzn.to).", token)
+                url_matches = re.findall(r'(https?://[^\s<>"\'()]+)', text)
+                amazon_url = None
+                for u in url_matches:
+                    u_clean = u.rstrip('.,;!?')
+                    if any(k in u_clean.lower() for k in ['amazon.', 'amzn.to', 'a.co', 'amzlinks.', 'link.amazon']):
+                        amazon_url = u_clean
+                        break
+
+                if not amazon_url:
+                    send_message(chat_id, "Please send a valid Amazon product URL (e.g. amazon.com, amzn.to, link.amazon, or a.co).", token)
                     continue
 
-                amazon_url = url_match.group(1)
-                send_message(chat_id, f"Processing Amazon product... Please wait ~15 seconds.", token)
+                send_message(chat_id, "Processing Amazon product... Please wait ~15 seconds.", token)
 
                 # Execute pipeline
                 try:
@@ -143,8 +149,11 @@ def run_bot():
                     socials = result["socials"]
 
                     # 1. Send 2:3 Pin Image
+                    raw_t = product['raw_title']
+                    b_name = product['brand']
+                    disp_t = raw_t if raw_t.lower().startswith(b_name.lower()) else f"{b_name} - {raw_t}"
                     pin_caption = (
-                        f"<b>{product['brand']} - {product['raw_title'][:50]}</b>\n"
+                        f"<b>{disp_t[:60]}</b>\n"
                         f"Price: {product['price']} | ASIN: {product['asin']}\n\n"
                         f"Live Website URL:\n{pdp_url}\n\n"
                         f"Pinterest RSS Status: Queued for auto-publish"
@@ -163,6 +172,15 @@ def run_bot():
                         f"<code>{socials['facebook']['caption']}</code>"
                     )
                     send_message(chat_id, fb_text, token)
+
+                    # 3. Send X (Twitter) Post with 1-Click Intent
+                    x_data = socials.get("x", {})
+                    x_text = (
+                        f"<b>X / Twitter Post (Ready to Copy):</b>\n\n"
+                        f"<code>{x_data.get('text', '')}</code>\n\n"
+                        f"<a href=\"{x_data.get('intent_url', '')}\">1-Click Post to X (Twitter)</a>"
+                    )
+                    send_message(chat_id, x_text, token)
 
                 except Exception as err:
                     print(f"[TelegramBot] Pipeline failed: {err}")

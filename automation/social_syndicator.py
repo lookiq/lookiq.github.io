@@ -9,7 +9,11 @@ def generate_social_captions(product: dict, site_base_url: str = "https://lookiq
     """
     slug = product["slug"]
     brand = product["brand"]
-    title = product["raw_title"]
+    raw_title = product["raw_title"]
+    if raw_title.lower().startswith(brand.lower()):
+        title = raw_title
+    else:
+        title = f"{brand} {raw_title}"
     price = product["price"]
     rating = product.get("rating", 4.5)
     reviews = product.get("review_count", 1000)
@@ -17,18 +21,18 @@ def generate_social_captions(product: dict, site_base_url: str = "https://lookiq
     pin_image_url = f"{site_base_url}/assets/pins/{slug}-pin.jpg"
 
     # 1. Pinterest (Guided Search SEO)
-    pin_title = f"{brand} {title[:40]} | Amazon Fashion on LOOKIQ"[:70]
+    pin_title = f"{title[:45]} | LOOKIQ Curated"[:70]
     pin_description = (
-        f"Looking for the perfect wardrobe staple on Amazon US? {brand} {title} features "
+        f"Looking for the perfect wardrobe staple on Amazon US? {title} features "
         f"tailored silhouette and verified sizing. Rated {rating} stars by over {reviews:,} buyers for {price}. "
         f"Tap to explore full sizing breakdown and outfit pairing on LOOKIQ!"
     )
     pin_hashtags = ["#AmazonFashion", "#QuietLuxury", "#CapsuleWardrobe", "#StyleInspo", "#AmazonFinds"]
-    pin_alt = f"{brand} {title} in clean luxury styling, photographed on neutral background."
+    pin_alt = f"{title} in clean luxury styling, photographed on neutral background."
 
     # 2. Instagram (Luxury Hook & Bio CTA)
     ig_caption = (
-        f"THE CHIC EDIT: {brand} {title}\n\n"
+        f"THE CHIC EDIT: {title}\n\n"
         f"An effortless staple for the elevated wardrobe. Curated for impeccable drape, "
         f"all-day comfort, and quiet luxury aesthetics.\n\n"
         f"Price: {price} (Verified on Amazon US with Prime)\n"
@@ -39,7 +43,7 @@ def generate_social_captions(product: dict, site_base_url: str = "https://lookiq
 
     # 3. Facebook Page (Direct Clickable Link)
     fb_caption = (
-        f"New Curated Fashion Staple: {brand} {title}\n\n"
+        f"New Curated Fashion Staple: {title}\n\n"
         f"Tested for real-world sizing, fabric comfort, and silhouette. "
         f"Currently verified on Amazon US for {price} with Prime returns.\n\n"
         f"Read our full editorial review and check live stock here:\n"
@@ -53,6 +57,16 @@ def generate_social_captions(product: dict, site_base_url: str = "https://lookiq
         f"Double-lined quality with true-to-size fit for {price}. "
         f"Full review on LOOKIQ (link in bio) #AmazonFashion #QuietLuxury #StyleDupes #CapsuleWardrobe #OOTD"
     )
+
+    # 5. X (Twitter - 280 character optimized)
+    clean_short_title = title[:45]
+    x_tweet_text = (
+        f"Viral Amazon Fashion Find: {brand} {clean_short_title}\n\n"
+        f"Verified Prime deal for {price}. Sizing breakdown on LOOKIQ:\n"
+        f"{pdp_url}\n\n"
+        f"#AmazonFashion #QuietLuxury #StyleReview #AmazonFinds"
+    )
+    x_intent_url = f"https://x.com/intent/tweet?text={urllib.parse.quote(x_tweet_text)}"
 
     return {
         "pinterest": {
@@ -77,6 +91,12 @@ def generate_social_captions(product: dict, site_base_url: str = "https://lookiq
             "caption": tiktok_caption,
             "image_url": pin_image_url,
             "cta_link": pdp_url
+        },
+        "x": {
+            "text": x_tweet_text,
+            "intent_url": x_intent_url,
+            "url": pdp_url,
+            "image_url": pin_image_url
         }
     }
 

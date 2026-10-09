@@ -85,16 +85,19 @@ def process_product(amazon_url: str, auto_push: bool = True) -> dict:
     if auto_push:
         print("[5/5] Deploying live to GitHub repository...")
         try:
-            subprocess.run(["git", "add", "."], cwd=str(project_root), check=True)
+            subprocess.run(["git", "add", "."], cwd=str(project_root), check=False)
             subprocess.run(
                 ["git", "commit", "-m", f"Auto-publish curated product: {product['raw_title'][:50]}"],
                 cwd=str(project_root),
-                check=True
+                check=False
             )
-            subprocess.run(["git", "push", "origin", "main"], cwd=str(project_root), check=True)
-            print("  -> Git push completed! Live deployment triggered.")
+            push_res = subprocess.run(["git", "push", "origin", "main"], cwd=str(project_root), capture_output=True, text=True)
+            if push_res.returncode == 0:
+                print("  -> Git push completed! Live deployment triggered.")
+            else:
+                print(f"  -> Git push note: {push_res.stderr.strip()[:100]}")
         except Exception as e:
-            print(f"  -> Git push skipped/error: {e}")
+            print(f"  -> Git step note: {e}")
 
     print("\n==================================================")
     print(f"[LookiQ Engine] Completed successfully!")
