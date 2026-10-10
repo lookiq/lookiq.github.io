@@ -1925,4 +1925,12 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // Hide when footer is visible so it never covers card/footer content
+  var footer = document.querySelector('footer');
+  if (footer && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      btn.classList.toggle('footer-visible', entries[0].isIntersecting);
+    }, { threshold: 0.05 }).observe(footer);
+  }
 })();
