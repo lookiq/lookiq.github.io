@@ -92,27 +92,6 @@ const PRODUCTS = [
     amazonLink: "https://www.amazon.com/dp/B0H1C1FT2R?tag=likeefashionh-20"
   },
   {
-    id: "lookiq-curated-amazoncom",
-    asin: "B0B2XZKB99",
-    title: "Amazon.com",
-    category: "women",
-    subCategory: "Curated Finds",
-    badge: "Trending Pick",
-    price: 59.99,
-    originalPrice: 80.99,
-    rating: 4.5,
-    reviewsCount: 5086,
-    image: "assets/pins/lookiq-curated-amazoncom-pin.jpg",
-    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
-    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
-    features: [
-      "Curated luxury fashion staple on Amazon US",
-      "Verified true-to-size fit based on customer reviews",
-      "Amazon Prime eligible with fast delivery and easy returns"
-    ],
-    amazonLink: "https://www.amazon.com/dp/B0B2XZKB99?tag=likeefashionh-20"
-  },
-  {
     id: "trendy-queen-womens-off-shoulder-sweatsh",
     asin: "B0H4Z8K7NN",
     title: "Trendy Queen Womens Off Shoulder Sweatshirt Oversized Tops Y2k Outfits",
