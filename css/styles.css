@@ -718,13 +718,17 @@ input, select {
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: -12px 0 45px rgba(0, 0, 0, 0.75);
   overflow-y: auto;
 }
 
 .mobile-nav-drawer.active {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-drawer-header {
@@ -4983,11 +4987,15 @@ input, select {
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .wishlist-drawer-overlay.open .wishlist-drawer {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .wishlist-drawer-header {
@@ -5325,6 +5333,54 @@ html, body {
   .mobile-menu-toggle {
     display: inline-flex !important;
     flex-shrink: 0 !important;
+  }
+
+  /* Catalog Controls & Filter Bar Responsive Wrap */
+  .filter-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+  .category-tabs {
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 6px !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .category-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  .catalog-controls {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 8px !important;
+  }
+  .search-input-wrap {
+    min-width: 0 !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .sort-select,
+  .price-select {
+    flex: 1 1 calc(50% - 4px) !important;
+    min-width: 0 !important;
+    max-width: calc(50% - 4px) !important;
+    box-sizing: border-box !important;
+    font-size: 0.8rem !important;
+    padding: 9px 10px !important;
+  }
+
+  /* 3D Runway Carousel Stage Overflow Guard */
+  .hero-3d-showcase,
+  .carousel-3d-stage {
+    overflow: hidden !important;
+    max-width: 100% !important;
   }
 }
 
