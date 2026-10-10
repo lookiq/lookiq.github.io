@@ -29,6 +29,132 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "ongerek-14k-gold-earrings-for-women-ripp",
+    asin: "B0F8W6S4DQ",
+    title: "14K Gold Earrings for Women Ripple Line 14K Gold Hoop Earrings for Wom",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 55.99,
+    originalPrice: 75.59,
+    rating: 4.2,
+    reviewsCount: 35,
+    image: "assets/pins/ongerek-14k-gold-earrings-for-women-ripp-pin.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0F8W6S4DQ?tag=likeefashionh-20"
+  },
+  {
+    id: "sovesi-14k-gold-plated-hoop-earrings-for",
+    asin: "B0GTYYM2VK",
+    title: "sovesi 14K Gold Plated Hoop Earrings for Women Chunky Gold Hoops Small",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 12.34,
+    originalPrice: 16.66,
+    rating: 4.2,
+    reviewsCount: 97,
+    image: "assets/pins/sovesi-14k-gold-plated-hoop-earrings-for-pin.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0GTYYM2VK?tag=likeefashionh-20"
+  },
+  {
+    id: "silvora-10mm-14k-gold-plated-huggie-earr",
+    asin: "B0H1C1FT2R",
+    title: "Silvora 10MM 14K Gold Plated Huggie Earrings for Women, Small Gold Hoo",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 49.99,
+    originalPrice: 67.49,
+    rating: 4.3,
+    reviewsCount: 125,
+    image: "assets/pins/silvora-10mm-14k-gold-plated-huggie-earr-pin.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0H1C1FT2R?tag=likeefashionh-20"
+  },
+  {
+    id: "lookiq-curated-amazoncom",
+    asin: "B0B2XZKB99",
+    title: "Amazon.com",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 59.99,
+    originalPrice: 80.99,
+    rating: 4.5,
+    reviewsCount: 5086,
+    image: "assets/pins/lookiq-curated-amazoncom-pin.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0B2XZKB99?tag=likeefashionh-20"
+  },
+  {
+    id: "trendy-queen-womens-off-shoulder-sweatsh",
+    asin: "B0H4Z8K7NN",
+    title: "Trendy Queen Womens Off Shoulder Sweatshirt Oversized Tops Y2k Outfits",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 23.99,
+    originalPrice: 32.39,
+    rating: 4.0,
+    reviewsCount: 39,
+    image: "assets/pins/trendy-queen-womens-off-shoulder-sweatsh-pin.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0H4Z8K7NN?tag=likeefashionh-20"
+  },
+  {
+    id: "trendy-queen-womens-mock-neck-sweatshirt",
+    asin: "B0C5RB7NRS",
+    title: "Trendy Queen Womens Mock Neck Sweatshirts Oversized Pullover Fall Outf",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 24.99,
+    originalPrice: 33.74,
+    rating: 4.1,
+    reviewsCount: 33,
+    image: "assets/pins/trendy-queen-womens-mock-neck-sweatshirt-pin.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0C5RB7NRS?tag=likeefashionh-20"
+  },
+  {
     id: "trendy-queen-cropped-cardigan-sweaters-f",
     asin: "B0DCW38YR7",
     title: "Trendy Queen Cropped Cardigan Sweaters for Women",
