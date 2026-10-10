@@ -562,43 +562,102 @@ input, select {
   flex-shrink: 0;
 }
 
-/* Nav Menu - Quiet Luxury Editorial Styling */
+/* Nav Menu - Quiet Luxury Interactive Button Navigation */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 8px;
 }
 
 .nav-link {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-secondary);
-  transition: var(--transition-fast);
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(20, 17, 19, 0.035);
+  border: 1px solid rgba(20, 17, 19, 0.1);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  padding: 8px 0;
   white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  cursor: pointer;
 }
 
-.nav-link:hover, .nav-link.active {
-  color: var(--text-primary);
+.nav-link:hover {
+  background: rgba(201, 151, 56, 0.12);
+  border-color: rgba(201, 151, 56, 0.45);
+  color: var(--accent-gold);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(201, 151, 56, 0.16);
+}
+
+.nav-link.active {
+  background: #141113;
+  color: #ffffff;
+  border-color: rgba(201, 151, 56, 0.5);
+  box-shadow: 0 3px 12px rgba(20, 17, 19, 0.2), inset 0 1px 1px rgba(255, 242, 214, 0.15);
+}
+
+.nav-link.active:hover {
+  background: #1c181a;
+  color: #fff2d6;
+  border-color: rgba(245, 214, 123, 0.75);
+  box-shadow: 0 5px 18px rgba(201, 151, 56, 0.28);
 }
 
 .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gold-gradient);
-  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: none !important;
 }
 
-.nav-link:hover::after, .nav-link.active::after {
-  width: 100%;
+/* Scrolled Header Button Feel */
+.site-header.scrolled .nav-link {
+  background: rgba(20, 17, 19, 0.03);
+  border-color: rgba(20, 17, 19, 0.08);
+}
+
+.site-header.scrolled .nav-link:hover {
+  background: rgba(201, 151, 56, 0.14);
+  border-color: rgba(201, 151, 56, 0.5);
+  color: var(--accent-gold);
+}
+
+.site-header.scrolled .nav-link.active {
+  background: #141113;
+  color: #ffffff;
+}
+
+/* Dark mode button styling */
+[data-theme="dark"] .nav-link {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.09);
+  color: #e4e4e7;
+}
+
+[data-theme="dark"] .nav-link:hover {
+  background: rgba(201, 151, 56, 0.18);
+  border-color: rgba(201, 151, 56, 0.55);
+  color: #fff2d6;
+}
+
+[data-theme="dark"] .nav-link.active {
+  background: var(--accent-gold);
+  color: #08080b;
+  font-weight: 700;
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 16px rgba(201, 151, 56, 0.35);
+}
+
+[data-theme="dark"] .nav-link.active:hover {
+  background: #dfa942;
+  color: #000000;
 }
 
 /* Header Action Controls */
@@ -659,11 +718,12 @@ input, select {
 /* Intermediate Laptop/Tablet Navbar Protection */
 @media (max-width: 1180px) {
   .main-nav {
-    gap: 16px;
+    gap: 6px;
   }
   .nav-link {
-    font-size: 0.75rem;
-    letter-spacing: 0.09em;
+    font-size: 0.72rem;
+    padding: 7px 12px;
+    letter-spacing: 0.06em;
   }
   .brand-logo .logo-sub {
     display: none;
@@ -4257,6 +4317,11 @@ input, select {
               border-color 0.3s ease;
 }
 
+[data-theme="dark"] .site-header {
+  background: rgba(10, 10, 13, 0.95);
+  border-bottom-color: rgba(201, 151, 56, 0.25);
+}
+
 .site-header.scrolled {
   background: rgba(250, 248, 245, 0.88);
   backdrop-filter: blur(20px) saturate(180%);
@@ -4553,214 +4618,13 @@ input, select {
   margin: 0;
 }
 
-/* 5. Quiet Luxury Nav Hover Mega-Dropdowns */
-.nav-item-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.nav-dropdown {
-  position: absolute;
-  top: calc(100% + 14px);
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  background: #141113;
-  border: 1px solid rgba(201, 151, 56, 0.32);
-  border-radius: 12px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(201, 151, 56, 0.12);
-  padding: 16px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-  z-index: 150;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.nav-item-wrap:hover .nav-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-  pointer-events: auto;
-}
-
-.nav-dropdown::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 12px;
-  height: 12px;
-  background: #141113;
-  border-left: 1px solid rgba(201, 151, 56, 0.32);
-  border-top: 1px solid rgba(201, 151, 56, 0.32);
-}
-
-.dropdown-dupes {
-  width: 380px;
-}
-
-.dropdown-header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.dropdown-tag {
-  color: var(--accent-gold);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.dropdown-view-all {
-  color: #fff0d0;
-  font-size: 0.74rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.dropdown-view-all:hover {
-  color: var(--accent-gold);
-}
-
-.dropdown-dupe-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.2s ease;
-  margin-bottom: 6px;
-}
-
-.dropdown-dupe-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.dropdown-dupe-item img {
-  width: 52px;
-  height: 52px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid rgba(201, 151, 56, 0.2);
-}
-
-.dropdown-dupe-info h5 {
-  color: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin: 0 0 3px 0;
-}
-
-.dropdown-dupe-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.72rem;
-}
-
-.dropdown-dupe-meta .price {
-  color: var(--accent-gold);
-  font-weight: 700;
-}
-
-.dropdown-dupe-meta .savings {
-  background: rgba(34, 197, 94, 0.15);
-  color: #4ade80;
-  padding: 1px 6px;
-  border-radius: 10px;
-  font-size: 0.68rem;
-  font-weight: 600;
-}
-
-.dropdown-categories {
-  width: 330px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.dropdown-cat-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: #e4e4e7;
-  text-decoration: none;
-  font-size: 0.76rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.dropdown-cat-link:hover {
-  background: rgba(201, 151, 56, 0.14);
-  border-color: rgba(201, 151, 56, 0.4);
-  color: #ffffff;
-  transform: translateX(2px);
-}
-
-.dropdown-cat-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgba(201, 151, 56, 0.15);
-  color: var(--accent-gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.dropdown-lookbook {
-  width: 360px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.dropdown-look-card {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  text-decoration: none;
-  border-radius: 8px;
-  overflow: hidden;
-  padding: 6px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.2s ease;
-}
-
-.dropdown-look-card:hover {
-  background: rgba(201, 151, 56, 0.12);
-  border-color: rgba(201, 151, 56, 0.35);
-  transform: translateY(-2px);
-}
-
-.dropdown-look-card img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.dropdown-look-card span {
-  color: #faf8f5;
-  font-size: 0.74rem;
-  font-weight: 600;
+/* 5. Nav Dropdown Neutralization (Dropdowns replaced by sleek button navigation) */
+.nav-dropdown,
+.nav-item-wrap .nav-dropdown {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
 }
 
 /* 6. Spotlight Instant Quick Search Modal */
