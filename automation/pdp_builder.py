@@ -5,12 +5,12 @@ from pathlib import Path
 def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github.io") -> str:
     """
     Generates a full production-grade LookiQ Product Detail Page (PDP)
-    by cloning the master luxury template (oversized-turtleneck-sweater.html)
+    by cloning the master luxury template (casual-summer-sundress.html)
     and substituting dynamic product details.
     """
     script_dir = Path(__file__).resolve().parent
     project_root = script_dir.parent
-    master_template_path = project_root / "products" / "oversized-turtleneck-sweater.html"
+    master_template_path = project_root / "products" / "casual-summer-sundress.html"
 
     if not master_template_path.exists():
         raise FileNotFoundError(f"Master PDP template not found at {master_template_path}")
@@ -22,14 +22,22 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     brand = product.get("brand", "LOOKIQ Curated")
     raw_title = product.get("raw_title", "Curated Fashion Staple")
     
-    # Avoid duplicate brand
-    if raw_title.lower().startswith(brand.lower()):
-        title = raw_title
-    else:
-        title = f"{brand} {raw_title}"
+    # Avoid duplicate brand & clean excessive Amazon title keywords
+    clean_raw = re.sub(r'\s*-\s*[A-Za-z0-9\s]+$', '', raw_title).strip()
+    if len(clean_raw) > 75:
+        # Take first descriptive segment before comma or slash
+        parts = re.split(r'[,|/]', clean_raw)
+        clean_raw = parts[0].strip()
+        if len(clean_raw) < 25 and len(parts) > 1:
+            clean_raw = f"{clean_raw} {parts[1].strip()}"
 
-    # Clean short title for meta & cards
-    clean_short_title = title[:60]
+    if clean_raw.lower().startswith(brand.lower()):
+        title = clean_raw
+    else:
+        title = f"{brand} {clean_raw}"
+
+    # Clean short title for meta, sticky bar & cards (35-50 chars max)
+    clean_short_title = title[:50].strip()
     
     price = product.get("price", "$39.99")
     price_num = re.sub(r'[^0-9.]', '', price) or "39.99"
@@ -41,9 +49,23 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     rating = product.get("rating", 4.6)
     reviews = product.get("review_count", 1850)
     asin = product.get("asin", "B0XXXXXXXX")
-    affiliate_url = product.get("short_affiliate_url") or product.get("affiliate_url")
+    affiliate_url = product.get("short_affiliate_url") or product.get("affiliate_url") or f"https://www.amazon.com/dp/{asin}/?tag=likeefashionh-20"
     
-    image_hero_url = product.get("image_url", f"{site_base_url}/assets/pins/{slug}-pin.jpg")
+    # Prefer local AI editorial asset if generated or available
+    pin_file = project_root / "assets" / "pins" / f"{slug}-pin.jpg"
+    product_file = project_root / "assets" / "products" / f"{slug}.jpg"
+
+    if product_file.exists():
+        image_hero_rel = f"../assets/products/{slug}.jpg"
+        image_hero_abs = f"{site_base_url}/assets/products/{slug}.jpg"
+    elif pin_file.exists():
+        image_hero_rel = f"../assets/pins/{slug}-pin.jpg"
+        image_hero_abs = f"{site_base_url}/assets/pins/{slug}-pin.jpg"
+    else:
+        raw_img = product.get("image_url", f"{site_base_url}/assets/pins/{slug}-pin.jpg")
+        image_hero_rel = raw_img
+        image_hero_abs = raw_img
+
     image_pin_url = f"{site_base_url}/assets/pins/{slug}-pin.jpg"
 
     bullets = product.get("bullets", [])
@@ -62,7 +84,7 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                <span>Premium fabric with tailored drape and all-day comfort</span>
+                <span>Premium tailored drape and elevated quiet luxury styling</span>
               </li>
               <li>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -74,7 +96,7 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                <span>Amazon Prime eligible with free 30-day returns</span>
+                <span>Amazon Prime eligible with fast shipping and free 30-day returns</span>
               </li>"""
 
     editorial_summary = (
@@ -100,18 +122,17 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     html = re.sub(r'<meta name="twitter:image" content=".*?">', f'<meta name="twitter:image" content="{image_pin_url}">', html, count=1)
 
     # 3. Update Schema.org JSON-LD
-    html = html.replace("ANRABESS Oversized Turtleneck Batwing Ribbed Knit Sweater", title)
-    html = html.replace("oversized-turtleneck-sweater.html", f"{slug}.html")
-    html = html.replace("oversized-turtleneck-sweater-pin.jpg", f"{slug}-pin.jpg")
-    html = html.replace("../assets/anrabess-turtleneck-sweater.webp", image_hero_url)
-    html = html.replace("https://lookiq.github.io/assets/anrabess-turtleneck-sweater.webp", image_hero_url)
-    html = html.replace("B07XKH9K5M", asin)
-    html = html.replace("ANRABESS", brand)
+    html = html.replace("Elescat Women's Casual Sleeveless Summer Sundress with Pockets", title)
+    html = html.replace("casual-summer-sundress.html", f"{slug}.html")
+    html = html.replace("casual-summer-sundress-pin.jpg", f"{slug}-pin.jpg")
+    html = html.replace("../assets/elescat-summer-dress.webp", image_hero_rel)
+    html = html.replace("https://lookiq.github.io/assets/elescat-summer-dress.webp", image_hero_abs)
+    html = html.replace("https://lookiq.github.io/assets/elescat-summer-dress.png", image_hero_abs)
+    html = html.replace("B09N72QM68", asin)
+    html = html.replace('"name": "Elescat"', f'"name": "{brand}"')
+    html = html.replace('"price": "24.99"', f'"price": "{price_num}"')
 
-    # 4. Update Announcement Bar
-    html = re.sub(r'<span>ANRABESS on Amazon US &bull;.*?</span>', f'<span>{brand} on Amazon US &bull; Verified Sizing &bull; Fast Prime Delivery</span>', html)
-
-    # 5. Update Breadcrumb current
+    # 4. Update Breadcrumb current
     html = re.sub(
         r'<span class="current" title=".*?">.*?</span>',
         f'<span class="current" title="{title}">{title}</span>',
@@ -119,15 +140,13 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
         count=1
     )
 
-    # 6. Update Product Page Details Header & Title
+    # 5. Update Product Page Title & Meta
     html = re.sub(
         r'<h1 class="product-page-title">.*?</h1>',
         f'<h1 class="product-page-title">{title}</h1>',
         html,
         count=1
     )
-
-    # Meta Header (Brand • Category • ASIN)
     html = re.sub(
         r'<div class="product-meta-header">[\s\S]*?</div>',
         f'<div class="product-meta-header">\n          <span>{brand}</span>\n          <span>&bull;</span>\n          <span>Curated Fashion</span>\n          <span>&bull;</span>\n          <span>ASIN: {asin}</span>\n        </div>',
@@ -135,7 +154,7 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
         count=1
     )
 
-    # 7. Update Price Card
+    # 6. Update Price Card & Ratings
     html = re.sub(
         r'<span class="price-value">\$[0-9.]+</span>',
         f'<span class="price-value">{price}</span>',
@@ -146,8 +165,6 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
         f'<span class="price-original-val">{orig_price}</span>',
         html
     )
-
-    # Rating score & count
     html = re.sub(
         r'<span class="rating-score">[0-9.]+ out of 5</span>',
         f'<span class="rating-score">{rating} out of 5</span>',
@@ -159,21 +176,19 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
         html
     )
 
-    # 8. Update Affiliate CTA Links
+    # 7. Update Affiliate Links
     html = re.sub(
-        r'href="https://www\.amazon\.com/dp/B07XKH9K5M/\?tag=likeefashionh-20[^"]*"',
+        r'href="https://amzn\.to/[^"]*"',
+        f'href="{affiliate_url}"',
+        html
+    )
+    html = re.sub(
+        r'href="https://www\.amazon\.com/dp/[^"]*"',
         f'href="{affiliate_url}"',
         html
     )
 
-    # 9. Update Editorial Overview & Bullets
-    html = re.sub(
-        r'<div class="product-section-block">\s*<h2>Editorial Overview</h2>\s*<p[^>]*>[\s\S]*?</p>\s*</div>',
-        f'<div class="product-section-block">\n          <h2>Editorial Overview</h2>\n          <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">\n            {editorial_summary}\n          </p>\n        </div>',
-        html,
-        count=1
-    )
-
+    # 8. Update Feature List
     html = re.sub(
         r'<ul class="feature-list-check">[\s\S]*?</ul>',
         f'<ul class="feature-list-check">\n{bullets_html}\n          </ul>',
@@ -181,21 +196,21 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
         count=1
     )
 
-    # 10. Update Hero and Zoom Image in Gallery
+    # 9. Update Hero and Zoom Image in Gallery
     html = re.sub(
         r'<div class="product-hero-image-box" id="product-zoom-box" onclick="openFullscreenLightbox\([^)]*\)">',
-        f'<div class="product-hero-image-box" id="product-zoom-box" onclick="openFullscreenLightbox(\'{image_hero_url}\', \'{title}\')">',
+        f'<div class="product-hero-image-box" id="product-zoom-box" onclick="openFullscreenLightbox(\'{image_hero_abs}\', \'{title}\')">',
         html,
         count=1
     )
     html = re.sub(
         r'<img src="[^"]*" alt="[^"]*" id="product-zoom-img" decoding="async">',
-        f'<img src="{image_hero_url}" alt="{title}" id="product-zoom-img" decoding="async">',
+        f'<img src="{image_hero_rel}" alt="{title}" id="product-zoom-img" decoding="async">',
         html,
         count=1
     )
 
-    # 11. Update Mobile Sticky Bar
+    # 10. Update Mobile Sticky Bar
     html = re.sub(
         r'<span class="sticky-bar-title">.*?</span>',
         f'<span class="sticky-bar-title">{clean_short_title}</span>',
@@ -210,10 +225,13 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     )
     html = re.sub(
         r'<img src="[^"]*" alt="[^"]*" class="sticky-bar-thumb" loading="lazy">',
-        f'<img src="{image_hero_url}" alt="{title}" class="sticky-bar-thumb" loading="lazy">',
+        f'<img src="{image_hero_rel}" alt="{title}" class="sticky-bar-thumb" loading="lazy">',
         html,
         count=1
     )
+
+    # Clean any replacement characters
+    html = html.replace('\ufffd', '&bull;')
 
     return html
 

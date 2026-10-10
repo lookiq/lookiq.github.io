@@ -14,7 +14,6 @@ sys.path.insert(0, str(script_dir))
 from pipeline import process_product, load_config
 
 def get_bot_token() -> str:
-    # First check environment variable, then config.json
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     if not token:
         config = load_config()
@@ -47,32 +46,43 @@ def send_photo(chat_id: int, photo_path: str, caption: str = "", token: str = ""
         token = get_bot_token()
     url = f"https://api.telegram.org/bot{token}/sendPhoto"
     try:
-        import mimetypes
         boundary = "----WebKitFormBoundaryLookiQBot7MA4YWxkTrZu0gW"
         body = bytearray()
 
-        # chat_id
         body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\"chat_id\"\r\n\r\n{chat_id}\r\n".encode("utf-8"))
 
-        # caption
         if caption:
             body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\"caption\"\r\n\r\n{caption}\r\n".encode("utf-8"))
             body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\"parse_mode\"\r\n\r\nHTML\r\n".encode("utf-8"))
 
-        # photo
-        filename = os.path.basename(photo_path)
-        mime = mimetypes.guess_type(photo_path)[0] or "image/jpeg"
-        body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"{filename}\"\r\nContent-Type: {mime}\r\n\r\n".encode("utf-8"))
         with open(photo_path, "rb") as f:
-            body.extend(f.read())
+            file_bytes = f.read()
+        file_name = Path(photo_path).name
+
+        body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"{file_name}\"\r\nContent-Type: image/jpeg\r\n\r\n".encode("utf-8"))
+        body.extend(file_bytes)
         body.extend(f"\r\n--{boundary}--\r\n".encode("utf-8"))
 
-        req = urllib.request.Request(url, data=body, headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        req = urllib.request.Request(
+            url,
+            data=body,
+            headers={"Content-Type": f"multipart/form-data; boundary={boundary}"}
+        )
+        with urllib.request.urlopen(req, timeout=60) as resp:
             return json.loads(resp.read().decode("utf-8"))
     except Exception as e:
-        print(f"[TelegramBot] Send Photo Error: {e}")
+        print(f"[TelegramBot] sendPhoto Error: {e}")
         return {}
+
+def download_telegram_file(file_id: str, token: str, save_path: Path) -> str:
+    res = telegram_api_request("getFile", {"file_id": file_id}, token=token)
+    if res.get("ok"):
+        file_path = res["result"].get("file_path")
+        file_url = f"https://api.telegram.org/file/bot{token}/{file_path}"
+        save_path.parent.mkdir(parents=True, exist_ok=True)
+        urllib.request.urlretrieve(file_url, str(save_path))
+        return str(save_path)
+    return None
 
 def run_bot():
     token = get_bot_token()
@@ -80,12 +90,9 @@ def run_bot():
         print("\n=======================================================")
         print("ERROR: Telegram Bot Token not set!")
         print("Please set TELEGRAM_BOT_TOKEN in automation/config.json")
-        print("or run with environment variable:")
-        print("  $env:TELEGRAM_BOT_TOKEN = 'your_bot_token_here'")
         print("=======================================================\n")
         return
 
-    # Check bot identity
     me = telegram_api_request("getMe", token=token)
     if not me.get("ok"):
         print(f"[TelegramBot] Failed to authenticate token: {me}")
@@ -93,7 +100,7 @@ def run_bot():
 
     bot_username = me.get("result", {}).get("username", "LookiQBot")
     print(f"\n[TelegramBot] Successfully connected as @{bot_username}")
-    print("[TelegramBot] Listening for Amazon product links 24/7. Press Ctrl+C to stop.\n")
+    print("[TelegramBot] Listening for Amazon links & AI images 24/7. Press Ctrl+C to stop.\n")
 
     offset = 0
     while True:
@@ -107,21 +114,23 @@ def run_bot():
                 offset = item["update_id"] + 1
                 message = item.get("message", {})
                 chat_id = message.get("chat", {}).get("id")
-                text = message.get("text", "").strip()
+                text = (message.get("text") or message.get("caption") or "").strip()
+                photos = message.get("photo", [])
 
                 if not chat_id or not text:
                     continue
 
                 if text == "/start" or text == "/help":
                     welcome_text = (
-                        "<b>LOOKIQ Automation Bot Active</b>\n\n"
-                        "Send me any Amazon product link (e.g. <code>amzn.to</code>, <code>link.amazon</code>, <code>a.co</code>, or <code>amazon.com</code>).\n\n"
+                        "<b>LOOKIQ Luxury Automation Bot Active</b>\n\n"
+                        "Send me any Amazon product link (e.g. <code>amzn.to</code>, <code>amazon.com</code>).\n"
+                        "<b>Tip:</b> You can also attach an AI Fashion Photo with the Amazon link in the caption!\n\n"
                         "I will automatically:\n"
-                        "1. Generate a high-converting Product Page on LOOKIQ.\n"
-                        "2. Format a luxury 2:3 Pinterest Pin image.\n"
+                        "1. Generate a high-converting Product Detail Page matching LookiQ master luxury design.\n"
+                        "2. Format a luxury 2:3 vertical Pinterest Pin.\n"
                         "3. Inject into Pinterest Auto-Publish Feed.\n"
                         "4. Commit and push live to GitHub Pages.\n"
-                        "5. Generate ready-to-copy captions for Instagram, Facebook, TikTok &amp; X (Twitter)!"
+                        "5. Generate ready-to-copy captions for Instagram, Facebook, TikTok &amp; X!"
                     )
                     send_message(chat_id, welcome_text, token)
                     continue
@@ -139,11 +148,18 @@ def run_bot():
                     send_message(chat_id, "Please send a valid Amazon product URL (e.g. amazon.com, amzn.to, link.amazon, or a.co).", token)
                     continue
 
-                send_message(chat_id, "Processing Amazon product... Please wait ~15 seconds.", token)
+                custom_image_path = None
+                if photos:
+                    send_message(chat_id, "AI Fashion Image detected! Downloading high-res image & processing product...", token)
+                    largest_photo = photos[-1]
+                    temp_img = project_root / "assets" / f"temp_upload_{int(time.time())}.jpg"
+                    custom_image_path = download_telegram_file(largest_photo["file_id"], token, temp_img)
+                else:
+                    send_message(chat_id, "Processing Amazon product... Please wait ~15 seconds.", token)
 
                 # Execute pipeline
                 try:
-                    result = process_product(amazon_url, auto_push=True)
+                    result = process_product(amazon_url, custom_image_path=custom_image_path, auto_push=True)
                     product = result["product"]
                     pdp_url = result["pdp_url"]
                     pin_img = result["pin_image"]

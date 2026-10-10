@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import subprocess
+import shutil
 from pathlib import Path
 
 # Add script directory to python path
@@ -25,12 +26,12 @@ def load_config() -> dict:
         "webhook_url": ""
     }
 
-def process_product(amazon_url: str, auto_push: bool = True) -> dict:
+def process_product(amazon_url: str, custom_image_path: str = None, auto_push: bool = True) -> dict:
     """
     Master pipeline:
     1. Fetches Amazon product metadata and extracts ASIN.
-    2. Builds PDP in products/{slug}.html.
-    3. Converts image to 2:3 luxury vertical pin in assets/pins/{slug}-pin.jpg.
+    2. Sets or formats 2:3 luxury vertical pin in assets/pins/{slug}-pin.jpg.
+    3. Builds PDP in products/{slug}.html using master luxury template.
     4. Injects product into feed.xml for Pinterest Auto-Publish.
     5. Formats multi-channel captions for Pinterest, Instagram, Facebook, TikTok.
     6. Git commits & pushes to trigger live deployment.
@@ -52,15 +53,25 @@ def process_product(amazon_url: str, auto_push: bool = True) -> dict:
     print(f"  -> Price: {product['price']} | ASIN: {product['asin']}")
     print(f"  -> Slug: {slug}")
 
-    # 2. Build PDP
-    print("[2/5] Generating luxury Product Detail Page (PDP)...")
+    # 2. Handle Custom AI Image or Generate 2:3 Pin Image
+    pin_output = project_root / "assets" / "pins" / f"{slug}-pin.jpg"
+    product_img_output = project_root / "assets" / "products" / f"{slug}.jpg"
+    product_img_output.parent.mkdir(parents=True, exist_ok=True)
+    pin_output.parent.mkdir(parents=True, exist_ok=True)
+
+    if custom_image_path and Path(custom_image_path).exists():
+        print(f"[2/5] Using custom high-end AI editorial image: {custom_image_path}")
+        shutil.copy2(custom_image_path, str(product_img_output))
+        # Also copy/format into pin_output
+        create_pinterest_pin_image(str(custom_image_path), str(pin_output))
+    else:
+        print("[2/5] Formatting luxury 2:3 vertical pin (1000 x 1500 px)...")
+        create_pinterest_pin_image(product["image_url"], str(pin_output))
+
+    # 3. Build PDP (now aware of local pin/product image)
+    print("[3/5] Generating luxury Product Detail Page (PDP)...")
     pdp_file = save_pdp(product, str(project_root))
     pdp_url = f"{base_url}/products/{slug}.html"
-
-    # 3. Generate 2:3 Pin Image
-    print("[3/5] Converting image to strict 2:3 vertical pin (1000 x 1500 px)...")
-    pin_output = project_root / "assets" / "pins" / f"{slug}-pin.jpg"
-    create_pinterest_pin_image(product["image_url"], str(pin_output))
 
     # 4. Inject into feed.xml for Pinterest Auto-Publish
     print("[4/5] Injecting into Pinterest RSS Feed (feed.xml)...")
