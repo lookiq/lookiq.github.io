@@ -1,359 +1,245 @@
 import os
 import re
-import json
+from pathlib import Path
 
 def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github.io") -> str:
     """
-    Generates a full production-grade LookiQ Product Detail Page (PDP).
+    Generates a full production-grade LookiQ Product Detail Page (PDP)
+    by cloning the master luxury template (oversized-turtleneck-sweater.html)
+    and substituting dynamic product details.
     """
+    script_dir = Path(__file__).resolve().parent
+    project_root = script_dir.parent
+    master_template_path = project_root / "products" / "oversized-turtleneck-sweater.html"
+
+    if not master_template_path.exists():
+        raise FileNotFoundError(f"Master PDP template not found at {master_template_path}")
+
+    with open(master_template_path, "r", encoding="utf-8") as f:
+        html = f.read()
+
     slug = product["slug"]
-    brand = product["brand"]
-    raw_title = product["raw_title"]
+    brand = product.get("brand", "LOOKIQ Curated")
+    raw_title = product.get("raw_title", "Curated Fashion Staple")
+    
+    # Avoid duplicate brand
     if raw_title.lower().startswith(brand.lower()):
         title = raw_title
     else:
         title = f"{brand} {raw_title}"
-    price = product["price"]
-    price_num = re.sub(r'[^0-9.]', '', price) or "29.99"
-    rating = product.get("rating", 4.5)
-    reviews = product.get("review_count", 1500)
+
+    # Clean short title for meta & cards
+    clean_short_title = title[:60]
+    
+    price = product.get("price", "$39.99")
+    price_num = re.sub(r'[^0-9.]', '', price) or "39.99"
+    try:
+        orig_price = f"${float(price_num) * 1.35:.2f}"
+    except Exception:
+        orig_price = "$59.99"
+
+    rating = product.get("rating", 4.6)
+    reviews = product.get("review_count", 1850)
     asin = product.get("asin", "B0XXXXXXXX")
     affiliate_url = product.get("short_affiliate_url") or product.get("affiliate_url")
-    image_pin_url = f"{site_base_url}/assets/pins/{slug}-pin.jpg"
+    
     image_hero_url = product.get("image_url", f"{site_base_url}/assets/pins/{slug}-pin.jpg")
+    image_pin_url = f"{site_base_url}/assets/pins/{slug}-pin.jpg"
+
     bullets = product.get("bullets", [])
-    bullets_html = "".join([f"<li>{b}</li>" for b in bullets[:4]]) or "<li>Ultra-soft premium fabric with tailored drape and all-day comfort.</li><li>Verified Amazon Prime deal with easy 30-day returns.</li>"
+    if bullets:
+        bullet_items = []
+        for b in bullets[:5]:
+            bullet_items.append(f"""              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>{b}</span>
+              </li>""")
+        bullets_html = "\n".join(bullet_items)
+    else:
+        bullets_html = """              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Premium fabric with tailored drape and all-day comfort</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Verified true-to-size fit based on customer reviews</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Amazon Prime eligible with free 30-day returns</span>
+              </li>"""
 
-    clean_short = title[:50]
-    description = f"Curated Amazon fashion staple: {clean_short} for {price}. Verified sizing, drape & style reviews on LOOKIQ."
+    editorial_summary = (
+        f"Curated Amazon fashion staple: {title}. Evaluated by LOOKIQ style editors "
+        f"for premium fabric quality, flattering silhouette, and effortless capsule wardrobe versatility. "
+        f"Currently verified on Amazon US for {price}."
+    )
 
-    html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPY8ZNRDF2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){{dataLayer.push(arguments);}}
-    gtag('js', new Date());
-    gtag('config', 'G-BPY8ZNRDF2');
-  </script>
-  <meta charset="UTF-8">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- High Intent Product SEO Meta Tags -->
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <title>{brand} {title} | LOOKIQ Sizing &amp; Review</title>
-  <meta name="description" content="{description}">
-  <meta name="author" content="LOOKIQ Style Editors">
-  <link rel="canonical" href="{site_base_url}/products/{slug}.html">
+    # 1. Update Title and Meta Tags
+    html = re.sub(r'<title>.*?</title>', f'<title>{clean_short_title} | LOOKIQ Review</title>', html, count=1)
+    html = re.sub(r'<meta name="description" content=".*?">', f'<meta name="description" content="{editorial_summary}">', html, count=1)
+    html = re.sub(r'<link rel="canonical" href=".*?">', f'<link rel="canonical" href="{site_base_url}/products/{slug}.html">', html, count=1)
 
-  <!-- OpenGraph / Social Sharing (Pinterest, Facebook) -->
-  <meta property="og:site_name" content="LOOKIQ">
-  <meta property="og:type" content="product">
-  <meta property="og:title" content="{brand} {title} | LOOKIQ Curated Amazon Finds">
-  <meta property="og:description" content="{description}">
-  <meta property="og:image" content="{image_pin_url}">
-  <meta property="og:url" content="{site_base_url}/products/{slug}.html">
-  <meta property="product:price:amount" content="{price_num}">
-  <meta property="product:price:currency" content="USD">
+    # 2. Update OpenGraph and Twitter
+    html = re.sub(r'<meta property="og:title" content=".*?">', f'<meta property="og:title" content="{clean_short_title} | LOOKIQ">', html, count=1)
+    html = re.sub(r'<meta property="og:description" content=".*?">', f'<meta property="og:description" content="{editorial_summary}">', html, count=1)
+    html = re.sub(r'<meta property="og:image" content=".*?">', f'<meta property="og:image" content="{image_pin_url}">', html, count=1)
+    html = re.sub(r'<meta property="og:url" content=".*?">', f'<meta property="og:url" content="{site_base_url}/products/{slug}.html">', html, count=1)
+    html = re.sub(r'<meta property="product:price:amount" content=".*?">', f'<meta property="product:price:amount" content="{price_num}">', html, count=1)
 
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{brand} {title} | LOOKIQ">
-  <meta name="twitter:description" content="{description}">
-  <meta name="twitter:image" content="{image_pin_url}">
+    html = re.sub(r'<meta name="twitter:title" content=".*?">', f'<meta name="twitter:title" content="{clean_short_title} | LOOKIQ">', html, count=1)
+    html = re.sub(r'<meta name="twitter:description" content=".*?">', f'<meta name="twitter:description" content="{editorial_summary}">', html, count=1)
+    html = re.sub(r'<meta name="twitter:image" content=".*?">', f'<meta name="twitter:image" content="{image_pin_url}">', html, count=1)
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-  <link rel="apple-touch-icon" href="../assets/favicon.png">
+    # 3. Update Schema.org JSON-LD
+    html = html.replace("ANRABESS Oversized Turtleneck Batwing Ribbed Knit Sweater", title)
+    html = html.replace("oversized-turtleneck-sweater.html", f"{slug}.html")
+    html = html.replace("oversized-turtleneck-sweater-pin.jpg", f"{slug}-pin.jpg")
+    html = html.replace("../assets/anrabess-turtleneck-sweater.webp", image_hero_url)
+    html = html.replace("https://lookiq.github.io/assets/anrabess-turtleneck-sweater.webp", image_hero_url)
+    html = html.replace("B07XKH9K5M", asin)
+    html = html.replace("ANRABESS", brand)
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="../css/styles.css?v=10.0">
+    # 4. Update Announcement Bar
+    html = re.sub(r'<span>ANRABESS on Amazon US &bull;.*?</span>', f'<span>{brand} on Amazon US &bull; Verified Sizing &bull; Fast Prime Delivery</span>', html)
 
-  <!-- Schema.org JSON-LD Structured Data for Google Rich Results -->
-  <script type="application/ld+json">
-  {{
-    "@context": "https://schema.org",
-    "@graph": [
-      {{
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "{site_base_url}/"
-          }},
-          {{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Curated Finds",
-            "item": "{site_base_url}/shop.html"
-          }},
-          {{
-            "@type": "ListItem",
-            "position": 3,
-            "name": "{brand} {title}",
-            "item": "{site_base_url}/products/{slug}.html"
-          }}
-        ]
-      }},
-      {{
-        "@type": "Product",
-        "@id": "{site_base_url}/products/{slug}.html",
-        "name": "{brand} {title}",
-        "description": "{description}",
-        "image": "{image_pin_url}",
-        "sku": "{asin}",
-        "brand": {{
-          "@type": "Brand",
-          "name": "{brand}"
-        }},
-        "category": "Fashion",
-        "review": {{
-          "@type": "Review",
-          "reviewRating": {{
-            "@type": "Rating",
-            "ratingValue": "{rating}",
-            "bestRating": "5"
-          }},
-          "author": {{
-            "@type": "Organization",
-            "name": "LOOKIQ Style Editors"
-          }},
-          "reviewBody": "Curated Amazon fashion staple evaluated for tailored drape, fabric quality, and verified true-to-size fit."
-        }},
-        "aggregateRating": {{
-          "@type": "AggregateRating",
-          "ratingValue": {rating},
-          "reviewCount": {reviews},
-          "bestRating": "5",
-          "worstRating": "1"
-        }},
-        "offers": {{
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "{price_num}",
-          "availability": "https://schema.org/InStock",
-          "url": "{affiliate_url}",
-          "seller": {{
-            "@type": "Organization",
-            "name": "Amazon US"
-          }}
-        }}
-      }}
-    ]
-  }}
-  </script>
-</head>
-<body class="product-page">
+    # 5. Update Breadcrumb current
+    html = re.sub(
+        r'<span class="current" title=".*?">.*?</span>',
+        f'<span class="current" title="{title}">{title}</span>',
+        html,
+        count=1
+    )
 
-  <!-- Top Announcement Bar -->
-  <aside class="announcement-bar" aria-label="Editorial Transparency Bar">
-    <div class="inner">
-      <div class="trending-ticker-wrap">
-        <span class="trending-pill-badge">
-          <span class="trending-pulse-dot"></span>
-          Trending Now
-        </span>
-        <div class="trending-ticker-track">
-          <span class="ticker-item active">
-            <span class="ticker-badge">VERIFIED FIND</span>
-            <span>{brand} on Amazon US &bull; Verified Sizing &bull; Fast Prime Delivery</span>
-          </span>
-        </div>
-      </div>
-      <div class="social-links-announcement">
-        <a href="https://www.pinterest.com/lookiqfashion/" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on Pinterest">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
-          <span>Pinterest @lookiqfashion</span>
-        </a>
-        <a href="https://www.instagram.com/lookiqfashion/" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on Instagram">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          <span>Instagram @lookiqfashion</span>
-        </a>
-      </div>
-    </div>
-  </aside>
+    # 6. Update Product Page Details Header & Title
+    html = re.sub(
+        r'<h1 class="product-page-title">.*?</h1>',
+        f'<h1 class="product-page-title">{title}</h1>',
+        html,
+        count=1
+    )
 
-  <!-- Navigation Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="../index.html" class="brand-logo" aria-label="LOOKIQ Home">
-        <div class="logo-mark">
-          <img src="../assets/favicon.png" alt="LOOKIQ Emblem" width="38" height="38" class="logo-emblem-img">
-        </div>
-        <div class="logo-text-group">
-          <span class="logo-text">LOOKIQ</span>
-          <span class="logo-sub">CURATED ELEGANCE</span>
-        </div>
-      </a>
-      <nav class="main-nav" aria-label="Main Navigation">
-        <a href="../index.html" class="nav-link">HOME</a>
-        <a href="../look-for-less.html" class="nav-link">LOOK FOR LESS</a>
-        <a href="../lookbook.html" class="nav-link">SHOP THE LOOK</a>
-        <a href="../shop.html" class="nav-link active">CURATED FINDS</a>
-        <a href="../guides.html" class="nav-link">STYLE GUIDES</a>
-      </nav>
-    </div>
-  </header>
+    # Meta Header (Brand • Category • ASIN)
+    html = re.sub(
+        r'<div class="product-meta-header">[\s\S]*?</div>',
+        f'<div class="product-meta-header">\n          <span>{brand}</span>\n          <span>&bull;</span>\n          <span>Curated Fashion</span>\n          <span>&bull;</span>\n          <span>ASIN: {asin}</span>\n        </div>',
+        html,
+        count=1
+    )
 
-  <!-- Breadcrumb Navigation -->
-  <nav class="breadcrumb-bar container" aria-label="Breadcrumb">
-    <ol class="breadcrumb-list">
-      <li><a href="../index.html">Home</a></li>
-      <li><span class="breadcrumb-sep">/</span></li>
-      <li><a href="../shop.html">Curated Finds</a></li>
-      <li><span class="breadcrumb-sep">/</span></li>
-      <li aria-current="page">{brand} {title}</li>
-    </ol>
-  </nav>
+    # 7. Update Price Card
+    html = re.sub(
+        r'<span class="price-value">\$[0-9.]+</span>',
+        f'<span class="price-value">{price}</span>',
+        html
+    )
+    html = re.sub(
+        r'<span class="price-original-val">\$[0-9.]+</span>',
+        f'<span class="price-original-val">{orig_price}</span>',
+        html
+    )
 
-  <!-- Product Detail Section -->
-  <main class="product-pdp-main container">
-    <div class="product-pdp-layout">
-      <!-- Media Column -->
-      <div class="product-media-column">
-        <div class="product-hero-image-wrap" id="product-zoom-box">
-          <img src="{image_hero_url}" alt="{brand} {title}" id="product-zoom-img" class="product-hero-img" loading="eager" />
-        </div>
-      </div>
+    # Rating score & count
+    html = re.sub(
+        r'<span class="rating-score">[0-9.]+ out of 5</span>',
+        f'<span class="rating-score">{rating} out of 5</span>',
+        html
+    )
+    html = re.sub(
+        r'<span class="rating-count">\([0-9,kK\+\s]+ verified Amazon ratings\)</span>',
+        f'<span class="rating-count">({reviews:,} verified Amazon ratings)</span>',
+        html
+    )
 
-      <!-- Info Column -->
-      <div class="product-info-column">
-        <div class="product-badge-group">
-          <span class="badge-brand">{brand}</span>
-          <span class="badge-prime">Prime Verified</span>
-        </div>
+    # 8. Update Affiliate CTA Links
+    html = re.sub(
+        r'href="https://www\.amazon\.com/dp/B07XKH9K5M/\?tag=likeefashionh-20[^"]*"',
+        f'href="{affiliate_url}"',
+        html
+    )
 
-        <h1 class="product-pdp-title">{title}</h1>
+    # 9. Update Editorial Overview & Bullets
+    html = re.sub(
+        r'<div class="product-section-block">\s*<h2>Editorial Overview</h2>\s*<p[^>]*>[\s\S]*?</p>\s*</div>',
+        f'<div class="product-section-block">\n          <h2>Editorial Overview</h2>\n          <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">\n            {editorial_summary}\n          </p>\n        </div>',
+        html,
+        count=1
+    )
 
-        <div class="product-rating-row">
-          <div class="rating-stars" aria-label="{rating} out of 5 stars">
-            <span class="star-gold">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-            <span class="rating-number">{rating}</span>
-          </div>
-          <span class="rating-count">({reviews:,} verified ratings)</span>
-        </div>
+    html = re.sub(
+        r'<ul class="feature-list-check">[\s\S]*?</ul>',
+        f'<ul class="feature-list-check">\n{bullets_html}\n          </ul>',
+        html,
+        count=1
+    )
 
-        <div class="product-price-box">
-          <span class="price-currency">$</span>
-          <span class="price-value">{price_num}</span>
-          <span class="price-note">Price verified on Amazon US</span>
-        </div>
+    # 10. Update Hero and Zoom Image in Gallery
+    html = re.sub(
+        r'<div class="product-hero-image-box" id="product-zoom-box" onclick="openFullscreenLightbox\([^)]*\)">',
+        f'<div class="product-hero-image-box" id="product-zoom-box" onclick="openFullscreenLightbox(\'{image_hero_url}\', \'{title}\')">',
+        html,
+        count=1
+    )
+    html = re.sub(
+        r'<img src="[^"]*" alt="[^"]*" id="product-zoom-img" decoding="async">',
+        f'<img src="{image_hero_url}" alt="{title}" id="product-zoom-img" decoding="async">',
+        html,
+        count=1
+    )
 
-        <div class="product-editorial-summary">
-          <h3>Editorial Review &amp; Fit Analysis</h3>
-          <p>{description}</p>
-        </div>
+    # 11. Update Mobile Sticky Bar
+    html = re.sub(
+        r'<span class="sticky-bar-title">.*?</span>',
+        f'<span class="sticky-bar-title">{clean_short_title}</span>',
+        html,
+        count=1
+    )
+    html = re.sub(
+        r'<span class="sticky-bar-price">.*?</span>',
+        f'<span class="sticky-bar-price">{price}</span>',
+        html,
+        count=1
+    )
+    html = re.sub(
+        r'<img src="[^"]*" alt="[^"]*" class="sticky-bar-thumb" loading="lazy">',
+        f'<img src="{image_hero_url}" alt="{title}" class="sticky-bar-thumb" loading="lazy">',
+        html,
+        count=1
+    )
 
-        <div class="product-features-box">
-          <h4>Key Highlights</h4>
-          <ul class="features-list">
-            {bullets_html}
-          </ul>
-        </div>
-
-        <!-- Primary Call to Action -->
-        <div class="product-action-block">
-          <a href="{affiliate_url}" target="_blank" rel="nofollow sponsored noopener" class="btn-amazon-cta-large" title="Check Current Price on Amazon US">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
-            </svg>
-            <span>Check Price on Amazon</span>
-          </a>
-          <span class="cta-micro-guarantee">Qualifies for Free 30-Day Prime Returns &bull; Real-time Amazon Stock</span>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- Mobile Sticky Amazon Action Bar -->
-  <div class="mobile-sticky-bar" id="mobile-sticky-bar" aria-label="Quick Amazon Buy Bar">
-    <div class="sticky-bar-inner">
-      <div class="sticky-bar-info">
-        <img src="{image_hero_url}" alt="{title}" class="sticky-bar-thumb" loading="lazy">
-        <div class="sticky-bar-text">
-          <span class="sticky-bar-title">{brand} {title}</span>
-          <span class="sticky-bar-price">{price}</span>
-        </div>
-      </div>
-      <a href="{affiliate_url}" target="_blank" rel="nofollow sponsored noopener" class="btn-sticky-buy">
-        <span>Check Price</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="logo-text">LOOKIQ</span>
-        <p>Curated Amazon fashion staples, verified sizing reviews, and viral designer dupes for the modern wardrobe.</p>
-        <div class="footer-social-bar" aria-label="LOOKIQ Social Channels">
-          <a href="https://www.pinterest.com/lookiqfashion/" target="_blank" rel="noopener noreferrer" class="social-micro-btn" aria-label="Pinterest" title="Follow LOOKIQ on Pinterest"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
-          <a href="https://www.instagram.com/lookiqfashion/" target="_blank" rel="noopener noreferrer" class="social-micro-btn" aria-label="Instagram" title="Follow LOOKIQ on Instagram"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-          <a href="https://www.tiktok.com/@lookiqfashion" target="_blank" rel="noopener noreferrer" class="social-micro-btn" aria-label="TikTok" title="Follow LOOKIQ on TikTok"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.88 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.38 0 .74.07 1.07.2v-3.56a6.34 6.34 0 0 0-1.07-.09A6.34 6.34 0 0 0 3 15.67a6.34 6.34 0 0 0 6.34 6.33 6.34 6.34 0 0 0 6.34-6.33V9.28a8.28 8.28 0 0 0 4.91 1.58V7.41a4.83 4.83 0 0 1-1-.72z"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="../index.html">Home</a>
-        <a href="../look-for-less.html">The Look for Less</a>
-        <a href="../lookbook.html">Shop The Look</a>
-        <a href="../shop.html">Curated Finds</a>
-        <a href="../guides.html">Style Guides</a>
-        <a href="../about.html">About</a>
-        <a href="../contact.html">Contact</a>
-        <a href="../privacy-policy.html">Privacy Policy</a>
-      </div>
-      <div class="amazon-disclosure-box">
-        <p><strong>FTC &amp; Amazon Associates Disclosure:</strong> LOOKIQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. Prices and availability are accurate as of the date indicated and subject to change.</p>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 LOOKIQ. All rights reserved. Amazon Associate Partner.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Sticky Bar Controller Script -->
-  <script>
-    (function() {{
-      const stickyBar = document.getElementById('mobile-sticky-bar');
-      const mainCta = document.querySelector('.btn-amazon-cta-large');
-      if (!stickyBar || !mainCta) return;
-      function updateStickyBar() {{
-        if (window.innerWidth > 768) {{
-          stickyBar.classList.remove('visible');
-          return;
-        }}
-        const rect = mainCta.getBoundingClientRect();
-        const isScrolled = window.scrollY > 250;
-        const isVisible = rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
-        if (isScrolled && !isVisible) {{
-          stickyBar.classList.add('visible');
-        }} else {{
-          stickyBar.classList.remove('visible');
-        }}
-      }}
-      window.addEventListener('scroll', updateStickyBar, {{ passive: true }});
-      window.addEventListener('resize', updateStickyBar, {{ passive: true }});
-      updateStickyBar();
-    }})();
-  </script>
-</body>
-</html>"""
     return html
 
-def save_pdp(product: dict, project_root: str) -> str:
-    """Generates and writes the product detail page."""
+def save_pdp(product: dict, project_root_path: str) -> str:
+    """Generates and writes PDP file into products/{slug}.html."""
     html_content = generate_pdp_html(product)
-    products_dir = os.path.join(project_root, "products")
-    os.makedirs(products_dir, exist_ok=True)
-    out_file = os.path.join(products_dir, f"{product['slug']}.html")
-    with open(out_file, "w", encoding="utf-8") as f:
+    slug = product["slug"]
+    output_dir = Path(project_root_path) / "products"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    file_path = output_dir / f"{slug}.html"
+    with open(file_path, "w", encoding="utf-8") as f:
         f.write(html_content)
-    print(f"[PDPBuilder] Created PDP at: {out_file}")
-    return out_file
+    print(f"[PDPBuilder] Created PDP at: {file_path}")
+    return str(file_path)
+
+if __name__ == "__main__":
+    sample = {
+        "slug": "test-item",
+        "brand": "LOOKIQ",
+        "raw_title": "Oversized Cashmere Knit Cardigan",
+        "price": "$49.99",
+        "rating": 4.8,
+        "review_count": 2500,
+        "asin": "B0TEST1234",
+        "affiliate_url": "https://www.amazon.com/dp/B0TEST1234?tag=likeefashionh-20",
+        "bullets": ["100% Cashmere blend", "True to size", "Fast Prime delivery"]
+    }
+    p = generate_pdp_html(sample)
+    print("Generated length:", len(p))
