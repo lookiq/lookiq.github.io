@@ -29,6 +29,28 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "trendy-queen-cropped-cardigan-sweaters-f",
+    asin: "B0DCW38YR7",
+    title: "Trendy Queen Cropped Cardigan Sweaters for Women",
+    category: "women",
+    subCategory: "Knitwear & Sweaters",
+    badge: "Trending Fall Pick",
+    price: 36.99,
+    originalPrice: 49.99,
+    rating: 4.6,
+    reviewsCount: 1850,
+    image: "assets/pins/trendy-queen-cropped-cardigan-sweaters-f-pin.jpg",
+    tags: ["Cardigan", "Cropped Sweater", "Fall Fashion", "Quiet Luxury"],
+    shortDesc: "Curated cropped button-front knit cardigan sweater featuring a flattering ribbed crewneck design and ultra-soft breathable drape. Perfect for transitional styling over dresses, tees, or trousers.",
+    features: [
+      "Ultra-soft fine ribbed knit with comfortable all-day stretch",
+      "Flattering cropped silhouette pairs effortlessly with high-waisted bottoms",
+      "Versatile button-down front with subtle tortoiseshell accents",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DCW38YR7/?tag=likeefashionh-20"
+  },
+  {
     id: "thermal-underwear-for-women-long-johns-s",
     asin: "B088H5DWV3",
     title: "Thermajane Women's Fleece Lined Thermal Underwear Set",

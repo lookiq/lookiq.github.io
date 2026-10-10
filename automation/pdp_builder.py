@@ -1,5 +1,6 @@
 import os
 import re
+import urllib.parse
 from pathlib import Path
 
 def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github.io") -> str:
@@ -25,7 +26,6 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     # Avoid duplicate brand & clean excessive Amazon title keywords
     clean_raw = re.sub(r'\s*-\s*[A-Za-z0-9\s]+$', '', raw_title).strip()
     if len(clean_raw) > 75:
-        # Take first descriptive segment before comma or slash
         parts = re.split(r'[,|/]', clean_raw)
         clean_raw = parts[0].strip()
         if len(clean_raw) < 25 and len(parts) > 1:
@@ -80,11 +80,11 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
               </li>""")
         bullets_html = "\n".join(bullet_items)
     else:
-        bullets_html = """              <li>
+        bullets_html = f"""              <li>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                <span>Premium tailored drape and elevated quiet luxury styling</span>
+                <span>Ultra-soft fine ribbed knit with comfortable all-day drape and stretch</span>
               </li>
               <li>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -105,21 +105,23 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
         f"Currently verified on Amazon US for {price}."
     )
 
+    encoded_pin_desc = urllib.parse.quote(f"{title} - Verified Amazon Find on LOOKIQ")
+
     # 1. Update Title and Meta Tags
-    html = re.sub(r'<title>.*?</title>', f'<title>{clean_short_title} | LOOKIQ Review</title>', html, count=1)
-    html = re.sub(r'<meta name="description" content=".*?">', f'<meta name="description" content="{editorial_summary}">', html, count=1)
-    html = re.sub(r'<link rel="canonical" href=".*?">', f'<link rel="canonical" href="{site_base_url}/products/{slug}.html">', html, count=1)
+    html = re.sub(r'<title>.*?</title>', lambda m: f'<title>{clean_short_title} | LOOKIQ Review</title>', html, count=1)
+    html = re.sub(r'<meta name="description" content=".*?">', lambda m: f'<meta name="description" content="{editorial_summary}">', html, count=1)
+    html = re.sub(r'<link rel="canonical" href=".*?">', lambda m: f'<link rel="canonical" href="{site_base_url}/products/{slug}.html">', html, count=1)
 
     # 2. Update OpenGraph and Twitter
-    html = re.sub(r'<meta property="og:title" content=".*?">', f'<meta property="og:title" content="{clean_short_title} | LOOKIQ">', html, count=1)
-    html = re.sub(r'<meta property="og:description" content=".*?">', f'<meta property="og:description" content="{editorial_summary}">', html, count=1)
-    html = re.sub(r'<meta property="og:image" content=".*?">', f'<meta property="og:image" content="{image_pin_url}">', html, count=1)
-    html = re.sub(r'<meta property="og:url" content=".*?">', f'<meta property="og:url" content="{site_base_url}/products/{slug}.html">', html, count=1)
-    html = re.sub(r'<meta property="product:price:amount" content=".*?">', f'<meta property="product:price:amount" content="{price_num}">', html, count=1)
+    html = re.sub(r'<meta property="og:title" content=".*?">', lambda m: f'<meta property="og:title" content="{clean_short_title} | LOOKIQ">', html, count=1)
+    html = re.sub(r'<meta property="og:description" content=".*?">', lambda m: f'<meta property="og:description" content="{editorial_summary}">', html, count=1)
+    html = re.sub(r'<meta property="og:image" content=".*?">', lambda m: f'<meta property="og:image" content="{image_pin_url}">', html, count=1)
+    html = re.sub(r'<meta property="og:url" content=".*?">', lambda m: f'<meta property="og:url" content="{site_base_url}/products/{slug}.html">', html, count=1)
+    html = re.sub(r'<meta property="product:price:amount" content=".*?">', lambda m: f'<meta property="product:price:amount" content="{price_num}">', html, count=1)
 
-    html = re.sub(r'<meta name="twitter:title" content=".*?">', f'<meta name="twitter:title" content="{clean_short_title} | LOOKIQ">', html, count=1)
-    html = re.sub(r'<meta name="twitter:description" content=".*?">', f'<meta name="twitter:description" content="{editorial_summary}">', html, count=1)
-    html = re.sub(r'<meta name="twitter:image" content=".*?">', f'<meta name="twitter:image" content="{image_pin_url}">', html, count=1)
+    html = re.sub(r'<meta name="twitter:title" content=".*?">', lambda m: f'<meta name="twitter:title" content="{clean_short_title} | LOOKIQ">', html, count=1)
+    html = re.sub(r'<meta name="twitter:description" content=".*?">', lambda m: f'<meta name="twitter:description" content="{editorial_summary}">', html, count=1)
+    html = re.sub(r'<meta name="twitter:image" content=".*?">', lambda m: f'<meta name="twitter:image" content="{image_pin_url}">', html, count=1)
 
     # 3. Update Schema.org JSON-LD
     html = html.replace("Elescat Women's Casual Sleeveless Summer Sundress with Pockets", title)
@@ -135,97 +137,118 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     # 4. Update Breadcrumb current
     html = re.sub(
         r'<span class="current" title=".*?">.*?</span>',
-        f'<span class="current" title="{title}">{title}</span>',
+        lambda m: f'<span class="current" title="{title}">{title}</span>',
         html,
         count=1
     )
 
-    # 5. Update Product Page Title & Meta
+    # 5. Update Product Page Title & Meta Header
     html = re.sub(
         r'<h1 class="product-page-title">.*?</h1>',
-        f'<h1 class="product-page-title">{title}</h1>',
+        lambda m: f'<h1 class="product-page-title">{title}</h1>',
         html,
         count=1
     )
     html = re.sub(
         r'<div class="product-meta-header">[\s\S]*?</div>',
-        f'<div class="product-meta-header">\n          <span>{brand}</span>\n          <span>&bull;</span>\n          <span>Curated Fashion</span>\n          <span>&bull;</span>\n          <span>ASIN: {asin}</span>\n        </div>',
+        lambda m: f'<div class="product-meta-header">\n          <span>{brand}</span>\n          <span>&bull;</span>\n          <span>Curated Fashion</span>\n          <span>&bull;</span>\n          <span>ASIN: {asin}</span>\n        </div>',
         html,
         count=1
     )
 
-    # 6. Update Price Card & Ratings
+    # 6. Badge & Pinterest Button
+    html = html.replace("Viral Summer Favorite", "Trending Fashion Staple")
+    html = re.sub(
+        r'href="https://www\.pinterest\.com/pin/create/button/\?url=[^"]*"',
+        lambda m: f'href="https://www.pinterest.com/pin/create/button/?url={urllib.parse.quote(f"{site_base_url}/products/{slug}.html")}&media={urllib.parse.quote(image_pin_url)}&description={encoded_pin_desc}"',
+        html
+    )
+
+    # 7. Update Price Card & Ratings
     html = re.sub(
         r'<span class="price-value">\$[0-9.]+</span>',
-        f'<span class="price-value">{price}</span>',
+        lambda m: f'<span class="price-value">{price}</span>',
         html
     )
     html = re.sub(
         r'<span class="price-original-val">\$[0-9.]+</span>',
-        f'<span class="price-original-val">{orig_price}</span>',
+        lambda m: f'<span class="price-original-val">{orig_price}</span>',
         html
     )
     html = re.sub(
         r'<span class="rating-score">[0-9.]+ out of 5</span>',
-        f'<span class="rating-score">{rating} out of 5</span>',
+        lambda m: f'<span class="rating-score">{rating} out of 5</span>',
         html
     )
     html = re.sub(
         r'<span class="rating-count">\([0-9,kK\+\s]+ verified Amazon ratings\)</span>',
-        f'<span class="rating-count">({reviews:,} verified Amazon ratings)</span>',
+        lambda m: f'<span class="rating-count">({reviews:,} verified Amazon ratings)</span>',
         html
     )
 
-    # 7. Update Affiliate Links
+    # 8. Update Affiliate Links
     html = re.sub(
         r'href="https://amzn\.to/[^"]*"',
-        f'href="{affiliate_url}"',
+        lambda m: f'href="{affiliate_url}"',
         html
     )
     html = re.sub(
         r'href="https://www\.amazon\.com/dp/[^"]*"',
-        f'href="{affiliate_url}"',
+        lambda m: f'href="{affiliate_url}"',
         html
     )
 
-    # 8. Update Feature List
+    # 9. Update Editorial Overview Block
+    overview_block = f"""        <div class="product-section-block">
+          <h2>Editorial Overview</h2>
+          <p style="font-size: 0.96rem; color: var(--text-secondary); line-height: 1.65;">
+            {editorial_summary}
+          </p>
+        </div>"""
     html = re.sub(
-        r'<ul class="feature-list-check">[\s\S]*?</ul>',
-        f'<ul class="feature-list-check">\n{bullets_html}\n          </ul>',
+        r'<div class="product-section-block">\s*<h2>Editorial Overview</h2>\s*<p[^>]*>[\s\S]*?</p>\s*</div>',
+        lambda m: overview_block,
         html,
         count=1
     )
 
-    # 9. Update Hero and Zoom Image in Gallery
+    # 10. Update Feature List
+    html = re.sub(
+        r'<ul class="feature-list-check">[\s\S]*?</ul>',
+        lambda m: f'<ul class="feature-list-check">\n{bullets_html}\n          </ul>',
+        html,
+        count=1
+    )
+
+    # 11. Update Hero and Zoom Image in Gallery
     html = re.sub(
         r'<div class="product-hero-image-box" id="product-zoom-box" onclick="openFullscreenLightbox\([^)]*\)">',
-        f'<div class="product-hero-image-box" id="product-zoom-box" onclick="openFullscreenLightbox(\'{image_hero_abs}\', \'{title}\')">',
+        lambda m: f'<div class="product-hero-image-box" id="product-zoom-box" onclick="openFullscreenLightbox(\'{image_hero_abs}\', \'{title}\')">',
         html,
         count=1
     )
     html = re.sub(
         r'<img src="[^"]*" alt="[^"]*" id="product-zoom-img" decoding="async">',
-        f'<img src="{image_hero_rel}" alt="{title}" id="product-zoom-img" decoding="async">',
+        lambda m: f'<img src="{image_hero_rel}" alt="{title}" id="product-zoom-img" decoding="async">',
         html,
         count=1
     )
 
-    # 10. Update Mobile Sticky Bar
+    # 12. Update Mobile Sticky Bar
     html = re.sub(
         r'<span class="sticky-bar-title">.*?</span>',
-        f'<span class="sticky-bar-title">{clean_short_title}</span>',
+        lambda m: f'<span class="sticky-bar-title">{clean_short_title}</span>',
         html,
         count=1
     )
     html = re.sub(
         r'<span class="sticky-bar-price">.*?</span>',
-        f'<span class="sticky-bar-price">{price}</span>',
-        html,
-        count=1
+        lambda m: f'<span class="sticky-bar-price">{price}</span>',
+        html
     )
     html = re.sub(
         r'<img src="[^"]*" alt="[^"]*" class="sticky-bar-thumb" loading="lazy">',
-        f'<img src="{image_hero_rel}" alt="{title}" class="sticky-bar-thumb" loading="lazy">',
+        lambda m: f'<img src="{image_hero_rel}" alt="{title}" class="sticky-bar-thumb" loading="lazy">',
         html,
         count=1
     )
