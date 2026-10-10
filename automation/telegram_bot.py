@@ -135,6 +135,35 @@ def run_bot():
                     send_message(chat_id, welcome_text, token)
                     continue
 
+                # Check if this is an image update for an existing LookiQ product
+                lookiq_match = re.search(r'products/([a-zA-Z0-9_-]+)(?:\.html)?', text)
+                if photos and lookiq_match:
+                    slug = lookiq_match.group(1)
+                    send_message(chat_id, f"<b>AI Fashion Image Update Request!</b>\nProduct: <code>{slug}</code>\nDownloading high-res image & regenerating 2:3 vertical pin...", token)
+                    largest_photo = photos[-1]
+                    p_img_path = project_root / "assets" / "products" / f"{slug}.jpg"
+                    pin_img_path = project_root / "assets" / "pins" / f"{slug}-pin.jpg"
+                    
+                    download_telegram_file(largest_photo["file_id"], token, p_img_path)
+                    
+                    from pin_generator import create_pinterest_pin_image
+                    create_pinterest_pin_image(str(p_img_path), str(pin_img_path))
+                    
+                    # Push live to GitHub Pages
+                    import subprocess
+                    subprocess.run(["git", "add", f"assets/products/{slug}.jpg", f"assets/pins/{slug}-pin.jpg"], cwd=str(project_root), check=False)
+                    subprocess.run(["git", "commit", "-m", f"Update AI editorial model image for {slug}"], cwd=str(project_root), check=False)
+                    subprocess.run(["git", "push", "origin", "main"], cwd=str(project_root), check=False)
+                    
+                    caption = (
+                        f"<b>Product Image Updated Live!</b>\n\n"
+                        f"Product: <code>{slug}</code>\n"
+                        f"Live PDP: https://lookiq.github.io/products/{slug}.html\n\n"
+                        f"New 2:3 luxury vertical Pin has been generated and pushed live to GitHub Pages!"
+                    )
+                    send_photo(chat_id, str(pin_img_path), caption, token)
+                    continue
+
                 # Check if text contains an Amazon link
                 url_matches = re.findall(r'(https?://[^\s<>"\'()]+)', text)
                 amazon_url = None
@@ -145,7 +174,7 @@ def run_bot():
                         break
 
                 if not amazon_url:
-                    send_message(chat_id, "Please send a valid Amazon product URL (e.g. amazon.com, amzn.to, link.amazon, or a.co).", token)
+                    send_message(chat_id, "Please send a valid Amazon product URL (e.g. amazon.com, amzn.to, link.amazon, or a.co) or attach a photo with your LookiQ product URL to update its image.", token)
                     continue
 
                 custom_image_path = None
