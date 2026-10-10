@@ -18,40 +18,35 @@ def create_pinterest_pin_image(
     temp_img_path = output_path + ".tmp"
 
     try:
-        headers = {'User-Agent': 'Mozilla/5.0'}
-        req = urllib.request.Request(image_url, headers=headers)
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            with open(temp_img_path, 'wb') as f:
-                f.write(resp.read())
+        if os.path.exists(image_url):
+            temp_img_path = image_url
+        else:
+            headers = {'User-Agent': 'Mozilla/5.0'}
+            req = urllib.request.Request(image_url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                with open(temp_img_path, 'wb') as f:
+                    f.write(resp.read())
 
         with Image.open(temp_img_path) as src:
             src = src.convert("RGB")
             
-            # Create base canvas with quiet luxury charcoal background
-            canvas = Image.new("RGB", (target_width, target_height), bg_color_hex)
-            
-            # Scale proportionally so the full garment or model is beautifully framed
-            scale_w = (target_width * 0.94) / src.width
-            scale_h = (target_height * 0.94) / src.height
-            scale = min(scale_w, scale_h)
+            # If image is already portrait or editorial, use smart full-bleed fit to avoid letterbox borders
+            # Focus on top 25% (face/torso) so model and styling stay perfectly in frame
+            canvas = ImageOps.fit(
+                src, 
+                (target_width, target_height), 
+                method=Image.Resampling.LANCZOS, 
+                centering=(0.5, 0.25)
+            )
+            canvas.save(output_path, "JPEG", quality=95)
 
-            new_w = int(src.width * scale)
-            new_h = int(src.height * scale)
-            resized = src.resize((new_w, new_h), Image.Resampling.LANCZOS)
-
-            pos_x = (target_width - new_w) // 2
-            pos_y = (target_height - new_h) // 2
-
-            canvas.paste(resized, (pos_x, pos_y))
-            canvas.save(output_path, "JPEG", quality=92)
-
-        if os.path.exists(temp_img_path):
+        if temp_img_path != image_url and os.path.exists(temp_img_path):
             os.remove(temp_img_path)
         return True
 
     except Exception as e:
         print(f"[PinGenerator] Error generating pin: {e}")
-        if os.path.exists(temp_img_path):
+        if temp_img_path != image_url and os.path.exists(temp_img_path):
             os.remove(temp_img_path)
         return False
 
