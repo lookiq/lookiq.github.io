@@ -2109,6 +2109,10 @@ input, select {
   position: absolute;
   top: 12px;
   left: 12px;
+  max-width: calc(100% - 112px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background: rgba(12, 12, 16, 0.88);
   backdrop-filter: blur(8px);
   color: #fff0d0;
@@ -4212,6 +4216,11 @@ input, select {
   visibility: visible;
   transform: translateY(0);
 }
+.back-to-top.footer-visible {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(12px) !important;
+}
 
 .back-to-top:hover {
   border-color: rgba(201, 151, 56, 0.70);
@@ -5217,10 +5226,16 @@ html, body {
     overflow-x: auto !important;
     flex-wrap: nowrap !important;
     padding-bottom: 6px !important;
+    padding-right: 24px !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important;
     width: 100% !important;
     max-width: 100% !important;
+    -webkit-mask-image: linear-gradient(to right, #000 90%, transparent 100%) !important;
+    mask-image: linear-gradient(to right, #000 90%, transparent 100%) !important;
+  }
+  .category-tabs .tab-btn {
+    flex-shrink: 0 !important;
   }
   .category-tabs::-webkit-scrollbar {
     display: none !important;
