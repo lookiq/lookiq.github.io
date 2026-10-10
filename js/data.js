@@ -92,7 +92,7 @@ const PRODUCTS = [
       "Flattering scoop neckline and modest armhole cut for confident all-day coverage",
       "Versatile swing flare silhouette pairs seamlessly with denim jackets, sandals, or sneakers"
     ],
-    amazonLink: "https://amzn.to/3UG9Got"
+    amazonLink: getAffiliateLink("B09N72QM68")
   },
   {
     id: "vintage-cocktail-dress",
@@ -114,7 +114,7 @@ const PRODUCTS = [
       "Breathable high-density stretch blend (94% Nylon, 6% Spandex)",
       "Standard US sizing: XS to 3XL (Over 40+ seasonal colors)"
     ],
-    amazonLink: "https://amzn.to/3T8vGYF"
+    amazonLink: getAffiliateLink("B07RKLN54Z")
   },
   {
     id: "retro-oval-sunglasses",
@@ -180,7 +180,7 @@ const PRODUCTS = [
       "Ultra-soft, lightweight & breathable textured fabric",
       "Asymmetrical curved hem with leg-lengthening side slits"
     ],
-    amazonLink: "https://amzn.to/4yj1hFV"
+    amazonLink: getAffiliateLink("B0GY34D6CM")
   },
   {
     id: "foldable-straw-sun-hat",
@@ -224,7 +224,7 @@ const PRODUCTS = [
       "Detachable festive rainbow pom-pom charm",
       "Fully lined interior with slip organization pocket"
     ],
-    amazonLink: "https://amzn.to/4xC9O6N"
+    amazonLink: getAffiliateLink("B07Q7ZJQ5V")
   },
   {
     id: "oversized-trench-coat",
@@ -537,7 +537,7 @@ const OUTFITS = [
         category: "Cover-Up",
         price: "$16.14",
         asin: "B0GY34D6CM",
-        amazonLink: "https://amzn.to/4yj1hFV"
+        amazonLink: getAffiliateLink("B0GY34D6CM")
       },
       {
         name: "FURTALK Foldable Wide-Brim Straw UV Sun Hat",
@@ -551,7 +551,7 @@ const OUTFITS = [
         category: "Beach Bag",
         price: "$19.59",
         asin: "B07Q7ZJQ5V",
-        amazonLink: "https://amzn.to/4xC9O6N"
+        amazonLink: getAffiliateLink("B07Q7ZJQ5V")
       }
     ]
   },
