@@ -74,6 +74,13 @@
   padding: 0;
 }
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -86,7 +93,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
 img {
@@ -5241,5 +5247,122 @@ input, select {
   }
   .active-detail-panel h3 {
     font-size: 1.15rem;
+  }
+}
+
+/* ==========================================================================
+   BULLETPROOF MOBILE PHONE (CHROME / SAFARI) LOCK
+   Fixes hamburger menu cut-off and horizontal page swipe
+   ========================================================================== */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+.site-header, .announcement-bar {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 820px) {
+  .announcement-bar .inner {
+    justify-content: center !important;
+    gap: 8px !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding: 0 10px !important;
+  }
+  .disclosure-badge-container,
+  .announcement-bar .disclosure-badge,
+  .social-links-announcement {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 62px !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+  }
+  .brand-logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+  }
+  .brand-logo .logo-mark {
+    width: 34px !important;
+    height: 34px !important;
+    flex-shrink: 0 !important;
+  }
+  .brand-logo .logo-emblem-img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .brand-logo .logo-text {
+    font-size: 1.35rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+  }
+  .action-btn {
+    width: 38px !important;
+    height: 38px !important;
+    flex-shrink: 0 !important;
+  }
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px !important;
+  }
+  .header-inner {
+    height: 58px !important;
+    gap: 6px !important;
+  }
+  .brand-logo .logo-mark {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .brand-logo .logo-emblem-img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .brand-logo .logo-text {
+    font-size: 1.22rem !important;
+    letter-spacing: 0.07em !important;
+  }
+  .header-actions {
+    gap: 6px !important;
+  }
+  .action-btn {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .trending-ticker-wrap {
+    gap: 6px !important;
+  }
+  .trending-pill-badge {
+    font-size: 0.58rem !important;
+    padding: 2px 6px !important;
+  }
+  .ticker-item {
+    font-size: 0.72rem !important;
   }
 }
