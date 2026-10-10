@@ -29,6 +29,28 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "thermal-underwear-for-women-long-johns-s",
+    asin: "B088H5DWV3",
+    title: "Thermajane Women's Fleece Lined Thermal Underwear Set",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Winter Warmth Essential",
+    price: 19.99,
+    originalPrice: 29.99,
+    rating: 4.6,
+    reviewsCount: 14213,
+    image: "assets/products/thermal-underwear-model.jpg",
+    tags: ["Thermal Underwear", "Winter Warmth", "Base Layer", "Fleece Lined"],
+    shortDesc: "Ultra-soft microfleece interior lining delivers maximum thermal insulation without added bulk. Breathable four-way stretch fabric for comfortable all-day cold weather layering.",
+    features: [
+      "Ultra-soft microfleece interior lining delivers maximum thermal insulation",
+      "Breathable four-way stretch fabric retains its tailored shape",
+      "Moisture-wicking dry technology prevents clamminess",
+      "Seamless fit under trousers, jeans, and winter knitwear"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B088H5DWV3/?tag=likeefashionh-20"
+  },
+  {
     id: "casual-summer-sundress",
     asin: "B09N72QM68",
     title: "Elescat Women's Casual Sleeveless Summer Sundress with Pockets",

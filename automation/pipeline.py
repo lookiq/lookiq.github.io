@@ -3,6 +3,7 @@ import sys
 import json
 import subprocess
 import shutil
+import re
 from pathlib import Path
 
 # Add script directory to python path
@@ -26,13 +27,68 @@ def load_config() -> dict:
         "webhook_url": ""
     }
 
+def inject_into_data_js(product: dict, data_js_path: Path):
+    """Automatically appends the new product to js/data.js catalog."""
+    if not data_js_path.exists():
+        return
+    with open(data_js_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    slug = product["slug"]
+    if f'id: "{slug}"' in content or f"id: '{slug}'" in content:
+        return
+
+    price = product.get("price", "$39.99")
+    price_num = float(re.sub(r'[^0-9.]', '', price) or "39.99")
+    orig_price = round(price_num * 1.35, 2)
+    asin = product.get("asin", "")
+    title = product.get("raw_title", "")
+    rating = product.get("rating", 4.6)
+    reviews = product.get("review_count", 1850)
+    
+    # Check if local image exists
+    local_prod_img = project_root / "assets" / "products" / f"{slug}.jpg"
+    if local_prod_img.exists():
+        img_path = f"assets/products/{slug}.jpg"
+    else:
+        img_path = f"assets/pins/{slug}-pin.jpg"
+
+    affiliate_url = product.get("short_affiliate_url") or product.get("affiliate_url") or f"https://www.amazon.com/dp/{asin}/?tag=likeefashionh-20"
+
+    new_entry = f"""  {{
+    id: "{slug}",
+    asin: "{asin}",
+    title: "{title[:70]}",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: {price_num},
+    originalPrice: {orig_price},
+    rating: {rating},
+    reviewsCount: {reviews},
+    image: "{img_path}",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "{affiliate_url}"
+  }},"""
+
+    updated_content = content.replace("const PRODUCTS = [\n", f"const PRODUCTS = [\n{new_entry}\n", 1)
+    with open(data_js_path, "w", encoding="utf-8") as f:
+        f.write(updated_content)
+    print(f"  -> Added {slug} to js/data.js catalog!")
+
 def process_product(amazon_url: str, custom_image_path: str = None, auto_push: bool = True) -> dict:
     """
     Master pipeline:
     1. Fetches Amazon product metadata and extracts ASIN.
     2. Sets or formats 2:3 luxury vertical pin in assets/pins/{slug}-pin.jpg.
     3. Builds PDP in products/{slug}.html using master luxury template.
-    4. Injects product into feed.xml for Pinterest Auto-Publish.
+    4. Injects product into feed.xml for Pinterest Auto-Publish & js/data.js for Catalog.
     5. Formats multi-channel captions for Pinterest, Instagram, Facebook, TikTok.
     6. Git commits & pushes to trigger live deployment.
     """
@@ -73,8 +129,8 @@ def process_product(amazon_url: str, custom_image_path: str = None, auto_push: b
     pdp_file = save_pdp(product, str(project_root))
     pdp_url = f"{base_url}/products/{slug}.html"
 
-    # 4. Inject into feed.xml for Pinterest Auto-Publish
-    print("[4/5] Injecting into Pinterest RSS Feed (feed.xml)...")
+    # 4. Inject into feed.xml and js/data.js
+    print("[4/5] Injecting into Pinterest RSS Feed & Website Catalog...")
     feed_path = project_root / "feed.xml"
     socials = generate_social_captions(product, site_base_url=base_url)
     pin_data = socials["pinterest"]
@@ -86,6 +142,7 @@ def process_product(amazon_url: str, custom_image_path: str = None, auto_push: b
         hashtags=pin_data["hashtags"],
         price=product["price"]
     )
+    inject_into_data_js(product, project_root / "js" / "data.js")
 
     # Dispatch to webhook if configured
     if webhook_url:
