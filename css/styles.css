@@ -5298,14 +5298,20 @@ html, body {
     gap: 8px !important;
     box-sizing: border-box !important;
   }
-  .brand-logo {
+  .brand-logo,
+  .logo-group {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
     flex-shrink: 1 !important;
     min-width: 0 !important;
   }
-  .brand-logo .logo-mark {
+  .brand-logo .logo-sub,
+  .logo-group .logo-sub {
+    display: none !important;
+  }
+  .brand-logo .logo-mark,
+  .logo-group .logo-icon-wrap {
     width: 34px !important;
     height: 34px !important;
     flex-shrink: 0 !important;
@@ -5314,7 +5320,8 @@ html, body {
     width: 32px !important;
     height: 32px !important;
   }
-  .brand-logo .logo-text {
+  .brand-logo .logo-text,
+  .logo-group .logo-text {
     font-size: 1.35rem !important;
     letter-spacing: 0.1em !important;
   }
@@ -5392,7 +5399,12 @@ html, body {
     height: 58px !important;
     gap: 6px !important;
   }
-  .brand-logo .logo-mark {
+  .brand-logo .logo-sub,
+  .logo-group .logo-sub {
+    display: none !important;
+  }
+  .brand-logo .logo-mark,
+  .logo-group .logo-icon-wrap {
     width: 30px !important;
     height: 30px !important;
   }
@@ -5400,7 +5412,8 @@ html, body {
     width: 28px !important;
     height: 28px !important;
   }
-  .brand-logo .logo-text {
+  .brand-logo .logo-text,
+  .logo-group .logo-text {
     font-size: 1.22rem !important;
     letter-spacing: 0.07em !important;
   }
