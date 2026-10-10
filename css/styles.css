@@ -5136,3 +5136,76 @@ input, select {
   padding: 16px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+/* ==========================================================================
+   Mobile & Tablet 100% Responsiveness Polish
+   ========================================================================== */
+.announcement-bar {
+  overflow: hidden;
+  max-width: 100vw;
+}
+
+@media (max-width: 600px) {
+  .trending-pill-badge {
+    font-size: 0.62rem;
+    padding: 2px 8px;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .ticker-item {
+    font-size: 0.74rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .ticker-item .ticker-action {
+    display: none;
+  }
+  .ticker-item .ticker-tag {
+    font-size: 0.62rem;
+    padding: 1px 5px;
+  }
+  .header-actions {
+    gap: 6px;
+  }
+  .action-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .brand-logo .logo-text {
+    font-size: 1.3rem;
+  }
+  .category-tabs {
+    gap: 6px;
+  }
+  .tab-btn {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-intro-center {
+    padding: 0 12px;
+  }
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+  .card-3d {
+    width: 185px !important;
+    height: 260px !important;
+    margin-left: -92px !important;
+    margin-top: -130px !important;
+  }
+  .carousel-3d-stage {
+    height: 320px !important;
+  }
+  .active-detail-panel {
+    padding: 0 12px;
+    margin-top: 14px;
+  }
+  .active-detail-panel h3 {
+    font-size: 1.15rem;
+  }
+}

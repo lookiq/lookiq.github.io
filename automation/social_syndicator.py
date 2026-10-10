@@ -53,7 +53,7 @@ def generate_social_captions(product: dict, site_base_url: str = "https://lookiq
 
     # 4. TikTok (Photo Mode / Carousel Hook)
     tiktok_caption = (
-        f"The viral Amazon staple everyone is styling this season: {brand} {title}. "
+        f"The viral Amazon staple everyone is styling this season: {title}. "
         f"Double-lined quality with true-to-size fit for {price}. "
         f"Full review on LOOKIQ (link in bio) #AmazonFashion #QuietLuxury #StyleDupes #CapsuleWardrobe #OOTD"
     )
@@ -61,7 +61,7 @@ def generate_social_captions(product: dict, site_base_url: str = "https://lookiq
     # 5. X (Twitter - 280 character optimized)
     clean_short_title = title[:45]
     x_tweet_text = (
-        f"Viral Amazon Fashion Find: {brand} {clean_short_title}\n\n"
+        f"Viral Amazon Fashion Find: {clean_short_title}\n\n"
         f"Verified Prime deal for {price}. Sizing breakdown on LOOKIQ:\n"
         f"{pdp_url}\n\n"
         f"#AmazonFashion #QuietLuxury #StyleReview #AmazonFinds"

@@ -57,6 +57,7 @@ def send_photo(chat_id: int, photo_path: str, caption: str = "", token: str = ""
         # caption
         if caption:
             body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\"caption\"\r\n\r\n{caption}\r\n".encode("utf-8"))
+            body.extend(f"--{boundary}\r\nContent-Disposition: form-data; name=\"parse_mode\"\r\n\r\nHTML\r\n".encode("utf-8"))
 
         # photo
         filename = os.path.basename(photo_path)
@@ -173,7 +174,14 @@ def run_bot():
                     )
                     send_message(chat_id, fb_text, token)
 
-                    # 3. Send X (Twitter) Post with 1-Click Intent
+                    # 3. Send TikTok Caption
+                    tiktok_text = (
+                        f"<b>TikTok Caption (Ready to Copy):</b>\n\n"
+                        f"<code>{socials['tiktok']['caption']}</code>"
+                    )
+                    send_message(chat_id, tiktok_text, token)
+
+                    # 4. Send X (Twitter) Post with 1-Click Intent
                     x_data = socials.get("x", {})
                     x_text = (
                         f"<b>X / Twitter Post (Ready to Copy):</b>\n\n"

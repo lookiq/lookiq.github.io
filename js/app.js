@@ -14,6 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let searchDebounceTimer = null;
   let wishlist = JSON.parse(localStorage.getItem("lookiq_wishlist")) || [];
 
+  // Parse URL Search Parameters (Sitelinks Searchbox & Deep Linking)
+  const initialUrlParams = new URLSearchParams(window.location.search);
+  const paramSearch = initialUrlParams.get("s") || initialUrlParams.get("search") || initialUrlParams.get("q");
+  if (paramSearch && paramSearch.trim()) {
+    searchQuery = paramSearch.trim();
+  }
+
   // DOM Elements
   const productsGrid = document.getElementById("products-grid");
   const outfitsGrid = document.getElementById("outfits-grid");
@@ -524,6 +531,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Live Search with Debounce & Clear Button Toggle
     if (searchInput) {
+    if (searchQuery) searchInput.value = searchQuery;
       searchInput.addEventListener("input", (e) => {
         const val = e.target.value;
         if (searchClearBtn) {
@@ -1124,22 +1132,19 @@ document.addEventListener("DOMContentLoaded", () => {
       resultsContainer.innerHTML = matchedProducts.map(p => {
         const affLink = getAffiliateLink(p.asin, p.amazonLink);
         return `
-          <div class="spotlight-card">
-            <img src="${p.image}" alt="${p.title}" class="spotlight-thumb" loading="lazy" />
-            <div class="spotlight-info">
-              <span class="spotlight-category">${p.badge || p.category.toUpperCase()}</span>
-              <h4 class="spotlight-title">
-                <a href="products/${p.id}.html" onclick="closeSpotlightSearch()">${p.title}</a>
-              </h4>
-              <div class="spotlight-meta">
-                <span class="spotlight-price">$${p.price.toFixed(2)}</span>
-                <span class="spotlight-rating">${p.rating} ★ (${p.reviews.toLocaleString()} reviews)</span>
+          <a href="products/${p.id}.html" class="spotlight-item" onclick="closeSpotlightSearch()">
+            <img src="${p.image}" alt="${p.title}" loading="lazy" />
+            <div class="spotlight-item-content">
+              <div class="spotlight-item-title">${p.title}</div>
+              <div class="spotlight-item-meta">
+                <span class="spotlight-item-price">${p.price.toFixed(2)}</span>
+                <span>&bull;</span>
+                <span>${p.rating} ★</span>
+                <span>(${p.reviews.toLocaleString()})</span>
               </div>
             </div>
-            <div class="spotlight-action">
-              <a href="${affLink}" target="_blank" rel="nofollow sponsored" class="btn-spotlight-prime">Shop Prime &rarr;</a>
-            </div>
-          </div>
+            <span class="spotlight-item-action" onclick="event.stopPropagation(); window.open('${affLink}', '_blank');">Shop Prime &rarr;</span>
+          </a>
         `;
       }).join("");
     }

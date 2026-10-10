@@ -24,7 +24,8 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     bullets = product.get("bullets", [])
     bullets_html = "".join([f"<li>{b}</li>" for b in bullets[:4]]) or "<li>Ultra-soft premium fabric with tailored drape and all-day comfort.</li><li>Verified Amazon Prime deal with easy 30-day returns.</li>"
 
-    description = f"Curated Amazon fashion staple: {title}. Features premium tailoring, flattering silhouette, and verified customer ratings for {price}."
+    clean_short = title[:50]
+    description = f"Curated Amazon fashion staple: {clean_short} for {price}. Verified sizing, drape & style reviews on LOOKIQ."
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -112,6 +113,19 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
           "name": "{brand}"
         }},
         "category": "Fashion",
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "{rating}",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "LOOKIQ Style Editors"
+          },
+          "reviewBody": "Curated Amazon fashion staple evaluated for tailored drape, fabric quality, and verified true-to-size fit."
+        },
         "aggregateRating": {{
           "@type": "AggregateRating",
           "ratingValue": {rating},
