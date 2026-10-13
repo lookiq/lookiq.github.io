@@ -240,7 +240,7 @@ const PRODUCTS = [
   },
   {
     id: "trendy-queen-womens-mock-neck-sweatshirt",
-    asin: "B0C5RB7NRS",
+    asin: "B0C5RC6M9Y",
     title: "Trendy Queen Womens Mock Neck Sweatshirts Oversized Pullover Fall Outf",
     category: "women",
     subCategory: "Curated Finds",
