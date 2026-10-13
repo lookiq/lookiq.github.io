@@ -742,6 +742,27 @@ const PRODUCTS = [
       "Versatile resort & summer staple for vacations, errands, or casual dining"
     ],
     amazonLink: getAffiliateLink("B0CR5D81C8")
+  },
+  {
+    id: "saodimallsu-womens-button-cardigan-sweat",
+    asin: "B0H3KMF929",
+    title: "Saodimallsu Womens Button Cardigan Sweaters Fall Chunky Knit",
+    category: "women",
+    subCategory: "Knitwear & Sweaters",
+    badge: "Curated Pick",
+    price: 52.99,
+    rating: 4.4,
+    reviewsCount: 38400,
+    image: "assets/pins/saodimallsu-womens-button-cardigan-sweat-pin.jpg",
+    tags: ["Cardigan", "Chunky Knit", "Fall Fashion", "Quiet Luxury"],
+    shortDesc: "Chunky-knit button-front cardigan sweater with a cozy fall-ready drape. An easy layering piece over tees, dresses, and turtlenecks.",
+    features: [
+      "Chunky knit construction with a soft, cozy hand-feel",
+      "Classic button-front design for versatile styling",
+      "Relaxed fall silhouette that layers effortlessly",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0H3KMF929/?tag=likeefashionh-20"
   }
 ];
 
