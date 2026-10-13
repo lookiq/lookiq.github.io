@@ -64,6 +64,90 @@
   </script>
 </head>
 <body>
+
+  <!-- Announcement & Dynamic Trending Ticker Bar -->
+  <aside class="announcement-bar" aria-label="Trending Announcements & Compliance">
+    <div class="inner">
+      <div class="trending-ticker-wrap">
+        <span class="trending-pill-badge">
+          <span class="trending-pulse-dot"></span>
+          Trending Now
+        </span>
+        <div class="trending-ticker-track" id="trending-ticker-track">
+          <a href="../index.html#catalog" class="ticker-item active">
+            <span class="ticker-badge">VIRAL FINDS</span>
+            <span>Viral Fashion Finds &amp; Designer Dupes on Amazon US</span>
+            <span class="ticker-arrow">&rarr;</span>
+          </a>
+          <a href="../guides.html#viral-tiktok-square-neck-bodysuit-review" class="ticker-item">
+            <span class="ticker-badge">VIRAL EDIT</span>
+            <span>$25 TikTok Square-Neck Shapewear Romper Fit Test</span>
+            <span class="ticker-arrow">&rarr;</span>
+          </a>
+          <a href="../guides.html#dresstells-review" class="ticker-item">
+            <span class="ticker-badge">TOP PICK</span>
+            <span>$44 Audrey Hepburn Vintage Cocktail Dress Review</span>
+            <span class="ticker-arrow">&rarr;</span>
+          </a>
+          <a href="../lookbook.html#outfit-01" class="ticker-item">
+            <span class="ticker-badge">STYLE GUIDE</span>
+            <span>Quiet Luxury Chic Street Style: Elevated Capsule Essentials</span>
+            <span class="ticker-arrow">&rarr;</span>
+          </a>
+          <a href="../lookbook.html#outfit-02" class="ticker-item">
+            <span class="ticker-badge">MEN'S EDIT</span>
+            <span>Clean Urban Minimalist Men's Street Style Edit</span>
+            <span class="ticker-arrow">&rarr;</span>
+          </a>
+        </div>
+        
+      </div>
+      <div class="disclosure-badge-container">
+        <button class="disclosure-badge" id="trust-badge-btn" aria-label="Amazon Prime Verification Details" aria-expanded="false" title="Click for Buyer Trust & Compliance">
+          <svg class="trust-shield-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+          <span>Amazon Associate Partner • Verified US Prime Deals</span>
+          <svg class="trust-chevron-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="trust-popover-card" id="trust-popover-card" role="tooltip">
+          <div class="trust-popover-header">
+            <span class="trust-title">LOOKIQ Buying Guarantee</span>
+          </div>
+          <ul class="trust-perks-list">
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <strong>Verified US Prime Deals</strong>
+                <p>Every curated staple is verified for fast Prime delivery &amp; authentic customer ratings.</p>
+              </div>
+            </li>
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              </div>
+              <div>
+                <strong>30-Day Free Prime Returns</strong>
+                <p>Fulfilled directly by Amazon US with zero-risk prepaid returns.</p>
+              </div>
+            </li>
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div>
+                <strong>FTC Compliance &amp; Ethics</strong>
+                <p>LOOKIQ earns qualifying commissions as an Amazon Associate at no extra cost to you.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
   <!-- Main Navigation Header -->
   <header class="site-header">
     <div class="container header-inner">
@@ -262,6 +346,28 @@
       </div>
     </div>
   </footer>
+
+
+  <script>
+    (function() {
+      var items = document.querySelectorAll('#trending-ticker-track .ticker-item');
+      if (!items.length) return;
+      var idx = 0, timer = null;
+      function show(n) {
+        items[idx].classList.remove('active');
+        idx = (n + items.length) % items.length;
+        items[idx].classList.add('active');
+      }
+      function start() { if (!timer) timer = setInterval(function() { show(idx + 1); }, 4500); }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+      var wrap = document.querySelector('.trending-ticker-wrap');
+      if (wrap) {
+        wrap.addEventListener('mouseenter', stop);
+        wrap.addEventListener('mouseleave', start);
+      }
+      start();
+    })();
+  </script>
 
   <script src="../js/data.js"></script>
   <script>
