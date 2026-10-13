@@ -2,57 +2,21 @@
   "candidates": [
     {
       "keyword": "oversized sweater women",
-      "asin": "B0C5RB7NRS",
-      "amazon_url": "https://www.amazon.com/dp/B0C5RB7NRS",
+      "asin": "B0D9RPX853",
+      "amazon_url": "https://www.amazon.com/dp/B0D9RPX853",
+      "status": "pending_approval"
+    },
+    {
+      "keyword": "oversized sweater women",
+      "asin": "B0H4LSB2YC",
+      "amazon_url": "https://www.amazon.com/dp/B0H4LSB2YC",
       "status": "published"
     },
     {
       "keyword": "oversized sweater women",
-      "asin": "B0C5RC6M9Y",
-      "amazon_url": "https://www.amazon.com/dp/B0C5RC6M9Y",
-      "status": "published"
-    },
-    {
-      "keyword": "oversized sweater women",
-      "asin": "B0H4Z8K7NN",
-      "amazon_url": "https://www.amazon.com/dp/B0H4Z8K7NN",
-      "status": "published"
-    },
-    {
-      "keyword": "chelsea boots women",
-      "asin": "B0B2XZKB99",
-      "amazon_url": "https://www.amazon.com/dp/B0B2XZKB99",
-      "status": "published"
-    },
-    {
-      "keyword": "chelsea boots women",
-      "asin": "B0B2X92HDC",
-      "amazon_url": "https://www.amazon.com/dp/B0B2X92HDC",
-      "status": "published"
-    },
-    {
-      "keyword": "chelsea boots women",
-      "asin": "B0DJM5M18M",
-      "amazon_url": "https://www.amazon.com/dp/B0DJM5M18M",
-      "status": "published"
-    },
-    {
-      "keyword": "gold hoop earrings",
-      "asin": "B0H1C1FT2R",
-      "amazon_url": "https://www.amazon.com/dp/B0H1C1FT2R",
-      "status": "published"
-    },
-    {
-      "keyword": "gold hoop earrings",
-      "asin": "B0GTYYM2VK",
-      "amazon_url": "https://www.amazon.com/dp/B0GTYYM2VK",
-      "status": "published"
-    },
-    {
-      "keyword": "gold hoop earrings",
-      "asin": "B0F8W6S4DQ",
-      "amazon_url": "https://www.amazon.com/dp/B0F8W6S4DQ",
-      "status": "published"
+      "asin": "B0HDP1JNK8",
+      "amazon_url": "https://www.amazon.com/dp/B0HDP1JNK8",
+      "status": "pending_approval"
     }
   ]
 }
