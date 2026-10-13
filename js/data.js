@@ -29,6 +29,132 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "nuohemule-3-in-1-100-merino-wool-winter",
+    asin: "B0DCVTTQMX",
+    title: "NUOHEMULE 3 in 1 100% Merino Wool Winter Accessory Set, Hat Scarf Glov",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 75.99,
+    originalPrice: 102.59,
+    rating: 4.7,
+    reviewsCount: 22,
+    image: "assets/products/nuohemule-3-in-1-100-merino-wool-winter.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DCVTTQMX?tag=likeefashionh-20"
+  },
+  {
+    id: "moyuxi-8mm-tapered-design-thick-large-go",
+    asin: "B0F4MC4L65",
+    title: "MOYUXI 8mm Tapered Design Thick Large Gold Hoop Earrings for Women Hyp",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 13.99,
+    originalPrice: 18.89,
+    rating: 4.6,
+    reviewsCount: 830,
+    image: "assets/products/moyuxi-8mm-tapered-design-thick-large-go.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0F4MC4L65?tag=likeefashionh-20"
+  },
+  {
+    id: "lookiq-curated-s-zone-leather-mini-cross",
+    asin: "B09VSDPLJZ",
+    title: "S-ZONE Leather Mini Crossbody Tote Bag Satchel Handbags Shoulder Purse",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 69.99,
+    originalPrice: 94.49,
+    rating: 4.5,
+    reviewsCount: 394,
+    image: "assets/products/lookiq-curated-s-zone-leather-mini-cross.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B09VSDPLJZ?tag=likeefashionh-20"
+  },
+  {
+    id: "cashmere-wool-blend-wrap-for-women-pash",
+    asin: "B0DDR7Q513",
+    title: "Cashmere Wool Blend Wrap for Women, Pashmina Shawl Scarf Travel 78x27in",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 85.49,
+    originalPrice: 115.41,
+    rating: 4.3,
+    reviewsCount: 760,
+    image: "assets/products/cashmere-wool-blend-wrap-for-women-pash.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DDR7Q513?tag=likeefashionh-20"
+  },
+  {
+    id: "lillusory-cardigan-for-women-lightweight",
+    asin: "B0FBGR7Z6K",
+    title: "LILLUSORY Cardigan for Women Lightweight Cardigans Fall Fashion Outfit",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 42.99,
+    originalPrice: 58.04,
+    rating: 4.1,
+    reviewsCount: 625,
+    image: "assets/products/lillusory-cardigan-for-women-lightweight.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0FBGR7Z6K?tag=likeefashionh-20"
+  },
+  {
+    id: "zesica-oversized-sweaters-for-women-2026",
+    asin: "B0H4LSB2YC",
+    title: "ZESICA Oversized Sweaters for Women 2026 Fall Trendy Pullover Tops Bur",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 49.99,
+    originalPrice: 67.49,
+    rating: 4.6,
+    reviewsCount: 427,
+    image: "assets/products/zesica-oversized-sweaters-for-women-2026.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0H4LSB2YC?tag=likeefashionh-20"
+  },
+  {
     id: "ongerek-14k-gold-earrings-for-women-ripp",
     asin: "B0F8W6S4DQ",
     title: "14K Gold Earrings for Women Ripple Line 14K Gold Hoop Earrings for Wom",
