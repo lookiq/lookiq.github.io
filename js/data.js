@@ -29,6 +29,90 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "automet-womens-oversized-faux-leather-j",
+    asin: "B0C9GRK8R4",
+    title: "AUTOMET Women's Oversized Faux Leather Jacket for Fall and Winter",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 39.99,
+    originalPrice: 53.99,
+    rating: 4.3,
+    reviewsCount: 304,
+    image: "assets/products/automet-womens-oversized-faux-leather-j.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0C9GRK8R4?tag=likeefashionh-20"
+  },
+  {
+    id: "prettygarden-womens-long-sleeve-quarter",
+    asin: "B0DL543BTK",
+    title: "PRETTYGARDEN Womens Long Sleeve Quarter Zip Pullover Sweater(Grey,XL)",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 32.98,
+    originalPrice: 44.52,
+    rating: 4.5,
+    reviewsCount: 282,
+    image: "assets/products/prettygarden-womens-long-sleeve-quarter.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DL543BTK?tag=likeefashionh-20"
+  },
+  {
+    id: "corski-womens-flannel-shacket-jacket-pl",
+    asin: "B0F9281M9D",
+    title: "CORSKI Women's Flannel Shacket Jacket Plaid Button Down Long Sleeve Shirt",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 19.99,
+    originalPrice: 26.99,
+    rating: 4.1,
+    reviewsCount: 14302,
+    image: "assets/products/corski-womens-flannel-shacket-jacket-pl.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0F9281M9D?tag=likeefashionh-20"
+  },
+  {
+    id: "anrabess-sweater-dress-for-women-oversiz",
+    asin: "B09C5GW935",
+    title: "ANRABESS Sweater Dress for Women Oversized Cable Knit Fall Long Sleeve",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 25.99,
+    originalPrice: 35.09,
+    rating: 4.2,
+    reviewsCount: 899,
+    image: "assets/products/anrabess-sweater-dress-for-women-oversiz.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B09C5GW935?tag=likeefashionh-20"
+  },
+  {
     id: "nuohemule-3-in-1-100-merino-wool-winter",
     asin: "B0DCVTTQMX",
     title: "NUOHEMULE 3 in 1 100% Merino Wool Winter Accessory Set, Hat Scarf Glov",
