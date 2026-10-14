@@ -29,6 +29,90 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "suuksess-women-workout-romper-one-piece",
+    asin: "B0F66J12H4",
+    title: "SUUKSESS Women's Workout Romper One Piece",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 29.95,
+    originalPrice: 40.43,
+    rating: 4.2,
+    reviewsCount: 166,
+    image: "assets/products/suuksess-women-workout-romper-one-piece.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0F66J12H4?tag=likeefashionh-20"
+  },
+  {
+    id: "besteel-3pairs-14k-gold-plated-small-chu",
+    asin: "B0D47LDXF7",
+    title: "BESTEEL 3Pairs 14K Gold Plated Small Chunky Huggie Hoop Earrings for W",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 9.99,
+    originalPrice: 13.49,
+    rating: 4.4,
+    reviewsCount: 2484,
+    image: "assets/products/besteel-3pairs-14k-gold-plated-small-chu.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D47LDXF7?tag=likeefashionh-20"
+  },
+  {
+    id: "trendy-queen-womens-hoodies-oversized-sw",
+    asin: "B0C65WCS8R",
+    title: "Trendy Queen Womens Hoodies Oversized Sweatshirt Grey M",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 27.99,
+    originalPrice: 37.79,
+    rating: 4.2,
+    reviewsCount: 10764,
+    image: "assets/products/trendy-queen-womens-hoodies-oversized-sw.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0C65WCS8R?tag=likeefashionh-20"
+  },
+  {
+    id: "athlefit-womens-chelsea-boots-lug-sole",
+    asin: "B0B2X92HDC",
+    title: "Athlefit Women's Chelsea Boots Lug Sole Chunky Heel Ankle Booties",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 59.99,
+    originalPrice: 80.99,
+    rating: 4.5,
+    reviewsCount: 3986,
+    image: "assets/products/athlefit-womens-chelsea-boots-lug-sole.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0B2X92HDC?tag=likeefashionh-20"
+  },
+  {
     id: "automet-womens-oversized-faux-leather-j",
     asin: "B0C9GRK8R4",
     title: "AUTOMET Women's Oversized Faux Leather Jacket for Fall and Winter",
