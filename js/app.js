@@ -46,6 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }[m]));
   }
 
+  // Lightweight thumbnail for card grids (600px WebP, ~25KB). Falls back to
+  // the full image via onerror if a thumbnail is missing (e.g. new products).
+  function thumbSrc(src) {
+    if (!src || src.startsWith('http')) return src;
+    const base = src.split('/').pop().replace(/\.(jpg|jpeg|png|webp)$/i, '');
+    return `assets/thumbs/${base}.webp`;
+  }
+
   function getCategoryName(cat) {
     const map = {
       'all': 'All Finds',
@@ -323,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
               </svg>
             </button>
-            <img src="${product.image}" alt="${product.altText || product.title}" loading="lazy" decoding="async">
+            <img src="${thumbSrc(product.image)}" onerror="this.onerror=null;this.src='${product.image}'" alt="${product.altText || product.title}" loading="lazy" decoding="async">
             <div class="quick-view-overlay">
               <button class="btn-quick-view" onclick="openQuickView('${product.id}')">Quick View</button>
             </div>
@@ -438,7 +446,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <span>Save Look</span>
             </button>
             <span class="outfit-items-count">${outfit.items.length} Pieces</span>
-            <img src="${outfit.image}" alt="${outfit.altText || outfit.title}" loading="lazy" decoding="async">
+            <img src="${thumbSrc(outfit.image)}" onerror="this.onerror=null;this.src='${outfit.image}'" alt="${outfit.altText || outfit.title}" loading="lazy" decoding="async">
           </div>
           <div class="outfit-body">
             <h4 class="outfit-title">${outfit.title}</h4>
@@ -1133,7 +1141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const affLink = getAffiliateLink(p.asin, p.amazonLink);
         return `
           <a href="products/${p.id}.html" class="spotlight-item" onclick="closeSpotlightSearch()">
-            <img src="${p.image}" alt="${p.title}" loading="lazy" />
+            <img src="${thumbSrc(p.image)}" onerror="this.onerror=null;this.src='${p.image}'" alt="${p.title}" loading="lazy" />
             <div class="spotlight-item-content">
               <div class="spotlight-item-title">${p.title}</div>
               <div class="spotlight-item-meta">
@@ -1287,7 +1295,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const affLink = getAffiliateLink(p.asin, p.amazonLink);
         return `
           <div class="wishlist-item" id="wishlist-item-${p.id}">
-            <img src="${p.image}" alt="${p.title}" />
+            <img src="${thumbSrc(p.image)}" onerror="this.onerror=null;this.src='${p.image}'" alt="${p.title}" />
             <div class="wishlist-item-details">
               <h4>${p.title}</h4>
               <div class="wishlist-item-price">$${p.price.toFixed(2)}</div>
