@@ -253,6 +253,97 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
         count=1
     )
 
+    # 12b. Fix template leftovers the clone misses (sundress master template).
+    # JSON-LD description
+    editorial_desc = f"{title}. Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling."
+    html = re.sub(
+        r'"description": "Effortless sleeveless casual sundress[^"]*"',
+        f'"description": "{editorial_desc}"', html, count=1)
+    # JSON-LD aggregateRating (template default 4.3 / 18500)
+    html = re.sub(
+        r'"ratingValue": 4\.3,(\s*)"reviewCount": 18500,',
+        lambda m: f'"ratingValue": {rating},{m.group(1)}"reviewCount": {reviews},',
+        html, count=1)
+    # JSON-LD reviewRating (template default 4.8)
+    html = re.sub(
+        r'("reviewRating":\s*\{\s*"@type": "Rating",\s*"ratingValue": ")4\.8(")',
+        rf'\g<1>{rating}\g<2>', html, count=1)
+    # JSON-LD offers.url (template amzn.to short link not caught by href swap)
+    html = re.sub(
+        r'"url": "https://amzn\.to/[^"]*"',
+        f'"url": "{affiliate_url}"', html, count=1)
+    # JSON-LD FAQPage: replace the 3 sundress-specific Q&As with generic ones
+    html = html.replace(
+        '"name": "How does the sizing run for this Elescat summer dress?"',
+        '"name": "How does the sizing run?"', 1)
+    html = html.replace(
+        '"text": "It fits true to size with a relaxed, flowy swing silhouette. If you prefer a more tailored fit through the bust, consider sizing down; otherwise, order your standard US size for breezy vacation comfort."',
+        '"text": "Based on aggregated Amazon customer reviews, this item fits true to size. We recommend ordering your standard US size."', 1)
+    html = html.replace(
+        '"name": "Is the fabric see-through, and are the pockets functional?"',
+        '"name": "What is the fabric and how do I care for it?"', 1)
+    html = html.replace(
+        '"text": "No, the high-density rayon-blend fabric is opaque and soft to the touch. Both side seam pockets are deep and sturdy enough to hold a smartphone, keys, or sunglasses without sagging."',
+        '"text": "See the product details on Amazon for the full material breakdown. Machine wash cold on gentle and hang dry."', 1)
+    html = html.replace(
+        '"name": "How should I care for and wash this dress?"',
+        '"name": "What is the return policy?"', 1)
+    html = html.replace(
+        '"text": "We recommend machine washing on a cold, gentle cycle with like colors and hanging to dry or tumble drying on low to preserve the vibrant color and soft drape."',
+        '"text": "Orders through Amazon are covered by Amazon\'s standard return policy \\u2014 most fashion items qualify for free 30-day returns."', 1)
+    # Visible FAQ accordion -> generic
+    def _faq_repl(m):
+        items = []
+        for i, (q, a) in enumerate([
+            ("How does the sizing run?",
+             "Based on aggregated Amazon customer reviews, this item fits true to size. We recommend ordering your standard US size — check the size chart on the Amazon listing for exact measurements."),
+            ("What is the fabric and how do I care for it?",
+             "See the product details on Amazon for the full material breakdown. As a rule of thumb, machine wash cold on a gentle cycle and hang dry to preserve color, shape, and softness."),
+            ("What is the return policy?",
+             "Orders placed through Amazon are covered by Amazon's standard return policy — most fashion items qualify for free 30-day returns."),
+        ]):
+            open_attr = " open" if i == 0 else ""
+            items.append(
+                f'''<details class="faq-accordion-item"{open_attr}>
+              <summary class="faq-accordion-summary">
+                <span>{q}</span>
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </summary>
+              <div class="faq-accordion-body">
+                <p>{a}</p>
+              </div>
+            </details>''')
+        return m.group(1) + "\n" + "\n".join(items) + "\n          " + m.group(3)
+    html = re.sub(
+        r'(<div class="faq-accordion-group">\s*)(<details class="faq-accordion-item"[^>]*>[\s\S]*?</details>\s*)+?(</div>)',
+        _faq_repl, html, count=1)
+    # Styling tip: swap the sundress sentence for a category-aware tip
+    _t = title.lower()
+    if any(k in _t for k in ("trench", "coat", "jacket", "blazer", "shacket")):
+        _tip = ("Layer it over a fitted knit and dark denim for a polished off-duty look, "
+                "or throw it over tailoring for the office. Finish with loafers or ankle boots and a structured bag.")
+    elif any(k in _t for k in ("sweater", "cardigan", "hoodie", "pullover", "knit")):
+        _tip = ("Style it with high-rise jeans and sneakers for everyday ease, or tuck the front "
+                "into a satin midi skirt with boots for an elevated evening look.")
+    elif any(k in _t for k in ("boot", "sneaker", "shoe", "loafer", "heel", "sandal")):
+        _tip = ("Pair with cropped denim or a midi dress to show them off — a true capsule-wardrobe workhorse.")
+    elif any(k in _t for k in ("earring", "hoop", "necklace", "jewelry", "bracelet")):
+        _tip = ("Wear solo for a minimal everyday statement or stack with your existing pieces.")
+    elif any(k in _t for k in ("dress", "romper", "jumpsuit")):
+        _tip = ("Dress it up with heeled boots and a tailored coat, or keep it casual with sneakers and a denim jacket.")
+    else:
+        _tip = ("A versatile wardrobe staple — dress it up with tailored pieces and heels, or keep it relaxed with denim and sneakers.")
+    html = html.replace(
+        "Elevate this classic black sundress with a woven straw shoulder tote, tortoiseshell retro sunglasses, and tan slide sandals for an effortless daytime look. To transition into an evening dinner outfit, add a tailored denim jacket or lightweight linen blazer with gold hoop earrings.",
+        _tip, 1)
+    # Sizing guide paragraph -> generic
+    html = re.sub(
+        r'(<h2>Sizing &amp; Fit Guide</h2>\s*<p[^>]*>)[\s\S]*?(</p>)',
+        r'\g<1>\n            <strong>Fit Profile:</strong> True to size based on aggregated Amazon customer reviews. '
+        r'If you are between sizes or prefer a roomier fit, consider sizing up. '
+        r'Always check the Amazon size chart for exact measurements.\n          \g<2>',
+        html, count=1)
+
     # Clean any replacement characters
     html = html.replace('\ufffd', '&bull;')
 
