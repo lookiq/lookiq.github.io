@@ -29,6 +29,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "prettygarden-batwing-long-sleeve-lightwe",
+    asin: "B0GY4L7WLX",
+    title: "PRETTYGARDEN Batwing Long Sleeve Lightweight Cardigan Sweaters for Wom",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 19.99,
+    originalPrice: 26.99,
+    rating: 4.4,
+    reviewsCount: 953,
+    image: "assets/products/prettygarden-batwing-long-sleeve-lightwe.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0GY4L7WLX?tag=likeefashionh-20"
+  },
+  {
+    id: "trendy-queen-womens-oversized-cable-kni",
+    asin: "B0D9RPX853",
+    title: "Trendy Queen Women's Oversized Cable Knit Sweaters 2026 Fall Outfits",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 36.99,
+    originalPrice: 49.94,
+    rating: 4.4,
+    reviewsCount: 5206,
+    image: "assets/products/trendy-queen-womens-oversized-cable-kni.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D9RPX853?tag=likeefashionh-20"
+  },
+  {
+    id: "orolay-chiione-women-trench-coat-long-do",
+    asin: "B0GX5125V2",
+    title: "Orolay CHIIONE Women Trench Coat Long Double Breasted Belted Rain Coat",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 94.99,
+    originalPrice: 128.24,
+    rating: 4.6,
+    reviewsCount: 809,
+    image: "assets/products/orolay-chiione-women-trench-coat-long-do.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0GX5125V2?tag=likeefashionh-20"
+  },
+  {
     id: "suuksess-women-workout-romper-one-piece",
     asin: "B0F66J12H4",
     title: "SUUKSESS Women's Workout Romper One Piece",
@@ -425,7 +488,7 @@ const PRODUCTS = [
       "Verified true-to-size fit based on customer reviews",
       "Amazon Prime eligible with fast delivery and easy returns"
     ],
-    amazonLink: "https://www.amazon.com/dp/B0C5RB7NRS?tag=likeefashionh-20"
+    amazonLink: "https://www.amazon.com/dp/B0C5RC6M9Y?tag=likeefashionh-20"
   },
   {
     id: "trendy-queen-cropped-cardigan-sweaters-f",
