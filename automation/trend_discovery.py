@@ -1,9 +1,16 @@
 """
-LOOKIQ Trend Discovery v1
-Daily: Google Trends (US, fashion) -> trending keywords -> Amazon search -> candidate ASINs.
-Output: JSON candidates for Telegram approval -> feed approved ones into run_local.py.
+LOOKIQ Trend Discovery v2
+Daily: Amazon's own sales-velocity signals (Movers & Shakers, New Releases,
+Best Sellers in fashion) -> candidate ASINs, with Google Trends keyword
+search as a filler/fallback -> JSON candidates.
 
 Usage: python automation/trend_discovery.py [--limit 10]
+
+Why v2: Google Trends captures search interest, but Amazon's Movers & Shakers
+captures actual purchase velocity on Amazon (biggest 24h sales-rank gainers) —
+the literal "trending products" signal for an Amazon-affiliate site. It also
+eliminates the junk-ASIN problem of raw search results (sponsored items,
+irrelevant matches), because bestseller lists are curated by sales rank.
 """
 import json
 import re
@@ -30,6 +37,18 @@ AMAZON_HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
+
+# Primary trend signal: Amazon's own sales-velocity lists for fashion.
+# Order matters — movers-and-shakers first (24h gainers = truly "trending"),
+# then new releases (fresh momentum), then best sellers (proven winners).
+# 7147440011 = Women's Fashion node.
+BESTSELLER_SOURCES = [
+    ("amazon_movers_shakers", "https://www.amazon.com/gp/movers-and-shakers/fashion/"),
+    ("amazon_new_releases", "https://www.amazon.com/gp/new-releases/fashion/7147440011"),
+    ("amazon_best_sellers", "https://www.amazon.com/gp/bestsellers/fashion/7147440011"),
+]
+
+ASIN_RX = re.compile(r'data-asin="(B0[A-Z0-9]{8}|B[A-Z0-9]{9})"')
 
 
 def get_trending_keywords(limit=10):
@@ -61,26 +80,45 @@ def get_trending_keywords(limit=10):
         return SEED_KEYWORDS[:limit]
 
 
-def search_amazon_asins(keyword, max_results=3):
-    """Light Amazon search scrape -> list of (asin, title). Rate-limited, best-effort."""
-    q = urllib.parse.quote_plus(keyword)
-    url = f"https://www.amazon.com/s?k={q}&s=relevanceblender"
+def extract_asins(html):
+    """Pull unique ASINs from an Amazon listing page's HTML, in page order."""
+    seen, out = set(), []
+    for asin in ASIN_RX.findall(html):
+        if asin not in seen:
+            seen.add(asin)
+            out.append(asin)
+    return out
+
+
+def fetch_listing_asins(url, max_results=3, label="listing"):
+    """Fetch an Amazon listing page and return up to max_results ASINs. [] on any failure."""
     req = urllib.request.Request(url, headers=AMAZON_HEADERS)
     try:
         with urllib.request.urlopen(req, timeout=15) as r:
             html = r.read().decode("utf-8", "ignore")
     except Exception as e:
-        print(f"[amazon] search failed for '{keyword}': {e}")
+        print(f"[amazon] {label} fetch failed ({url}): {e}")
         return []
-    # ASINs appear as data-asin="B0XXXXXXX"
-    asins = re.findall(r'data-asin="(B0[A-Z0-9]{8}|B[A-Z0-9]{9})"', html)
-    seen, out = set(), []
-    for asin in asins:
-        if asin not in seen:
-            seen.add(asin)
-            out.append(asin)
-        if len(out) >= max_results:
-            break
+    asins = extract_asins(html)[:max_results]
+    print(f"[amazon] {label} -> {len(asins)} ASINs")
+    return asins
+
+
+def search_amazon_asins(keyword, max_results=3):
+    """Light Amazon search scrape -> list of ASINs. Rate-limited, best-effort."""
+    q = urllib.parse.quote_plus(keyword)
+    url = f"https://www.amazon.com/s?k={q}&s=relevanceblender"
+    return fetch_listing_asins(url, max_results, label=f"search '{keyword}'")
+
+
+def fetch_bestseller_asins(per_source=4):
+    """Primary signal: ASINs from Amazon's fashion sales-velocity lists."""
+    out = []
+    for source_name, url in BESTSELLER_SOURCES:
+        asins = fetch_listing_asins(url, per_source, label=source_name)
+        for asin in asins:
+            out.append((source_name, asin))
+        time.sleep(3)  # be gentle with Amazon
     return out
 
 
@@ -92,19 +130,35 @@ def main():
             limit = int(args[i + 1])
         elif a.startswith("--limit="):
             limit = int(a.split("=", 1)[1])
-    keywords = get_trending_keywords(limit)
+
     candidates = []
+    seen_asins = set()
+
+    def add_candidate(asin, keyword, source):
+        if asin in seen_asins:
+            return
+        seen_asins.add(asin)
+        candidates.append({
+            "keyword": keyword,
+            "asin": asin,
+            "amazon_url": f"https://www.amazon.com/dp/{asin}",
+            "source": source,
+            "status": "pending_approval",
+        })
+
+    # 1) Primary: Amazon sales-velocity lists (purchase-proven, junk-free)
+    for source_name, asin in fetch_bestseller_asins(per_source=4):
+        add_candidate(asin, source_name.replace("amazon_", "").replace("_", " "), source_name)
+    print(f"[trend] bestseller sources -> {len(candidates)} unique ASINs")
+
+    # 2) Filler: Google Trends keyword search (old v1 behavior, kept as fallback)
+    keywords = get_trending_keywords(limit)
     for kw in keywords:
-        asins = search_amazon_asins(kw)
-        for asin in asins:
-            candidates.append({
-                "keyword": kw,
-                "asin": asin,
-                "amazon_url": f"https://www.amazon.com/dp/{asin}",
-                "status": "pending_approval",
-            })
-        print(f"[trend] '{kw}' -> {len(asins)} ASINs")
+        for asin in search_amazon_asins(kw):
+            add_candidate(asin, kw, "google_trends_search")
+        print(f"[trend] '{kw}' -> candidates so far: {len(candidates)}")
         time.sleep(3)  # be gentle with Amazon
+
     out_path = "automation/trend_candidates.json"
     with open(out_path, "w") as f:
         json.dump({"candidates": candidates}, f, indent=2)
