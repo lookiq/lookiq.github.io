@@ -29,6 +29,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "pickbeau-gold-large-hoop-earrings-for-wo",
+    asin: "B0BVM1VF9P",
+    title: "PICKBEAU Gold Large Hoop Earrings for Women 14K Real Gold Plated Hoops",
+    category: "Jewelry",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 9.99,
+    originalPrice: 13.49,
+    rating: 4.6,
+    reviewsCount: 2735,
+    image: "assets/products/pickbeau-gold-large-hoop-earrings-for-wo.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0BVM1VF9P?tag=likeefashionh-20"
+  },
+  {
+    id: "prettygarden-womens-short-cardigan-swea",
+    asin: "B0B8D3P9YW",
+    title: "PRETTYGARDEN Women's Short Cardigan Sweaters Fashion Clothing, Apricot",
+    category: "Knitwear",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 29.98,
+    originalPrice: 40.47,
+    rating: 4.4,
+    reviewsCount: 4895,
+    image: "assets/products/prettygarden-womens-short-cardigan-swea.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0B8D3P9YW?tag=likeefashionh-20"
+  },
+  {
+    id: "coach-brooklyn-shoulder-bag-28-maple-h",
+    asin: "B0CTWGZ6TT",
+    title: "Coach Brooklyn Shoulder Bag 28, Maple",
+    category: "Bag",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 295,
+    originalPrice: 398.25,
+    rating: 4.5,
+    reviewsCount: 957,
+    image: "assets/products/coach-brooklyn-shoulder-bag-28-maple-h.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CTWGZ6TT?tag=likeefashionh-20"
+  },
+  {
     id: "prettygarden-batwing-long-sleeve-lightwe",
     asin: "B0GY4L7WLX",
     title: "PRETTYGARDEN Batwing Long Sleeve Lightweight Cardigan Sweaters for Wom",
