@@ -29,6 +29,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "fahsyee-faux-leather-jackets-for-women",
+    asin: "B08GY37ZH8",
+    title: "Fahsyee Faux Leather Jacket for Women, Black",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 49.99,
+    originalPrice: 67.49,
+    rating: 4.4,
+    reviewsCount: 2124,
+    image: "assets/products/fahsyee-faux-leather-jackets-for-women.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B08GY37ZH8?tag=likeefashionh-20"
+  },
+  {
+    id: "sinophant-high-waisted-leggings-with-poc",
+    asin: "B0CKZ4ZWYG",
+    title: "SINOPHANT High Waisted Leggings with Pockets, Full Length",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 9.99,
+    originalPrice: 13.49,
+    rating: 4.4,
+    reviewsCount: 5544,
+    image: "assets/products/sinophant-high-waisted-leggings-with-poc.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CKZ4ZWYG?tag=likeefashionh-20"
+  },
+  {
+    id: "everswe-womens-80-den-soft-opaque-tight",
+    asin: "B07ZTD3JZH",
+    title: "EVERSWE Women's 80 Den Soft Opaque Tights",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 7.5,
+    originalPrice: 10.12,
+    rating: 4.5,
+    reviewsCount: 21384,
+    image: "assets/products/everswe-womens-80-den-soft-opaque-tight.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B07ZTD3JZH?tag=likeefashionh-20"
+  },
+  {
     id: "pickbeau-gold-large-hoop-earrings-for-wo",
     asin: "B0BVM1VF9P",
     title: "PICKBEAU Gold Large Hoop Earrings for Women 14K Real Gold Plated Hoops",
