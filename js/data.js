@@ -29,6 +29,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "the-sak-lucia-leather-crossbody-purse-z",
+    asin: "B09Q91BJ7X",
+    title: "The Sak Lucia Leather Crossbody Purse, Zipper Closure with Adjustable ",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 149.0,
+    originalPrice: 201.15,
+    rating: 4.6,
+    reviewsCount: 317,
+    image: "assets/products/the-sak-lucia-leather-crossbody-purse-z.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B09Q91BJ7X?tag=likeefashionh-20"
+  },
+  {
+    id: "btfbm-wide-leg-dress-pants-women-busines",
+    asin: "B0DN67RR2Z",
+    title: "BTFBM Wide Leg Dress Pants Women Business Casual Outfits,Black,L",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 36.99,
+    originalPrice: 49.94,
+    rating: 4.1,
+    reviewsCount: 2643,
+    image: "assets/products/btfbm-wide-leg-dress-pants-women-busines.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DN67RR2Z?tag=likeefashionh-20"
+  },
+  {
+    id: "anrabess-women-long-sleeve-shirts-ribbed",
+    asin: "B0CYZM5RSM",
+    title: "ANRABESS Women Long Sleeve Shirts Ribbed Fitted Tops,Black,M",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 19.99,
+    originalPrice: 26.99,
+    rating: 4.6,
+    reviewsCount: 11975,
+    image: "assets/products/anrabess-women-long-sleeve-shirts-ribbed.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CYZM5RSM?tag=likeefashionh-20"
+  },
+  {
     id: "fahsyee-faux-leather-jackets-for-women",
     asin: "B08GY37ZH8",
     title: "Fahsyee Faux Leather Jacket for Women, Black",
