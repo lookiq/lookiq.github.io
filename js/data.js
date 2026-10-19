@@ -37,7 +37,7 @@ const PRODUCTS = [
     badge: "Trending Pick",
     price: 149.0,
     originalPrice: 201.15,
-    rating: 4.6,
+    rating: 4.4,
     reviewsCount: 317,
     image: "assets/products/the-sak-lucia-leather-crossbody-purse-z.jpg",
     tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
