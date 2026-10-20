@@ -139,6 +139,132 @@ const PRODUCTS = [
     amazonLink: "https://www.amazon.com/dp/B07NQ15M7B?tag=likeefashionh-20"
   },
   {
+    id: "oeak-wireless-jelly-bra-women-plus-size",
+    asin: "B0GKFMQS9K",
+    title: "OEAK Women's Wireless Jelly Bra, Plus Size Push Up Seamless Bra",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Trending Pick",
+    price: 29.99,
+    rating: 4.1,
+    reviewsCount: 12577,
+    image: "assets/products/oeak-wireless-jelly-bra-women-plus-size.webp",
+    tags: ["Wireless Bra", "Jelly Bra", "Seamless", "Plus Size"],
+    shortDesc: "The viral OEAK wireless jelly bra for women swaps underwire for a flexible jelly support band that lifts, shapes and smooths. Seamless, wide-strap comfort designed for fuller busts and all-day wear.",
+    features: [
+      "Jelly support band lifts and shapes — real support with zero underwire",
+      "Seamless cups stay invisible under tees, knits and fitted dresses",
+      "Wide comfort straps spread weight so shoulders never take the strain",
+      "Designed for fuller busts, with smoothing sides and back coverage"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0GKFMQS9K?tag=likeefashionh-20"
+  },
+  {
+    id: "cocomarts-scalloped-wireless-bra-women",
+    asin: "B0FNMFCJ29",
+    title: "COCOMARTS Jelly Bra for Women, Scalloped Wireless Push Up Seamless Bra",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Trending Pick",
+    price: 24.99,
+    rating: 4.2,
+    reviewsCount: 6188,
+    image: "assets/products/cocomarts-scalloped-wireless-bra-women.webp",
+    tags: ["Wireless Bra", "Scalloped", "Seamless", "Jelly Bra"],
+    shortDesc: "A scalloped wireless bra for women with seamless jelly-band support and gentle push-up shaping. COCOMARTS' wavy scalloped edges smooth the silhouette and add a quiet-luxury finish under any neckline.",
+    features: [
+      "Scalloped neckline and hem — a polished finish that peeks out prettily under V-necks",
+      "Jelly support band lifts without underwire, padding bulk or digging",
+      "Fully seamless cups disappear under fitted tops and dresses",
+      "Adjustable straps for a personalised lift and fit"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0FNMFCJ29?tag=likeefashionh-20"
+  },
+  {
+    id: "trendy-queen-2-piece-lounge-set-women-fall",
+    asin: "B0F9SW7V12",
+    title: "Trendy Queen Women's 2 Piece Lounge Set, Fall Matching Set with Pockets",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Trending Pick",
+    price: 39.99,
+    rating: 4.2,
+    reviewsCount: 3682,
+    image: "assets/products/trendy-queen-2-piece-lounge-set-women-fall.webp",
+    tags: ["Lounge Set", "Matching Set", "Wide Leg", "Fall Outfit"],
+    shortDesc: "A polished 2 piece lounge set for women: a fitted side-ruched long-sleeve top with drawstring wide-leg pants that have real pockets. Trendy Queen's fall matching set works from sofa to airport.",
+    features: [
+      "Matching two-piece set — fitted ruched top plus wide-leg pants, zero outfit planning",
+      "Side-ruched long-sleeve top skims the waist for a flattering, modern fit",
+      "Drawstring waistband adjusts to you, from travel days to slow Sundays",
+      "Real side pockets on the pants — phone, keys, boarding pass"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0F9SW7V12?tag=likeefashionh-20"
+  },
+  {
+    id: "trendy-queen-long-sleeve-t-shirts-women",
+    asin: "B0BW8ZFMDJ",
+    title: "Trendy Queen Women's Long Sleeve T-Shirt, Slim Fit Fall Basic Tee",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Trending Pick",
+    price: 14.99,
+    rating: 4.4,
+    reviewsCount: 8235,
+    image: "assets/products/trendy-queen-long-sleeve-t-shirts-women.webp",
+    tags: ["Long Sleeve Tee", "Basic Tee", "Slim Fit", "Fall Layering"],
+    shortDesc: "The layering hero of fall: Trendy Queen's slim-fit long sleeve t shirts for women in a soft, stretchy crewneck knit. Clean enough to wear solo, smooth enough to disappear under blazers and coats.",
+    features: [
+      "Slim, body-skimming fit that tucks cleanly into jeans and trousers",
+      "Classic crewneck — the most layer-friendly neckline for fall",
+      "Soft stretch knit keeps its shape wash after wash",
+      "Long sleeves with clean cuffs that sit right under coats and blazers"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0BW8ZFMDJ?tag=likeefashionh-20"
+  },
+  {
+    id: "amazon-essentials-slim-fit-tank-tops-women",
+    asin: "B0775Q1K93",
+    title: "Amazon Essentials Women's Slim Fit Ribbed Tank Top, Pack of 2",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Trending Pick",
+    price: 12.00,
+    rating: 4.6,
+    reviewsCount: 79068,
+    image: "assets/products/amazon-essentials-slim-fit-tank-tops-women.webp",
+    tags: ["Tank Top", "Ribbed", "2-Pack", "Capsule Basic"],
+    shortDesc: "The internet's favourite basic: slim fit tank tops for women in a fine ribbed knit, sold as a value 2-pack by Amazon Essentials. Scoop neck, smooth straps, endless layering mileage — 79,068 ratings strong.",
+    features: [
+      "Value 2-pack — two capsule staples in one order",
+      "Fine ribbed knit adds texture while staying smooth under layers",
+      "Scoop neckline and wide straps that cover bra straps cleanly",
+      "Slim fit that tucks into high-rise denim without bulk"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0775Q1K93?tag=likeefashionh-20"
+  },
+  {
+    id: "cozywow-opaque-tights-women-80-den",
+    asin: "B01LXJZAOR",
+    title: "CozyWow Women's 80 Den Opaque Footed Tights, High Waisted",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Trending Pick",
+    price: 7.99,
+    rating: 4.5,
+    reviewsCount: 15911,
+    image: "assets/products/cozywow-opaque-tights-women-80-den.webp",
+    tags: ["Tights", "80 Den", "Opaque", "Winter Essential"],
+    shortDesc: "Winter's hardest-working layer: CozyWow opaque tights for women in a smooth 80 den knit with a stay-put high waistband and full footed coverage. The $7.99 essential under every dress and skirt this season.",
+    features: [
+      "80 den knit — genuinely opaque coverage, no show-through",
+      "High, wide waistband stays flat and never rolls mid-day",
+      "Full footed design layers cleanly into loafers, boots and heels",
+      "Smooth matte finish that reads polished, never shiny"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B01LXJZAOR?tag=likeefashionh-20"
+  },
+  {
     id: "tagoo-faux-leather-leggings-for-women",
     asin: "B07BKNQRC3",
     title: "Tagoo Faux Leather Leggings for Women, Black High Waist Fleece Lined",
