@@ -29,6 +29,116 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "prettygarden-womens-winter-cropped-faux",
+    asin: "B0FCLM19GT",
+    title: "PRETTYGARDEN Women's Winter Cropped Faux Fur Coat, Taupe",
+    category: "women",
+    subCategory: "Outerwear",
+    badge: "Trending Pick",
+    price: 50.99,
+    originalPrice: 68.84,
+    rating: 4.5,
+    reviewsCount: 848,
+    image: "assets/products/prettygarden-womens-winter-cropped-faux.webp",
+    tags: ["Faux Fur", "Cropped Coat", "Winter Style", "Quiet Luxury"],
+    shortDesc: "A plush shaggy faux fur coat in warm taupe with a cropped, open-front silhouette. Fluffy and smooth with two side pockets — an instant quiet-luxury layer over dresses, knits and denim.",
+    features: [
+      "Premium shaggy faux fur — fluffy, smooth and warm in cold weather",
+      "Cropped open-front design with long sleeves and crew neckline",
+      "Two side pockets for essentials or warming hands",
+      "Sizes S (US 4-6) through XXL (US 20)"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0FCLM19GT?tag=likeefashionh-20"
+  },
+  {
+    id: "dokotoo-winter-coats-for-women-jackets-f",
+    asin: "B0D62RMJ3T",
+    title: "Dokotoo Women's Plaid Flannel Shacket Jacket, Oversized",
+    category: "women",
+    subCategory: "Outerwear",
+    badge: "Trending Pick",
+    price: 54.99,
+    originalPrice: 74.24,
+    rating: 4.5,
+    reviewsCount: 242,
+    image: "assets/products/dokotoo-winter-coats-for-women-jackets-f.webp",
+    tags: ["Plaid Flannel", "Shacket", "Fall Layering", "Oversized"],
+    shortDesc: "An oversized plaid flannel shacket in warm beige tones with a cozy fleece-lined collar, chest flap pocket and button cuffs. Wear it open as a jacket or buttoned as a shirt.",
+    features: [
+      "Soft flannel with good warmth retention and a comfortable feel",
+      "Plaid print, chest flap pocket and single-button cuffs",
+      "Oversized fit with drop shoulders for easy layering",
+      "Wear open as a jacket or closed as a shirt"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D62RMJ3T?tag=likeefashionh-20"
+  },
+  {
+    id: "lillusory-oversized-cardigan-sweaters-fo",
+    asin: "B0CCNT3N2F",
+    title: "LILLUSORY Oversized Chunky Knit Cardigan Sweater with Pockets",
+    category: "women",
+    subCategory: "Knitwear & Sweaters",
+    badge: "Trending Pick",
+    price: 41.99,
+    originalPrice: 56.69,
+    rating: 4.4,
+    reviewsCount: 264,
+    image: "assets/products/lillusory-oversized-cardigan-sweaters-fo.webp",
+    tags: ["Chunky Knit", "Oversized Cardigan", "Fall Style", "Cozy"],
+    shortDesc: "A chunky-knit oversized cardigan in rich taupe with a slouchy open front and roomy patch pockets. Soft and breathable yet warm — the layer your fall outfits have been missing.",
+    features: [
+      "Premium soft knit — cozy, skin-friendly, never bulky",
+      "Oversized slouchy fit with drop shoulders",
+      "Two roomy patch pockets",
+      "Hand wash or dry clean to keep the knit texture rich"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CCNT3N2F?tag=likeefashionh-20"
+  },
+  {
+    id: "letsjoli-jelly-bras-for-women-no-underwi",
+    asin: "B0F6V98C31",
+    title: "LetsJoli Jelly Wireless Support Bra, Seamless Full Coverage",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Trending Pick",
+    price: 23.99,
+    originalPrice: 32.39,
+    rating: 4.1,
+    reviewsCount: 25188,
+    image: "assets/products/letsjoli-jelly-bras-for-women-no-underwi.webp",
+    tags: ["Wireless Bra", "Seamless", "Full Coverage", "Comfort"],
+    shortDesc: "A buttery-soft seamless wireless bra with a 4-layer jelly band support system for lift without underwire. Full coverage, back-smoothing, and made for fuller figures in sizes S to 5XL.",
+    features: [
+      "360° jelly band support — lift and bounce control, zero underwire",
+      "Higher side wings and wider straps for fuller figures",
+      "Back-smoothing fit with 5 hook rows plus a free extender",
+      "Buttery 4-way stretch fabric, breathable all day"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0F6V98C31?tag=likeefashionh-20"
+  },
+  {
+    id: "bali-womens-comfort-revolution-wireless",
+    asin: "B07NQ15M7B",
+    title: "Bali Comfort Revolution Wireless Bra, ComfortFlex Full Coverage",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Trending Pick",
+    price: 21.99,
+    originalPrice: 50.00,
+    rating: 4.1,
+    reviewsCount: 25431,
+    image: "assets/products/bali-womens-comfort-revolution-wireless.webp",
+    tags: ["Wireless Bra", "ComfortFlex", "Full Coverage", "Cooling"],
+    shortDesc: "Bali's beloved Comfort Revolution wireless bra with ComfortFlex Fit four-way stretch that shapes to your body. Cool Comfort wicking fabric and full coverage — everyday support without a wire.",
+    features: [
+      "Wireless support — ComfortFlex Fit stretch shapes to your body",
+      "Cool Comfort moisture-wicking fabric keeps you cool",
+      "Full-coverage scoop neckline with wide straps",
+      "Wide smoothing underband for a flexible, comfy fit"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B07NQ15M7B?tag=likeefashionh-20"
+  },
+  {
     id: "tagoo-faux-leather-leggings-for-women",
     asin: "B07BKNQRC3",
     title: "Tagoo Faux Leather Leggings for Women, Black High Waist Fleece Lined",
