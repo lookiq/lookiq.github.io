@@ -2,6 +2,13 @@
   "candidates": [
     {
       "keyword": "new releases",
+      "asin": "B0HD71QKMP",
+      "amazon_url": "https://www.amazon.com/dp/B0HD71QKMP",
+      "source": "amazon_new_releases",
+      "status": "pending_approval"
+    },
+    {
+      "keyword": "new releases",
       "asin": "B0H6X849JV",
       "amazon_url": "https://www.amazon.com/dp/B0H6X849JV",
       "source": "amazon_new_releases",
@@ -9,22 +16,15 @@
     },
     {
       "keyword": "new releases",
-      "asin": "B0H9LN2ZXL",
-      "amazon_url": "https://www.amazon.com/dp/B0H9LN2ZXL",
+      "asin": "B0H39B9HZG",
+      "amazon_url": "https://www.amazon.com/dp/B0H39B9HZG",
       "source": "amazon_new_releases",
       "status": "pending_approval"
     },
     {
       "keyword": "new releases",
-      "asin": "B0H6W7X989",
-      "amazon_url": "https://www.amazon.com/dp/B0H6W7X989",
-      "source": "amazon_new_releases",
-      "status": "pending_approval"
-    },
-    {
-      "keyword": "new releases",
-      "asin": "B0HG9CVMZ9",
-      "amazon_url": "https://www.amazon.com/dp/B0HG9CVMZ9",
+      "asin": "B0HCNPL5Q8",
+      "amazon_url": "https://www.amazon.com/dp/B0HCNPL5Q8",
       "source": "amazon_new_releases",
       "status": "pending_approval"
     },
@@ -44,15 +44,15 @@
     },
     {
       "keyword": "best sellers",
-      "asin": "B0D8D6RBHN",
-      "amazon_url": "https://www.amazon.com/dp/B0D8D6RBHN",
+      "asin": "B0BW8ZFMDJ",
+      "amazon_url": "https://www.amazon.com/dp/B0BW8ZFMDJ",
       "source": "amazon_best_sellers",
       "status": "pending_approval"
     },
     {
       "keyword": "best sellers",
-      "asin": "B0CKZ4ZWYG",
-      "amazon_url": "https://www.amazon.com/dp/B0CKZ4ZWYG",
+      "asin": "B0D8D6RBHN",
+      "amazon_url": "https://www.amazon.com/dp/B0D8D6RBHN",
       "source": "amazon_best_sellers",
       "status": "pending_approval"
     },
@@ -65,36 +65,36 @@
     },
     {
       "keyword": "oversized sweater women",
-      "asin": "B0H4QP53K9",
-      "amazon_url": "https://www.amazon.com/dp/B0H4QP53K9",
+      "asin": "B0FP19B8YN",
+      "amazon_url": "https://www.amazon.com/dp/B0FP19B8YN",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
     {
       "keyword": "oversized sweater women",
-      "asin": "B0H4L65BFD",
-      "amazon_url": "https://www.amazon.com/dp/B0H4L65BFD",
+      "asin": "B0F9WYTPPC",
+      "amazon_url": "https://www.amazon.com/dp/B0F9WYTPPC",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
     {
       "keyword": "chelsea boots women",
-      "asin": "B0B62W8RFV",
-      "amazon_url": "https://www.amazon.com/dp/B0B62W8RFV",
+      "asin": "B0B2XZKB99",
+      "amazon_url": "https://www.amazon.com/dp/B0B2XZKB99",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
     {
       "keyword": "chelsea boots women",
-      "asin": "B0B2XZKNH1",
-      "amazon_url": "https://www.amazon.com/dp/B0B2XZKNH1",
+      "asin": "B0B2X92HDC",
+      "amazon_url": "https://www.amazon.com/dp/B0B2X92HDC",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
     {
       "keyword": "chelsea boots women",
-      "asin": "B0D78TNGNC",
-      "amazon_url": "https://www.amazon.com/dp/B0D78TNGNC",
+      "asin": "B0B2XY9WGQ",
+      "amazon_url": "https://www.amazon.com/dp/B0B2XY9WGQ",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
@@ -114,8 +114,8 @@
     },
     {
       "keyword": "gold hoop earrings",
-      "asin": "B0CCPBJYYR",
-      "amazon_url": "https://www.amazon.com/dp/B0CCPBJYYR",
+      "asin": "B0CPDRW819",
+      "amazon_url": "https://www.amazon.com/dp/B0CPDRW819",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
@@ -142,22 +142,22 @@
     },
     {
       "keyword": "workout romper",
-      "asin": "B0F66J12H4",
-      "amazon_url": "https://www.amazon.com/dp/B0F66J12H4",
+      "asin": "B0CSXHPD93",
+      "amazon_url": "https://www.amazon.com/dp/B0CSXHPD93",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
     {
       "keyword": "workout romper",
-      "asin": "B0G3TZPDMJ",
-      "amazon_url": "https://www.amazon.com/dp/B0G3TZPDMJ",
+      "asin": "B0CW539JCR",
+      "amazon_url": "https://www.amazon.com/dp/B0CW539JCR",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
     {
       "keyword": "workout romper",
-      "asin": "B0G3V1BY5L",
-      "amazon_url": "https://www.amazon.com/dp/B0G3V1BY5L",
+      "asin": "B0CT4ZQ79P",
+      "amazon_url": "https://www.amazon.com/dp/B0CT4ZQ79P",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
@@ -226,22 +226,22 @@
     },
     {
       "keyword": "wide leg trousers",
-      "asin": "B0H48LBQDN",
-      "amazon_url": "https://www.amazon.com/dp/B0H48LBQDN",
+      "asin": "B0DHRF4ZSS",
+      "amazon_url": "https://www.amazon.com/dp/B0DHRF4ZSS",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
     {
       "keyword": "wide leg trousers",
-      "asin": "B0H4892C7X",
-      "amazon_url": "https://www.amazon.com/dp/B0H4892C7X",
+      "asin": "B0BZPRM97C",
+      "amazon_url": "https://www.amazon.com/dp/B0BZPRM97C",
       "source": "google_trends_search",
       "status": "pending_approval"
     },
     {
       "keyword": "wide leg trousers",
-      "asin": "B0F8QHDY4V",
-      "amazon_url": "https://www.amazon.com/dp/B0F8QHDY4V",
+      "asin": "B0F381SSVD",
+      "amazon_url": "https://www.amazon.com/dp/B0F381SSVD",
       "source": "google_trends_search",
       "status": "pending_approval"
     },

@@ -29,6 +29,48 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "pavoi-19mm-gold-hoop-earrings",
+    asin: "B0BKNPPSDL",
+    title: "PAVOI Hoop Earrings for Women, 925 Silver, Yellow Gold, Size 19 Millim",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 14.95,
+    originalPrice: 20.18,
+    rating: 4.1,
+    reviewsCount: 1620,
+    image: "assets/products/pavoi-19mm-gold-hoop-earrings.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0BKNPPSDL?tag=likeefashionh-20"
+  },
+  {
+    id: "pinspark-full-zip-lounge-set",
+    asin: "B0H39B9HZG",
+    title: "PINSPARK Lounge Sets for Women Full Zip Top and Drawstring Wide Leg Pa",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 46.99,
+    originalPrice: 63.44,
+    rating: 4.3,
+    reviewsCount: 204,
+    image: "assets/products/pinspark-full-zip-lounge-set.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0H39B9HZG?tag=likeefashionh-20"
+  },
+  {
     id: "prettygarden-womens-winter-cropped-faux",
     asin: "B0FCLM19GT",
     title: "PRETTYGARDEN Women's Winter Cropped Faux Fur Coat, Taupe",
