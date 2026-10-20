@@ -23,6 +23,12 @@ for page, freq, prio in core_pages:
     loc = f"{BASE}/{page}" if page else f"{BASE}/"
     urls.append((loc, today if freq == "daily" else "2026-10-10", freq, prio))
 
+# Individual guide pages (guides/<slug>.html)
+guides_dir = ROOT / "guides"
+if guides_dir.is_dir():
+    for f in sorted(guides_dir.glob("*.html")):
+        urls.append((f"{BASE}/guides/{f.name}", today, "weekly", "0.8"))
+
 # Real product pages only (skip meta-refresh redirect stubs)
 for f in sorted((ROOT / "products").glob("*.html")):
     html = f.read_text(encoding="utf-8", errors="ignore")
