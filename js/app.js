@@ -483,7 +483,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <h4 class="guide-title">${guide.title}</h4>
             <p class="guide-excerpt">${guide.excerpt}</p>
-            <a href="guides.html#${guide.id}" class="guide-link">
+            <a href="guides/${guide.id}.html" class="guide-link">
               <span>Read Full Edit</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
