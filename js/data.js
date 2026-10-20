@@ -29,6 +29,50 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "tagoo-faux-leather-leggings-for-women",
+    asin: "B07BKNQRC3",
+    title: "Tagoo Faux Leather Leggings for Women, Black High Waist Fleece Lined",
+    category: "women",
+    subCategory: "Bottoms",
+    badge: "Trending Pick",
+    price: 39.99,
+    originalPrice: 53.99,
+    rating: 4.1,
+    reviewsCount: 16605,
+    image: "assets/products/tagoo-faux-leather-leggings-for-women.jpg",
+    tags: ["Faux Leather", "Leggings", "Fleece Lined", "Winter Style"],
+    shortDesc: "Glossy wet-look faux leather leggings with a thin fleece lining and a wide high-rise waistband. Four-way stretch, tummy control and a butt-lifting fit for an elevated everyday look.",
+    features: [
+      "Thin fleece lining with 4-way stretch — soft, comfy and non-see-through",
+      "High waistband with tummy control for a slim, sculpted fit",
+      "Butt-lifting design with a gusset crotch that moves with you",
+      "Wet-look shine pairs with sweaters, blazers and festive outfits"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B07BKNQRC3?tag=likeefashionh-20"
+  },
+  {
+    id: "pisiqi-thermal-underwear-for-women-long-johns",
+    asin: "B07HP5ZKR2",
+    title: "PISIQI Thermal Underwear for Women Long Johns Set Base Layer",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Winter Warmth Essential",
+    price: 15.72,
+    originalPrice: 21.22,
+    rating: 4.6,
+    reviewsCount: 14821,
+    image: "assets/products/pisiqi-thermal-underwear-for-women-long-johns.jpg",
+    tags: ["Thermal Underwear", "Winter Warmth", "Base Layer", "Fleece Lined"],
+    shortDesc: "Ultra-soft fleece lined thermal top and bottom set that traps body heat without bulk. Breathable, moisture-wicking four-way stretch — the perfect base layer for skiing and cold days.",
+    features: [
+      "Ultra-soft fleece lining keeps you comfortably warm in cold weather",
+      "Breathable moisture-wicking fabric keeps sweat away from skin",
+      "Four-way stretch warmth without thick or heavy layers",
+      "Lightweight, non-bulky fit layers easily under clothes or pajamas"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B07HP5ZKR2?tag=likeefashionh-20"
+  },
+  {
     id: "the-sak-lucia-leather-crossbody-purse-z",
     asin: "B09Q91BJ7X",
     title: "The Sak Lucia Leather Crossbody Purse, Zipper Closure with Adjustable ",
