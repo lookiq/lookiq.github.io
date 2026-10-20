@@ -149,7 +149,7 @@ const PRODUCTS = [
     originalPrice: 53.99,
     rating: 4.1,
     reviewsCount: 16605,
-    image: "assets/products/tagoo-faux-leather-leggings-for-women.jpg",
+    image: "assets/products/tagoo-faux-leather-leggings-for-women.webp",
     tags: ["Faux Leather", "Leggings", "Fleece Lined", "Winter Style"],
     shortDesc: "Glossy wet-look faux leather leggings with a thin fleece lining and a wide high-rise waistband. Four-way stretch, tummy control and a butt-lifting fit for an elevated everyday look.",
     features: [
