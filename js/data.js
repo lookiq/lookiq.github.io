@@ -29,6 +29,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "cushionaire-hippy-womens-platform-ankle",
+    asin: "B0BMJR8VF6",
+    title: "CUSHIONAIRE Hippy Women's Platform Ankle Boots – Genuine Suede, Faux F",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 42.99,
+    originalPrice: 58.04,
+    rating: 4.5,
+    reviewsCount: 722,
+    image: "assets/products/cushionaire-hippy-womens-platform-ankle.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0BMJR8VF6?tag=likeefashionh-20"
+  },
+  {
+    id: "silver-fashions-lambskin-leather-jacket",
+    asin: "B0CQFVGGFV",
+    title: "SILVER FASHIONS Lambskin Leather Jacket Women, Long Sleeve Button Fron",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 159.98,
+    originalPrice: 215.97,
+    rating: 4.4,
+    reviewsCount: 60,
+    image: "assets/products/silver-fashions-lambskin-leather-jacket.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CQFVGGFV?tag=likeefashionh-20"
+  },
+  {
+    id: "chouyatou-womens-winter-double-breasted",
+    asin: "B0DFXNPWL3",
+    title: "chouyatou Women's Winter Double Breasted Wool Coat Long Sleeve Notch L",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 62.99,
+    originalPrice: 85.04,
+    rating: 4.4,
+    reviewsCount: 114,
+    image: "assets/products/chouyatou-womens-winter-double-breasted.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DFXNPWL3?tag=likeefashionh-20"
+  },
+  {
     id: "pavoi-19mm-gold-hoop-earrings",
     asin: "B0BKNPPSDL",
     title: "PAVOI Hoop Earrings for Women, 925 Silver, Yellow Gold, Size 19 Millim",
