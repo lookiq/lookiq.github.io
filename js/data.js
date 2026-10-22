@@ -10,8 +10,7 @@ const LOOKIQ_CONFIG = {
   amazonAffiliateTag: "likeefashionh-20",
   currency: "$",
   marketRegion: "US",
-  amazonBaseUrl: "https://www.amazon.com/dp/",
-  disclaimer: "As an Amazon Associate, LOOKIQ earns from qualifying purchases at no additional cost to you. Prices and availability are accurate as of the date/time indicated and are subject to change."
+  amazonBaseUrl: "https://www.amazon.com/dp/"
 };
 
 /**
