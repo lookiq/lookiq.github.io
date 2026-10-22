@@ -28,6 +28,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "trendy-queen-womens-oversized-sweatshirt",
+    asin: "B0GZ3W9XFS",
+    title: "Trendy Queen Womens Oversized Sweatshirts with Snap Button Henley Coll",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 35.99,
+    originalPrice: 48.59,
+    rating: 4.4,
+    reviewsCount: 2350,
+    image: "assets/products/trendy-queen-womens-oversized-sweatshirt.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0GZ3W9XFS?tag=likeefashionh-20"
+  },
+  {
+    id: "gacimy-chunky-hoop-earrings-for-women-14",
+    asin: "B097SD325T",
+    title: "Gacimy Chunky Hoop Earrings for Women 14K Gold Plated, 925 Sterling Si",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 13.95,
+    originalPrice: 18.83,
+    rating: 4.4,
+    reviewsCount: 265,
+    image: "assets/products/gacimy-chunky-hoop-earrings-for-women-14.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B097SD325T?tag=likeefashionh-20"
+  },
+  {
+    id: "zeagoo-womens-long-sleeve-tops-black-sco",
+    asin: "B0GZVWLXX9",
+    title: "Zeagoo Womens Long Sleeve Tops Black Scoop Neck Dressy Casual Fall Shi",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 19.99,
+    originalPrice: 26.99,
+    rating: 4.3,
+    reviewsCount: 2334,
+    image: "assets/products/zeagoo-womens-long-sleeve-tops-black-sco.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0GZVWLXX9?tag=likeefashionh-20"
+  },
+  {
     id: "cushionaire-hippy-womens-platform-ankle",
     asin: "B0BMJR8VF6",
     title: "CUSHIONAIRE Hippy Women's Platform Ankle Boots – Genuine Suede, Faux F",
