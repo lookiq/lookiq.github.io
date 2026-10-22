@@ -2848,6 +2848,13 @@ input, select {
   color: #71717a;
 }
 
+.footer-disclosure {
+  text-align: center;
+  padding-top: 16px;
+  font-size: 0.75rem;
+  color: #71717a;
+}
+
 /* ==========================================================================
    Modals (Quick View & Shop The Look Outfit Breakdown)
    ========================================================================== */
