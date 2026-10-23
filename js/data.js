@@ -28,6 +28,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "panshi-3-pairs-gold-hoop-earrings-set",
+    asin: "B0D172FC5V",
+    title: "3 Pairs Gold Hoop Earrings Set for Women — Trendy Chunky Small Huggie ",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 8.99,
+    originalPrice: 12.14,
+    rating: 4.2,
+    reviewsCount: 1046,
+    image: "assets/products/panshi-3-pairs-gold-hoop-earrings-set.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D172FC5V?tag=likeefashionh-20"
+  },
+  {
+    id: "athlefit-womens-slip-on-chelsea-ankle-boots",
+    asin: "B0B2XY9WGQ",
+    title: "Athlefit Women's Slip On Chelsea Ankle Boots Beige — Fall Short Bootie",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 59.99,
+    originalPrice: 80.99,
+    rating: 4.5,
+    reviewsCount: 135,
+    image: "assets/products/athlefit-womens-slip-on-chelsea-ankle-boots.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0B2XY9WGQ?tag=likeefashionh-20"
+  },
+  {
+    id: "trendy-queen-oversized-henley-collar-sweatshirt",
+    asin: "B0GZ48K8D3",
+    title: "Trendy Queen Womens Oversized Sweatshirts with Snap Button Henley Coll",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 35.99,
+    originalPrice: 48.59,
+    rating: 4.3,
+    reviewsCount: 2357,
+    image: "assets/products/trendy-queen-oversized-henley-collar-sweatshirt.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0GZ48K8D3?tag=likeefashionh-20"
+  },
+  {
     id: "trendy-queen-womens-oversized-sweatshirt",
     asin: "B0GZ3W9XFS",
     title: "Trendy Queen Womens Oversized Sweatshirts with Snap Button Henley Coll",
