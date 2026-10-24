@@ -28,6 +28,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "levis-womens-318-shaping-wide-leg-jeans",
+    asin: "B0DJWPGRYD",
+    title: "Levi's Women's 318 Shaping Wide-Leg Jeans, Darkest Sky",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 69.50,
+    originalPrice: 93.83,
+    rating: 4.3,
+    reviewsCount: 1984,
+    image: "assets/products/levis-womens-318-shaping-wide-leg-jeans.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DJWPGRYD?tag=likeefashionh-20"
+  },
+  {
+    id: "sojos-retro-aviator-sunglasses",
+    asin: "B0CHS15JXY",
+    title: "SOJOS Retro Aviator Sunglasses for Women, Square Polarized 90s Shades",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 15.99,
+    originalPrice: 21.59,
+    rating: 4.5,
+    reviewsCount: 357,
+    image: "assets/products/sojos-retro-aviator-sunglasses.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CHS15JXY?tag=likeefashionh-20"
+  },
+  {
+    id: "womengifts-layered-gold-necklaces",
+    asin: "B0FFTH89XT",
+    title: "WomenGifts Layered Gold Necklaces for Women, Cuban Chain Choker Set",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 11.99,
+    originalPrice: 16.19,
+    rating: 4.5,
+    reviewsCount: 361,
+    image: "assets/products/womengifts-layered-gold-necklaces.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0FFTH89XT?tag=likeefashionh-20"
+  },
+  {
     id: "panshi-3-pairs-gold-hoop-earrings-set",
     asin: "B0D172FC5V",
     title: "3 Pairs Gold Hoop Earrings Set for Women — Trendy Chunky Small Huggie ",
