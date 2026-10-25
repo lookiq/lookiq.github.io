@@ -28,6 +28,48 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "idealsanxun-plaid-wool-long-skirt",
+    asin: "B07HRKH7ZW",
+    title: "IDEALSANXUN Plaid Wool Skirt \u2014 A-Line Pleated Tartan Long Skirt",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 36.98,
+    originalPrice: 42.98,
+    rating: 4.2,
+    reviewsCount: 9848,
+    image: "assets/products/idealsanxun-plaid-wool-long-skirt.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B07HRKH7ZW?tag=likeefashionh-20"
+  },
+  {
+    id: "kendra-scott-ari-heart-pendant-necklace",
+    asin: "B08FGZHW3C",
+    title: "Kendra Scott Ari Heart Pendant Necklace, 14K Gold-Plated, Rose Quartz",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 45.00,
+    originalPrice: 60.00,
+    rating: 4.6,
+    reviewsCount: 5216,
+    image: "assets/products/kendra-scott-ari-heart-pendant.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B08FGZHW3C?tag=likeefashionh-20"
+  },
+  {
     id: "levis-womens-318-shaping-wide-leg-jeans",
     asin: "B0DJWPGRYD",
     title: "Levi's Women's 318 Shaping Wide-Leg Jeans, Darkest Sky",
