@@ -28,6 +28,47 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "wander-agio-warm-blanket-scarf",
+    asin: "B07W9JN7RL",
+    title: "Wander Agio Warm Blanket Scarf \u2014 Plaid Winter Shawl Wrap",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 7.99,
+    rating: 4.5,
+    reviewsCount: 2968,
+    image: "assets/products/wander-agio-warm-blanket-scarf.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B07W9JN7RL?tag=likeefashionh-20"
+  },
+  {
+    id: "luvamia-corduroy-skirt",
+    asin: "B0F9NCV4M1",
+    title: "luvamia Corduroy Skirt \u2014 High-Waisted Wine Red Fall Skirt",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 29.99,
+    originalPrice: 36.99,
+    rating: 4.4,
+    reviewsCount: 207,
+    image: "assets/products/luvamia-corduroy-skirt.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0F9NCV4M1?tag=likeefashionh-20"
+  },
+  {
     id: "idealsanxun-plaid-wool-long-skirt",
     asin: "B07HRKH7ZW",
     title: "IDEALSANXUN Plaid Wool Skirt \u2014 A-Line Pleated Tartan Long Skirt",
