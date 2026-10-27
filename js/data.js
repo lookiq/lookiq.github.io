@@ -28,6 +28,48 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "striped-trim-long-sleeve-tunic-top",
+    asin: "B0H4KJM339",
+    title: "Striped Trim Long Sleeve Tunic Top for Women, Fall Business Casual",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 24.99,
+    originalPrice: 33.74,
+    rating: 4.4,
+    reviewsCount: 455,
+    image: "assets/products/striped-trim-long-sleeve-tunic-top.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0H4KJM339?tag=likeefashionh-20"
+  },
+  {
+    id: "joypeak-black-lace-corset-top",
+    asin: "B0FC31WQF8",
+    title: "JoyPeak Black Lace Corset Top, Overbust Brocade Bustier",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 29.99,
+    originalPrice: 40.49,
+    rating: 4.4,
+    reviewsCount: 18569,
+    image: "assets/products/joypeak-black-lace-corset-top.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0FC31WQF8?tag=likeefashionh-20"
+  },
+  {
     id: "wander-agio-warm-blanket-scarf",
     asin: "B07W9JN7RL",
     title: "Wander Agio Warm Blanket Scarf \u2014 Plaid Winter Shawl Wrap",
