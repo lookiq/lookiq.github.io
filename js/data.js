@@ -28,6 +28,48 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "adidas-womens-grand-court-lo-sneakers",
+    asin: "B0DK7RK7L1",
+    title: "adidas Women's Grand Court Lo Sneakers — White/Black/Gum Low-Profile Classic",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 53.95,
+    originalPrice: 75.00,
+    rating: 4.4,
+    reviewsCount: 1176,
+    image: "assets/products/adidas-womens-grand-court-lo-sneakers.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DK7RK7L1?tag=likeefashionh-20"
+  },
+  {
+    id: "adidas-womens-vl-court-3-sneakers",
+    asin: "B0CKMQ5625",
+    title: "adidas Women's VL Court 3.0 Sneakers — Preloved Brown/Chalk White/Gum",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 78.18,
+    originalPrice: 105.54,
+    rating: 4.5,
+    reviewsCount: 10426,
+    image: "assets/products/adidas-womens-vl-court-3-sneakers.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CKMQ5625?tag=likeefashionh-20"
+  },
+  {
     id: "striped-trim-long-sleeve-tunic-top",
     asin: "B0H4KJM339",
     title: "Striped Trim Long Sleeve Tunic Top for Women, Fall Business Casual",
