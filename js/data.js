@@ -28,6 +28,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "project-cloud-womens-platform-sneakers-light-blue",
+    asin: "B0D5RM3J3X",
+    title: "PROJECT CLOUD Women's Platform Sneakers — Light Blue/White Retro Lace-Up",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 42.65,
+    originalPrice: 57.58,
+    rating: 4.4,
+    reviewsCount: 3417,
+    image: "assets/products/project-cloud-womens-platform-sneakers-light-blue.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D5RM3J3X?tag=likeefashionh-20"
+  },
+  {
+    id: "xuoaz-western-cowboy-hat-black",
+    asin: "B0HKVN689L",
+    title: "XuoAz Western Cowboy Hat — Black Felt Fedora with Buckle Band",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 23.98,
+    originalPrice: 32.37,
+    rating: 4.6,
+    reviewsCount: 329,
+    image: "assets/products/xuoaz-western-cowboy-hat-black.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0HKVN689L?tag=likeefashionh-20"
+  },
+  {
+    id: "dr-martens-embury-chelsea-boot-black",
+    asin: "B082VYK5F2",
+    title: "Dr. Martens Unisex Embury Chelsea Boot — Black Wyoming Leather",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 140.00,
+    originalPrice: 189.00,
+    rating: 4.5,
+    reviewsCount: 39,
+    image: "assets/products/dr-martens-embury-chelsea-boot-black.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B082VYK5F2?tag=likeefashionh-20"
+  },
+  {
     id: "adidas-womens-grand-court-lo-sneakers",
     asin: "B0DK7RK7L1",
     title: "adidas Women's Grand Court Lo Sneakers — White/Black/Gum Low-Profile Classic",
