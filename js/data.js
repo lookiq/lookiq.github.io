@@ -28,6 +28,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "wolfant-womens-leather-belt-tan-gold-buckle",
+    asin: "B0D73L29YJ",
+    title: "WOLFANT Women's Leather Belt — Tan Full-Grain with Gold Buckle",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 29.98,
+    originalPrice: 40.47,
+    rating: 4.7,
+    reviewsCount: 4920,
+    image: "assets/products/wolfant-womens-leather-belt-tan-gold-buckle.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D73L29YJ?tag=likeefashionh-20"
+  },
+  {
+    id: "belle-poque-black-midi-skirt-bow-belt",
+    asin: "B07CPN8955",
+    title: "Belle Poque Black High-Waist Midi Skirt — A-Line with Bow Tie Belt",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 27.99,
+    originalPrice: 37.79,
+    rating: 4.3,
+    reviewsCount: 287,
+    image: "assets/products/belle-poque-black-midi-skirt-bow-belt.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B07CPN8955?tag=likeefashionh-20"
+  },
+  {
+    id: "andantino-mulberry-silk-scarf-geometric",
+    asin: "B07V3KXMGP",
+    title: "ANDANTINO Mulberry Silk Scarf — Navy/Coral Geometric 35\" Square",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 29.99,
+    originalPrice: 40.49,
+    rating: 4.6,
+    reviewsCount: 2645,
+    image: "assets/products/andantino-mulberry-silk-scarf-geometric.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B07V3KXMGP?tag=likeefashionh-20"
+  },
+  {
     id: "project-cloud-womens-platform-sneakers-light-blue",
     asin: "B0D5RM3J3X",
     title: "PROJECT CLOUD Women's Platform Sneakers — Light Blue/White Retro Lace-Up",
