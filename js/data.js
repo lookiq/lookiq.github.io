@@ -28,6 +28,69 @@ function getAffiliateLink(asin, fallbackUrl) {
  */
 const PRODUCTS = [
   {
+    id: "carfia-square-polarized-sunglasses-women",
+    asin: "B0D1FX3TKV",
+    title: "CARFIA Square Polarized Sunglasses for Women — Multicolor Tortoise",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 35.00,
+    originalPrice: 47.25,
+    rating: 4.6,
+    reviewsCount: 1958,
+    image: "assets/products/carfia-square-polarized-sunglasses-women.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D1FX3TKV?tag=likeefashionh-20"
+  },
+  {
+    id: "zeagoo-black-satin-midi-skirt-high-waist",
+    asin: "B0BRCHFG9J",
+    title: "Zeagoo Black Satin Midi Skirt — High-Waist, Fluid A-Line",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 19.99,
+    originalPrice: 26.99,
+    rating: 4.2,
+    reviewsCount: 155,
+    image: "assets/products/zeagoo-black-satin-midi-skirt-high-waist.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0BRCHFG9J?tag=likeefashionh-20"
+  },
+  {
+    id: "baublebar-blythe-birthstone-pendant-necklace",
+    asin: "B0DLPZ31K4",
+    title: "BaubleBar Blythe Birthstone Pendant Necklace — Gold Paperclip Chain, August",
+    category: "women",
+    subCategory: "Curated Finds",
+    badge: "Trending Pick",
+    price: 42.00,
+    originalPrice: 56.70,
+    rating: 4.2,
+    reviewsCount: 51,
+    image: "assets/products/baublebar-blythe-birthstone-pendant-necklace.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Curated Find"],
+    shortDesc: "Curated Amazon fashion staple evaluated for premium fabric quality, flattering silhouette, and effortless styling.",
+    features: [
+      "Curated luxury fashion staple on Amazon US",
+      "Verified true-to-size fit based on customer reviews",
+      "Amazon Prime eligible with fast delivery and easy returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DLPZ31K4?tag=likeefashionh-20"
+  },
+  {
     id: "wolfant-womens-leather-belt-tan-gold-buckle",
     asin: "B0D73L29YJ",
     title: "WOLFANT Women's Leather Belt — Tan Full-Grain with Gold Buckle",
