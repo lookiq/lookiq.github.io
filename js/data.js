@@ -2093,6 +2093,72 @@ const PRODUCTS = [
     amazonLink: getAffiliateLink("B0CR5D81C8")
   },
   {
+    id: "ekouaer-black-v-neck-button-cuff-blouse",
+    asin: "B0HCNPL5Q8",
+    title: "Ekouaer Black V-Neck Professional Top — Puff Sleeves, Button Cuffs",
+    category: "women",
+    subCategory: "Tops & Blouses",
+    badge: "Trending Pick",
+    price: 19.99,
+    originalPrice: 26.99,
+    rating: 4.4,
+    reviewsCount: 633,
+    image: "assets/products/ekouaer-black-v-neck-button-cuff-blouse.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Fall Fashion", "Workwear"],
+    shortDesc: "Soft, breathable black blouse with a flattering drape, puff shoulders and triple-button cuffs — a business-casual staple for the fall capsule wardrobe.",
+    features: [
+      "Soft, breathable fabric with a beautiful drape that flatters most body types",
+      "Puff shoulders and triple-button cuffs with a V-neckline that elongates the neck",
+      "3/4 sleeves cover the upper arms for a leaner line",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0HCNPL5Q8/?tag=likeefashionh-20"
+  },
+  {
+    id: "ifendei-beige-skinny-belt-gold-buckle",
+    asin: "B08XNCQHZ1",
+    title: "IFENDEI Beige Skinny Belt — Gold Pin Buckle, Thin Waist Belt",
+    category: "women",
+    subCategory: "Belts & Accessories",
+    badge: "Trending Pick",
+    price: 12.99,
+    originalPrice: 17.54,
+    rating: 4.6,
+    reviewsCount: 122,
+    image: "assets/products/ifendei-beige-skinny-belt-gold-buckle.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Fall Fashion", "Accessories"],
+    shortDesc: "Classic skinny belt in soft beige faux leather with a polished gold pin buckle — the quiet-luxury finishing touch for dresses, coats and jeans.",
+    features: [
+      "Classic skinny belt in soft faux leather with a polished gold pin buckle",
+      "Slim 0.90-inch width that cinches waists without bulk",
+      "Four sizes to fit waist sizes from 24 to 37 inches",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B08XNCQHZ1/?tag=likeefashionh-20"
+  },
+  {
+    id: "serenita-burgundy-paisley-pashmina-shawl",
+    asin: "B0C1L3KWLV",
+    title: "SERENITA Burgundy Paisley Pashmina Shawl — Large Cashmere-Feel Wrap",
+    category: "women",
+    subCategory: "Scarves & Wraps",
+    badge: "Trending Pick",
+    price: 14.98,
+    originalPrice: 20.22,
+    rating: 4.5,
+    reviewsCount: 3689,
+    image: "assets/products/serenita-burgundy-paisley-pashmina-shawl.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Fall Fashion", "Winter Essential"],
+    shortDesc: "Oversized burgundy and gold paisley pashmina shawl with fringe trim — a soft cashmere-feel wrap for fall evenings, travel and winter layering.",
+    features: [
+      "Oversized pashmina shawl in a rich burgundy and gold paisley jacquard with fringe trim",
+      "Soft cashmere-feel fabric that drapes as a wrap, scarf or evening shawl",
+      "Reversible styling doubles the ways to coordinate it with a fall and winter wardrobe",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0C1L3KWLV/?tag=likeefashionh-20"
+  },
+  {
     id: "saodimallsu-womens-button-cardigan-sweat",
     asin: "B0H3KMF929",
     title: "Saodimallsu Womens Button Cardigan Sweaters Fall Chunky Knit",
