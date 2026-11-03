@@ -2179,6 +2179,72 @@ const PRODUCTS = [
       "Amazon Prime eligible with fast shipping and free 30-day returns"
     ],
     amazonLink: "https://www.amazon.com/dp/B0H3KMF929/?tag=likeefashionh-20"
+  },
+  {
+    id: "nine-west-womens-mesh-bracelet-watch-gold",
+    asin: "B0979QJWQJ",
+    title: "Nine West Women's Mesh Bracelet Watch — Gold Rectangular",
+    category: "women",
+    subCategory: "Watches",
+    badge: "Trending Pick",
+    price: 29.99,
+    originalPrice: 40.49,
+    rating: 4.4,
+    reviewsCount: 14478,
+    image: "assets/products/nine-west-womens-mesh-bracelet-watch-gold.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Fall Fashion", "Accessories"],
+    shortDesc: "Gold-tone rectangular watch with a champagne Roman-numeral dial and a fine gold mesh bracelet — a quiet-luxury everyday piece that dresses up denim and tailoring alike.",
+    features: [
+      "Gold-tone rectangular case with a champagne dial and Roman numerals",
+      "Fine gold mesh bracelet strap for a polished, jewelry-like finish",
+      "Mineral glass dial window with reliable quartz movement",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0979QJWQJ/?tag=likeefashionh-20"
+  },
+  {
+    id: "golden-hour-womens-two-tone-bracelet-watch-white-dial",
+    asin: "B0G1HFF6X5",
+    title: "GOLDEN HOUR Women's Bracelet Analog Watch — Two-Tone, White Dial",
+    category: "women",
+    subCategory: "Watches",
+    badge: "Trending Pick",
+    price: 20.99,
+    originalPrice: 28.34,
+    rating: 4.2,
+    reviewsCount: 318,
+    image: "assets/products/golden-hour-womens-two-tone-bracelet-watch-white-dial.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Fall Fashion", "Accessories"],
+    shortDesc: "Two-tone silver-and-gold bracelet watch with an easy-reader white dial and date window — the everyday classic that pairs with both silver and gold jewelry.",
+    features: [
+      "Two-tone silver-and-gold stainless steel bracelet band",
+      "Easy-reader white dial with a date window and gold bezel",
+      "Foldover clasp with push button for a secure fit",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0G1HFF6X5/?tag=likeefashionh-20"
+  },
+  {
+    id: "ugg-womens-leather-turn-cuff-gloves-black",
+    asin: "B079RLZ3GF",
+    title: "UGG Women's Leather Turn Cuff Gloves — Black Sheepskin Shearling",
+    category: "women",
+    subCategory: "Gloves & Accessories",
+    badge: "Trending Pick",
+    price: 177.99,
+    originalPrice: 240.29,
+    rating: 4.3,
+    reviewsCount: 754,
+    image: "assets/products/ugg-womens-leather-turn-cuff-gloves-black.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Fall Fashion", "Winter Essentials"],
+    shortDesc: "Black leather turn-cuff gloves in water-resistant sheepskin with a plush shearling cuff — winter warmth that still looks refined with a wool coat and boots.",
+    features: [
+      "100% sheepskin leather with a water-resistant finish",
+      "Turn cuff with plush shearling trim for extra winter warmth",
+      "Sleek pull-on design with a buckle strap detail",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B079RLZ3GF/?tag=likeefashionh-20"
   }
 ];
 
