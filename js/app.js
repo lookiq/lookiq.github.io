@@ -276,6 +276,11 @@ document.addEventListener("DOMContentLoaded", () => {
       filtered.sort((a, b) => b.rating - a.rating);
     } else if (currentSort === "reviews") {
       filtered.sort((a, b) => b.reviewsCount - a.reviewsCount);
+    } else if (currentSort === "featured" && window.location.pathname.includes("shop")) {
+      // Shop default view: newest first. Daily products are appended at the
+      // end of PRODUCTS, so reverse catalog order keeps the newest finds on
+      // top automatically — today and for every future daily addition.
+      filtered.sort((a, b) => PRODUCTS.indexOf(b) - PRODUCTS.indexOf(a));
     }
 
     const paginationContainer = document.getElementById("pagination-container");
