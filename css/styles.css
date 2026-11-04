@@ -2762,6 +2762,123 @@ input, select {
   color: #71717a;
 }
 
+/* Style Club signup — native Brevo form (replaces the old iframe embed) */
+.club-signup {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.club-form {
+  align-items: flex-start;
+  max-width: 500px;
+  margin-bottom: 16px;
+}
+
+.club-field {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.club-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #d4d4d8;
+  margin: 2px 0 8px 20px;
+}
+
+.club-form input::placeholder {
+  color: #8b8b93;
+}
+
+.club-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 27px;
+  cursor: pointer;
+  border: none;
+}
+
+.club-btn .progress-indicator__icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  animation: club-spin 0.9s linear infinite;
+}
+
+.club-btn .sib-hide-loader-icon {
+  display: none;
+}
+
+@keyframes club-spin {
+  to { transform: rotate(360deg); }
+}
+
+.club-error {
+  display: none;
+  font-size: 0.8rem;
+  color: #fda4af;
+  margin: 8px 0 0 20px;
+}
+
+.club-error:not(:empty) {
+  display: block;
+}
+
+.club-hidden {
+  display: none;
+}
+
+.sib-form-message-panel {
+  display: none;
+  max-width: 500px;
+  margin: 0 auto 16px;
+  padding: 13px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  border: 1px solid transparent;
+}
+
+.sib-form-message-panel--active {
+  display: block;
+}
+
+.sib-form-message-panel__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.sib-form-message-panel .sib-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.club-panel--error {
+  color: #fecdd3;
+  background: rgba(190, 18, 60, 0.16);
+  border-color: rgba(244, 63, 94, 0.45);
+}
+
+.club-panel--success {
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.16);
+  border-color: rgba(34, 197, 94, 0.45);
+}
+
+@media (max-width: 768px) {
+  .club-btn {
+    margin-top: 4px;
+    width: 100%;
+  }
+}
+
 /* ==========================================================================
    Footer & Legal Disclaimer (Strict Amazon Associates Compliance)
    ========================================================================== */
