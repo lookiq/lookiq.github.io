@@ -2245,6 +2245,50 @@ const PRODUCTS = [
       "Amazon Prime eligible with fast shipping and free 30-day returns"
     ],
     amazonLink: "https://www.amazon.com/dp/B079RLZ3GF/?tag=likeefashionh-20"
+  },
+  {
+    id: "kate-kasin-burnt-orange-suede-mini-skirt",
+    asin: "B0FCMDWM2F",
+    title: "Kate Kasin Burnt Orange Suede Mini Pencil Skirt — High Waist, Pockets",
+    category: "women",
+    subCategory: "Skirts",
+    badge: "Trending Pick",
+    price: 26.99,
+    originalPrice: 36.44,
+    rating: 4.2,
+    reviewsCount: 265,
+    image: "assets/products/kate-kasin-burnt-orange-suede-mini-skirt.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Fall Fashion", "Skirts"],
+    shortDesc: "Burnt-orange faux-suede mini pencil skirt with a high waist, button closure and deep front pockets — the fall texture piece that makes a cream knit and ankle boots look considered.",
+    features: [
+      "Ultra-soft faux suede with moderate stretch, unlined for easy fall layering",
+      "Two deep front pockets hold a phone, cards and keys without adding bulk",
+      "High waist with elastic back, hidden zipper and button closure for a secure fit",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0FCMDWM2F/?tag=likeefashionh-20"
+  },
+  {
+    id: "pavoi-paperclip-layered-necklace-white-gold",
+    asin: "B09LDD9Q1X",
+    title: "PAVOI Paperclip Layered Necklace — Double Layered, White Gold",
+    category: "women",
+    subCategory: "Necklaces",
+    badge: "Trending Pick",
+    price: 17.95,
+    originalPrice: 24.23,
+    rating: 4.5,
+    reviewsCount: 66,
+    image: "assets/products/pavoi-paperclip-layered-necklace-white-gold.jpg",
+    tags: ["Amazon Fashion", "Quiet Luxury", "Fall Fashion", "Accessories"],
+    shortDesc: "Double-layered paperclip chain in white gold — two joined 14K gold-plated layers that give a polished layered look with zero tangling and zero effort.",
+    features: [
+      "14K gold-plated double-layered paperclip chain with elongated oval links",
+      "Two joined layers that sit perfectly without tangling",
+      "Lightweight everyday layering necklace for knits, blouses and dresses",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B09LDD9Q1X/?tag=likeefashionh-20"
   }
 ];
 
