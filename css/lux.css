@@ -160,3 +160,17 @@ body.lux .site-footer { background: #1B040B; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
 }
 .lux-hero-inner { z-index: 2; }
+
+/* --- Disclosure line above the first shopping sections --- */
+.lux-disc {
+  max-width: 1240px; margin: 84px auto 0; padding: 0 24px;
+  display: flex; align-items: center; gap: 18px;
+  font-size: 12px; letter-spacing: .06em; text-align: center;
+  color: rgba(243, 230, 220, .55);
+}
+.lux-disc::before, .lux-disc::after {
+  content: ""; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(217, 164, 91, .4), transparent);
+}
+.lux-disc a { color: #D9A45B; }
+.lux-disc + .lux-sec { padding-top: 36px; }
