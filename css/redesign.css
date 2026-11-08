@@ -443,6 +443,19 @@ body.v5 .mobile-drawer-footer .btn-primary {
 body.v5 .mobile-drawer-footer .btn-primary:active { background: var(--v5-burg-dark); }
 body.v5 .drawer-disclosure { color: var(--v5-muted); }
 
+/* ---------- Sticky-header scroll state — v5 geometry lock ----------
+   Legacy styles.css shrinks the header on scroll (.scrolled):
+   header-inner 64px, logo 36px, smaller wordmark. With the v5
+   two-row header (124px) that collapse made PC scrolling shake
+   and jump at the 36px threshold (owner report 2026-11-08).
+   On v5 pages the scrolled state now changes paint only
+   (background/shadow from the legacy rule still apply); every
+   geometric value is pinned to its unscrolled size. */
+body.v5 .site-header.scrolled .header-inner { height: auto; }
+body.v5 .site-header.scrolled .logo-mark { width: 44px; height: 44px; }
+body.v5 .site-header.scrolled .logo-text { font-size: 28.8px; }
+body.v5 .site-header.scrolled .logo-sub { font-size: 9.6px; }
+
 /* ================= v5 rollout: guides (no-image pick cards, CTA card) ================= */
 body.v5-guide .v5-pick.noimg { grid-template-columns: 1fr; }
 body.v5-guide .article-cta-card { background: var(--v5-ink); border-top: 4px solid var(--v5-burg); }
