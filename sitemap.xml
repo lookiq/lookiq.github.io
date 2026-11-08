@@ -13,6 +13,12 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://lookiqfashion.com/catalog.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lookiqfashion.com/look-for-less.html</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
