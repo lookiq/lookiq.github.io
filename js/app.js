@@ -255,6 +255,24 @@ document.addEventListener("DOMContentLoaded", () => {
   handleDeepLink();
   window.addEventListener("hashchange", handleDeepLink);
 
+  // Display category for the v5 card anatomy — derived from the product
+  // title at render time; catalog data in data.js is never modified.
+  function displayCategory(product) {
+    const t = (product.title || "").toLowerCase();
+    if (/\bwatch\b/.test(t)) return "Watches";
+    if (/necklace|earring|hoop|huggie|pendant|bracelet/.test(t)) return "Jewelry";
+    if (/boot|sneaker|shoe/.test(t)) return "Shoes & Boots";
+    if (/coat|jacket|trench|shacket|blazer/.test(t)) return "Coats & Jackets";
+    if ((/dress|skirt|romper|jumpsuit/.test(t)) && !/dress pants/.test(t)) return "Dresses & Skirts";
+    if (/cardigan|sweater|knit/.test(t)) return "Sweaters & Cardigans";
+    if (/bag|tote|crossbody|purse|handbag|satchel|sunglasses|scarf|belt|hat|gloves|shawl|pashmina/.test(t)) return "Bags & Accessories";
+    if (/legging|pants|jeans|trouser|tights/.test(t)) return "Pants & Bottoms";
+    if (/lounge|bra\b|thermal|underwear|pajama/.test(t)) return "Loungewear";
+    if (/swim|cover-up|coverup/.test(t)) return "Swim & Cover-Ups";
+    if (/top|tee|shirt|blouse|tank|tunic|hoodie|sweatshirt/.test(t)) return "Tops & Tees";
+    return product.subCategory || "Curated Finds";
+  }
+
   /**
    * Render Product Cards
    */
@@ -342,8 +360,10 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
           <div class="product-content">
+            <div class="v5-cat-label">${displayCategory(product)}</div>
             <div class="product-rating">
               <div class="stars">${starIcons}</div>
+              <span class="v5-rating-num">${product.rating.toFixed(1)}</span>
               <span class="reviews-count">(${product.reviewsCount.toLocaleString()})</span>
             </div>
             <h4 class="product-title" title="${product.title}"><a href="products/${product.id}.html" style="color: inherit; text-decoration: none;">${product.title}</a></h4>
