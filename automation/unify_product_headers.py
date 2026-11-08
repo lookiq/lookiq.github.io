@@ -42,18 +42,18 @@ def unify_headers():
         # 1. Ensure SHOP is marked active in main-nav
         old_nav = """      <nav class="main-nav" aria-label="Main Navigation">
         <a href="../index.html" class="nav-link">HOME</a>
-        <a href="../look-for-less.html" class="nav-link">LOOK FOR LESS</a>
-        <a href="../lookbook.html" class="nav-link">LOOKBOOK</a>
-        <a href="../shop.html" class="nav-link">SHOP</a>
         <a href="../guides.html" class="nav-link">GUIDES</a>
+        <a href="../shop.html" class="nav-link">SHOP</a>
+        <a href="../lookbook.html" class="nav-link">LOOKBOOK</a>
+        <a href="../look-for-less.html" class="nav-link">LOOK FOR LESS</a>
       </nav>"""
 
         new_nav = """      <nav class="main-nav" aria-label="Main Navigation">
         <a href="../index.html" class="nav-link">HOME</a>
-        <a href="../look-for-less.html" class="nav-link">LOOK FOR LESS</a>
-        <a href="../lookbook.html" class="nav-link">LOOKBOOK</a>
-        <a href="../shop.html" class="nav-link active">SHOP</a>
         <a href="../guides.html" class="nav-link">GUIDES</a>
+        <a href="../shop.html" class="nav-link active">SHOP</a>
+        <a href="../lookbook.html" class="nav-link">LOOKBOOK</a>
+        <a href="../look-for-less.html" class="nav-link">LOOK FOR LESS</a>
       </nav>"""
 
         if old_nav in html:
