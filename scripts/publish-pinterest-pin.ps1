@@ -112,8 +112,8 @@ if ($cleanTitle.Length -gt 100) {
     $cleanTitle = $cleanTitle.Substring(0, 97) + "..."
 }
 
-$pinUrl = "https://lookiq.github.io/products/$ProductId.html"
-$pinImageUrl = "https://lookiq.github.io/assets/pins/$pinImageName"
+$pinUrl = "https://lookiqfashion.com/products/$ProductId.html"
+$pinImageUrl = "https://lookiqfashion.com/assets/pins/$pinImageName"
 $hashtagString = ($Hashtags | ForEach-Object { if ($_ -notmatch '^#') { "#$_" } else { $_ } }) -join " "
 $nowUtc = [DateTime]::UtcNow.ToString("r")
 

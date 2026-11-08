@@ -70,8 +70,8 @@ def inject_into_feed_xml(
     if categories is None:
         categories = ["Women's Fashion", "Amazon Fashion", "Quiet Luxury"]
 
-    pin_url = f"https://lookiq.github.io/products/{slug}.html"
-    pin_image_url = f"https://lookiq.github.io/assets/pins/{slug}-pin.jpg"
+    pin_url = f"https://lookiqfashion.com/products/{slug}.html"
+    pin_image_url = f"https://lookiqfashion.com/assets/pins/{slug}-pin.jpg"
     hashtag_str = " ".join([h if h.startswith("#") else f"#{h}" for h in hashtags])
     now_utc = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
     

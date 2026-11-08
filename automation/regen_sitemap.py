@@ -4,7 +4,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = "https://lookiq.github.io"
+BASE = "https://lookiqfashion.com"
 today = date.today().isoformat()
 
 core_pages = [

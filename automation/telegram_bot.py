@@ -158,7 +158,7 @@ def run_bot():
                     caption = (
                         f"<b>Product Image Updated Live!</b>\n\n"
                         f"Product: <code>{slug}</code>\n"
-                        f"Live PDP: https://lookiq.github.io/products/{slug}.html\n\n"
+                        f"Live PDP: https://lookiqfashion.com/products/{slug}.html\n\n"
                         f"New 2:3 luxury vertical Pin has been generated and pushed live to GitHub Pages!"
                     )
                     send_photo(chat_id, str(pin_img_path), caption, token)

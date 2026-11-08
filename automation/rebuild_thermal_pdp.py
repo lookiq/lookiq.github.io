@@ -19,7 +19,7 @@ def rebuild_thermal_pdp():
     
     # Open Graph & Twitter
     html = html.replace("Elescat Summer Sundress with Pockets | LOOKIQ", "Thermajane Women's Fleece Lined Thermal Underwear Set | LOOKIQ")
-    html = html.replace("https://lookiq.github.io/assets/pins/casual-summer-sundress-pin.jpg", "https://lookiq.github.io/assets/pins/thermal-underwear-for-women-long-johns-s-pin.jpg")
+    html = html.replace("https://lookiqfashion.com/assets/pins/casual-summer-sundress-pin.jpg", "https://lookiqfashion.com/assets/pins/thermal-underwear-for-women-long-johns-s-pin.jpg")
     html = re.sub(r'<meta property="og:description" content="[^"]*">',
                   '<meta property="og:description" content="Curated review of Thermajane Women\'s Ultra Soft Fleece-Lined Thermal Underwear Set. Moisture-wicking poly-spandex blend with four-way stretch. Verified Amazon deal at $19.99.">',
                   html)
@@ -34,8 +34,8 @@ def rebuild_thermal_pdp():
     html = html.replace("Elescat Women's Casual Sleeveless Summer Sundress with Pockets", "Thermajane Women's Fleece Lined Thermal Underwear Set")
     html = html.replace("Effortless sleeveless casual sundress featuring a flattering scoop neckline, functional side pockets, and airy swing silhouette. Lightweight breathable rayon blend for summer chic styling.",
                         "Ultra-soft fleece-lined thermal base layer set designed for winter warmth without bulk. Features moisture-wicking poly-spandex fabric with 4-way stretch for flexible layering under work or outdoor clothing.")
-    html = html.replace("https://lookiq.github.io/assets/elescat-summer-dress.png", "https://lookiq.github.io/assets/products/thermal-underwear-model.jpg")
-    html = html.replace("https://lookiq.github.io/assets/elescat-summer-dress.webp", "https://lookiq.github.io/assets/products/thermal-underwear-model.jpg")
+    html = html.replace("https://lookiqfashion.com/assets/elescat-summer-dress.png", "https://lookiqfashion.com/assets/products/thermal-underwear-model.jpg")
+    html = html.replace("https://lookiqfashion.com/assets/elescat-summer-dress.webp", "https://lookiqfashion.com/assets/products/thermal-underwear-model.jpg")
     html = html.replace("../assets/elescat-summer-dress.webp", "../assets/products/thermal-underwear-model.jpg")
     html = html.replace("B09N72QM68", "B088H5DWV3")
     html = html.replace('"name": "Elescat"', '"name": "Thermajane"')
@@ -52,8 +52,8 @@ def rebuild_thermal_pdp():
 
     # Badge & Image box
     html = html.replace('Viral Summer Favorite', 'Winter Warmth Essential')
-    html = html.replace('openFullscreenLightbox(\'https://lookiq.github.io/assets/elescat-summer-dress.webp\', \'Elescat Women\\\'s Casual Sleeveless Summer Sundress with Pockets\')',
-                        'openFullscreenLightbox(\'https://lookiq.github.io/assets/products/thermal-underwear-model.jpg\', \'Thermajane Women\\\'s Fleece Lined Thermal Underwear Set\')')
+    html = html.replace('openFullscreenLightbox(\'https://lookiqfashion.com/assets/elescat-summer-dress.webp\', \'Elescat Women\\\'s Casual Sleeveless Summer Sundress with Pockets\')',
+                        'openFullscreenLightbox(\'https://lookiqfashion.com/assets/products/thermal-underwear-model.jpg\', \'Thermajane Women\\\'s Fleece Lined Thermal Underwear Set\')')
     html = html.replace('Elescat%20Women%27s%20Casual%20Sleeveless%20Summer%20Sundress%20with%20Pockets%20-%20Verified%20Amazon%20Find%20on%20LOOKIQ',
                         'Thermajane%20Women%27s%20Fleece%20Lined%20Thermal%20Underwear%20Set%20-%20Verified%20Amazon%20Find%20on%20LOOKIQ')
     html = html.replace('alt="Elescat Women\'s Casual Sleeveless Summer Sundress with Pockets in Black"',

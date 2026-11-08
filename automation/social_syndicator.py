@@ -2,7 +2,7 @@ import json
 import urllib.request
 import urllib.parse
 
-def generate_social_captions(product: dict, site_base_url: str = "https://lookiq.github.io") -> dict:
+def generate_social_captions(product: dict, site_base_url: str = "https://lookiqfashion.com") -> dict:
     """
     Generates targeted, high-converting social media captions for all platforms.
     Strictly follows Zero-Emoji Policy.

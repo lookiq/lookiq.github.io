@@ -165,7 +165,7 @@ def fetch_product_details(input_url: str, affiliate_tag: str = "likeefashionh-20
     if not title:
         title = f"{brand} Fashion Staple"
     if not image_url:
-        image_url = "https://lookiq.github.io/assets/favicon.png"
+        image_url = "https://lookiqfashion.com/assets/favicon.png"
 
     if title.lower().startswith(brand.lower()):
         slug_src = title[:40]
