@@ -293,3 +293,26 @@ body.lux .site-header.scrolled .main-nav .nav-link {
 body.lux .site-header.scrolled .main-nav .nav-link.active {
   box-shadow: 0 8px 22px rgba(231, 84, 128, .45), inset 0 0 0 2px rgba(255, 255, 255, .55);
 }
+
+/* --- Click/tap = same shape (owner order 2026-11-08) --- */
+body.lux .main-nav .nav-link,
+body.lux .mobile-nav-link { -webkit-tap-highlight-color: transparent; }
+body.lux .main-nav .nav-link:hover,
+body.lux .main-nav .nav-link:active,
+body.lux .site-header.scrolled .main-nav .nav-link:hover,
+body.lux .site-header.scrolled .main-nav .nav-link:active {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #FFFFFF; transform: none;
+  box-shadow: 0 8px 22px rgba(231, 84, 128, .38), inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+body.lux .main-nav .nav-link.active:hover,
+body.lux .main-nav .nav-link.active:active,
+body.lux .site-header.scrolled .main-nav .nav-link.active:hover,
+body.lux .site-header.scrolled .main-nav .nav-link.active:active {
+  box-shadow: 0 8px 22px rgba(231, 84, 128, .45), inset 0 0 0 2px rgba(255, 255, 255, .55);
+}
+body.lux .mobile-nav-link:hover,
+body.lux .mobile-nav-link:active {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #FFFFFF; transform: none;
+}

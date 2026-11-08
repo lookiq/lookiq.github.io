@@ -723,3 +723,29 @@ body.v5 .site-header.scrolled .main-nav .nav-link:hover {
 body.v5 .site-header.scrolled .main-nav .nav-link.active {
   box-shadow: 0 8px 22px rgba(231, 84, 128, .35), inset 0 0 0 2px rgba(255, 255, 255, .55);
 }
+
+/* --- Click/tap = same shape (owner order 2026-11-08: "Mouse click
+   korle or finger click korle menu same shape thakbe") — the pills
+   must not brighten, lift or flash in any state: rest, hover, press,
+   tap. Hover/press now render exactly like rest. --- */
+body.v5 .main-nav .nav-link,
+body.v5 .mobile-nav-link { -webkit-tap-highlight-color: transparent; }
+body.v5 .main-nav .nav-link:hover,
+body.v5 .main-nav .nav-link:active,
+body.v5 .site-header.scrolled .main-nav .nav-link:hover,
+body.v5 .site-header.scrolled .main-nav .nav-link:active {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #FFFFFF; transform: none;
+  box-shadow: 0 8px 22px rgba(231, 84, 128, .30), inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+body.v5 .main-nav .nav-link.active:hover,
+body.v5 .main-nav .nav-link.active:active,
+body.v5 .site-header.scrolled .main-nav .nav-link.active:hover,
+body.v5 .site-header.scrolled .main-nav .nav-link.active:active {
+  box-shadow: 0 8px 22px rgba(231, 84, 128, .35), inset 0 0 0 2px rgba(255, 255, 255, .55);
+}
+body.v5 .mobile-nav-link:hover,
+body.v5 .mobile-nav-link:active {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #FFFFFF; transform: none;
+}
