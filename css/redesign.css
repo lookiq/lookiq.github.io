@@ -598,17 +598,29 @@ body.v5-dupes .dupe-save-amount, body.v5-dupes .dupe-side.save .dupe-side-price 
 body.v5-dupes .btn-dupe-amazon { background: var(--v5-burg); background-image: none; color: #fff; border-radius: 999px; }
 body.v5-dupes .editorial-explainer-card { background: #fff; border: 1px solid var(--v5-taupe); border-radius: 18px; }
 
-/* ---------- Pink header — homepage only (owner request 2026-11-08) ----------
+/* ---------- Pink header — all v5 pages (owner request 2026-11-08, extended site-wide same day) ----------
    Deep-pink disclosure strip + blush masthead + pink active nav
    pill, scoped to body.v5-home so every other page keeps the
    ivory header until the owner says otherwise. */
 body.v5-home .v5-strip {
-  background: linear-gradient(90deg, #C7436F 0%, #E75480 55%, #C7436F 100%);
+  background: linear-gradient(90deg, #9E2B4E 0%, #BC3A63 55%, #9E2B4E 100%);
   color: #fff;
 }
 body.v5-home .v5-strip b { color: #fff; }
-body.v5-home .site-header {
-  background: linear-gradient(180deg, #FDF1EC 0%, #F5E3DC 100%);
-  border-bottom-color: #E8CFC4;
+body.v5 .site-header {
+  background: linear-gradient(180deg, #FFFBF8 0%, #F9ECE5 100%);
+  border-bottom-color: #ECD9CF; box-shadow: 0 10px 30px rgba(114, 47, 55, .05);
 }
-body.v5-home .main-nav .nav-link.active { background: var(--v5-pink); color: #fff; }
+body.v5 .main-nav .nav-link.active { background: var(--v5-pink); color: #fff; }
+
+/* Announcement bar (inner pages) joins the pink header: deep-pink
+   gradient bar, white trending pill, light disclosure badge. */
+body.v5 .announcement-bar {
+  background: linear-gradient(90deg, #9E2B4E 0%, #BC3A63 55%, #9E2B4E 100%);
+}
+body.v5 .trending-pill-badge { background: #fff; color: var(--v5-pink-dark); }
+body.v5 .trending-pulse-dot { background: var(--v5-pink); }
+body.v5 .ticker-tag { color: #FFE3EE; }
+body.v5 .announcement-bar .disclosure-badge {
+  background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .55); color: #fff;
+}
