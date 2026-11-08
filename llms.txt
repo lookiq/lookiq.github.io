@@ -1,0 +1,27 @@
+# LOOKIQ
+
+> LOOKIQ (lookiqfashion.com) is a US-focused fashion curation site that reviews and recommends women's fashion finds from Amazon — clothing, shoes, bags, jewelry and accessories chosen for a quiet-luxury look at accessible prices. Every product page carries an honest editorial review with sizing and fit notes, materials and care details, styling advice, and shopper rating summaries, so readers can decide before they buy. The audience is primarily women in the United States shopping for everyday outfits, capsule wardrobe staples, designer-inspired pieces and gifts.
+
+## Main sections
+
+- [Home](https://lookiqfashion.com/): The latest curated fashion finds and featured guides from LOOKIQ.
+- [Shop](https://lookiqfashion.com/shop.html): The full LOOKIQ catalog of reviewed Amazon fashion products — dresses, skirts, sweaters, coats, boots, bags, jewelry and more, newest finds first.
+- [Guides](https://lookiqfashion.com/guides.html): All LOOKIQ buying guides and gift guides, comparing the best Amazon fashion picks by category, budget and occasion.
+- [Lookbook](https://lookiqfashion.com/lookbook.html): Styled outfit inspiration built around LOOKIQ's curated Amazon finds.
+- [Look for Less](https://lookiqfashion.com/look-for-less.html): Designer-inspired styles and quiet-luxury looks for less, sourced from Amazon.
+- [About](https://lookiqfashion.com/about.html): What LOOKIQ is and how our editors select and review products.
+
+## Top gift guides
+
+- [Best Gifts for Her Under $50 on Amazon (2026)](https://lookiqfashion.com/guides/best-gifts-for-her-under-50-2026.html): Thoughtful, expensive-looking gifts for women, all under $50.
+- [Best Stocking Stuffers for Women Under $25 (2026)](https://lookiqfashion.com/guides/stocking-stuffers-for-women-under-25.html): Small, high-rated fashion and beauty-adjacent stocking stuffers under $25.
+- [Black Friday Fashion Deals 2026](https://lookiqfashion.com/guides/black-friday-fashion-deals-2026.html): The best Amazon fashion deals for women during Black Friday 2026.
+- [Best Winter Essentials on Amazon (2026)](https://lookiqfashion.com/guides/best-winter-essentials-2026.html): Cozy layers and cold-weather staples that look expensive.
+- [Designer Bag Dupes on Amazon](https://lookiqfashion.com/guides/amazon-designer-bag-dupes-guide.html): High-end-looking bags and designer-inspired alternatives on Amazon.
+- [Best Gold Hoop Earrings on Amazon (2026)](https://lookiqfashion.com/guides/best-gold-hoop-earrings-amazon-2026.html): The best-rated gold hoop earrings for women, from huggies to chunky hoops.
+- [Best Crossbody Bags Under $50 on Amazon (2026)](https://lookiqfashion.com/guides/best-crossbody-bags-under-50-amazon-2026.html): Everyday crossbody bags under $50, reviewed and compared.
+- [Quiet Luxury Outfit Ideas on Amazon](https://lookiqfashion.com/guides/quiet-luxury-chic-outfit-ideas-amazon.html): Understated, expensive-looking outfits built from affordable Amazon pieces.
+
+## Disclosure
+
+LOOKIQ is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate I earn from qualifying purchases. Product prices and availability shown in reviews are as verified at the time of writing and can change on Amazon; ratings cited on product pages summarize Amazon customer ratings.
