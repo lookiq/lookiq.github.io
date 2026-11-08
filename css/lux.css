@@ -49,7 +49,7 @@ body.lux .nav-toggle { color: #F3E6DC; }
 
 /* --- Hero --- */
 .lux-hero { position: relative; overflow: hidden; }
-.lux-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.lux-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 10%; }
 .lux-hero-shade {
   position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(27, 4, 11, .88) 0%, rgba(27, 4, 11, .55) 46%, rgba(27, 4, 11, .08) 78%),
@@ -152,3 +152,11 @@ body.lux .site-footer { background: #1B040B; }
 
 .lux-ad-slot:empty { display: none; }
 .lux-ad-slot { max-width: 970px; margin: 64px auto 0; text-align: center; }
+
+/* --- Hero HQ: picture wrapper + film grain (hides gradient banding) --- */
+.lux-hero-pic { position: absolute; inset: 0; display: block; }
+.lux-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+.lux-hero-inner { z-index: 2; }
