@@ -3,6 +3,126 @@ import re
 import urllib.parse
 from pathlib import Path
 
+# ---------------------------------------------------------------------------
+# Related-products ("Pair It With") helpers.
+#
+# The master template ships a fixed 4-product related block, so every cloned
+# PDP used to link the same 4 products regardless of relevance (SEO audit
+# 2026-11-08, finding #10). These helpers pick 4 category-relevant products
+# from the live catalog (js/data.js) for each new PDP instead.
+# ---------------------------------------------------------------------------
+
+def _classify_product(slug: str, title: str = "") -> str:
+    s = (slug + " " + title).lower()
+    def has(*words):
+        return any(w in s for w in words)
+    if has("earring"): return "earrings"
+    if has("necklace", "pendant"): return "necklace"
+    if has("watch"): return "watch"
+    if has("sunglasses", "aviator"): return "sunglasses"
+    if has("crossbody", "tote", "hobo", "clutch", "satchel", "backpack", "shoulder-bag", " bag"): return "bag"
+    if has("belt"): return "belt"
+    if has("pashmina", "scarf", "shawl", "wrap"): return "scarf"
+    if has("cowboy", "sun-hat", " hat"): return "hat"
+    if has("glove"): return "gloves"
+    if has("boot"): return "boots"
+    if has("sneaker", "loafer", "sandal", "heel", "shoe"): return "shoes"
+    if has("skirt"): return "skirt"
+    if has("romper", "jumpsuit"): return "romper"
+    if has("swimsuit", "bikini", "coverup", "cover-up"): return "swim"
+    if has("cardigan", "sweater", "turtleneck", "knit"): return "knitwear"
+    if has("sweatshirt", "hoodie", "pullover"): return "sweatshirt"
+    if has("trench", "coat", "jacket", "shacket", "blazer"): return "outerwear"
+    if has("legging", "tights", "jeans", "trousers", "chinos", "pants"): return "bottoms"
+    if has("lounge", "pajama", "thermal", "long-johns"): return "loungewear"
+    if re.search(r"\bbra\b", s): return "intimates"
+    if has("dress", "gown"): return "dress"
+    if has("tank", "blouse", "tunic", "corset", "bodysuit", "top", "shirt", "tee", "henley"): return "top"
+    return "other"
+
+_RELATED_COMPLEMENTS = {
+    "dress":     ["boots", "shoes", "bag", "necklace", "earrings", "outerwear", "belt"],
+    "skirt":     ["top", "boots", "shoes", "belt", "bag", "knitwear"],
+    "top":       ["bottoms", "skirt", "necklace", "earrings", "bag", "belt"],
+    "knitwear":  ["bottoms", "skirt", "boots", "scarf", "outerwear"],
+    "sweatshirt":["bottoms", "shoes", "bag", "skirt"],
+    "outerwear": ["knitwear", "boots", "scarf", "gloves", "dress"],
+    "bottoms":   ["top", "knitwear", "belt", "boots", "shoes"],
+    "boots":     ["outerwear", "dress", "bottoms", "knitwear"],
+    "shoes":     ["bottoms", "dress", "sweatshirt", "top", "skirt"],
+    "bag":       ["dress", "outerwear", "sunglasses", "top", "shoes"],
+    "sunglasses":["bag", "dress", "hat", "top"],
+    "earrings":  ["necklace", "dress", "top", "knitwear"],
+    "necklace":  ["earrings", "dress", "top"],
+    "watch":     ["top", "dress", "knitwear", "outerwear"],
+    "belt":      ["dress", "bottoms", "skirt", "top"],
+    "scarf":     ["outerwear", "knitwear", "gloves", "hat"],
+    "hat":       ["outerwear", "sunglasses", "scarf", "dress"],
+    "gloves":    ["outerwear", "scarf", "hat"],
+    "loungewear":["sweatshirt", "top"],
+    "intimates": [],
+    "romper":    ["shoes", "bag", "sunglasses", "earrings"],
+    "swim":      ["bag", "sunglasses", "hat"],
+    "other":     [],
+}
+
+def _load_catalog(project_root: Path):
+    """Parse js/data.js PRODUCTS into [{id, title, price, image, type}]."""
+    data_js = project_root / "js" / "data.js"
+    if not data_js.exists():
+        return []
+    src = data_js.read_text(encoding="utf-8")
+    m = re.search(r"const PRODUCTS = \[(.*?)\n\];", src, re.S)
+    if not m:
+        return []
+    catalog = []
+    for mm in re.finditer(r'\{\s*id: "([^"]+)".*?title: "([^"]+)".*?price: ([0-9.]+).*?image: "([^"]+)"', m.group(1), re.S):
+        pid, title, price, image = mm.group(1), mm.group(2), float(mm.group(3)), mm.group(4)
+        catalog.append({"id": pid, "title": title, "price": price, "image": image,
+                        "type": _classify_product(pid, title)})
+    return catalog
+
+def _pick_related_products(project_root: Path, slug: str, raw_title: str = ""):
+    """Return up to 4 catalog products relevant to the given slug:
+    same category first, then complementary categories, then the rest."""
+    catalog = _load_catalog(project_root)
+    if not catalog:
+        return []
+    ptype = _classify_product(slug, raw_title)
+    tiers = [[p for p in catalog if p["type"] == ptype and p["id"] != slug]]
+    for t in _RELATED_COMPLEMENTS.get(ptype, []):
+        tiers.append([p for p in catalog if p["type"] == t and p["id"] != slug])
+    tiers.append([p for p in catalog if p["id"] != slug])
+    # Rotate within tiers by a slug hash so different PDPs surface different picks.
+    rot = sum(ord(c) for c in slug)
+    picked = []
+    for tier in tiers:
+        if tier:
+            k = rot % len(tier)
+            tier = tier[k:] + tier[:k]
+        for p in tier:
+            if p not in picked:
+                picked.append(p)
+            if len(picked) >= 4:
+                return picked
+    return picked
+
+def _escape(text: str) -> str:
+    return (text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                .replace('"', "&quot;"))
+
+def _related_card_html(p: dict) -> str:
+    t = _escape(p["title"])
+    return (f'        <a href="{p["id"]}.html" class="related-card">\n'
+            f'          <div class="related-card-img">\n'
+            f'            <img src="../{p["image"]}" alt="{t}" loading="lazy">\n'
+            f'          </div>\n'
+            f'          <div class="related-card-body">\n'
+            f'            <h4 class="related-card-title">{t}</h4>\n'
+            f'            <div class="related-card-price">${p["price"]:.2f}</div>\n'
+            f'          </div>\n'
+            f'        </a>')
+
 def generate_pdp_html(product: dict, site_base_url: str = "https://lookiqfashion.com") -> str:
     """
     Generates a full production-grade LookiQ Product Detail Page (PDP)
@@ -68,6 +188,15 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiqfashion
 
     image_pin_url = f"{site_base_url}/assets/pins/{slug}-pin.jpg"
 
+    # og:image existence guard (SEO audit 2026-11-08, P0 #3): never ship an
+    # og:image that 404s — the Kendra Scott PDP pointed at a pin file that was
+    # never created. Fall back to the hero image when the pin is missing.
+    if pin_file.exists():
+        og_image_url = image_pin_url
+    else:
+        og_image_url = image_hero_abs
+        print(f"[PDPBuilder] WARNING: pin image missing for {slug} ({pin_file.name}); og:image falls back to hero image")
+
     bullets = product.get("bullets", [])
     if bullets:
         bullet_items = []
@@ -115,13 +244,13 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiqfashion
     # 2. Update OpenGraph and Twitter
     html = re.sub(r'<meta property="og:title" content=".*?">', lambda m: f'<meta property="og:title" content="{clean_short_title} | LOOKIQ">', html, count=1)
     html = re.sub(r'<meta property="og:description" content=".*?">', lambda m: f'<meta property="og:description" content="{editorial_summary}">', html, count=1)
-    html = re.sub(r'<meta property="og:image" content=".*?">', lambda m: f'<meta property="og:image" content="{image_pin_url}">', html, count=1)
+    html = re.sub(r'<meta property="og:image" content=".*?">', lambda m: f'<meta property="og:image" content="{og_image_url}">', html, count=1)
     html = re.sub(r'<meta property="og:url" content=".*?">', lambda m: f'<meta property="og:url" content="{site_base_url}/products/{slug}.html">', html, count=1)
     html = re.sub(r'<meta property="product:price:amount" content=".*?">', lambda m: f'<meta property="product:price:amount" content="{price_num}">', html, count=1)
 
     html = re.sub(r'<meta name="twitter:title" content=".*?">', lambda m: f'<meta name="twitter:title" content="{clean_short_title} | LOOKIQ">', html, count=1)
     html = re.sub(r'<meta name="twitter:description" content=".*?">', lambda m: f'<meta name="twitter:description" content="{editorial_summary}">', html, count=1)
-    html = re.sub(r'<meta name="twitter:image" content=".*?">', lambda m: f'<meta name="twitter:image" content="{image_pin_url}">', html, count=1)
+    html = re.sub(r'<meta name="twitter:image" content=".*?">', lambda m: f'<meta name="twitter:image" content="{og_image_url}">', html, count=1)
 
     # 3. Update Schema.org JSON-LD
     html = html.replace("Elescat Women's Casual Sleeveless Summer Sundress with Pockets", title)
@@ -343,6 +472,22 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiqfashion
         r'If you are between sizes or prefer a roomier fit, consider sizing up. '
         r'Always check the Amazon size chart for exact measurements.\n          \g<2>',
         html, count=1)
+
+    # 13. Related products ("Pair It With"): replace the master template's fixed
+    # 4-product block with category-relevant picks from the live catalog, so new
+    # PDPs never inherit the same unrelated links (SEO audit 2026-11-08, P0 #1).
+    try:
+        related = _pick_related_products(project_root, slug, raw_title)
+        if related:
+            cards = "\n\n".join(_related_card_html(r) for r in related)
+            html = re.sub(
+                r'(<div class="related-grid">)[\s\S]*?(</div>\s*</section>)',
+                lambda m: m.group(1) + "\n" + cards + "\n      " + m.group(2),
+                html, count=1)
+        else:
+            print(f"[PDPBuilder] WARNING: no catalog found; related block left as template default for {slug}")
+    except Exception as e:
+        print(f"[PDPBuilder] WARNING: related-products step skipped for {slug}: {e}")
 
     # Clean any replacement characters
     html = html.replace('\ufffd', '&bull;')
