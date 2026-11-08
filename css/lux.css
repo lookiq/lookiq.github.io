@@ -187,3 +187,72 @@ body.lux .site-header.scrolled .main-nav .nav-link.active { color: #FFFFFF; }
 body.lux .site-header.scrolled .brand-logo .logo-text { color: #F7E9DF; }
 body.lux .site-header.scrolled .logo-text-group .logo-sub { color: #D9A45B; }
 body.lux .site-header.scrolled .action-btn { color: #F3E6DC; }
+
+/* --- Menu beauty + hero text fix (owner brief 2026-11-08 23:29) --- */
+
+/* Hero text: script words get breathing room — no more collisions */
+.lux-kick { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.lux-kick .lux-script { line-height: 1; padding: 0 2px; transform: translateY(2px); }
+.lux-hero h1 em { padding-left: .16em; }
+
+/* Nav menu: real pill buttons — soft hover, jewel-pink active */
+body.lux .main-nav { gap: 8px; }
+body.lux .main-nav .nav-link {
+  padding: 9px 18px; border-radius: 999px; letter-spacing: .18em;
+  transition: background .25s ease, color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+body.lux .main-nav .nav-link::after { display: none; }
+body.lux .main-nav .nav-link:hover {
+  background: rgba(245, 227, 220, .09); color: #FFD9A0; transform: translateY(-1px);
+}
+body.lux .main-nav .nav-link.active {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 22px rgba(231, 84, 128, .38), inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+
+/* Header round buttons: cream & gold, matching the logo medallion */
+body.lux .action-btn {
+  background: linear-gradient(180deg, #FCF4ED 0%, #EFDBCB 100%);
+  color: #722F37;
+  border: 1px solid rgba(217, 164, 91, .7);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .32), inset 0 1px 0 #FFFFFF;
+  transition: transform .25s ease, color .25s ease, box-shadow .25s ease;
+}
+body.lux .action-btn:hover {
+  color: #9E2B4E; transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .38), inset 0 1px 0 #FFFFFF;
+}
+body.lux .badge-counter {
+  background: #E75480; color: #FFF;
+  border: 2px solid #2A0813; box-shadow: 0 3px 8px rgba(0, 0, 0, .35);
+}
+
+/* Mobile drawer menu in evening dress */
+body.lux .mobile-nav-drawer {
+  background: linear-gradient(180deg, #2E0A16 0%, #1B040B 100%);
+  color: #F3E6DC;
+  box-shadow: 24px 0 60px rgba(0, 0, 0, .5);
+}
+body.lux .drawer-logo-text { color: #F7E9DF; letter-spacing: .3em; }
+body.lux .drawer-logo-sub { color: #D9A45B; }
+body.lux .mobile-nav-link { color: #F3E6DC; border-radius: 12px; }
+body.lux .mobile-nav-link .nav-icon-container {
+  border-color: rgba(217, 164, 91, .4); color: #D9A45B; background: rgba(255, 255, 255, .03);
+}
+body.lux .mobile-nav-link.active {
+  background: linear-gradient(135deg, rgba(231, 84, 128, .28), rgba(199, 67, 111, .18));
+  color: #FFD9E4;
+}
+body.lux .mobile-nav-link.active .nav-icon-container {
+  border-color: rgba(231, 84, 128, .65); color: #F5B8C9;
+}
+body.lux .mobile-drawer-divider { background: linear-gradient(90deg, transparent, rgba(217, 164, 91, .4), transparent); }
+body.lux .drawer-disclosure { color: rgba(240, 201, 210, .6); }
+
+@media (max-width: 760px) {
+  .lux-kick { gap: 10px; font-size: 11.5px; }
+  .lux-kick .lux-script { font-size: 27px; }
+}
+body.lux .mobile-nav-link.secondary { color: rgba(243, 230, 220, .78); }
+body.lux .mobile-nav-link.secondary .nav-icon-container { color: rgba(217, 164, 91, .85); }
