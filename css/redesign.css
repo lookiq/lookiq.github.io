@@ -492,6 +492,34 @@ body.v5 .dupe-badge-label {
   background: var(--v5-burg); background-image: none; color: #fff;
 }
 
+/* ---------- Attractive pink CTA + clear hover feedback ----------
+   Owner directive 2026-11-08: buttons get an attractive colour
+   that itself draws the click (audience: women shoppers) and the
+   hover change must be unmistakable. Money buttons go Dark Pink
+   #E75480 (from the owner's own pink-shades chart), hover deepens
+   to #C7436F with a soft shadow. Burgundy stays the brand/label
+   colour (badges, headings, links). */
+body.v5 { --v5-pink: #E75480; --v5-pink-dark: #C7436F; }
+.v5-btn, .v5-pcard .cta, .v5-lux-card .cta,
+body.v5-shop .btn-amazon-buy, body.v5-pdp .btn-amazon-cta-large,
+body.v5-pdp .v5-rel-cta, body.v5-lookbook .outfit-btn {
+  background: var(--v5-pink); border-color: var(--v5-pink);
+}
+.v5-btn:hover, .v5-pcard .cta:hover, .v5-lux-card .cta:hover,
+body.v5-shop .btn-amazon-buy:hover, body.v5-pdp .btn-amazon-cta-large:hover,
+body.v5-pdp .related-card:hover .v5-rel-cta, body.v5-lookbook .outfit-btn:hover {
+  background: var(--v5-pink-dark); border-color: var(--v5-pink-dark); color: #fff;
+  box-shadow: 0 8px 20px rgba(199, 67, 111, .35);
+}
+.v5-club .club-btn { background: var(--v5-pink) !important; border-color: var(--v5-pink) !important; }
+.v5-club .club-btn:hover { background: var(--v5-pink-dark) !important; }
+body.v5 .mobile-drawer-footer .btn-primary { background: var(--v5-pink); }
+body.v5 .mobile-drawer-footer .btn-primary:active { background: var(--v5-pink-dark); }
+body.v5 .main-nav .nav-link:hover { background: var(--v5-blush); border-radius: 999px; }
+body.v5-guide .article-body a:not(.v5-btn):hover {
+  color: var(--v5-burg-dark) !important; background: var(--v5-blush);
+}
+
 /* ================= v5 rollout: guides (no-image pick cards, CTA card) ================= */
 body.v5-guide .v5-pick.noimg { grid-template-columns: 1fr; }
 body.v5-guide .article-cta-card { background: var(--v5-ink); border-top: 4px solid var(--v5-burg); }
