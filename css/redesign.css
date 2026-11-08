@@ -399,3 +399,46 @@ body.v5-guide .verdict-box { border-color: var(--v5-burg); background: var(--v5-
   .v5-hero h1 { font-size: 40px; }
   .v5-sec { padding-top: 46px; }
 }
+
+/* ---------- Mobile menu (toggle + drawer) — v5 restyle ----------
+   The drawer markup/JS is shared with the legacy design; these
+   overrides bring it into the Burgundy + Blush system on v5 pages
+   (owner flagged the gold legacy drawer on 2026-11-08). */
+body.v5 .mobile-menu-toggle {
+  width: 42px; height: 42px; min-width: 42px;
+  color: var(--v5-ink); border-radius: 50%;
+}
+body.v5 .mobile-menu-toggle:active { background: var(--v5-blush); }
+body.v5 .mobile-nav-drawer {
+  background: var(--v5-ivory); color: var(--v5-ink);
+  box-shadow: -18px 0 44px rgba(28, 25, 23, .22);
+}
+body.v5 .mobile-drawer-header { border-bottom: 1px solid var(--v5-taupe); background: transparent; }
+body.v5 .drawer-logo-text {
+  font-family: var(--v5-serif); color: var(--v5-ink); letter-spacing: .14em;
+}
+body.v5 .drawer-logo-sub { color: var(--v5-burg); letter-spacing: .22em; }
+body.v5 .mobile-drawer-close {
+  background: var(--v5-blush); color: var(--v5-ink); border-radius: 50%;
+  width: 40px; height: 40px;
+}
+body.v5 .mobile-nav-link { color: var(--v5-ink); border-radius: 12px; }
+body.v5 .mobile-nav-link .nav-icon-container {
+  background: var(--v5-blush); border: 1px solid var(--v5-taupe);
+  color: var(--v5-burg); border-radius: 50%;
+}
+body.v5 .mobile-nav-link.active {
+  background: var(--v5-blush); color: var(--v5-burg);
+}
+body.v5 .mobile-nav-link.active .nav-icon-container {
+  background: var(--v5-burg); border-color: var(--v5-burg); color: #fff;
+}
+body.v5 .mobile-nav-link.secondary { color: var(--v5-muted); }
+body.v5 .mobile-drawer-divider { background: var(--v5-taupe); }
+body.v5 .mobile-drawer-footer { border-top: 1px solid var(--v5-taupe); background: transparent; }
+body.v5 .mobile-drawer-footer .btn-primary {
+  background: var(--v5-burg); background-image: none;
+  color: #fff; box-shadow: none; border: none;
+}
+body.v5 .mobile-drawer-footer .btn-primary:active { background: var(--v5-burg-dark); }
+body.v5 .drawer-disclosure { color: var(--v5-muted); }
