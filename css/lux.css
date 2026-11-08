@@ -174,3 +174,16 @@ body.lux .site-footer { background: #1B040B; }
 }
 .lux-disc a { color: #D9A45B; }
 .lux-disc + .lux-sec { padding-top: 36px; }
+
+/* --- Scrolled-header fix (owner report 2026-11-08): the v5 scrolled
+   rule recolours nav links to charcoal ink — invisible on the dark
+   burgundy lux header. Keep them ivory in every state. --- */
+body.lux .site-header.scrolled {
+  background: rgba(38, 7, 15, .96);
+}
+body.lux .site-header.scrolled .main-nav .nav-link { color: #F3E6DC; }
+body.lux .site-header.scrolled .main-nav .nav-link:hover { color: #FFD9A0; }
+body.lux .site-header.scrolled .main-nav .nav-link.active { color: #FFFFFF; }
+body.lux .site-header.scrolled .brand-logo .logo-text { color: #F7E9DF; }
+body.lux .site-header.scrolled .logo-text-group .logo-sub { color: #D9A45B; }
+body.lux .site-header.scrolled .action-btn { color: #F3E6DC; }
