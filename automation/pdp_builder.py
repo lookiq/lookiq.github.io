@@ -3,7 +3,7 @@ import re
 import urllib.parse
 from pathlib import Path
 
-def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github.io") -> str:
+def generate_pdp_html(product: dict, site_base_url: str = "https://lookiqfashion.com") -> str:
     """
     Generates a full production-grade LookiQ Product Detail Page (PDP)
     by cloning the master luxury template (casual-summer-sundress.html)
@@ -128,8 +128,8 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiq.github
     html = html.replace("casual-summer-sundress.html", f"{slug}.html")
     html = html.replace("casual-summer-sundress-pin.jpg", f"{slug}-pin.jpg")
     html = html.replace("../assets/elescat-summer-dress.webp", image_hero_rel)
-    html = html.replace("https://lookiq.github.io/assets/elescat-summer-dress.webp", image_hero_abs)
-    html = html.replace("https://lookiq.github.io/assets/elescat-summer-dress.png", image_hero_abs)
+    html = html.replace("https://lookiqfashion.com/assets/elescat-summer-dress.webp", image_hero_abs)
+    html = html.replace("https://lookiqfashion.com/assets/elescat-summer-dress.png", image_hero_abs)
     html = html.replace("B09N72QM68", asin)
     html = html.replace('"name": "Elescat"', f'"name": "{brand}"')
     html = html.replace('"price": "24.99"', f'"price": "{price_num}"')

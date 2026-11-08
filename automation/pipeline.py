@@ -23,7 +23,7 @@ def load_config() -> dict:
             return json.load(f)
     return {
         "affiliate_tag": "likeefashionh-20",
-        "base_url": "https://lookiq.github.io",
+        "base_url": "https://lookiqfashion.com",
         "webhook_url": ""
     }
 
@@ -94,7 +94,7 @@ def process_product(amazon_url: str, custom_image_path: str = None, auto_push: b
     """
     config = load_config()
     affiliate_tag = config.get("affiliate_tag", "likeefashionh-20")
-    base_url = config.get("base_url", "https://lookiq.github.io")
+    base_url = config.get("base_url", "https://lookiqfashion.com")
     webhook_url = config.get("webhook_url", "")
 
     print(f"\n==================================================")
