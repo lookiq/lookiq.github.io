@@ -283,3 +283,13 @@ body.lux .mobile-nav-link.active {
 body.lux .mobile-nav-link.active {
   background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
 }
+
+/* --- Scrolled = same shape (owner order 2026-11-08) --- */
+body.lux .site-header.scrolled .main-nav .nav-link {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #FFFFFF; border: none; border-radius: 999px; padding: 9px 18px;
+  box-shadow: 0 8px 22px rgba(231, 84, 128, .38), inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+body.lux .site-header.scrolled .main-nav .nav-link.active {
+  box-shadow: 0 8px 22px rgba(231, 84, 128, .45), inset 0 0 0 2px rgba(255, 255, 255, .55);
+}
