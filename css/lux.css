@@ -49,7 +49,7 @@ body.lux .nav-toggle { color: #F3E6DC; }
 
 /* --- Hero --- */
 .lux-hero { position: relative; overflow: hidden; }
-.lux-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.lux-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 10%; }
 .lux-hero-shade {
   position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(27, 4, 11, .88) 0%, rgba(27, 4, 11, .55) 46%, rgba(27, 4, 11, .08) 78%),
