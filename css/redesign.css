@@ -347,7 +347,7 @@ body.v5-guide table.v5-compare td a { font-weight: 700; }
   background: #fff; border: 1px solid var(--v5-taupe); border-radius: 18px;
   padding: 24px; margin: 22px 0; display: grid; grid-template-columns: 240px 1fr; gap: 24px;
 }
-.v5-pick .ph { border-radius: 12px; overflow: hidden; background: var(--v5-blush); }
+.v5-pick .ph { border-radius: 12px; overflow: hidden; background: var(--v5-blush); aspect-ratio: 4/4.6; align-self: start; }
 .v5-pick .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .v5-pick .bdg {
   display: inline-block; background: var(--v5-burg); color: #fff; font-size: 10.5px;
@@ -394,6 +394,8 @@ body.v5-guide .verdict-box { border-color: var(--v5-burg); background: var(--v5-
   .v5-tiles { grid-template-columns: repeat(2, 1fr); }
   .v5-insta-grid { grid-template-columns: repeat(3, 1fr); }
   .v5-pick { grid-template-columns: 1fr; }
+  .v5-pick .ph { aspect-ratio: 16/10.5; }
+  .v5-pick .ph img { object-position: center 22%; }
   .v5-proscons { grid-template-columns: 1fr; }
   .v5-banner { padding: 30px 24px; }
   .v5-hero h1 { font-size: 40px; }
@@ -455,6 +457,37 @@ body.v5 .site-header.scrolled .header-inner { height: auto; }
 body.v5 .site-header.scrolled .logo-mark { width: 44px; height: 44px; }
 body.v5 .site-header.scrolled .logo-text { font-size: 28.8px; }
 body.v5 .site-header.scrolled .logo-sub { font-size: 9.6px; }
+
+/* ---------- Legacy gold accents — v5 sweep ----------
+   Shared legacy elements that still rendered in the old
+   black/gold palette on v5 pages (owner reports 2026-11-08:
+   guide/lookbook/LFL heroes + trench guide header). All paint
+   only — no geometry changes. */
+body.v5 .trending-pill-badge {
+  background: var(--v5-burg); background-image: none; color: #fff;
+}
+body.v5 .trending-pulse-dot { background: #fff; }
+body.v5 .ticker-tag { color: var(--v5-blush); }
+body.v5 .announcement-bar .disclosure-badge {
+  background: rgba(114, 47, 55, .28); border-color: var(--v5-taupe); color: var(--v5-blush);
+}
+body.v5 .section-tag, body.v5 .section-tag-badge {
+  background: var(--v5-blush); color: var(--v5-burg);
+  border: 1px solid var(--v5-taupe);
+}
+body.v5 .section-tag-badge .badge-dot, body.v5 .badge-dot { background: var(--v5-burg); }
+body.v5 .title-gold-italic {
+  background: none; -webkit-text-fill-color: var(--v5-burg); color: var(--v5-burg);
+}
+body.v5 .hero-section {
+  background: var(--v5-blush) !important; border-bottom-color: var(--v5-taupe) !important;
+}
+body.v5 .article-header span[style*="gold-gradient"] {
+  background: var(--v5-burg) !important; color: #fff !important;
+}
+body.v5 .dupe-badge-label {
+  background: var(--v5-burg); background-image: none; color: #fff;
+}
 
 /* ================= v5 rollout: guides (no-image pick cards, CTA card) ================= */
 body.v5-guide .v5-pick.noimg { grid-template-columns: 1fr; }
