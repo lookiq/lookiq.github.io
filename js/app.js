@@ -1530,7 +1530,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = typeof PRODUCTS !== "undefined" ? PRODUCTS.find(p => p.id === productId) : null;
     if (!product) return;
 
-    const baseUrl = "https://lookiq.github.io/";
+    const baseUrl = "https://lookiqfashion.com/";
     const pageUrl = `${baseUrl}products/${product.id}.html`;
     const imgUrl = product.image.startsWith("http") ? product.image : `${baseUrl}${product.image}`;
     const description = `${product.title} - Verified Amazon Find on LOOKIQ for $${product.price.toFixed(2)}. Check sizing, reviews & style tips!`;
@@ -1547,7 +1547,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const outfit = typeof OUTFITS !== "undefined" ? OUTFITS.find(o => o.id === outfitId) : null;
     if (!outfit) return;
 
-    const baseUrl = "https://lookiq.github.io/";
+    const baseUrl = "https://lookiqfashion.com/";
     const pageUrl = `${baseUrl}lookbook.html#${outfitId}`;
     const imgUrl = outfit.image.startsWith("http") ? outfit.image : `${baseUrl}${outfit.image}`;
     const description = `${outfit.title} (${outfit.tag}) - Shop this complete aesthetic outfit capsule on LOOKIQ!`;
@@ -1561,7 +1561,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       event.stopPropagation();
     }
-    const baseUrl = "https://lookiq.github.io/";
+    const baseUrl = "https://lookiqfashion.com/";
     const pageUrl = targetUrl.startsWith("http") ? targetUrl : `${baseUrl}${targetUrl}`;
     const imgUrl = relativeImg.startsWith("http") ? relativeImg : `${baseUrl}${relativeImg}`;
     const description = `${title} - The Look for Less! Smart Style Twin comparison & review on LOOKIQ.`;

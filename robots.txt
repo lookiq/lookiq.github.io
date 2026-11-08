@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lookiq.github.io/sitemap.xml
+Sitemap: https://lookiqfashion.com/sitemap.xml
