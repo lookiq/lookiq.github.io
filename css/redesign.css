@@ -597,3 +597,18 @@ body.v5-dupes .dupe-card { background: #fff; border: 1px solid var(--v5-taupe); 
 body.v5-dupes .dupe-save-amount, body.v5-dupes .dupe-side.save .dupe-side-price { color: var(--v5-burg); }
 body.v5-dupes .btn-dupe-amazon { background: var(--v5-burg); background-image: none; color: #fff; border-radius: 999px; }
 body.v5-dupes .editorial-explainer-card { background: #fff; border: 1px solid var(--v5-taupe); border-radius: 18px; }
+
+/* ---------- Pink header — homepage only (owner request 2026-11-08) ----------
+   Deep-pink disclosure strip + blush masthead + pink active nav
+   pill, scoped to body.v5-home so every other page keeps the
+   ivory header until the owner says otherwise. */
+body.v5-home .v5-strip {
+  background: linear-gradient(90deg, #C7436F 0%, #E75480 55%, #C7436F 100%);
+  color: #fff;
+}
+body.v5-home .v5-strip b { color: #fff; }
+body.v5-home .site-header {
+  background: linear-gradient(180deg, #FDF1EC 0%, #F5E3DC 100%);
+  border-bottom-color: #E8CFC4;
+}
+body.v5-home .main-nav .nav-link.active { background: var(--v5-pink); color: #fff; }
