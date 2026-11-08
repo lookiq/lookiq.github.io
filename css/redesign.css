@@ -669,3 +669,40 @@ body.v5 .announcement-bar, body.v5-home .v5-strip {
 @supports (overflow: clip) {
   html, body.v5 { overflow-x: clip !important; }
 }
+
+/* ============================================================
+   ALL menu buttons = the HOME pill (owner order 2026-11-08 via
+   main chat: "Sob menu button k home er motoi koro") — every nav
+   link is a Dark Pink gradient pill by default, on every page.
+   ============================================================ */
+body.v5 .main-nav { gap: 10px; }
+body.v5 .main-nav .nav-link {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #FFFFFF; border-radius: 999px; padding: 9px 18px;
+  box-shadow: 0 8px 22px rgba(231, 84, 128, .30), inset 0 1px 0 rgba(255, 255, 255, .35);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+body.v5 .main-nav .nav-link::after { display: none; }
+body.v5 .main-nav .nav-link:hover {
+  color: #FFFFFF; transform: translateY(-1px);
+  background: linear-gradient(135deg, #EE6191 0%, #D14B78 100%);
+  box-shadow: 0 12px 26px rgba(231, 84, 128, .38), inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+body.v5 .main-nav .nav-link.active {
+  color: #FFFFFF;
+  box-shadow: 0 8px 22px rgba(231, 84, 128, .35), inset 0 0 0 2px rgba(255, 255, 255, .55);
+}
+body.v5 .site-header.scrolled .nav-link { color: #FFFFFF; }
+body.v5 .mobile-nav-link {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(231, 84, 128, .25), inset 0 1px 0 rgba(255, 255, 255, .3);
+}
+body.v5 .mobile-nav-link .nav-icon-container {
+  background: rgba(255, 255, 255, .14); border-color: rgba(255, 255, 255, .45); color: #FFFFFF;
+}
+body.v5 .mobile-nav-link.active {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%); color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(231, 84, 128, .3), inset 0 0 0 2px rgba(255, 255, 255, .55);
+}
+body.v5 .mobile-nav-link.secondary { color: rgba(255, 255, 255, .88); }
