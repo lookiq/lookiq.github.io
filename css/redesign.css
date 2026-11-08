@@ -315,6 +315,9 @@ body.v5 .editorial-intro {
 body.v5-guide .article-header h1 { font-family: var(--v5-serif); }
 body.v5-guide .article-body p { line-height: 1.75; }
 body.v5-guide .article-body a { color: var(--v5-burg) !important; }
+body.v5-guide .article-body a.v5-btn { color: #fff !important; }
+body.v5-guide .article-body a.v5-btn.dark-ghost { color: var(--v5-ink) !important; }
+body.v5-guide .article-body a.v5-btn.dark-ghost:hover { color: #fff !important; }
 .v5-answer {
   background: var(--v5-blush); border: 1px solid var(--v5-taupe); border-left: 5px solid var(--v5-burg);
   border-radius: 14px; padding: 22px 24px; margin: 26px 0 8px;
