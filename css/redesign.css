@@ -624,3 +624,48 @@ body.v5 .ticker-tag { color: #FFE3EE; }
 body.v5 .announcement-bar .disclosure-badge {
   background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .55); color: #fff;
 }
+
+/* ---------- Premium header finish (owner request 2026-11-08) ----------
+   The details that make a header feel expensive: a gradient
+   hairline instead of a flat border, frosted-glass on scroll,
+   a centre-grow underline on nav hover, a barely-there sheen
+   drifting across the rose bar, and a gentle lift on buttons. */
+body.v5 .site-header::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(199, 67, 111, .45) 30%, rgba(199, 67, 111, .45) 70%, transparent);
+}
+body.v5 .site-header.scrolled {
+  background: rgba(253, 247, 243, .85);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  box-shadow: 0 12px 32px rgba(114, 47, 55, .08);
+}
+body.v5 .main-nav .nav-link { position: relative; }
+body.v5 .main-nav .nav-link::after {
+  content: ""; position: absolute; left: 50%; bottom: -3px; width: 70%; height: 2px;
+  background: var(--v5-pink); border-radius: 2px;
+  transform: translateX(-50%) scaleX(0); transition: transform .3s ease;
+}
+body.v5 .main-nav .nav-link:hover { background: transparent; border-radius: 0; }
+body.v5 .main-nav .nav-link:hover::after { transform: translateX(-50%) scaleX(1); }
+body.v5 .main-nav .nav-link.active::after { display: none; }
+body.v5 .announcement-bar, body.v5-home .v5-strip {
+  background-size: 200% 100%;
+  animation: v5sheen 9s ease-in-out infinite alternate;
+}
+@keyframes v5sheen {
+  from { background-position: 0% 0; }
+  to { background-position: 100% 0; }
+}
+.v5-btn { transition: background .25s ease, transform .25s ease, box-shadow .25s ease; }
+.v5-btn:hover { transform: translateY(-1px); }
+
+/* Sticky repair: legacy overflow-x:hidden on html/body turns body
+   into a scroll box and silently kills position:sticky — the v5
+   header scrolled away after ~33px. overflow:clip prevents
+   horizontal scrollbars without creating a scroll container,
+   so the frosted header can actually stay. (v5 pages only —
+   this stylesheet loads nowhere else.) */
+@supports (overflow: clip) {
+  html, body.v5 { overflow-x: clip !important; }
+}
