@@ -1,0 +1,154 @@
+/* ============================================================
+   LOOKIQ — Luxury Burgundy homepage (owner direction 2026-11-08:
+   full dark-burgundy evening-luxury style, template #4 family).
+   Homepage only: index.html adds class "lux" to <body> and loads
+   this file after redesign.css. Money buttons stay Dark Pink
+   (locked PR #127 rule); burgundy/blush/gold carry the mood.
+   ============================================================ */
+body.lux { background: #22060F; }
+body.lux main { background: #26070F; color: #F3E6DC; }
+
+/* --- Header in evening dress (homepage only) --- */
+body.lux .announcement-bar {
+  background: linear-gradient(90deg, #1B040B 0%, #47152A 55%, #1B040B 100%);
+}
+body.lux .site-header {
+  background: linear-gradient(180deg, #3D0E1E 0%, #2A0813 100%);
+  border-bottom-color: rgba(217, 164, 91, .35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+body.lux .site-header::after {
+  background: linear-gradient(90deg, transparent, rgba(217, 164, 91, .55) 30%, rgba(217, 164, 91, .55) 70%, transparent);
+}
+body.lux .site-header.scrolled {
+  background: rgba(42, 8, 19, .86);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .4);
+}
+body.lux .brand-logo .logo-text { color: #F7E9DF; }
+body.lux .logo-text-group .logo-sub { color: #D9A45B; }
+body.lux .main-nav .nav-link { color: #F3E6DC; }
+body.lux .main-nav .nav-link:hover { color: #F5B8C9; }
+body.lux .icon-btn { color: #F3E6DC; border-color: rgba(217, 164, 91, .45); background: rgba(255, 255, 255, .04); }
+body.lux .nav-toggle { color: #F3E6DC; }
+
+/* --- Shared lux pieces --- */
+.lux-script { font-family: "Great Vibes", "Playfair Display", cursive; font-weight: 400; color: #D9A45B; letter-spacing: 0; }
+.lux-sec { max-width: 1240px; margin: 0 auto; padding: 84px 24px 8px; }
+.lux-head { text-align: center; margin-bottom: 42px; }
+.lux-eyebrow {
+  display: inline-block; font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
+  color: #E7B7C2; border: 1px solid rgba(217, 164, 91, .4); border-radius: 999px; padding: 7px 16px;
+}
+.lux-eyebrow.dark { color: #722F37; border-color: rgba(114, 47, 55, .35); }
+.lux-head h2, .lux-band h2 {
+  font-family: "Playfair Display", serif; font-weight: 600; font-size: clamp(32px, 4.4vw, 50px);
+  line-height: 1.12; margin: 18px 0 0; color: #F7E9DF;
+}
+.lux-band h2 { color: #3B0E1C; }
+.lux-head h2 .lux-script, .lux-band h2 .lux-script { font-size: 1.22em; }
+
+/* --- Hero --- */
+.lux-hero { position: relative; overflow: hidden; }
+.lux-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.lux-hero-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(27, 4, 11, .88) 0%, rgba(27, 4, 11, .55) 46%, rgba(27, 4, 11, .08) 78%),
+              linear-gradient(0deg, #26070F 0%, transparent 26%);
+}
+.lux-hero-inner { position: relative; max-width: 1240px; margin: 0 auto; padding: 120px 24px 110px; }
+.lux-kick { font-size: 13px; letter-spacing: .3em; text-transform: uppercase; color: #F0C9D2; }
+.lux-kick .lux-script { font-size: 30px; text-transform: none; letter-spacing: 0; vertical-align: -6px; margin: 0 4px; }
+.lux-hero h1 {
+  font-family: "Playfair Display", serif; font-weight: 600; color: #FBF3EC;
+  font-size: clamp(46px, 7vw, 84px); line-height: 1.04; margin: 16px 0 18px; max-width: 640px;
+}
+.lux-hero h1 em { font-family: "Great Vibes", cursive; font-style: normal; font-weight: 400; color: #D9A45B; font-size: 1.18em; }
+.lux-sub { max-width: 520px; font-size: 17.5px; line-height: 1.65; color: rgba(247, 233, 223, .88); margin: 0 0 28px; }
+.lux-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.lux-ghost {
+  display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 600; font-size: 15px;
+  border: 1px solid rgba(245, 227, 220, .55); color: #F7E9DF; text-decoration: none;
+  transition: background .25s ease, color .25s ease;
+}
+.lux-ghost:hover { background: rgba(245, 227, 220, .14); }
+.lux-bfchip {
+  display: inline-block; margin-top: 26px; font-size: 13.5px; letter-spacing: .04em; color: #F0C9D2;
+  border: 1px solid rgba(217, 164, 91, .5); border-radius: 999px; padding: 8px 16px; text-decoration: none;
+  background: rgba(27, 4, 11, .45);
+}
+.lux-bfchip:hover { color: #FFD9A0; }
+
+/* --- Occasions --- */
+.lux-occ { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.lux-occ-card { text-decoration: none; color: inherit; text-align: center; display: block; }
+.lux-arch { display: block; overflow: hidden; border-radius: 999px 999px 20px 20px; border: 1px solid rgba(217, 164, 91, .35); }
+.lux-arch img { width: 100%; aspect-ratio: 3 / 3.9; object-fit: cover; display: block; transition: transform .6s ease; }
+.lux-occ-card:hover .lux-arch img { transform: scale(1.05); }
+.lux-occ-card h3 { font-family: "Playfair Display", serif; font-size: 25px; font-weight: 600; margin: 18px 0 4px; color: #F7E9DF; }
+.lux-occ-sub { font-size: 14px; color: rgba(243, 230, 220, .66); }
+
+/* --- Principles band --- */
+.lux-band {
+  margin-top: 84px; text-align: center; padding: 72px 24px 76px;
+  background: linear-gradient(180deg, #F8EAE2 0%, #F2D9CE 100%); color: #3B0E1C;
+}
+.lux-prin { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1080px; margin: 44px auto 0; }
+.lux-ic {
+  width: 58px; height: 58px; margin: 0 auto 14px; border-radius: 50%;
+  border: 1px solid rgba(114, 47, 55, .4); color: #A4445A; font-size: 24px;
+  display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, .5);
+}
+.lux-prin h3 { font-family: "Playfair Display", serif; font-size: 21px; margin: 0 0 8px; }
+.lux-prin p { font-size: 14.5px; line-height: 1.6; color: rgba(59, 14, 28, .75); margin: 0; }
+
+/* --- Cards on dark --- */
+.lux-looks, .lux-prods, .lux-guides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.lux-prods { grid-template-columns: repeat(4, 1fr); }
+.lux-look, .lux-prod, .lux-guide {
+  background: #38101F; border: 1px solid rgba(217, 164, 91, .22); border-radius: 20px; overflow: hidden;
+  display: flex; flex-direction: column; transition: transform .3s ease, box-shadow .3s ease;
+}
+.lux-look:hover, .lux-prod:hover, .lux-guide:hover { transform: translateY(-4px); box-shadow: 0 22px 44px rgba(0, 0, 0, .35); }
+.lux-look .ph img, .lux-prod .ph img, .lux-guide .ph img { width: 100%; aspect-ratio: 4 / 3.1; object-fit: cover; display: block; }
+.lux-prod .ph img { aspect-ratio: 1 / 1.02; }
+.lux-card-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.lux-cat { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #D9A45B; }
+.lux-card-body h3 { font-family: "Playfair Display", serif; font-size: 20.5px; line-height: 1.3; margin: 0; font-weight: 600; }
+.lux-card-body h3 a { color: #F7E9DF; text-decoration: none; }
+.lux-card-body h3 a:hover { color: #F5B8C9; }
+.lux-pieces { list-style: none; margin: 4px 0 0; padding: 0; font-size: 14px; color: rgba(243, 230, 220, .78); }
+.lux-pieces li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px dashed rgba(217, 164, 91, .22); }
+.lux-pieces li b { color: #EAC79B; font-weight: 600; white-space: nowrap; }
+.lux-total { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #E7B7C2; margin-top: 10px; }
+.lux-stars { color: #E9B949; font-size: 14px; letter-spacing: 2px; }
+.lux-stars span { color: rgba(243, 230, 220, .65); letter-spacing: 0; font-size: 13px; margin-left: 6px; }
+.lux-price { font-size: 19px; font-weight: 700; color: #F7E9DF; }
+.lux-price s { color: rgba(243, 230, 220, .45); font-weight: 400; font-size: 15px; margin-left: 8px; }
+.lux-card-body .v5-btn { margin-top: auto; align-self: flex-start; }
+.lux-read { margin-top: auto; color: #D9A45B; font-weight: 600; font-size: 14.5px; text-decoration: none; }
+.lux-read:hover { color: #FFD9A0; }
+.lux-best { padding-bottom: 84px; }
+
+/* --- Footer joins the evening --- */
+body.lux .site-footer { background: #1B040B; }
+
+/* --- Mobile --- */
+@media (max-width: 900px) {
+  .lux-occ, .lux-looks, .lux-guides, .lux-prin { grid-template-columns: 1fr; }
+  .lux-prods { grid-template-columns: repeat(2, 1fr); }
+  .lux-hero-inner { padding: 84px 20px 84px; }
+  .lux-hero-shade { background: linear-gradient(0deg, rgba(27, 4, 11, .92) 22%, rgba(27, 4, 11, .35) 70%), linear-gradient(0deg, #26070F 0%, transparent 22%); }
+  .lux-sec { padding: 60px 18px 4px; }
+}
+
+/* --- Ad slot (ad-network ready; premium-styled, collapsible) --- */
+.lux-ad {
+  max-width: 970px; margin: 64px auto 0; padding: 26px 20px; text-align: center;
+  border: 1px dashed rgba(217, 164, 91, .45); border-radius: 14px; color: rgba(243, 230, 220, .55);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.lux-ad-label { font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: rgba(217, 164, 91, .8); }
+.lux-ad-note { font-size: 13px; }
+
+.lux-ad-slot:empty { display: none; }
+.lux-ad-slot { max-width: 970px; margin: 64px auto 0; text-align: center; }
