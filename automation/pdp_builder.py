@@ -78,7 +78,14 @@ def _load_catalog(project_root: Path):
     catalog = []
     for mm in re.finditer(r'\{\s*id: "([^"]+)".*?title: "([^"]+)".*?price: ([0-9.]+).*?image: "([^"]+)"', m.group(1), re.S):
         pid, title, price, image = mm.group(1), mm.group(2), float(mm.group(3)), mm.group(4)
+        seg = mm.group(0)
+        sub = re.search(r'subCategory: "([^"]+)"', seg)
+        rating_m = re.search(r'rating: ([0-9.]+)', seg)
+        reviews_m = re.search(r'reviewsCount: ([0-9]+)', seg)
         catalog.append({"id": pid, "title": title, "price": price, "image": image,
+                        "subCategory": sub.group(1) if sub else "",
+                        "rating": float(rating_m.group(1)) if rating_m else None,
+                        "reviewsCount": int(reviews_m.group(1)) if reviews_m else None,
                         "type": _classify_product(pid, title)})
     return catalog
 
@@ -113,13 +120,22 @@ def _escape(text: str) -> str:
 
 def _related_card_html(p: dict) -> str:
     t = _escape(p["title"])
+    sub = _escape(p.get("subCategory", "") or "")
+    cat_html = f'<div class="v5-rel-cat">{sub}</div>' if sub else ''
+    rate_html = ''
+    if p.get("rating") is not None and p.get("reviewsCount") is not None:
+        full = int(float(p["rating"]) + 0.5)
+        star_str = '★' * full + '☆' * (5 - full)
+        rate_html = (f'<div class="v5-rel-rate">{star_str} {p["rating"]} '
+                     f'<span>({int(p["reviewsCount"]):,} ratings)</span></div>'
+                     f'<span class="v5-rel-cta">See This Piece</span>')
     return (f'        <a href="{p["id"]}.html" class="related-card">\n'
             f'          <div class="related-card-img">\n'
             f'            <img src="../{p["image"]}" alt="{t}" loading="lazy">\n'
             f'          </div>\n'
-            f'          <div class="related-card-body">\n'
+            f'          <div class="related-card-body">{cat_html}\n'
             f'            <h4 class="related-card-title">{t}</h4>\n'
-            f'            <div class="related-card-price">${p["price"]:.2f}</div>\n'
+            f'            <div class="related-card-price">${p["price"]:.2f}</div>{rate_html}\n'
             f'          </div>\n'
             f'        </a>')
 
@@ -488,6 +504,43 @@ def generate_pdp_html(product: dict, site_base_url: str = "https://lookiqfashion
             print(f"[PDPBuilder] WARNING: no catalog found; related block left as template default for {slug}")
     except Exception as e:
         print(f"[PDPBuilder] WARNING: related-products step skipped for {slug}: {e}")
+
+    # 14. v5 rollout (2026-11-08): keep the discount badge honest and regenerate
+    # the "At a Glance" box from THIS product's data. Previously the discount
+    # text was inherited unchanged from the master template, and the master's
+    # glance facts would have been cloned verbatim to every new PDP.
+    try:
+        price_f = float(price_num)
+        orig_f = float(re.sub(r'[^0-9.]', '', orig_price) or price_f)
+        if orig_f > price_f:
+            pct = round((1 - price_f / orig_f) * 100)
+            html = re.sub(r'<span class="product-page-discount">[^<]*</span>',
+                          f'<span class="product-page-discount">Save {pct}%</span>', html, count=1)
+            glance_price = f'{price} <s>{orig_price}</s> — Save {pct}%'
+        else:
+            glance_price = price
+        feats = []
+        fl_m = re.search(r'<ul class="feature-list-check">(.*?)</ul>', html, re.S)
+        if fl_m:
+            for li in re.findall(r'<li>(.*?)</li>', fl_m.group(1), re.S)[:3]:
+                txt = re.sub(r'<[^>]+>', '', li)
+                txt = ' '.join(txt.split())
+                if txt:
+                    feats.append(txt)
+        glance_lines = [f'<li><b>Price:</b> {glance_price} · Prime delivery available</li>',
+                        f'<li><b>Rating:</b> {rating} out of 5 · ({reviews:,} verified Amazon ratings)</li>']
+        if feats:
+            glance_lines.append('<li><b>Standout features:</b> ' + ' · '.join(feats) + '</li>')
+        glance_lines.append(f'<li><b>ASIN:</b> {asin}</li>')
+        glance = ('<!-- V5-GLANCE-START --><div class="v5-glance"><h2>At a Glance</h2><ul>'
+                  + ''.join(glance_lines)
+                  + '</ul><p class="gl-note">Live prices move — the button below shows today\'s figure on Amazon.</p></div><!-- V5-GLANCE-END -->')
+        html, n_glance = re.subn(r'<!-- V5-GLANCE-START -->.*?<!-- V5-GLANCE-END -->',
+                                 lambda m: glance, html, count=1, flags=re.S)
+        if n_glance == 0:
+            print(f"[PDPBuilder] WARNING: no V5-GLANCE markers in master template; glance not regenerated for {slug}")
+    except Exception as e:
+        print(f"[PDPBuilder] WARNING: v5 glance step skipped for {slug}: {e}")
 
     # Clean any replacement characters
     html = html.replace('\ufffd', '&bull;')
