@@ -49,7 +49,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     }
   }
   </script>
-  <link rel="stylesheet" href="css/styles.css?v=10.4">
+  <link rel="stylesheet" href="css/styles.css?v=10.5">
   <style>
     :root { --gold: #b98a2f; --cream: #faf7f2; --ink: #1c1a17; --muted: #6f6a61; }
     body { background: var(--cream); color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 0; }
@@ -176,12 +176,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-  var footer = document.querySelector('footer');
-  if (footer && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      btn.classList.toggle('footer-visible', entries[0].isIntersecting);
-    }, { threshold: 0.05 }).observe(footer);
-  }
 })();
 </script>
 </body>

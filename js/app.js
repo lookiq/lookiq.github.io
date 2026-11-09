@@ -1969,10 +1969,4 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  var footer = document.querySelector('footer');
-  if (footer && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      btn.classList.toggle('footer-visible', entries[0].isIntersecting);
-    }, { threshold: 0.05 }).observe(footer);
-  }
 })();

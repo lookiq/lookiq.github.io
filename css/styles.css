@@ -4334,11 +4334,6 @@ input, select {
   visibility: visible;
   transform: translateY(0);
 }
-.back-to-top.footer-visible {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transform: translateY(12px) !important;
-}
 
 .back-to-top svg {
   display: block;
