@@ -57,7 +57,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="../css/styles.css?v=10.4">
+  <link rel="stylesheet" href="../css/styles.css?v=10.5">
     <link rel="stylesheet" href="../css/redesign.css?v=1.5">
 
   <!-- Schema.org JSON-LD Structured Data for Google Rich Results -->
@@ -1142,12 +1142,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-  var footer = document.querySelector('footer');
-  if (footer && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      btn.classList.toggle('footer-visible', entries[0].isIntersecting);
-    }, { threshold: 0.05 }).observe(footer);
-  }
 })();
 </script>
 </body>
