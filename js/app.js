@@ -1934,32 +1934,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* ============================================================
-   BACK TO TOP � Quiet Luxury Floating Button Logic
+   BACK TO TOP - CocoMelody-style red disc + scroll-progress ring
    ============================================================ */
 (function () {
-  // Inject button into every page
+  if (document.querySelector('.back-to-top')) return;
   const btn = document.createElement('button');
   btn.className = 'back-to-top';
   btn.setAttribute('aria-label', 'Back to top');
   btn.setAttribute('title', 'Back to top');
-  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
+  btn.innerHTML = '<svg viewBox="0 0 44 44" fill="none" aria-hidden="true">'
+    + '<circle class="btt-track" cx="22" cy="22" r="20" stroke-width="2.5"></circle>'
+    + '<circle class="btt-prog" cx="22" cy="22" r="20" stroke-width="2.5" stroke-linecap="round" transform="rotate(-90 22 22)"></circle>'
+    + '<polyline class="btt-chev" points="14.5,20 22,12.5 29.5,20" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>'
+    + '<polyline class="btt-chev" points="14.5,28 22,20.5 29.5,28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>'
+    + '</svg>';
   document.body.appendChild(btn);
 
-  // Show after 320px scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 320) {
-      btn.classList.add('visible');
-    } else {
-      btn.classList.remove('visible');
-    }
-  }, { passive: true });
+  const CIRC = 2 * Math.PI * 20;
+  const prog = btn.querySelector('.btt-prog');
+  prog.style.strokeDasharray = CIRC.toFixed(1);
+  prog.style.strokeDashoffset = CIRC.toFixed(1);
 
-  // Smooth scroll to top on click
+  function onScroll() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const y = window.scrollY;
+    btn.classList.toggle('visible', y > 600);
+    const p = max > 0 ? Math.min(y / max, 1) : 0;
+    prog.style.strokeDashoffset = (CIRC * (1 - p)).toFixed(1);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Hide when footer is visible so it never covers card/footer content
   var footer = document.querySelector('footer');
   if (footer && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
