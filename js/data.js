@@ -512,7 +512,7 @@ const PRODUCTS = [
   {
     id: "trendy-queen-womens-oversized-sweatshirt",
     asin: "B0GZ3W9XFS",
-    title: "Trendy Queen Womens Oversized Sweatshirts with Snap Button Henley Coll",
+    title: "Trendy Queen Womens Oversized Sweatshirts with Snap Button Henley Collar — Black",
     category: "women",
     subCategory: "Curated Finds",
     badge: "Trending Pick",
