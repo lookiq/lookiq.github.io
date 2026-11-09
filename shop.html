@@ -105,6 +105,59 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   ]
 }
   </script>
+
+<style>
+/* ===== Shop: CocoMelody-style collection layout, LOOKIQ colours (2026-11-09) ===== */
+body.v5-shop .coco-crumb { max-width:1280px; margin:20px auto 0; padding:0 5vw; font-size:13px; color:#9A7B6E; }
+body.v5-shop .coco-crumb b { color:#722F37; }
+body.v5-shop .coco-head { text-align:center; padding:12px 16px 4px; }
+body.v5-shop .coco-head h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(30px,4.5vw,44px); color:#722F37; font-weight:600; }
+body.v5-shop .coco-head p { color:#8A6D5C; margin-top:7px; font-size:15px; }
+body.v5-shop .coco-disc { text-align:center; font-size:12px; color:#A08B7C; margin-top:6px; }
+body.v5-shop .coco-layout { max-width:1280px; margin:20px auto 70px; padding:0 5vw; display:grid; grid-template-columns:236px 1fr; gap:34px; align-items:start; }
+body.v5-shop .coco-filters { position:sticky; top:150px; background:#fff; border:1px solid #EAD9CF; border-radius:16px; padding:20px 18px; z-index:60; }
+body.v5-shop .coco-filters h4 { font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:#722F37; margin:18px 0 10px; font-family:'Segoe UI',system-ui,sans-serif; }
+body.v5-shop .coco-filters h4:first-child { margin-top:0; }
+body.v5-shop .coco-f-item { display:flex; align-items:center; gap:8px; font-size:14px; padding:5px 0; cursor:pointer; font-family:'Segoe UI',system-ui,sans-serif; }
+body.v5-shop .coco-f-item input { accent-color:#E75480; width:16px; height:16px; flex:none; }
+body.v5-shop .coco-f-count { margin-left:auto; color:#B79B8A; font-size:12px; }
+body.v5-shop .coco-clear { margin-top:18px; width:100%; background:#F5E3DC; color:#722F37; border:none; font-weight:700; padding:9px; border-radius:999px; cursor:pointer; font-size:13px; font-family:'Segoe UI',system-ui,sans-serif; }
+body.v5-shop .coco-close { display:none; }
+body.v5-shop .coco-toolbar { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; gap:12px; font-family:'Segoe UI',system-ui,sans-serif; }
+body.v5-shop .coco-count { font-size:14px; color:#8A6D5C; }
+body.v5-shop .coco-toolbar select { padding:9px 12px; border:1.5px solid #EAD9CF; border-radius:10px; background:#fff; font-size:14px; color:#1C1917; }
+body.v5-shop .coco-filter-btn { display:none; background:#722F37; color:#fff; border:none; padding:10px 18px; border-radius:999px; font-weight:700; font-size:13.5px; cursor:pointer; }
+body.v5-shop .coco-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+body.v5-shop .coco-card { position:relative; background:#fff; border:1px solid #EAD9CF; border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s, box-shadow .25s; }
+body.v5-shop .coco-card:hover { transform:translateY(-4px); box-shadow:0 18px 36px rgba(114,47,55,.13); }
+body.v5-shop .coco-img { position:relative; display:block; aspect-ratio:3/3.4; overflow:hidden; background:#F5E3DC; }
+body.v5-shop .coco-img img { width:100%; height:100%; object-fit:cover; object-position:center 18%; display:block; }
+body.v5-shop .coco-badge { position:absolute; top:12px; left:12px; background:#722F37; color:#fff; font-size:12px; font-weight:700; padding:5px 10px; border-radius:999px; z-index:2; font-family:'Segoe UI',system-ui,sans-serif; }
+body.v5-shop .coco-badge.gold { background:#C9A24B; color:#3D2C07; }
+body.v5-shop .coco-heart { position:absolute; top:10px; right:10px; width:36px; height:36px; border-radius:50%; border:none; background:rgba(255,255,255,.92); color:#722F37; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:2; box-shadow:0 3px 10px rgba(0,0,0,.14); }
+body.v5-shop .coco-heart.active { color:#E75480; }
+body.v5-shop .coco-body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:6px; flex:1; font-family:'Segoe UI',system-ui,sans-serif; }
+body.v5-shop .coco-catlabel { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#B0765F; font-weight:700; }
+body.v5-shop .coco-title { font-size:15.5px; line-height:1.35; font-weight:600; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:42px; font-family:'Segoe UI',system-ui,sans-serif; }
+body.v5-shop .coco-title a { color:inherit; text-decoration:none; }
+body.v5-shop .coco-rate { font-size:13.5px; color:#6B5747; }
+body.v5-shop .coco-rate .stars { color:#C9A24B; letter-spacing:1px; }
+body.v5-shop .coco-rate .rev { color:#B79B8A; }
+body.v5-shop .coco-price { margin-top:auto; padding-top:4px; }
+body.v5-shop .coco-price .now { font-size:19px; font-weight:800; color:#722F37; }
+body.v5-shop .coco-price .was { color:#B79B8A; text-decoration:line-through; margin-left:6px; font-size:14.5px; }
+body.v5-shop .coco-btn { margin-top:9px; text-align:center; background:linear-gradient(135deg,#E75480,#C7436F); color:#fff; font-weight:700; font-size:14px; padding:11px; border-radius:999px; box-shadow:0 8px 18px rgba(199,67,111,.30); text-decoration:none; }
+body.v5-shop .coco-review { text-align:center; font-size:12.5px; font-weight:600; color:#9A5B47; margin-top:8px; text-decoration:none; }
+body.v5-shop .coco-empty { display:none; text-align:center; color:#8A6D5C; padding:50px 0; font-size:16px; font-family:'Segoe UI',system-ui,sans-serif; }
+@media (max-width:900px) {
+  body.v5-shop .coco-layout { grid-template-columns:1fr; }
+  body.v5-shop .coco-filters { position:fixed; inset:0 auto 0 0; width:300px; max-width:86vw; border-radius:0; transform:translateX(-105%); transition:transform .3s; overflow:auto; top:0; }
+  body.v5-shop .coco-filters.open { transform:translateX(0); box-shadow:30px 0 60px rgba(0,0,0,.25); }
+  body.v5-shop .coco-close { display:block; width:100%; margin-top:14px; background:#722F37; color:#fff; border:none; font-weight:700; padding:10px; border-radius:999px; cursor:pointer; font-family:'Segoe UI',system-ui,sans-serif; }
+  body.v5-shop .coco-filter-btn { display:inline-block; }
+  body.v5-shop .coco-grid { grid-template-columns:repeat(2,1fr); gap:14px; }
+}
+</style>
 </head>
 <body class="v5 v5-shop">
 <!-- Google Tag Manager (noscript) -->
@@ -342,114 +395,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero-section" style="padding: 42px 0 40px; background: var(--bg-secondary); border-bottom: 1px solid var(--border-subtle);">
-      <div class="container" style="text-align: center; max-width: 820px;">
-        <!-- Breadcrumbs -->
-        <nav class="product-breadcrumbs" aria-label="Breadcrumbs">
-          <a href="index.html">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-            <span>Home</span>
-          </a>
-          <span class="crumb-sep">/</span>
-          <span class="current" title="Curated Finds">Shop Curated Finds</span>
-        </nav>
-        <span class="section-tag-badge">
-          <span class="badge-dot"></span>
-          Verified Amazon US Curation &bull; Quiet Luxury
-        </span>
-        <h1 class="hero-title" style="font-size: clamp(2.2rem, 4vw, 2.9rem); margin-bottom: 16px;">
-          Curated Fashion <span class="title-gold-italic">Catalog</span>
-        </h1>
-        <p class="hero-desc editorial-intro">
-          Every piece below is carried in the LOOKIQ catalog and reviewed individually — rated by real Amazon buyers, checked for fabric quality, sizing fidelity and styling versatility. Newest finds first; use the filters to shop by budget, category or search.
-        </p>
+  <div class="coco-crumb">Home &nbsp;/&nbsp; <b>Shop</b></div>
+  <div class="coco-head">
+    <h1>Shop All Finds</h1>
+    <p>Every piece hand-checked by our editors - rated 4.0+ by real buyers.</p>
+    <div class="coco-disc">As an Amazon Associate I earn from qualifying purchases.</div>
+  </div>
+  <div class="coco-layout">
+    <aside class="coco-filters" id="cocoFilters" aria-label="Product filters">
+      <h4>Category</h4>
+      <div id="cocoCats"></div>
+      <h4>Price</h4>
+      <label class="coco-f-item"><input type="radio" name="coco-price" class="coco-price-r" value="9999" checked> All prices</label>
+      <label class="coco-f-item"><input type="radio" name="coco-price" class="coco-price-r" value="25"> Under $25</label>
+      <label class="coco-f-item"><input type="radio" name="coco-price" class="coco-price-r" value="50"> Under $50</label>
+      <label class="coco-f-item"><input type="radio" name="coco-price" class="coco-price-r" value="100"> Under $100</label>
+      <h4>Rating</h4>
+      <label class="coco-f-item"><input type="radio" name="coco-rate" class="coco-rate-r" value="0" checked> All ratings</label>
+      <label class="coco-f-item"><input type="radio" name="coco-rate" class="coco-rate-r" value="4.5"> 4.5 &amp; up</label>
+      <label class="coco-f-item"><input type="radio" name="coco-rate" class="coco-rate-r" value="4.0"> 4.0 &amp; up</label>
+      <button class="coco-clear" id="cocoClear" type="button">Clear all filters</button>
+      <button class="coco-close" id="cocoClose" type="button">Show results</button>
+    </aside>
+    <section>
+      <div class="coco-toolbar">
+        <button class="coco-filter-btn" id="cocoFilterBtn" type="button">&#9776; Filters</button>
+        <span class="coco-count" id="cocoCount"></span>
+        <label>Sort by
+          <select id="cocoSort">
+            <option value="featured">Featured</option>
+            <option value="reviews">Most reviewed</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </label>
       </div>
+      <div class="coco-grid" id="cocoGrid"></div>
+      <div class="coco-empty" id="cocoEmpty">No finds match those filters - try clearing a filter or two.</div>
     </section>
+  </div>
 
-    <!-- Curated Product Catalog Section -->
-    <section class="catalog-section" id="catalog" style="padding: 50px 0 80px;">
-      <div class="container">
-        <!-- Filter Controls Bar -->
-        <div class="filter-bar">
-          <div class="category-tabs">
-            <button class="tab-btn active" data-category="all">All Finds</button>
-            <button class="tab-btn" data-category="under25">Under $25</button>
-            <button class="tab-btn" data-category="women">Women</button>
-            <button class="tab-btn" data-category="men">Men</button>
-            <button class="tab-btn" data-category="shoes">Shoes</button>
-            <button class="tab-btn" data-category="accessories">Bags &amp; Jewelry</button>
-            <button class="tab-btn" data-category="dupes">Viral Dupes</button>
-          </div>
-
-          <div class="catalog-controls">
-            <!-- Search input with Instant Clear Button -->
-            <div class="search-input-wrap">
-              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              <input type="text" id="search-input" placeholder="Search dresses, sunglasses, sneakers..." autocomplete="off" spellcheck="false" aria-label="Search curated fashion catalog">
-              <button class="search-clear-btn" id="search-clear-btn" type="button" aria-label="Clear search input" title="Clear search" style="display: none;" onclick="clearSearch()">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-            </div>
-
-            <!-- Sort Selector -->
-            <select class="price-select sort-select" id="sort-select" aria-label="Sort Catalog Items">
-              <option value="featured">Newest First</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="rating">Highest Rated (4.5+ Stars)</option>
-              <option value="reviews">Most Reviewed / Viral</option>
-            </select>
-
-            <!-- Price Selector -->
-            <select class="price-select" id="price-filter" aria-label="Filter by Price">
-              <option value="all">All Prices</option>
-              <option value="under20">Under $20</option>
-              <option value="under25">Under $25</option>
-              <option value="under30">Under $30</option>
-              <option value="25to50">$25 - $50</option>
-              <option value="over50">$50+</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Filter Status & Active Filter Chips Bar -->
-        <div class="filter-status-bar" id="filter-status-bar" aria-live="polite">
-          <span class="filter-count-badge" id="filter-count-badge">
-            <span class="filter-count-micro-icon">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </span>
-            <span class="count-text-wrap">
-              <span>Showing</span>
-              <span class="count-pill-highlight"><strong>20</strong> of 20</span>
-              <span class="count-suffix">Curated Finds</span>
-            </span>
-          </span>
-          <div class="active-filter-chips" id="active-filter-chips"></div>
-        </div>
-
-        <!-- Products Grid -->
-                <div class="products-grid" id="products-grid">
-          <!-- Populated dynamically via app.js -->
-        </div>
-
-        <!-- Quiet Luxury Numbered Pagination Bar -->
-        <div class="pagination-container" id="pagination-container"></div>
-      </div>
-    </section>
-  </main>
 
   <!-- Site Footer (FTC & Amazon Associates Compliance) -->
   <footer class="site-footer">
@@ -547,7 +533,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="modal-dialog">
       <button class="modal-close-btn" aria-label="Close modal">&times;</button>
       <div class="modal-body">
-        <!-- Content injected dynamically via app.js?v=9.6 -->
+        <!-- Content injected dynamically via app.js?v=9.7 -->
       </div>
     </div>
   </div>
@@ -557,14 +543,129 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="modal-dialog" style="max-width: 900px;">
       <button class="modal-close-btn" aria-label="Close modal">&times;</button>
       <div class="modal-body">
-        <!-- Content injected dynamically via app.js?v=9.6 -->
+        <!-- Content injected dynamically via app.js?v=9.7 -->
       </div>
     </div>
   </div>
 
   <!-- Scripts -->
   <script src="js/data.js?v=6.1"></script>
-  <script src="js/app.js?v=9.6"></script>
+  <script src="js/app.js?v=9.7"></script>
 
+
+<script>
+/* Shop collection renderer - CocoMelody-style layout (2026-11-09). Self-contained:
+   app.js's legacy shop renderer no-ops here (its hook ids are intentionally absent). */
+(function () {
+  if (typeof PRODUCTS === "undefined") return;
+  var grid = document.getElementById("cocoGrid");
+  if (!grid) return;
+  var countEl = document.getElementById("cocoCount");
+  var emptyEl = document.getElementById("cocoEmpty");
+  var catsEl = document.getElementById("cocoCats");
+
+  function esc(s) { return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+  function thumbSrc(src) {
+    if (!src || src.indexOf("http") === 0) return src;
+    var base = src.split("/").pop().replace(/\.(jpg|jpeg|png|webp)$/i, "");
+    return "assets/thumbs/" + base + ".webp";
+  }
+  function displayCategory(p) {
+    var t = (p.title || "").toLowerCase();
+    if (/\bwatch\b/.test(t)) return "Watches";
+    if (/necklace|earring|hoop|huggie|pendant|bracelet/.test(t)) return "Jewelry";
+    if (/boot|sneaker|shoe/.test(t)) return "Shoes & Boots";
+    if (/coat|jacket|trench|shacket|blazer/.test(t)) return "Coats & Jackets";
+    if ((/dress|skirt|romper|jumpsuit/.test(t)) && !/dress pants/.test(t)) return "Dresses & Skirts";
+    if (/cardigan|sweater|knit/.test(t)) return "Sweaters & Cardigans";
+    if (/bag|tote|crossbody|purse|handbag|satchel|sunglasses|scarf|belt|hat|gloves|shawl|pashmina/.test(t)) return "Bags & Accessories";
+    if (/legging|pants|jeans|trouser|tights/.test(t)) return "Pants & Bottoms";
+    if (/lounge|bra\b|thermal|underwear|pajama/.test(t)) return "Loungewear";
+    if (/swim|cover-up|coverup/.test(t)) return "Swim & Cover-Ups";
+    if (/top|tee|shirt|blouse|tank|tunic|hoodie|sweatshirt/.test(t)) return "Tops & Tees";
+    return p.subCategory || "Curated Finds";
+  }
+  function stars(r) {
+    var full = Math.floor(r), half = (r - full) >= 0.4 ? 1 : 0, out = "";
+    for (var i = 0; i < full; i++) out += "\u2605";
+    if (half) out += "\u2BE8";
+    for (var j = 0; j < 5 - full - half; j++) out += "\u2606";
+    return out;
+  }
+  var GROUP_ORDER = ["Dresses & Skirts", "Coats & Jackets", "Sweaters & Cardigans", "Tops & Tees", "Pants & Bottoms", "Shoes & Boots", "Jewelry", "Bags & Accessories", "Loungewear", "Swim & Cover-Ups", "Watches", "Curated Finds"];
+  var items = PRODUCTS.map(function (p, i) { return { p: p, idx: i, group: displayCategory(p) }; });
+  var counts = {};
+  items.forEach(function (it) { counts[it.group] = (counts[it.group] || 0) + 1; });
+  var groups = GROUP_ORDER.filter(function (g) { return counts[g]; });
+  Object.keys(counts).forEach(function (g) { if (groups.indexOf(g) < 0) groups.push(g); });
+  catsEl.innerHTML = groups.map(function (g) {
+    return '<label class="coco-f-item"><input type="checkbox" class="coco-cat" value="' + esc(g) + '"> ' + esc(g) + ' <span class="coco-f-count">' + counts[g] + "</span></label>";
+  }).join("");
+
+  var urlQ = (new URLSearchParams(window.location.search).get("s") || new URLSearchParams(window.location.search).get("q") || "").toLowerCase().trim();
+
+  function wishlist() { try { return JSON.parse(localStorage.getItem("lookiq_wishlist")) || []; } catch (e) { return []; } }
+
+  function render() {
+    var cats = Array.prototype.map.call(document.querySelectorAll(".coco-cat:checked"), function (i) { return i.value; });
+    var maxP = parseFloat(document.querySelector(".coco-price-r:checked").value);
+    var minR = parseFloat(document.querySelector(".coco-rate-r:checked").value);
+    var sort = document.getElementById("cocoSort").value;
+    var list = items.filter(function (it) {
+      if (cats.length && cats.indexOf(it.group) < 0) return false;
+      if (it.p.price > maxP) return false;
+      if (it.p.rating < minR) return false;
+      if (urlQ) {
+        var corpus = (it.p.title + " " + (it.p.category || "") + " " + (it.p.subCategory || "") + " " + (it.p.tags || []).join(" ")).toLowerCase();
+        if (urlQ.split(/\s+/).some(function (term) { return corpus.indexOf(term) < 0; })) return false;
+      }
+      return true;
+    });
+    if (sort === "featured") list.sort(function (a, b) { return b.idx - a.idx; });
+    else if (sort === "reviews") list.sort(function (a, b) { return b.p.reviewsCount - a.p.reviewsCount; });
+    else if (sort === "price-asc") list.sort(function (a, b) { return a.p.price - b.p.price; });
+    else if (sort === "price-desc") list.sort(function (a, b) { return b.p.price - a.p.price; });
+    else if (sort === "rating") list.sort(function (a, b) { return b.p.rating - a.p.rating; });
+
+    var saved = wishlist();
+    grid.innerHTML = list.map(function (it) {
+      var p = it.p;
+      var disc = (p.originalPrice && p.originalPrice > p.price) ? Math.round((1 - p.price / p.originalPrice) * 100) : 0;
+      var badge = disc >= 10 ? '<span class="coco-badge">-' + disc + '%</span>'
+        : (p.badge ? '<span class="coco-badge gold">' + esc(p.badge) + "</span>" : "");
+      var isSaved = saved.indexOf(p.id) >= 0;
+      var heart = '<button class="coco-heart' + (isSaved ? " active" : "") + '" onclick="toggleWishlist(\'' + p.id + '\', event)" title="Save to Favorites" aria-label="Save to Favorites">'
+        + '<svg width="17" height="17" viewBox="0 0 24 24" fill="' + (isSaved ? "currentColor" : "none") + '" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>';
+      return '<article class="coco-card">'
+        + '<a class="coco-img" href="products/' + p.id + '.html"><img src="' + thumbSrc(p.image) + '" onerror="this.onerror=null;this.src=\'' + p.image + '\'" alt="' + esc(p.altText || p.title) + '" loading="lazy" decoding="async">' + badge + "</a>"
+        + heart
+        + '<div class="coco-body">'
+        + '<div class="coco-catlabel">' + esc(it.group) + "</div>"
+        + '<h3 class="coco-title"><a href="products/' + p.id + '.html">' + esc(p.title) + "</a></h3>"
+        + '<div class="coco-rate"><span class="stars">' + stars(p.rating) + "</span> " + p.rating.toFixed(1) + ' <span class="rev">(' + p.reviewsCount.toLocaleString() + " reviews)</span></div>"
+        + '<div class="coco-price"><span class="now">$' + p.price.toFixed(2) + "</span>" + (p.originalPrice ? '<span class="was">$' + p.originalPrice.toFixed(2) + "</span>" : "") + "</div>"
+        + '<a class="coco-btn" href="' + p.amazonLink + '" target="_blank" rel="nofollow sponsored noopener" onclick="trackClick(\'' + p.id + '\', \'card_btn\')">Check Price on Amazon</a>'
+        + '<a class="coco-review" href="products/' + p.id + '.html">Read Full Review &amp; Fit Guide &rarr;</a>'
+        + "</div></article>";
+    }).join("");
+    countEl.textContent = list.length + " of " + items.length + " finds";
+    emptyEl.style.display = list.length ? "none" : "block";
+  }
+
+  document.querySelectorAll(".coco-cat, .coco-price-r, .coco-rate-r").forEach(function (el) { el.addEventListener("change", render); });
+  document.getElementById("cocoSort").addEventListener("change", render);
+  document.getElementById("cocoClear").addEventListener("click", function () {
+    document.querySelectorAll(".coco-cat").forEach(function (i) { i.checked = false; });
+    document.querySelector(".coco-price-r").checked = true;
+    document.querySelector(".coco-rate-r").checked = true;
+    document.getElementById("cocoSort").value = "featured";
+    render();
+  });
+  var filtersEl = document.getElementById("cocoFilters");
+  document.getElementById("cocoFilterBtn").addEventListener("click", function () { filtersEl.classList.toggle("open"); });
+  document.getElementById("cocoClose").addEventListener("click", function () { filtersEl.classList.remove("open"); });
+  render();
+})();
+</script>
 </body>
 </html>

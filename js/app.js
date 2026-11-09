@@ -1173,7 +1173,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="spotlight-item-price">${p.price.toFixed(2)}</span>
                 <span>&bull;</span>
                 <span>${p.rating} ★</span>
-                <span>(${p.reviews.toLocaleString()})</span>
+                <span>(${(p.reviewsCount || 0).toLocaleString()})</span>
               </div>
             </div>
             <span class="spotlight-item-action" onclick="event.stopPropagation(); window.open('${affLink}', '_blank');">Shop Prime &rarr;</span>
