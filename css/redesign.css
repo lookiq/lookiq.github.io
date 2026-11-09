@@ -1080,3 +1080,7 @@ body.v5-pdp .btn-sticky-buy {
 /* v5-spec — guide pick spec block (format standard v1, 2026-11-09) */
 body.v5 .v5-spec{display:flex;flex-wrap:wrap;gap:4px 16px;background:#F5E3DC;border:1px solid #EAD5CB;border-radius:12px;padding:8px 14px;margin:10px 0 2px;font-size:13.5px;line-height:1.5;color:#1C1917}
 body.v5 .v5-spec b{color:#722F37;text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;margin-right:5px}
+
+/* outfit price line — lookbook cards (step 13, 2026-11-09) */
+body.v5 .outfit-price{font-size:14px;color:#1C1917;margin:2px 0 10px}
+body.v5 .outfit-price strong{color:#722F37}

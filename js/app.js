@@ -476,6 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="outfit-body">
             <h4 class="outfit-title">${outfit.title}</h4>
             <p class="outfit-desc">${outfit.description}</p>
+            <p class="outfit-price">Full look: <strong>$${outfit.items.reduce((sum, item) => sum + parseFloat(String(item.price).replace('$', '')), 0).toFixed(2)}</strong> total for all ${outfit.items.length} pieces</p>
             <button class="outfit-btn" onclick="openOutfitModal('${outfit.id}')">
               <span>Shop All ${outfit.items.length} Pieces</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
