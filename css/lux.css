@@ -316,3 +316,12 @@ body.lux .mobile-nav-link:active {
   background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
   color: #FFFFFF; transform: none;
 }
+
+/* --- Header icon fix (owner report 2026-11-09): the PR #136 scrolled
+   rule set the round header buttons' colour to ivory — right back when
+   those buttons were dark glass, but PR #138 turned them into cream
+   medallions, so in the scrolled state the search / wishlist / menu
+   icons turned ivory-on-cream and vanished. Icons stay burgundy in
+   every state. --- */
+body.lux .site-header.scrolled .action-btn { color: #722F37; }
+body.lux .site-header.scrolled .action-btn:hover { color: #9E2B4E; }
