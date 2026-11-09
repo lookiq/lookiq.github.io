@@ -749,3 +749,20 @@ body.v5 .mobile-nav-link:active {
   background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
   color: #FFFFFF; transform: none;
 }
+
+/* --- PDP mobile fix (owner report 2026-11-09): the product gallery is
+   position:sticky (top:100px) in each PDP's inline styles — right for
+   the desktop two-column layout, but on mobile the single column
+   scrolls UNDER the stuck image, which floated over the FAQ section
+   and hid questions. On mobile the gallery stays static at the top. --- */
+@media (max-width: 900px) {
+  body.v5 .product-gallery-wrap { position: static; }
+}
+
+/* --- Sticky buy button = money button (PR #127 directive): the v5 PDP
+   rule painted it burgundy; money buttons are Dark Pink everywhere. --- */
+body.v5-pdp .btn-sticky-buy {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(231, 84, 128, .35), inset 0 1px 0 rgba(255, 255, 255, .3);
+}
