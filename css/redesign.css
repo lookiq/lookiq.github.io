@@ -751,6 +751,121 @@ body.v5-dupes #dupes-empty-msg .btn-primary {
   body.v5-dupes .dupe-save-banner { flex-direction: column; gap: 5px; text-align: center; }
 }
 
+/* ================= v5: utility pages — about / contact / privacy (2026-11-09) =================
+   Shared editorial shell for the text pages. All rules scoped to
+   body.v5-utility; legacy inline gold styles were removed from the
+   three pages in the same pass. */
+body.v5-utility .util-main { background: var(--v5-ivory); }
+body.v5-utility .util-container { max-width: 920px; margin: 0 auto; padding: 32px 20px 84px; }
+body.v5-utility .util-crumbs { display: flex; align-items: center; gap: 8px; font-size: .83rem; color: var(--v5-muted); margin-bottom: 22px; }
+body.v5-utility .util-crumbs a { color: var(--v5-muted); text-decoration: none; }
+body.v5-utility .util-crumbs a:hover { color: var(--v5-burg); }
+body.v5-utility .util-crumbs .current { color: var(--v5-burg); font-weight: 600; }
+body.v5-utility .util-hero {
+  background: linear-gradient(155deg, #FCF3ED 0%, var(--v5-blush) 58%, #F0D5C9 100%);
+  border: 1px solid var(--v5-taupe); border-radius: 24px;
+  padding: 42px 36px 36px; margin-bottom: 34px; box-shadow: 0 12px 30px rgba(114,47,55,.08);
+}
+body.v5-utility .util-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--v5-burg); color: #FFF7F1;
+  font-size: .7rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase;
+  padding: 7px 15px; border-radius: 999px; margin-bottom: 18px;
+  box-shadow: 0 6px 16px rgba(114,47,55,.28);
+}
+body.v5-utility .util-badge .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #F5B8C4; display: inline-block; }
+body.v5-utility .util-hero h1 { font-family: var(--v5-serif); font-size: clamp(1.9rem, 4.2vw, 2.6rem); line-height: 1.16; color: var(--v5-ink); margin: 0 0 12px; }
+body.v5-utility .util-accent { color: var(--v5-burg); font-style: italic; }
+body.v5-utility .util-hero p { color: #57493F; font-size: 1.02rem; line-height: 1.65; margin: 0; max-width: 640px; }
+body.v5-utility .util-card {
+  background: #fff; border: 1px solid var(--v5-taupe); border-radius: 20px;
+  padding: 36px; margin-bottom: 30px; box-shadow: 0 10px 26px rgba(28,25,23,.05);
+}
+body.v5-utility .util-card h2 { font-family: var(--v5-serif); font-size: 1.55rem; color: var(--v5-ink); margin: 0 0 14px; }
+body.v5-utility .util-card p { color: #57493F; line-height: 1.75; font-size: .97rem; margin: 0 0 14px; }
+body.v5-utility .util-card p:last-child { margin-bottom: 0; }
+body.v5-utility .util-mission { text-align: left; }
+body.v5-utility .util-logo {
+  display: block; margin: 0 auto 24px; border-radius: 20px; background: #FBF6F1;
+  border: 1px solid var(--v5-taupe); padding: 10px; box-shadow: 0 10px 26px rgba(114,47,55,.14);
+}
+body.v5-utility .util-card-head { border-bottom: 1px solid var(--v5-taupe); padding-bottom: 16px; margin-bottom: 24px; }
+body.v5-utility .util-card-head h2 { margin-bottom: 8px; }
+body.v5-utility .util-card-head p { color: var(--v5-muted); font-size: .92rem; margin: 0; }
+body.v5-utility .pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+body.v5-utility .pillar-card { background: #FBF1EA; border: 1px solid var(--v5-taupe); border-radius: 16px; padding: 22px; }
+body.v5-utility .pillar-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%; margin-bottom: 12px;
+  background: var(--v5-burg); color: #FFF6EF; font-family: var(--v5-serif);
+  font-style: italic; font-weight: 700; font-size: .95rem;
+  box-shadow: 0 5px 12px rgba(114,47,55,.3);
+}
+body.v5-utility .pillar-card h3 { font-family: var(--v5-serif); font-size: 1.12rem; color: var(--v5-ink); margin: 0 0 8px; line-height: 1.35; }
+body.v5-utility .pillar-card p { font-size: .9rem; line-height: 1.68; margin: 0; }
+body.v5-utility .util-band {
+  background: var(--v5-blush); border: 1px solid var(--v5-taupe); border-left: 4px solid var(--v5-burg);
+  border-radius: 16px; padding: 26px 28px; margin-bottom: 30px;
+}
+body.v5-utility .util-band h3 { font-family: var(--v5-serif); font-size: 1.28rem; color: var(--v5-ink); margin: 0 0 10px; }
+body.v5-utility .util-band p { color: #57493F; line-height: 1.7; font-size: .94rem; margin: 0 0 10px; }
+body.v5-utility .util-band p:last-child { margin-bottom: 0; }
+body.v5-utility .util-band a { color: var(--v5-burg); font-weight: 600; text-decoration: none; }
+body.v5-utility .util-band a:hover { text-decoration: underline; }
+body.v5-utility .util-band-note { font-size: .88rem; color: var(--v5-muted); }
+body.v5-utility .util-band-in-card { margin-bottom: 0; padding: 18px 20px; }
+body.v5-utility .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+body.v5-utility .contact-grid .util-card { margin-bottom: 0; }
+body.v5-utility .contact-block { margin-bottom: 24px; }
+body.v5-utility .contact-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .11em; color: var(--v5-muted); font-weight: 700; margin: 0 0 7px; }
+body.v5-utility .contact-email { font-size: 1.08rem; font-weight: 700; margin: 0; }
+body.v5-utility .contact-email a { color: var(--v5-burg); text-decoration: none; }
+body.v5-utility .contact-email a:hover { text-decoration: underline; }
+body.v5-utility .contact-list { margin: 0; padding-left: 18px; color: #57493F; font-size: .92rem; line-height: 1.65; }
+body.v5-utility .contact-text { color: #57493F; font-size: .92rem; line-height: 1.6; margin: 0; }
+body.v5-utility .util-field { margin-bottom: 16px; }
+body.v5-utility .util-field label { display: block; font-size: .85rem; font-weight: 600; color: var(--v5-ink); margin-bottom: 7px; }
+body.v5-utility .util-field input, body.v5-utility .util-field select, body.v5-utility .util-field textarea {
+  width: 100%; padding: 12px 15px; border: 1px solid var(--v5-taupe); border-radius: 12px;
+  font-family: var(--v5-sans); font-size: .92rem; box-sizing: border-box;
+  background: var(--v5-ivory); color: var(--v5-ink); outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+body.v5-utility .util-field textarea { resize: vertical; }
+body.v5-utility .util-field input:focus, body.v5-utility .util-field select:focus, body.v5-utility .util-field textarea:focus {
+  border-color: #E75480; box-shadow: 0 0 0 3px rgba(231,84,128,.16); background: #fff;
+}
+body.v5-utility .util-submit {
+  width: 100%; padding: 14px; border: none; border-radius: 999px; cursor: pointer;
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%); color: #fff;
+  font-family: var(--v5-sans); font-size: .95rem; font-weight: 700; text-align: center;
+  box-shadow: 0 8px 20px rgba(199,67,111,.35); transition: all .2s ease;
+}
+body.v5-utility .util-submit:hover { background: linear-gradient(135deg, #C7436F 0%, #A93359 100%); transform: translateY(-1px); box-shadow: 0 12px 24px rgba(199,67,111,.42); }
+body.v5-utility .util-success { background: #F0FAF3; border: 1px solid #BFE6CC; border-radius: 14px; padding: 20px; text-align: center; margin-top: 20px; }
+body.v5-utility .util-success h3 { font-family: var(--v5-serif); font-size: 1.15rem; color: #166534; margin: 0 0 6px; }
+body.v5-utility .util-success p { color: #1E7A3C; font-size: .9rem; margin: 0 0 10px; line-height: 1.55; }
+body.v5-utility .util-success .util-success-note { font-size: .8rem; margin: 0; }
+body.v5-utility .util-success a { color: #166534; font-weight: 600; }
+body.v5-utility .legal-callout {
+  background: #fff; border: 1px solid var(--v5-taupe); border-left: 4px solid var(--v5-burg);
+  border-radius: 16px; padding: 26px 28px; margin-bottom: 30px; box-shadow: 0 8px 22px rgba(28,25,23,.05);
+}
+body.v5-utility .legal-callout h2 { font-family: var(--v5-serif); font-size: 1.28rem; color: var(--v5-ink); margin: 0 0 12px; }
+body.v5-utility .legal-callout p { font-size: .95rem; line-height: 1.68; color: #57493F; margin: 0 0 12px; }
+body.v5-utility .legal-callout p:last-child { margin-bottom: 0; }
+body.v5-utility .legal-callout .legal-callout-note { font-size: .9rem; color: var(--v5-muted); }
+body.v5-utility .legal-body section { margin-bottom: 34px; }
+body.v5-utility .legal-body section:last-child { margin-bottom: 0; }
+body.v5-utility .legal-body h2 { font-size: 1.42rem; }
+body.v5-utility .legal-body ul { padding-left: 20px; margin: 0 0 14px; color: #57493F; line-height: 1.7; font-size: .95rem; }
+@media (max-width: 860px) {
+  body.v5-utility .contact-grid { grid-template-columns: 1fr; }
+  body.v5-utility .pillar-grid { grid-template-columns: 1fr; }
+  body.v5-utility .util-card { padding: 26px 20px; }
+  body.v5-utility .util-hero { padding: 32px 22px 28px; }
+}
+
 /* ---------- Pink header — all v5 pages (owner request 2026-11-08, extended site-wide same day) ----------
    Deep-pink disclosure strip + blush masthead + pink active nav
    pill, scoped to body.v5-home so every other page keeps the

@@ -44,6 +44,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <link rel="stylesheet" href="css/styles.css?v=10.6">
+  <link rel="stylesheet" href="css/redesign.css?v=1.7">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -87,52 +88,99 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   }
   </script>
 </head>
-<body>
+<body class="v5 v5-utility">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5T2TZG6K"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
   <!-- Top Announcement Bar -->
-  <aside class="announcement-bar" aria-label="Editorial Transparency Bar">
+  <aside class="announcement-bar" aria-label="Trending Announcements &amp; Compliance">
     <div class="inner">
       <div class="trending-ticker-wrap">
         <span class="trending-pill-badge">
           <span class="trending-pulse-dot"></span>
-          Direct Reader Support
+          Trending Now
         </span>
-        <div class="trending-ticker-track">
-          <span class="ticker-item active">
-            <span class="ticker-badge">RESPONSE TIME</span>
-            <span>All editorial and styling inquiries reviewed within 24 to 48 business hours</span>
-          </span>
+        <div class="trending-ticker-track" id="trending-ticker-track">
+          <a href="products/chunky-chelsea-booties.html" class="ticker-item active">
+            <span class="ticker-tag">VIRAL BOOT</span>
+            <span class="ticker-text">SODA Lug Sole Chelsea Booties &bull; <strong>$34.50</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
+          <a href="products/oversized-trench-coat.html" class="ticker-item">
+            <span class="ticker-tag">CAPSULE STAPLE</span>
+            <span class="ticker-text">Double-Breasted Trench Coat &bull; <strong>$39.99</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
+          <a href="products/retro-oval-sunglasses.html" class="ticker-item">
+            <span class="ticker-tag">QUIET LUXURY</span>
+            <span class="ticker-text">Retro Oval Sunglasses &bull; <strong>$14.99</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
+          <a href="products/gold-huggie-hoop-earrings.html" class="ticker-item">
+            <span class="ticker-tag">EVERYDAY GLAM</span>
+            <span class="ticker-text">PAVOI 14K Gold Huggie Earrings &bull; <strong>$12.95</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
+          <a href="products/slouchy-hobo-shoulder-bag.html" class="ticker-item">
+            <span class="ticker-tag">STYLE TWIN</span>
+            <span class="ticker-text">Slouchy Vegan Leather Hobo Bag &bull; <strong>$28.90</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
         </div>
+        
       </div>
-      <div class="social-links-announcement">
-        <a href="https://www.pinterest.com/lookiqfashion/" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on Pinterest">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
-            <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+
+      <!-- Prime Verified Trust Badge with Interactive Popover -->
+      <div class="disclosure-badge-container">
+        <button class="disclosure-badge" id="trust-popover-trigger" aria-expanded="false" aria-haspopup="true">
+          <svg class="trust-shield-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
-          <span>Pinterest @lookiqfashion</span>
-        </a>
-        <a href="https://www.instagram.com/lookiqfashion/" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on Instagram">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          <span>Amazon Associate Partner &bull; Verified US Prime Deals</span>
+          <svg class="trust-chevron-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
-          <span>Instagram @lookiqfashion</span>
-        </a>
-        <a href="https://www.tiktok.com/@lookiqfashion" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on TikTok">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
-            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.88 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.38 0 .74.07 1.07.2v-3.56a6.34 6.34 0 0 0-1.07-.09A6.34 6.34 0 0 0 3 15.67a6.34 6.34 0 0 0 6.34 6.33 6.34 6.34 0 0 0 6.34-6.33V9.28a8.28 8.28 0 0 0 4.91 1.58V7.41a4.83 4.83 0 0 1-1-.72z"/>
-          </svg>
-          <span>TikTok @lookiqfashion</span>
-        </a>
-        <a href="https://x.com/lookiqfashion" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on X">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-          </svg>
-          <span>X @lookiqfashion</span>
-        </a>
+        </button>
+
+        <div class="trust-popover-card" id="trust-popover" role="tooltip">
+          <div class="trust-popover-header">
+            <div class="trust-popover-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>LOOKIQ Trust &amp; Transparency Standard</span>
+            </div>
+          </div>
+          <ul class="trust-perks-list">
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <strong>Verified US Prime Deals</strong>
+                <p>Every curated staple is verified for fast Prime delivery &amp; authentic customer ratings.</p>
+              </div>
+            </li>
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              </div>
+              <div>
+                <strong>30-Day Free Prime Returns</strong>
+                <p>Fulfilled directly by Amazon US with zero-risk prepaid returns.</p>
+              </div>
+            </li>
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div>
+                <strong>FTC Compliance &amp; Ethics</strong>
+                <p>LOOKIQ earns qualifying commissions as an Amazon Associate at no extra cost to you.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>
@@ -274,49 +322,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   
 
-  <main style="padding: 40px 0 80px 0;">
-    <div class="container" style="max-width: 920px;">
-      
-      <!-- Breadcrumbs -->
-      <nav aria-label="Breadcrumb" style="margin-bottom: 24px; font-size: 0.85rem; color: var(--text-muted);">
-        <a href="index.html" style="color: var(--accent-gold); text-decoration: none;">Home</a>
-        <span style="margin: 0 8px;">/</span>
-        <span>Contact Us</span>
+  <main class="util-main">
+    <div class="util-container">
+
+      <nav class="util-crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">Contact Us</span>
       </nav>
 
-      <!-- Page Header -->
-      <div style="margin-bottom: 40px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 24px;">
-        <span class="section-tag-badge" style="margin-bottom: 12px;">
-          <span class="badge-dot"></span>
-          Editorial &bull; Reader Support
-        </span>
-        <h1 style="font-family: var(--font-serif); font-size: 2.4rem; color: var(--text-primary); margin-bottom: 12px;">
-          Get In Touch With <span class="title-gold-italic">LOOKIQ</span>
-        </h1>
-        <p style="color: var(--text-secondary); font-size: 1.05rem; margin: 0; line-height: 1.6;">
-          Have a question about sizing, a specific Amazon outfit breakdown, or feedback on our fashion lookbooks? Our editorial desk is here to assist.
-        </p>
-      </div>
+      <section class="util-hero">
+        <span class="util-badge"><span class="badge-dot"></span> Editorial &bull; Reader Support</span>
+        <h1>Get In Touch With <span class="util-accent">LOOKIQ</span></h1>
+        <p>Have a question about sizing, a specific Amazon outfit breakdown, or feedback on our fashion lookbooks? Our editorial desk is here to assist.</p>
+      </section>
 
-      <!-- Two-Column Contact Layout -->
-      <div class="contact-two-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-bottom: 48px;">
-        
-        <!-- Column 1: Direct Support Details -->
-        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-sm);">
-          <h2 style="font-family: var(--font-serif); font-size: 1.45rem; color: var(--text-primary); margin-top: 0; margin-bottom: 16px;">
-            Direct Channels
-          </h2>
-          
-          <div style="margin-bottom: 24px;">
-            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 6px;">Official Email Address</p>
-            <p style="margin: 0; font-size: 1.1rem; font-weight: 600;">
-              <a href="mailto:lookiqfashion@gmail.com" style="color: var(--accent-gold); text-decoration: none;">lookiqfashion@gmail.com</a>
+      <div class="contact-grid">
+
+        <div class="util-card">
+          <h2>Direct Channels</h2>
+
+          <div class="contact-block">
+            <p class="contact-label">Official Email Address</p>
+            <p class="contact-email">
+              <a href="mailto:lookiqfashion@gmail.com">lookiqfashion@gmail.com</a>
             </p>
           </div>
 
-          <div style="margin-bottom: 24px;">
-            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 6px;">Editorial &amp; Inquiries Covered</p>
-            <ul style="margin: 0; padding-left: 18px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+          <div class="contact-block">
+            <p class="contact-label">Editorial &amp; Inquiries Covered</p>
+            <ul class="contact-list">
               <li>Wardrobe styling and size recommendation questions</li>
               <li>Outdated link reporting or stock availability updates</li>
               <li>Editorial collaboration or brand partnerships</li>
@@ -324,40 +359,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
           </div>
 
-          <div style="margin-bottom: 24px;">
-            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 6px;">Response Window</p>
-            <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+          <div class="contact-block">
+            <p class="contact-label">Response Window</p>
+            <p class="contact-text">
               Our team reviews and responds to incoming reader queries within 24 to 48 business hours (Monday through Friday, EST).
             </p>
           </div>
 
-          <div style="background: var(--bg-secondary); padding: 16px; border-radius: var(--radius-sm); border-left: 3px solid var(--accent-gold);">
-            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
-              <strong>Looking for urgent customer support on an Amazon order?</strong> Please contact <a href="https://www.amazon.com/gp/help/customer/display.html" target="_blank" rel="nofollow sponsored noopener noreferrer" style="color: var(--accent-gold); text-decoration: none; font-weight: 600;">Amazon Customer Service</a> directly regarding order tracking, shipping, and returns.
+          <div class="util-band util-band-in-card">
+            <p>
+              <strong>Looking for urgent customer support on an Amazon order?</strong> Please contact <a href="https://www.amazon.com/gp/help/customer/display.html" target="_blank" rel="nofollow sponsored noopener noreferrer">Amazon Customer Service</a> directly regarding order tracking, shipping, and returns.
             </p>
           </div>
         </div>
 
-        <!-- Column 2: Interactive Contact Form -->
-        <div style="background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-sm);">
-          <h2 style="font-family: var(--font-serif); font-size: 1.45rem; color: var(--text-primary); margin-top: 0; margin-bottom: 16px;">
-            Send A Message
-          </h2>
-          
-          <form id="contact-form" onsubmit="handleContactSubmit(event)">
-            <div style="margin-bottom: 16px;">
-              <label for="contact-name" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">Your Name</label>
-              <input type="text" id="contact-name" name="name" required placeholder="e.g. Sarah Jenkins" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: var(--font-sans); font-size: 0.9rem; box-sizing: border-box; background: var(--bg-primary); color: var(--text-primary);">
+        <div class="util-card">
+          <h2>Send A Message</h2>
+
+          <form id="contact-form" class="util-form" onsubmit="handleContactSubmit(event)">
+            <div class="util-field">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" name="name" required placeholder="e.g. Sarah Jenkins">
             </div>
 
-            <div style="margin-bottom: 16px;">
-              <label for="contact-email" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">Your Email Address</label>
-              <input type="email" id="contact-email" name="email" required placeholder="e.g. sarah@example.com" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: var(--font-sans); font-size: 0.9rem; box-sizing: border-box; background: var(--bg-primary); color: var(--text-primary);">
+            <div class="util-field">
+              <label for="contact-email">Your Email Address</label>
+              <input type="email" id="contact-email" name="email" required placeholder="e.g. sarah@example.com">
             </div>
 
-            <div style="margin-bottom: 16px;">
-              <label for="contact-topic" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">Inquiry Topic</label>
-              <select id="contact-topic" name="topic" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: var(--font-sans); font-size: 0.9rem; box-sizing: border-box; background: var(--bg-primary); color: var(--text-primary);">
+            <div class="util-field">
+              <label for="contact-topic">Inquiry Topic</label>
+              <select id="contact-topic" name="topic">
                 <option value="styling">Styling Advice &amp; Sizing Question</option>
                 <option value="editorial">Editorial Feedback / Product Recommendation</option>
                 <option value="link">Broken Link or Out-of-Stock Report</option>
@@ -366,23 +398,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </select>
             </div>
 
-            <div style="margin-bottom: 20px;">
-              <label for="contact-message" style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px;">Message</label>
-              <textarea id="contact-message" name="message" rows="4" required placeholder="How can our style desk assist you today?" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-family: var(--font-sans); font-size: 0.9rem; box-sizing: border-box; background: var(--bg-primary); color: var(--text-primary); resize: vertical;"></textarea>
+            <div class="util-field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="4" required placeholder="How can our style desk assist you today?"></textarea>
             </div>
 
-            <button type="submit" class="btn-primary" style="width: 100%; padding: 14px; font-size: 0.95rem; cursor: pointer; text-align: center; border: none;">
+            <button type="submit" class="util-submit">
               Send Inquiry
             </button>
           </form>
 
-          <div id="contact-success" style="display: none; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-sm); padding: 20px; text-align: center; margin-top: 20px;">
-            <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: #166534; margin: 0 0 6px 0;">Thank You for Reaching Out</h3>
-            <p style="color: #15803d; font-size: 0.9rem; margin: 0 0 12px 0; line-height: 1.5;">
+          <div id="contact-success" class="util-success" style="display: none;">
+            <h3>Thank You for Reaching Out</h3>
+            <p>
               Your inquiry has been logged. Our styling and editorial desk will reply directly to your email address within 24 to 48 hours.
             </p>
-            <p style="margin: 0; font-size: 0.8rem; color: #166534;">
-              Need an instant reply? You can also email us directly at <a href="mailto:lookiqfashion@gmail.com" style="color: #166534; font-weight: 600; text-decoration: underline;">lookiqfashion@gmail.com</a>.
+            <p class="util-success-note">
+              Need an instant reply? You can also email us directly at <a href="mailto:lookiqfashion@gmail.com">lookiqfashion@gmail.com</a>.
             </p>
           </div>
 

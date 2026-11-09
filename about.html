@@ -44,6 +44,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <link rel="stylesheet" href="css/styles.css?v=10.6">
+  <link rel="stylesheet" href="css/redesign.css?v=1.7">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -87,52 +88,99 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   }
   </script>
 </head>
-<body>
+<body class="v5 v5-utility">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5T2TZG6K"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
   <!-- Top Announcement Bar -->
-  <aside class="announcement-bar" aria-label="Editorial Transparency Bar">
+  <aside class="announcement-bar" aria-label="Trending Announcements &amp; Compliance">
     <div class="inner">
       <div class="trending-ticker-wrap">
         <span class="trending-pill-badge">
           <span class="trending-pulse-dot"></span>
-          Editorial Integrity
+          Trending Now
         </span>
-        <div class="trending-ticker-track">
-          <span class="ticker-item active">
-            <span class="ticker-badge">E-E-A-T</span>
-            <span>Independent Fashion Curation &bull; Zero Sponsored Bias &bull; Verified US Sizing</span>
-          </span>
+        <div class="trending-ticker-track" id="trending-ticker-track">
+          <a href="products/chunky-chelsea-booties.html" class="ticker-item active">
+            <span class="ticker-tag">VIRAL BOOT</span>
+            <span class="ticker-text">SODA Lug Sole Chelsea Booties &bull; <strong>$34.50</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
+          <a href="products/oversized-trench-coat.html" class="ticker-item">
+            <span class="ticker-tag">CAPSULE STAPLE</span>
+            <span class="ticker-text">Double-Breasted Trench Coat &bull; <strong>$39.99</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
+          <a href="products/retro-oval-sunglasses.html" class="ticker-item">
+            <span class="ticker-tag">QUIET LUXURY</span>
+            <span class="ticker-text">Retro Oval Sunglasses &bull; <strong>$14.99</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
+          <a href="products/gold-huggie-hoop-earrings.html" class="ticker-item">
+            <span class="ticker-tag">EVERYDAY GLAM</span>
+            <span class="ticker-text">PAVOI 14K Gold Huggie Earrings &bull; <strong>$12.95</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
+          <a href="products/slouchy-hobo-shoulder-bag.html" class="ticker-item">
+            <span class="ticker-tag">STYLE TWIN</span>
+            <span class="ticker-text">Slouchy Vegan Leather Hobo Bag &bull; <strong>$28.90</strong></span>
+            <span class="ticker-action">Shop Prime &rarr;</span>
+          </a>
         </div>
+        
       </div>
-      <div class="social-links-announcement">
-        <a href="https://www.pinterest.com/lookiqfashion/" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on Pinterest">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
-            <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+
+      <!-- Prime Verified Trust Badge with Interactive Popover -->
+      <div class="disclosure-badge-container">
+        <button class="disclosure-badge" id="trust-popover-trigger" aria-expanded="false" aria-haspopup="true">
+          <svg class="trust-shield-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
-          <span>Pinterest @lookiqfashion</span>
-        </a>
-        <a href="https://www.instagram.com/lookiqfashion/" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on Instagram">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          <span>Amazon Associate Partner &bull; Verified US Prime Deals</span>
+          <svg class="trust-chevron-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
-          <span>Instagram @lookiqfashion</span>
-        </a>
-        <a href="https://www.tiktok.com/@lookiqfashion" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on TikTok">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
-            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.88 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.38 0 .74.07 1.07.2v-3.56a6.34 6.34 0 0 0-1.07-.09A6.34 6.34 0 0 0 3 15.67a6.34 6.34 0 0 0 6.34 6.33 6.34 6.34 0 0 0 6.34-6.33V9.28a8.28 8.28 0 0 0 4.91 1.58V7.41a4.83 4.83 0 0 1-1-.72z"/>
-          </svg>
-          <span>TikTok @lookiqfashion</span>
-        </a>
-        <a href="https://x.com/lookiqfashion" target="_blank" rel="noopener noreferrer" class="social-pill-link" title="Follow LOOKIQ on X">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-          </svg>
-          <span>X @lookiqfashion</span>
-        </a>
+        </button>
+
+        <div class="trust-popover-card" id="trust-popover" role="tooltip">
+          <div class="trust-popover-header">
+            <div class="trust-popover-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>LOOKIQ Trust &amp; Transparency Standard</span>
+            </div>
+          </div>
+          <ul class="trust-perks-list">
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <strong>Verified US Prime Deals</strong>
+                <p>Every curated staple is verified for fast Prime delivery &amp; authentic customer ratings.</p>
+              </div>
+            </li>
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              </div>
+              <div>
+                <strong>30-Day Free Prime Returns</strong>
+                <p>Fulfilled directly by Amazon US with zero-risk prepaid returns.</p>
+              </div>
+            </li>
+            <li>
+              <div class="trust-perk-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div>
+                <strong>FTC Compliance &amp; Ethics</strong>
+                <p>LOOKIQ earns qualifying commissions as an Amazon Associate at no extra cost to you.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>
@@ -274,112 +322,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   
 
-  <main style="padding: 40px 0 80px 0;">
-    <div class="container" style="max-width: 920px;">
-      
-      <!-- Breadcrumbs -->
-      <nav aria-label="Breadcrumb" style="margin-bottom: 24px; font-size: 0.85rem; color: var(--text-muted);">
-        <a href="index.html" style="color: var(--accent-gold); text-decoration: none;">Home</a>
-        <span style="margin: 0 8px;">/</span>
-        <span>About Us &amp; Editorial Standards</span>
+  <main class="util-main">
+    <div class="util-container">
+
+      <nav class="util-crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">About Us &amp; Editorial Standards</span>
       </nav>
 
-      <!-- Page Header -->
-      <div style="margin-bottom: 40px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 24px;">
-        <span class="section-tag-badge" style="margin-bottom: 12px;">
-          <span class="badge-dot"></span>
-          Editorial Intelligence &bull; Mission
-        </span>
-        <h1 style="font-family: var(--font-serif); font-size: 2.4rem; color: var(--text-primary); margin-bottom: 12px;">
-          About LOOKIQ &amp; <span class="title-gold-italic">Editorial Standards</span>
-        </h1>
-        <p style="color: var(--text-secondary); font-size: 1.05rem; margin: 0; line-height: 1.6;">
-          Elevating personal style through rigorous curation. We cut through the noise of millions of Amazon listings to highlight only the verified, high-quality 1%.
-        </p>
-      </div>
+      <section class="util-hero">
+        <span class="util-badge"><span class="badge-dot"></span> Editorial Intelligence &bull; Mission</span>
+        <h1>About LOOKIQ &amp; <span class="util-accent">Editorial Standards</span></h1>
+        <p>Elevating personal style through rigorous curation. We cut through the noise of millions of Amazon listings to highlight only the verified, high-quality 1%.</p>
+      </section>
 
-      <!-- Core Mission Statement Card -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 36px; margin-bottom: 40px; box-shadow: var(--shadow-md); text-align: center;">
-        <div style="margin-bottom: 24px;">
-          <img src="assets/logo-full.webp" alt="LOOKIQ Haute Couture Brand Emblem" width="150" height="150" style="border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.4); border: 1.5px solid var(--accent-gold); background: #faf8f5; padding: 10px; display: inline-block;">
-        </div>
-        <h2 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--text-primary); margin-top: 0; margin-bottom: 16px; text-align: left;">
-          Our Guiding Philosophy: Quiet Luxury For Real Life
-        </h2>
-        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem; margin-bottom: 16px;">
+      <section class="util-card util-mission">
+        <img src="assets/logo-full.webp" alt="LOOKIQ Haute Couture Brand Emblem" width="150" height="150" class="util-logo">
+        <h2>Our Guiding Philosophy: Quiet Luxury For Real Life</h2>
+        <p>
           The modern fashion landscape is overwhelmed by fast trends and endless sponsored algorithm feeds. Finding a truly timeless trench coat, an unbranded leather sneaker that lasts seasons, or a wedding guest dress with flattering architectural drape on Amazon often feels like looking for a needle in a haystack.
         </p>
-        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem; margin: 0;">
+        <p>
           <strong>LOOKIQ was created to solve this friction.</strong> We act as an independent digital style salon and consumer research desk. Our editors combine runway silhouette awareness with deep e-commerce review forensics, ensuring our readers spend less time scrolling and more time wearing clothes they love with absolute confidence.
         </p>
-      </div>
+      </section>
 
-      <!-- The 4-Pillar Curation Standard (Google E-E-A-T Framework) -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 40px; line-height: 1.75; color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 40px;">
-        
-        <div style="margin-bottom: 32px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px;">
-          <h2 style="font-family: var(--font-serif); font-size: 1.7rem; color: var(--text-primary); margin: 0 0 8px 0;" id="standards">
-            The LOOKIQ 4-Pillar Quality Audit
-          </h2>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
-            Every single garment, footwear pair, and accessory recommended on LOOKIQ must pass our four foundational checks:
-          </p>
+      <section class="util-card">
+        <div class="util-card-head">
+          <h2 id="standards">The LOOKIQ 4-Pillar Quality Audit</h2>
+          <p>Every single garment, footwear pair, and accessory recommended on LOOKIQ must pass our four foundational checks:</p>
         </div>
-
-        <!-- Pillar 1 -->
-        <div style="margin-bottom: 28px; padding-left: 20px; border-left: 3px solid var(--accent-gold);">
-          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin: 0 0 8px 0;">
-            Pillar 1: Verified Buyer Sentiment &amp; Review Forensics
-          </h3>
-          <p style="margin: 0; line-height: 1.7;">
-            We filter out artificial rating spikes. An item must hold a minimum 4.2 out of 5.0 star aggregate rating across thousands of verified purchases. Our team analyzes written buyer feedback over 6-month intervals to check how fabrics hold up after washing, whether zippers snag, and whether colors match the product photography.
-          </p>
+        <div class="pillar-grid">
+          <div class="pillar-card">
+            <span class="pillar-num">1</span>
+            <h3>Pillar 1: Verified Buyer Sentiment &amp; Review Forensics</h3>
+            <p>We filter out artificial rating spikes. An item must hold a minimum 4.2 out of 5.0 star aggregate rating across thousands of verified purchases. Our team analyzes written buyer feedback over 6-month intervals to check how fabrics hold up after washing, whether zippers snag, and whether colors match the product photography.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">2</span>
+            <h3>Pillar 2: True-to-Size &amp; Fit Transparency</h3>
+            <p>Nothing erodes consumer trust faster than misleading sizing charts. For every product featured on LOOKIQ, our editors provide clear sizing advice (e.g., whether to order your standard size, size down for compression shapewear, or size up for an oversized chic drape). We cross-reference reviews across diverse body types to provide honest fit guidance.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">3</span>
+            <h3>Pillar 3: Uncompromising Anti-Counterfeit &amp; Fair Use Policy</h3>
+            <p>We hold a zero-tolerance policy toward counterfeit goods, fake designer logos, and intellectual property theft. When we curate &quot;The Look for Less,&quot; we focus exclusively on legitimate, unbranded or independent Amazon brands that deliver similar aesthetic silhouettes (such as 90s oval frames or minimalist knitwear) without copying trademarks. We believe great design should be accessible without deception.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">4</span>
+            <h3>Pillar 4: Total Editorial Independence</h3>
+            <p>LOOKIQ never accepts sponsored compensation from manufacturers or sellers in exchange for positive reviews or favored placements. While we earn affiliate commissions from qualifying Amazon purchases (at zero extra cost to the buyer), our editorial picks are made completely independently by our fashion team. If a product does not deliver genuine luxury value, it is removed from our catalog.</p>
+          </div>
         </div>
+      </section>
 
-        <!-- Pillar 2 -->
-        <div style="margin-bottom: 28px; padding-left: 20px; border-left: 3px solid var(--accent-gold);">
-          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin: 0 0 8px 0;">
-            Pillar 2: True-to-Size &amp; Fit Transparency
-          </h3>
-          <p style="margin: 0; line-height: 1.7;">
-            Nothing erodes consumer trust faster than misleading sizing charts. For every product featured on LOOKIQ, our editors provide clear sizing advice (e.g., whether to order your standard size, size down for compression shapewear, or size up for an oversized chic drape). We cross-reference reviews across diverse body types to provide honest fit guidance.
-          </p>
-        </div>
-
-        <!-- Pillar 3 -->
-        <div style="margin-bottom: 28px; padding-left: 20px; border-left: 3px solid var(--accent-gold);">
-          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin: 0 0 8px 0;">
-            Pillar 3: Uncompromising Anti-Counterfeit &amp; Fair Use Policy
-          </h3>
-          <p style="margin: 0; line-height: 1.7;">
-            We hold a zero-tolerance policy toward counterfeit goods, fake designer logos, and intellectual property theft. When we curate &quot;The Look for Less,&quot; we focus exclusively on legitimate, unbranded or independent Amazon brands that deliver similar aesthetic silhouettes (such as 90s oval frames or minimalist knitwear) without copying trademarks. We believe great design should be accessible without deception.
-          </p>
-        </div>
-
-        <!-- Pillar 4 -->
-        <div style="margin-bottom: 12px; padding-left: 20px; border-left: 3px solid var(--accent-gold);">
-          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin: 0 0 8px 0;">
-            Pillar 4: Total Editorial Independence
-          </h3>
-          <p style="margin: 0; line-height: 1.7;">
-            LOOKIQ never accepts sponsored compensation from manufacturers or sellers in exchange for positive reviews or favored placements. While we earn affiliate commissions from qualifying Amazon purchases (at zero extra cost to the buyer), our editorial picks are made completely independently by our fashion team. If a product does not deliver genuine luxury value, it is removed from our catalog.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Updating & Maintenance Policy -->
-      <div style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: 32px; margin-bottom: 40px; border-left: 4px solid var(--accent-gold);">
-        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--text-primary); margin-top: 0; margin-bottom: 12px;">
-          Product Auditing &amp; Price Accuracy Commitment
-        </h3>
-        <p style="margin: 0 0 12px 0; line-height: 1.7;">
+      <section class="util-band">
+        <h3>Product Auditing &amp; Price Accuracy Commitment</h3>
+        <p>
           Prices and promotional deals on Amazon fluctuate dynamically. Our automated monitoring scripts and editorial staff regularly audit our catalog, lookbooks, and style guides to ensure link validity, stock availability, and price accuracy.
         </p>
-        <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">
-          Notice an outdated link or out-of-stock item? Please let our editorial desk know at <a href="mailto:lookiqfashion@gmail.com" style="color: var(--accent-gold); font-weight: 600; text-decoration: none;">lookiqfashion@gmail.com</a>.
+        <p class="util-band-note">
+          Notice an outdated link or out-of-stock item? Please let our editorial desk know at <a href="mailto:lookiqfashion@gmail.com">lookiqfashion@gmail.com</a>.
         </p>
-      </div>
+      </section>
 
     </div>
   </main>

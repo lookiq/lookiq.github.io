@@ -36,6 +36,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css?v=10.6">
+  <link rel="stylesheet" href="css/redesign.css?v=1.7">
 
   <style>
     .error-container {
@@ -52,7 +53,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       font-size: clamp(5rem, 12vw, 8rem);
       font-weight: 800;
       line-height: 1;
-      background: var(--gold-gradient);
+      background: linear-gradient(135deg, #722F37 5%, #E75480 95%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 10px;
@@ -76,6 +77,18 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       flex-wrap: wrap;
       justify-content: center;
     }
+    .error-actions .btn-primary {
+      background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+      color: #fff; border: none; border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(199,67,111,.35);
+      text-decoration: none; font-weight: 700;
+    }
+    .error-actions .btn-primary:hover { background: linear-gradient(135deg, #C7436F 0%, #A93359 100%); }
+    .error-actions .btn-secondary {
+      background: #fff; color: #722F37; border: 1px solid #722F37;
+      border-radius: 999px; text-decoration: none; font-weight: 600;
+    }
+    .error-actions .btn-secondary:hover { background: #F5E3DC; }
   </style>
 
   <script>
@@ -92,7 +105,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })();
   </script>
 </head>
-<body>
+<body class="v5">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5T2TZG6K"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
