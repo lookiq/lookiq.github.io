@@ -57,7 +57,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="../css/styles.css?v=10.3">
+  <link rel="stylesheet" href="../css/styles.css?v=10.4">
     <link rel="stylesheet" href="../css/redesign.css?v=1.5">
 
   <!-- Schema.org JSON-LD Structured Data for Google Rich Results -->
@@ -1219,5 +1219,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
 
+<script>
+/* Back to top - CocoMelody-style red disc + scroll-progress ring (same component as js/app.js) */
+(function () {
+  if (document.querySelector('.back-to-top')) return;
+  var btn = document.createElement('button');
+  btn.className = 'back-to-top';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.setAttribute('title', 'Back to top');
+  btn.innerHTML = '<svg viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle class="btt-track" cx="22" cy="22" r="20" stroke-width="2.5"></circle><circle class="btt-prog" cx="22" cy="22" r="20" stroke-width="2.5" stroke-linecap="round" transform="rotate(-90 22 22)"></circle><polyline class="btt-chev" points="14.5,20 22,12.5 29.5,20" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline><polyline class="btt-chev" points="14.5,28 22,20.5 29.5,28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>';
+  document.body.appendChild(btn);
+  var CIRC = 2 * Math.PI * 20;
+  var prog = btn.querySelector('.btt-prog');
+  prog.style.strokeDasharray = CIRC.toFixed(1);
+  prog.style.strokeDashoffset = CIRC.toFixed(1);
+  function onScroll() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var y = window.scrollY;
+    btn.classList.toggle('visible', y > 600);
+    var p = max > 0 ? Math.min(y / max, 1) : 0;
+    prog.style.strokeDashoffset = (CIRC * (1 - p)).toFixed(1);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  var footer = document.querySelector('footer');
+  if (footer && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      btn.classList.toggle('footer-visible', entries[0].isIntersecting);
+    }, { threshold: 0.05 }).observe(footer);
+  }
+})();
+</script>
 </body>
 </html>
