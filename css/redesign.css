@@ -589,14 +589,167 @@ body.v5-lookbook .outfit-btn {
 }
 body.v5-lookbook .outfit-btn:hover { background: var(--v5-burg-dark); }
 
-/* ================= v5 rollout: look for less ================= */
-body.v5-dupes .dupes-hero { background: var(--v5-blush); }
-body.v5-dupes .dupe-stat-pill { background: #fff; border: 1px solid var(--v5-taupe); color: var(--v5-ink); }
-body.v5-dupes .dupe-filter-btn.active { background: var(--v5-burg); color: #fff; border-color: var(--v5-burg); }
-body.v5-dupes .dupe-card { background: #fff; border: 1px solid var(--v5-taupe); border-radius: 18px; overflow: hidden; }
-body.v5-dupes .dupe-save-amount, body.v5-dupes .dupe-side.save .dupe-side-price { color: var(--v5-burg); }
-body.v5-dupes .btn-dupe-amazon { background: var(--v5-burg); background-image: none; color: #fff; border-radius: 999px; }
-body.v5-dupes .editorial-explainer-card { background: #fff; border: 1px solid var(--v5-taupe); border-radius: 18px; }
+/* ================= v5: look for less — full redesign (2026-11-09) =================
+   Burgundy + Blush magazine treatment for the Save vs. Splurge hub.
+   All rules scoped to body.v5-dupes; the page's legacy gold inline
+   styles were removed in the same pass. */
+body.v5-dupes .dupes-page-container { max-width: 1240px; margin: 0 auto; padding: 30px 20px 84px; }
+body.v5-dupes .product-breadcrumbs { font-size: .82rem; color: var(--v5-muted); }
+body.v5-dupes .product-breadcrumbs a { color: var(--v5-muted); text-decoration: none; }
+body.v5-dupes .product-breadcrumbs a:hover { color: var(--v5-burg); }
+body.v5-dupes .product-breadcrumbs .current { color: var(--v5-burg); font-weight: 600; }
+
+/* Hero — blush editorial panel */
+body.v5-dupes .dupes-hero {
+  background: linear-gradient(155deg, #FCF3ED 0%, var(--v5-blush) 58%, #F0D5C9 100%);
+  border: 1px solid var(--v5-taupe); border-radius: 26px;
+  text-align: center; max-width: none; margin: 0 auto 36px;
+  padding: 52px 34px 42px; box-shadow: 0 14px 34px rgba(114,47,55,.08);
+}
+body.v5-dupes .dupes-hero .section-tag-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--v5-burg); color: #FFF7F1; border: none;
+  font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  padding: 8px 16px; border-radius: 999px; margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(114,47,55,.28);
+}
+body.v5-dupes .dupes-hero .section-tag-badge .badge-dot { background: #F5B8C4; }
+body.v5-dupes .dupes-hero .section-title {
+  font-family: var(--v5-serif); font-size: clamp(2.1rem, 4.6vw, 3.1rem);
+  line-height: 1.14; color: var(--v5-ink); margin: 0 auto 16px; max-width: 760px;
+}
+body.v5-dupes .dupes-hero .title-gold-italic {
+  background: none; color: var(--v5-burg); font-style: italic;
+  -webkit-text-fill-color: var(--v5-burg);
+}
+body.v5-dupes .dupes-hero .section-subtitle {
+  font-size: 1.02rem; color: #57493F; line-height: 1.7;
+  max-width: 680px; margin: 0 auto 28px;
+}
+body.v5-dupes .dupe-stat-pills { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin: 0; }
+body.v5-dupes .dupe-stat-pill {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: #fff; border: 1px solid var(--v5-taupe); color: var(--v5-ink);
+  padding: 7px 16px 7px 8px; border-radius: 999px;
+  font-size: .83rem; font-weight: 600; letter-spacing: .01em;
+  box-shadow: 0 3px 10px rgba(114,47,55,.07);
+}
+body.v5-dupes .dupe-stat-icon {
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  background: var(--v5-burg); border: none; color: #FFF3EC;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+body.v5-dupes .dupes-disclosure { margin: 26px auto 0; font-size: .78rem; color: var(--v5-muted); font-style: italic; }
+body.v5-dupes .dupes-disclosure a { color: var(--v5-burg); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Filter bar */
+body.v5-dupes .dupes-filter-bar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px;
+  background: #fff; border: 1px solid var(--v5-taupe); border-radius: 18px;
+  padding: 13px 16px; margin-bottom: 34px; box-shadow: 0 8px 22px rgba(28,25,23,.05);
+}
+body.v5-dupes .dupe-filter-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+body.v5-dupes .dupe-filter-btn {
+  background: transparent; border: 1px solid transparent; padding: 8px 15px;
+  border-radius: 999px; font-size: .86rem; font-weight: 600; color: var(--v5-muted);
+  cursor: pointer; transition: all .2s ease; font-family: var(--v5-sans);
+}
+body.v5-dupes .dupe-filter-btn:hover { color: var(--v5-burg); background: var(--v5-blush); }
+body.v5-dupes .dupe-filter-btn.active { background: var(--v5-burg); color: #fff; border-color: var(--v5-burg); box-shadow: 0 5px 14px rgba(114,47,55,.3); }
+body.v5-dupes .dupe-search-wrap { position: relative; min-width: 230px; flex: 0 1 280px; }
+body.v5-dupes .dupe-search-input {
+  width: 100%; padding: 10px 14px 10px 37px; border: 1px solid var(--v5-taupe);
+  border-radius: 999px; font-size: .85rem; background: var(--v5-ivory); color: var(--v5-ink);
+  outline: none; transition: border-color .2s ease, box-shadow .2s ease; font-family: var(--v5-sans);
+}
+body.v5-dupes .dupe-search-input:focus { border-color: #E75480; box-shadow: 0 0 0 3px rgba(231,84,128,.16); background: #fff; }
+body.v5-dupes .dupe-search-icon { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--v5-muted); pointer-events: none; }
+
+/* Dupe cards */
+body.v5-dupes .dupe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr)); gap: 30px; margin-top: 6px; }
+body.v5-dupes .dupe-card {
+  background: #fff; border: 1px solid var(--v5-taupe); border-radius: 20px; overflow: hidden;
+  box-shadow: 0 10px 26px rgba(28,25,23,.06); display: flex; flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+body.v5-dupes .dupe-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(114,47,55,.14); border-color: #D8BBAE; }
+body.v5-dupes .dupe-visual-split { display: grid; grid-template-columns: 1fr 1fr; position: relative; background: #FBF7F2; border-bottom: 1px solid var(--v5-taupe); }
+body.v5-dupes .dupe-visual-split::after {
+  content: "VS"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 42px; height: 42px; border-radius: 50%; z-index: 3;
+  background: var(--v5-burg); color: #FFF6EF; border: 2.5px solid #fff;
+  box-shadow: 0 6px 16px rgba(87,31,38,.4);
+  font-family: var(--v5-serif); font-style: italic; font-weight: 700; font-size: .92rem;
+  display: flex; align-items: center; justify-content: center; letter-spacing: .02em;
+}
+body.v5-dupes .dupe-side { padding: 20px 16px 18px; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; }
+body.v5-dupes .dupe-side.splurge { background: #F4EFE9; border-right: 1px dashed #D9C8BC; }
+body.v5-dupes .dupe-side.save { background: linear-gradient(165deg, #FBEEE7 0%, var(--v5-blush) 100%); }
+body.v5-dupes .dupe-badge-label {
+  font-size: .68rem; text-transform: uppercase; letter-spacing: .13em; font-weight: 700;
+  padding: 4px 11px; border-radius: 999px; margin-bottom: 13px; display: inline-block;
+}
+body.v5-dupes .dupe-side.splurge .dupe-badge-label { background: transparent; border: 1px solid #B9A894; color: #7A6A58; }
+body.v5-dupes .dupe-side.save .dupe-badge-label { background: var(--v5-burg); background-image: none; color: #FFF6EF; border: 1px solid var(--v5-burg); box-shadow: 0 4px 10px rgba(114,47,55,.3); }
+body.v5-dupes .dupe-img-box { width: 100%; height: 168px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+body.v5-dupes .dupe-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 10px; }
+body.v5-dupes .dupe-side.splurge .dupe-img-box img { filter: saturate(.72) contrast(.97); opacity: .94; }
+body.v5-dupes .dupe-side-title { font-family: var(--v5-sans); font-size: .84rem; font-weight: 600; color: var(--v5-ink); margin: 0 0 6px; line-height: 1.35; min-height: 34px; }
+body.v5-dupes .dupe-side-price { font-size: 1.14rem; font-weight: 700; margin: 0; }
+body.v5-dupes .dupe-side.splurge .dupe-side-price { color: #9A8A76; text-decoration: line-through; font-weight: 600; }
+body.v5-dupes .dupe-side.save .dupe-side-price { color: var(--v5-burg); font-size: 1.34rem; }
+body.v5-dupes .dupe-save-banner {
+  background: linear-gradient(90deg, var(--v5-burg-dark) 0%, var(--v5-burg) 100%);
+  color: #fff; padding: 11px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+body.v5-dupes .dupe-save-tag { color: #F2CFC0; text-transform: uppercase; font-size: .7rem; font-weight: 700; letter-spacing: .12em; }
+body.v5-dupes .dupe-save-amount {
+  background: #FFF6EF; background-image: none; color: var(--v5-burg);
+  padding: 4px 12px; border-radius: 999px; font-size: .8rem; font-weight: 800; letter-spacing: .03em; white-space: nowrap;
+}
+body.v5-dupes .dupe-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex-grow: 1; }
+body.v5-dupes .dupe-editorial-desc { font-size: .88rem; line-height: 1.62; color: #5C4F43; margin: 0 0 16px; flex-grow: 1; }
+body.v5-dupes .dupe-actions { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+body.v5-dupes .btn-dupe-amazon {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%);
+  color: #fff; padding: 13px 18px; border-radius: 999px; border: none;
+  font-size: .9rem; font-weight: 700; text-decoration: none;
+  box-shadow: 0 8px 20px rgba(199,67,111,.35); transition: all .2s ease;
+}
+body.v5-dupes .btn-dupe-amazon:hover { background: linear-gradient(135deg, #C7436F 0%, #A93359 100%); color: #fff; border: none; transform: translateY(-1px); box-shadow: 0 12px 24px rgba(199,67,111,.42); }
+body.v5-dupes .btn-dupe-details { text-align: left; font-size: .82rem; font-weight: 600; color: var(--v5-burg); text-decoration: none; transition: color .2s ease; }
+body.v5-dupes .btn-dupe-details:hover { color: #E75480; text-decoration: underline; }
+body.v5-dupes .btn-dupe-pin { border-radius: 999px; padding: 8px 15px; }
+
+/* Editorial standard — dark burgundy band (matches homepage Luxury Edit) */
+body.v5-dupes .editorial-explainer-card {
+  background: linear-gradient(150deg, #40161D 0%, var(--v5-burg-dark) 55%, var(--v5-burg) 130%);
+  border: 1px solid #4A1E25; border-radius: 24px; padding: 40px 42px; margin-top: 58px;
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: 38px; align-items: center;
+  box-shadow: 0 22px 44px rgba(64,22,29,.28);
+}
+body.v5-dupes .editorial-explainer-card h3 { font-family: var(--v5-serif); font-size: 1.8rem; margin: 0 0 13px; color: #FFF6EF; }
+body.v5-dupes .editorial-explainer-card p { color: #EBD3C8; line-height: 1.68; font-size: .94rem; margin: 0; }
+body.v5-dupes .editorial-explainer-card p strong { color: #fff; }
+body.v5-dupes .faq-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; }
+body.v5-dupes .faq-item { background: rgba(255,246,239,.07); border: 1px solid rgba(245,227,220,.28); border-radius: 14px; padding: 15px 18px; }
+body.v5-dupes .faq-item strong { display: block; color: #FFF6EF; font-size: .92rem; margin-bottom: 5px; }
+body.v5-dupes .faq-item span { font-size: .86rem; color: #E8CFC2; line-height: 1.55; }
+body.v5-dupes #dupes-empty-msg .btn-primary {
+  background: linear-gradient(135deg, #E75480 0%, #C7436F 100%); color: #fff; border: none;
+  border-radius: 999px; padding: 12px 26px; font-weight: 700; cursor: pointer;
+  box-shadow: 0 8px 20px rgba(199,67,111,.35); font-family: var(--v5-sans);
+}
+@media (max-width: 860px) {
+  body.v5-dupes .editorial-explainer-card { grid-template-columns: 1fr; padding: 30px 22px; }
+}
+@media (max-width: 768px) {
+  body.v5-dupes .dupes-hero { padding: 38px 20px 32px; border-radius: 20px; }
+  body.v5-dupes .dupe-search-wrap { flex: 1 1 100%; }
+  body.v5-dupes .dupe-img-box { height: 138px; }
+  body.v5-dupes .dupe-save-banner { flex-direction: column; gap: 5px; text-align: center; }
+}
 
 /* ---------- Pink header — all v5 pages (owner request 2026-11-08, extended site-wide same day) ----------
    Deep-pink disclosure strip + blush masthead + pink active nav

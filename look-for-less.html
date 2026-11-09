@@ -59,7 +59,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css?v=10.6">
-    <link rel="stylesheet" href="css/redesign.css?v=1.5">
+    <link rel="stylesheet" href="css/redesign.css?v=1.6">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -157,199 +157,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 }
   </script>
 
-  <style>
-    /* Scoped Styles for The Look for Less Hub */
-    .dupes-page-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 36px 20px 80px;
-    }
-    .dupes-hero {
-      text-align: center;
-      max-width: 820px;
-      margin: 0 auto 44px;
-    }
-    .dupes-hero .section-tag {
-      display: inline-block;
-      margin-bottom: 12px;
-    }
-    .dupes-hero .section-title {
-      font-size: 2.7rem;
-      margin-bottom: 16px;
-      line-height: 1.18;
-    }
-    @media (max-width: 768px) {
-      .dupes-hero .section-title {
-        font-size: 2.1rem;
-      }
-    }
-    .dupes-hero .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      line-height: 1.68;
-      margin-bottom: 24px;
-    }
-    .dupe-stat-pills {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 36px;
-    }
-    .dupe-stat-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--bg-card);
-      border: 1px solid rgba(201, 151, 56, 0.22);
-      padding: 7px 18px 7px 10px;
-      border-radius: var(--radius-full);
-      font-size: 0.84rem;
-      font-weight: 600;
-      letter-spacing: 0.015em;
-      color: var(--text-primary);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      transition: all var(--transition-normal);
-    }
-    .dupe-stat-pill:hover {
-      border-color: var(--accent-gold);
-      box-shadow: 0 4px 14px rgba(201, 151, 56, 0.15);
-      transform: translateY(-2px);
-    }
-    .dupe-stat-icon {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: rgba(201, 151, 56, 0.1);
-      border: 1px solid rgba(201, 151, 56, 0.25);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-gold);
-      flex-shrink: 0;
-    }
-    .dupes-filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 14px 20px;
-      margin-bottom: 36px;
-      box-shadow: var(--shadow-sm);
-    }
-    .dupe-filter-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-    }
-    .dupe-filter-btn {
-      background: transparent;
-      border: 1px solid transparent;
-      padding: 8px 16px;
-      border-radius: var(--radius-full);
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .dupe-filter-btn:hover {
-      color: var(--text-primary);
-      background: var(--bg-secondary);
-    }
-    .dupe-filter-btn.active {
-      background: #101014;
-      color: #fff;
-    }
-    [data-theme="dark"] .dupe-filter-btn.active {
-      background: var(--accent-gold);
-      color: #101014;
-    }
-    .dupe-search-wrap {
-      position: relative;
-      min-width: 240px;
-    }
-    .dupe-search-input {
-      width: 100%;
-      padding: 9px 14px 9px 36px;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-full);
-      font-size: 0.85rem;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      outline: none;
-      transition: border-color 0.2s ease;
-    }
-    .dupe-search-input:focus {
-      border-color: var(--accent-gold);
-    }
-    .dupe-search-icon {
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
-      pointer-events: none;
-    }
-    /* Editorial Explainer Banner */
-    .editorial-explainer-card {
-      background: linear-gradient(135deg, rgba(201, 151, 56, 0.08) 0%, rgba(201, 151, 56, 0.02) 100%);
-      border: 1px solid var(--border-gold);
-      border-radius: var(--radius-lg);
-      padding: 36px 40px;
-      margin-top: 64px;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 36px;
-      align-items: center;
-    }
-    @media (max-width: 860px) {
-      .editorial-explainer-card {
-        grid-template-columns: 1fr;
-        padding: 28px 20px;
-      }
-    }
-    .editorial-explainer-card h3 {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      margin-bottom: 12px;
-      color: var(--text-primary);
-    }
-    .editorial-explainer-card p {
-      color: var(--text-secondary);
-      line-height: 1.65;
-      font-size: 0.94rem;
-    }
-    .faq-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .faq-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      padding: 16px 20px;
-    }
-    .faq-item strong {
-      display: block;
-      color: var(--text-primary);
-      font-size: 0.92rem;
-      margin-bottom: 6px;
-    }
-    .faq-item span {
-      font-size: 0.86rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-  </style>
 </head>
 <body class="v5 v5-dupes">
 <!-- Google Tag Manager (noscript) -->
@@ -646,6 +453,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span>Verified Material &amp; Non-Sheer Fit Tests</span>
         </div>
       </div>
+      <p class="dupes-disclosure">As an Amazon Associate, LOOKIQ earns from qualifying purchases — at no extra cost to you. <a href="disclosure.html">How it works</a></p>
     </section>
 
     <!-- Category Filter Bar -->
