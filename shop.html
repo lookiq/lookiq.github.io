@@ -533,7 +533,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="modal-dialog">
       <button class="modal-close-btn" aria-label="Close modal">&times;</button>
       <div class="modal-body">
-        <!-- Content injected dynamically via app.js?v=9.8 -->
+        <!-- Content injected dynamically via app.js?v=9.9 -->
       </div>
     </div>
   </div>
@@ -543,14 +543,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="modal-dialog" style="max-width: 900px;">
       <button class="modal-close-btn" aria-label="Close modal">&times;</button>
       <div class="modal-body">
-        <!-- Content injected dynamically via app.js?v=9.8 -->
+        <!-- Content injected dynamically via app.js?v=9.9 -->
       </div>
     </div>
   </div>
 
   <!-- Scripts -->
   <script src="js/data.js?v=6.1"></script>
-  <script src="js/app.js?v=9.8"></script>
+  <script src="js/app.js?v=9.9"></script>
 
 
 <script>
@@ -579,7 +579,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if ((/dress|skirt|romper|jumpsuit/.test(t)) && !/dress pants/.test(t)) return "Dresses & Skirts";
     if (/cardigan|sweater|knit/.test(t)) return "Sweaters & Cardigans";
     if (/bag|tote|crossbody|purse|handbag|satchel|sunglasses|scarf|belt|hat|gloves|shawl|pashmina/.test(t)) return "Bags & Accessories";
-    if (/legging|pants|jeans|trouser|tights/.test(t)) return "Pants & Bottoms";
+    if (/legging|\bpants?\b|chino|jeans|trouser|tights/.test(t)) return "Pants & Bottoms";
     if (/lounge|bra\b|thermal|underwear|pajama/.test(t)) return "Loungewear";
     if (/swim|cover-up|coverup/.test(t)) return "Swim & Cover-Ups";
     if (/top|tee|shirt|blouse|tank|tunic|hoodie|sweatshirt/.test(t)) return "Tops & Tees";
