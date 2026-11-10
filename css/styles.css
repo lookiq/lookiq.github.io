@@ -4354,7 +4354,7 @@ input, select {
 }
 .back-to-top:hover .btt-track { stroke: rgba(231,84,128,0.25); }
 .back-to-top:hover .btt-prog { stroke: #E75480; }
-.back-to-top:hover .btt-chev { stroke: #722F37; }
+.back-to-top:hover .btt-chev { stroke: #8E1150; }
 
 @media (max-width: 768px) {
   .back-to-top {
