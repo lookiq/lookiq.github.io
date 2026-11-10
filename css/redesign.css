@@ -3,18 +3,18 @@
    Loaded AFTER css/styles.css, only on redesigned pages
    (body.v5). All component classes are v5- prefixed so pages
    that are not rebuilt keep the original design untouched.
-   Palette: ivory #FAF7F2 · charcoal #1C1917 · burgundy #722F37
-            blush #F5E3DC · taupe lines #E2CCC3
+   Palette: ivory #FAF7F2 · charcoal #1C1917 · burgundy #8E1150
+            blush #FADCE9 · taupe lines #E5B7CE
    Type: Playfair Display (display) + Inter (UI/body)
    ============================================================ */
 
 body.v5 {
   --v5-ivory: #FAF7F2;
   --v5-ink: #1C1917;
-  --v5-burg: #722F37;
-  --v5-burg-dark: #571F26;
-  --v5-taupe: #E2CCC3;
-  --v5-blush: #F5E3DC;
+  --v5-burg: #8E1150;
+  --v5-burg-dark: #630A38;
+  --v5-taupe: #E5B7CE;
+  --v5-blush: #FADCE9;
   --v5-muted: #6F6357;
   --v5-serif: "Playfair Display", Georgia, serif;
   --v5-sans: "Inter", "Plus Jakarta Sans", sans-serif;
@@ -472,7 +472,7 @@ body.v5 .trending-pill-badge {
 body.v5 .trending-pulse-dot { background: #fff; }
 body.v5 .ticker-tag { color: var(--v5-blush); }
 body.v5 .announcement-bar .disclosure-badge {
-  background: rgba(114, 47, 55, .28); border-color: var(--v5-taupe); color: var(--v5-blush);
+  background: rgba(142, 17, 80, .28); border-color: var(--v5-taupe); color: var(--v5-blush);
 }
 body.v5 .section-tag, body.v5 .section-tag-badge {
   background: var(--v5-blush); color: var(--v5-burg);
@@ -538,7 +538,7 @@ body.v5-pdp .v5-glance li b { color: var(--v5-burg); }
 body.v5-pdp .v5-glance .gl-note { margin: 10px 0 0; font-size: .85rem; color: var(--v5-muted); }
 body.v5-pdp .btn-amazon-cta-large {
   background: var(--v5-burg); background-image: none; color: #fff;
-  border-radius: 999px; box-shadow: 0 10px 22px rgba(114,47,55,.28);
+  border-radius: 999px; box-shadow: 0 10px 22px rgba(142,17,80,.28);
 }
 body.v5-pdp .btn-amazon-cta-large:hover { background: var(--v5-burg-dark); }
 body.v5-pdp .btn-sticky-buy { background: var(--v5-burg); background-image: none; color: #fff; border-radius: 999px; }
@@ -604,14 +604,14 @@ body.v5-dupes .dupes-hero {
   background: linear-gradient(155deg, #FCF3ED 0%, var(--v5-blush) 58%, #F0D5C9 100%);
   border: 1px solid var(--v5-taupe); border-radius: 26px;
   text-align: center; max-width: none; margin: 0 auto 36px;
-  padding: 52px 34px 42px; box-shadow: 0 14px 34px rgba(114,47,55,.08);
+  padding: 52px 34px 42px; box-shadow: 0 14px 34px rgba(142,17,80,.08);
 }
 body.v5-dupes .dupes-hero .section-tag-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--v5-burg); color: #FFF7F1; border: none;
   font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
   padding: 8px 16px; border-radius: 999px; margin-bottom: 20px;
-  box-shadow: 0 6px 16px rgba(114,47,55,.28);
+  box-shadow: 0 6px 16px rgba(142,17,80,.28);
 }
 body.v5-dupes .dupes-hero .section-tag-badge .badge-dot { background: #F5B8C4; }
 body.v5-dupes .dupes-hero .section-title {
@@ -632,7 +632,7 @@ body.v5-dupes .dupe-stat-pill {
   background: #fff; border: 1px solid var(--v5-taupe); color: var(--v5-ink);
   padding: 7px 16px 7px 8px; border-radius: 999px;
   font-size: .83rem; font-weight: 600; letter-spacing: .01em;
-  box-shadow: 0 3px 10px rgba(114,47,55,.07);
+  box-shadow: 0 3px 10px rgba(142,17,80,.07);
 }
 body.v5-dupes .dupe-stat-icon {
   width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
@@ -655,7 +655,7 @@ body.v5-dupes .dupe-filter-btn {
   cursor: pointer; transition: all .2s ease; font-family: var(--v5-sans);
 }
 body.v5-dupes .dupe-filter-btn:hover { color: var(--v5-burg); background: var(--v5-blush); }
-body.v5-dupes .dupe-filter-btn.active { background: var(--v5-burg); color: #fff; border-color: var(--v5-burg); box-shadow: 0 5px 14px rgba(114,47,55,.3); }
+body.v5-dupes .dupe-filter-btn.active { background: var(--v5-burg); color: #fff; border-color: var(--v5-burg); box-shadow: 0 5px 14px rgba(142,17,80,.3); }
 body.v5-dupes .dupe-search-wrap { position: relative; min-width: 230px; flex: 0 1 280px; }
 body.v5-dupes .dupe-search-input {
   width: 100%; padding: 10px 14px 10px 37px; border: 1px solid var(--v5-taupe);
@@ -672,7 +672,7 @@ body.v5-dupes .dupe-card {
   box-shadow: 0 10px 26px rgba(28,25,23,.06); display: flex; flex-direction: column;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-body.v5-dupes .dupe-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(114,47,55,.14); border-color: #D8BBAE; }
+body.v5-dupes .dupe-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(142,17,80,.14); border-color: #D8BBAE; }
 body.v5-dupes .dupe-visual-split { display: grid; grid-template-columns: 1fr 1fr; position: relative; background: #FBF7F2; border-bottom: 1px solid var(--v5-taupe); }
 body.v5-dupes .dupe-visual-split::after {
   content: "VS"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
@@ -690,7 +690,7 @@ body.v5-dupes .dupe-badge-label {
   padding: 4px 11px; border-radius: 999px; margin-bottom: 13px; display: inline-block;
 }
 body.v5-dupes .dupe-side.splurge .dupe-badge-label { background: transparent; border: 1px solid #B9A894; color: #7A6A58; }
-body.v5-dupes .dupe-side.save .dupe-badge-label { background: var(--v5-burg); background-image: none; color: #FFF6EF; border: 1px solid var(--v5-burg); box-shadow: 0 4px 10px rgba(114,47,55,.3); }
+body.v5-dupes .dupe-side.save .dupe-badge-label { background: var(--v5-burg); background-image: none; color: #FFF6EF; border: 1px solid var(--v5-burg); box-shadow: 0 4px 10px rgba(142,17,80,.3); }
 body.v5-dupes .dupe-img-box { width: 100%; height: 168px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
 body.v5-dupes .dupe-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 10px; }
 body.v5-dupes .dupe-side.splurge .dupe-img-box img { filter: saturate(.72) contrast(.97); opacity: .94; }
@@ -764,14 +764,14 @@ body.v5-utility .util-crumbs .current { color: var(--v5-burg); font-weight: 600;
 body.v5-utility .util-hero {
   background: linear-gradient(155deg, #FCF3ED 0%, var(--v5-blush) 58%, #F0D5C9 100%);
   border: 1px solid var(--v5-taupe); border-radius: 24px;
-  padding: 42px 36px 36px; margin-bottom: 34px; box-shadow: 0 12px 30px rgba(114,47,55,.08);
+  padding: 42px 36px 36px; margin-bottom: 34px; box-shadow: 0 12px 30px rgba(142,17,80,.08);
 }
 body.v5-utility .util-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--v5-burg); color: #FFF7F1;
   font-size: .7rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase;
   padding: 7px 15px; border-radius: 999px; margin-bottom: 18px;
-  box-shadow: 0 6px 16px rgba(114,47,55,.28);
+  box-shadow: 0 6px 16px rgba(142,17,80,.28);
 }
 body.v5-utility .util-badge .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #F5B8C4; display: inline-block; }
 body.v5-utility .util-hero h1 { font-family: var(--v5-serif); font-size: clamp(1.9rem, 4.2vw, 2.6rem); line-height: 1.16; color: var(--v5-ink); margin: 0 0 12px; }
@@ -787,7 +787,7 @@ body.v5-utility .util-card p:last-child { margin-bottom: 0; }
 body.v5-utility .util-mission { text-align: left; }
 body.v5-utility .util-logo {
   display: block; margin: 0 auto 24px; border-radius: 20px; background: #FBF6F1;
-  border: 1px solid var(--v5-taupe); padding: 10px; box-shadow: 0 10px 26px rgba(114,47,55,.14);
+  border: 1px solid var(--v5-taupe); padding: 10px; box-shadow: 0 10px 26px rgba(142,17,80,.14);
 }
 body.v5-utility .util-card-head { border-bottom: 1px solid var(--v5-taupe); padding-bottom: 16px; margin-bottom: 24px; }
 body.v5-utility .util-card-head h2 { margin-bottom: 8px; }
@@ -799,7 +799,7 @@ body.v5-utility .pillar-num {
   width: 30px; height: 30px; border-radius: 50%; margin-bottom: 12px;
   background: var(--v5-burg); color: #FFF6EF; font-family: var(--v5-serif);
   font-style: italic; font-weight: 700; font-size: .95rem;
-  box-shadow: 0 5px 12px rgba(114,47,55,.3);
+  box-shadow: 0 5px 12px rgba(142,17,80,.3);
 }
 body.v5-utility .pillar-card h3 { font-family: var(--v5-serif); font-size: 1.12rem; color: var(--v5-ink); margin: 0 0 8px; line-height: 1.35; }
 body.v5-utility .pillar-card p { font-size: .9rem; line-height: 1.68; margin: 0; }
@@ -877,7 +877,7 @@ body.v5-home .v5-strip {
 body.v5-home .v5-strip b { color: #fff; }
 body.v5 .site-header {
   background: linear-gradient(180deg, #FFFBF8 0%, #F9ECE5 100%);
-  border-bottom-color: #ECD9CF; box-shadow: 0 10px 30px rgba(114, 47, 55, .05);
+  border-bottom-color: #ECD9CF; box-shadow: 0 10px 30px rgba(142, 17, 80, .05);
 }
 body.v5 .main-nav .nav-link.active { background: var(--v5-pink); color: #fff; }
 
@@ -906,7 +906,7 @@ body.v5 .site-header.scrolled {
   background: rgba(253, 247, 243, .85);
   backdrop-filter: blur(16px) saturate(1.5);
   -webkit-backdrop-filter: blur(16px) saturate(1.5);
-  box-shadow: 0 12px 32px rgba(114, 47, 55, .08);
+  box-shadow: 0 12px 32px rgba(142, 17, 80, .08);
 }
 body.v5 .main-nav .nav-link { position: relative; }
 body.v5 .main-nav .nav-link::after {
@@ -1042,7 +1042,7 @@ body.v5-pdp .btn-sticky-buy {
    small-caps label, a solid white pill box with a gold rim and a pink
    focus glow, and a rich gradient premium-pink button. --- */
 .v5-club .club-label {
-  color: #722F37;
+  color: #8E1150;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -1056,13 +1056,13 @@ body.v5-pdp .btn-sticky-buy {
   color: #1C1917;
   font-size: 16px;
   padding: 15px 22px;
-  box-shadow: 0 6px 18px rgba(114, 47, 55, .10), inset 0 1px 0 rgba(255, 255, 255, .9);
+  box-shadow: 0 6px 18px rgba(142, 17, 80, .10), inset 0 1px 0 rgba(255, 255, 255, .9);
 }
 .v5-club .newsletter-form input::placeholder { color: #9A7B6E; }
 .v5-club .newsletter-form input:focus {
   outline: none;
   border-color: #E75480;
-  box-shadow: 0 0 0 4px rgba(231, 84, 128, .18), 0 8px 22px rgba(114, 47, 55, .12);
+  box-shadow: 0 0 0 4px rgba(231, 84, 128, .18), 0 8px 22px rgba(142, 17, 80, .12);
 }
 .v5-club .club-btn {
   background: linear-gradient(135deg, #F2739D 0%, #E75480 48%, #C7436F 100%) !important;
@@ -1078,9 +1078,9 @@ body.v5-pdp .btn-sticky-buy {
 }
 
 /* v5-spec — guide pick spec block (format standard v1, 2026-11-09) */
-body.v5 .v5-spec{display:flex;flex-wrap:wrap;gap:4px 16px;background:#F5E3DC;border:1px solid #EAD5CB;border-radius:12px;padding:8px 14px;margin:10px 0 2px;font-size:13.5px;line-height:1.5;color:#1C1917}
-body.v5 .v5-spec b{color:#722F37;text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;margin-right:5px}
+body.v5 .v5-spec{display:flex;flex-wrap:wrap;gap:4px 16px;background:#FADCE9;border:1px solid #EAD5CB;border-radius:12px;padding:8px 14px;margin:10px 0 2px;font-size:13.5px;line-height:1.5;color:#1C1917}
+body.v5 .v5-spec b{color:#8E1150;text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;margin-right:5px}
 
 /* outfit price line — lookbook cards (step 13, 2026-11-09) */
 body.v5 .outfit-price{font-size:14px;color:#1C1917;margin:2px 0 10px}
-body.v5 .outfit-price strong{color:#722F37}
+body.v5 .outfit-price strong{color:#8E1150}
