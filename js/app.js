@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if ((/dress|skirt|romper|jumpsuit/.test(t)) && !/dress pants/.test(t)) return "Dresses & Skirts";
     if (/cardigan|sweater|knit/.test(t)) return "Sweaters & Cardigans";
     if (/bag|tote|crossbody|purse|handbag|satchel|sunglasses|scarf|belt|hat|gloves|shawl|pashmina/.test(t)) return "Bags & Accessories";
-    if (/legging|pants|jeans|trouser|tights/.test(t)) return "Pants & Bottoms";
+    if (/legging|\bpants?\b|chino|jeans|trouser|tights/.test(t)) return "Pants & Bottoms";
     if (/lounge|bra\b|thermal|underwear|pajama/.test(t)) return "Loungewear";
     if (/swim|cover-up|coverup/.test(t)) return "Swim & Cover-Ups";
     if (/top|tee|shirt|blouse|tank|tunic|hoodie|sweatshirt/.test(t)) return "Tops & Tees";
