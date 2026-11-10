@@ -686,6 +686,48 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       margin-top: auto;
     }
   </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1890146272144827');
+fbq('track', 'PageView');
+document.addEventListener('click', function (e) {
+  var a = e.target.closest ? e.target.closest('a[href]') : null;
+  if (!a) return;
+  var h = a.href || '';
+  if (/amazon\.|amzn\./i.test(h)) {
+    fbq('trackCustom', 'OutboundClick', { destination: 'amazon' });
+  }
+});
+document.addEventListener('DOMContentLoaded', function () {
+  var successPanel = document.getElementById('success-message');
+  if (successPanel && document.getElementById('sib-form')) {
+    var leadFired = false;
+    var checkSuccess = function () {
+      if (leadFired) return;
+      var st = window.getComputedStyle(successPanel);
+      if (st.display !== 'none' && st.visibility !== 'hidden') {
+        leadFired = true;
+        fbq('track', 'Lead', { content_name: 'Style Club Subscribe' });
+      }
+    };
+    new MutationObserver(checkSuccess).observe(successPanel, { attributes: true, attributeFilter: ['style', 'class'] });
+    checkSuccess();
+  }
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function () {
+      fbq('track', 'Lead', { content_name: 'Contact Form' });
+    });
+  }
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1890146272144827&ev=PageView&noscript=1" alt=""></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body class="v5 v5-pdp">
 <!-- Google Tag Manager (noscript) -->
