@@ -826,17 +826,20 @@ body.v5-utility .contact-text { color: #57493F; font-size: .92rem; line-height: 
 body.v5-utility .util-field { margin-bottom: 16px; }
 body.v5-utility .util-field label { display: block; font-size: .85rem; font-weight: 600; color: var(--v5-ink); margin-bottom: 7px; }
 body.v5-utility .util-field input, body.v5-utility .util-field select, body.v5-utility .util-field textarea {
-  width: 100%; padding: 12px 15px; border: 1px solid var(--v5-taupe); border-radius: 12px;
-  font-family: var(--v5-sans); font-size: .92rem; box-sizing: border-box;
+  width: 100%; padding: 13px 16px; border: 1px solid var(--v5-taupe); border-radius: 12px;
+  font-family: var(--v5-sans); font-size: 16px; line-height: 1.45; box-sizing: border-box;
   background: var(--v5-ivory); color: var(--v5-ink); outline: none;
+  scroll-margin-top: 110px; scroll-margin-bottom: 24px;
   transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
 }
+body.v5-utility .util-field input, body.v5-utility .util-field select { min-height: 48px; }
+body.v5-utility .util-field textarea { min-height: 120px; }
 body.v5-utility .util-field textarea { resize: vertical; }
 body.v5-utility .util-field input:focus, body.v5-utility .util-field select:focus, body.v5-utility .util-field textarea:focus {
   border-color: #E75480; box-shadow: 0 0 0 3px rgba(231,84,128,.16); background: #fff;
 }
 body.v5-utility .util-submit {
-  width: 100%; padding: 14px; border: none; border-radius: 999px; cursor: pointer;
+  width: 100%; padding: 14px; min-height: 52px; border: none; border-radius: 999px; cursor: pointer;
   background: linear-gradient(135deg, #E75480 0%, #C7436F 100%); color: #fff;
   font-family: var(--v5-sans); font-size: .95rem; font-weight: 700; text-align: center;
   box-shadow: 0 8px 20px rgba(199,67,111,.35); transition: all .2s ease;
@@ -1140,4 +1143,18 @@ body.v5-home .v5-club .newsletter-note { color: #8A7280; }
   body.v5-home .v5-club { padding: 56px 0 64px; }
   body.v5-home .v5-club .box { padding: 34px 22px 30px; border-radius: 24px; }
   body.v5-home .v5-club .club-btn { width: 100%; }
+}
+
+/* ---------- Mobile form UX (2026-11-10): keyboard-safe focus + small-screen fit ----------
+   16px inputs stop iOS focus auto-zoom; scroll-margin keeps the focused field
+   above the on-screen keyboard; the viewport meta (contact + home) carries
+   interactive-widget=resizes-content so supporting browsers resize the layout. */
+@media (max-width: 860px) {
+  body.v5-utility .util-field input, body.v5-utility .util-field select, body.v5-utility .util-field textarea { scroll-margin-bottom: 42vh; }
+  body.v5-home .v5-club .newsletter-form input { scroll-margin-top: 110px; scroll-margin-bottom: 42vh; }
+}
+@media (max-width: 380px) {
+  body.v5-utility .util-card { padding: 22px 16px; }
+  body.v5-utility .util-field { margin-bottom: 14px; }
+  body.v5-utility .util-field textarea { min-height: 108px; }
 }
