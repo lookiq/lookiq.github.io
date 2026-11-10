@@ -2470,7 +2470,7 @@ const GUIDES = [
     readTime: "6 min read",
     author: "LOOKIQ Fashion Editors",
     excerpt: "Building a versatile, quiet luxury autumn wardrobe doesn't require high four-figure budgets. Here are 4 tested Amazon staples that create over 10 elevated looks for under $150 total.",
-    image: "assets/capsule-wardrobe-guide.webp",
+    image: "assets/capsule-wardrobe-guide-2026.webp",
     altText: "Best Amazon Fall Capsule Wardrobe Under 150 Dollars Minimalist Checklist",
     tags: ["Capsule Wardrobe", "Fall Fashion", "Budget Luxury", "Checklist"]
   },
