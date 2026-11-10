@@ -838,6 +838,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (st.display !== 'none' && st.visibility !== 'hidden') {
         leadFired = true;
         fbq('track', 'Lead', { content_name: 'Style Club Subscribe' });
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'generate_lead', lead_source: 'style_club' });
+        if (typeof gtag === 'function') { gtag('event', 'generate_lead', { method: 'Style Club' }); }
       }
     };
     new MutationObserver(checkSuccess).observe(successPanel, { attributes: true, attributeFilter: ['style', 'class'] });
