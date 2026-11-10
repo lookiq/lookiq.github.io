@@ -124,6 +124,37 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
+        "validFrom": "2026-11-09",
+        "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+        },
+        "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+        },
+        "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+        "@type": "QuantitativeValue",
+        "minValue": 0,
+        "maxValue": 1,
+        "unitCode": "DAY"
+        },
+        "transitTime": {
+        "@type": "QuantitativeValue",
+        "minValue": 1,
+        "maxValue": 5,
+        "unitCode": "DAY"
+        }
+        }
+        },
         "price": "24.99",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
