@@ -1084,3 +1084,60 @@ body.v5 .v5-spec b{color:#8E1150;text-transform:uppercase;letter-spacing:.06em;f
 /* outfit price line — lookbook cards (step 13, 2026-11-09) */
 body.v5 .outfit-price{font-size:14px;color:#1C1917;margin:2px 0 10px}
 body.v5 .outfit-price strong{color:#8E1150}
+
+/* --- Style Club premium v2 (owner request 2026-11-10): the section heading
+   inherited the dark-homepage cream body colour and vanished on the blush
+   band, and the email box still carried a gold rim from the burgundy era.
+   Now: a white premium card on the pink band, deep-pink serif heading with
+   a gradient accent word, pink-rimmed pill input (gold rim removed), and
+   the richest form of the locked Dark Pink gradient button. --- */
+body.v5-home .v5-club { background: linear-gradient(180deg, #FCE9F1 0%, #FADCE9 100%); padding: 74px 0 84px; }
+body.v5-home .v5-club .box {
+  background: #FFFFFF; border: 1px solid #F0C6D8; border-radius: 28px;
+  max-width: 720px; padding: 46px 44px 40px;
+  box-shadow: 0 30px 60px -18px rgba(142, 17, 80, .25), 0 4px 14px rgba(142, 17, 80, .08);
+}
+body.v5-home .v5-club .club-badge {
+  width: 56px; height: 56px; margin: 0 auto 18px; border-radius: 50%;
+  background: linear-gradient(135deg, #F2739D 0%, #E75480 48%, #C7436F 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 12px 24px rgba(199, 67, 111, .35), inset 0 1px 0 rgba(255, 255, 255, .5);
+}
+body.v5-home .v5-club .club-badge svg { width: 26px; height: 26px; }
+body.v5-home .v5-club h2 { color: #630A38; font-size: clamp(30px, 4.2vw, 40px); font-weight: 700; line-height: 1.15; }
+body.v5-home .v5-club h2 em {
+  font-style: italic;
+  background: linear-gradient(92deg, #E75480 0%, #8E1150 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}
+body.v5-home .v5-club p { color: #5C4A52; font-size: 16px; }
+body.v5-home .v5-club .freebie a { color: #8E1150; text-underline-offset: 3px; }
+body.v5-home .v5-club .club-signup { max-width: 580px; margin-left: auto; margin-right: auto; }
+body.v5-home .v5-club .club-form { display: flex; flex-direction: row; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+body.v5-home .v5-club .club-field { flex: 1 1 300px; text-align: left; }
+body.v5-home .v5-club .club-label { color: #8E1150; margin: 0 0 10px 22px; }
+body.v5-home .v5-club .newsletter-form input {
+  border: 1.5px solid #E5B7CE; padding: 16px 24px; width: 100%;
+  box-shadow: 0 8px 20px rgba(142, 17, 80, .08), inset 0 1px 0 rgba(255, 255, 255, .9);
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+body.v5-home .v5-club .newsletter-form input::placeholder { color: #A08A94; }
+body.v5-home .v5-club .newsletter-form input:focus {
+  border-color: #E75480;
+  box-shadow: 0 0 0 4px rgba(231, 84, 128, .18), 0 10px 24px rgba(142, 17, 80, .12);
+}
+body.v5-home .v5-club .club-btn {
+  padding: 16px 40px; font-size: 16.5px; border-radius: 999px; cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+body.v5-home .v5-club .club-btn:hover { transform: translateY(-1px); }
+body.v5-home .v5-club .club-btn:active { transform: translateY(0); }
+body.v5-home .v5-club .club-panel { border-radius: 14px; padding: 12px 16px; font-size: 14px; margin-bottom: 14px; }
+body.v5-home .v5-club .club-panel--error { background: #FDECEF; border: 1px solid #F3B8C6; color: #8E1150; }
+body.v5-home .v5-club .club-panel--success { background: #EAF7EE; border: 1px solid #BEE3C8; color: #1E6B34; }
+body.v5-home .v5-club .newsletter-note { color: #8A7280; }
+@media (max-width: 640px) {
+  body.v5-home .v5-club { padding: 56px 0 64px; }
+  body.v5-home .v5-club .box { padding: 34px 22px 30px; border-radius: 24px; }
+  body.v5-home .v5-club .club-btn { width: 100%; }
+}
