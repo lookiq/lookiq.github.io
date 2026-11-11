@@ -397,8 +397,8 @@ body.v5-guide .verdict-box { border-color: var(--v5-burg); background: var(--v5-
   .v5-tiles { grid-template-columns: repeat(2, 1fr); }
   .v5-insta-grid { grid-template-columns: repeat(3, 1fr); }
   .v5-pick { grid-template-columns: 1fr; }
-  .v5-pick .ph { aspect-ratio: 16/10.5; }
-  .v5-pick .ph img { object-position: center 22%; }
+  .v5-pick .ph { aspect-ratio: 4/4.6; }
+  .v5-pick .ph img { object-position: center; }
   .v5-proscons { grid-template-columns: 1fr; }
   .v5-banner { padding: 30px 24px; }
   .v5-hero h1 { font-size: 40px; }

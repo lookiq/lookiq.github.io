@@ -2169,7 +2169,7 @@ const PRODUCTS = [
     originalPrice: 52.99,
     rating: 4.4,
     reviewsCount: 25,
-    image: "assets/pins/saodimallsu-womens-button-cardigan-sweat-pin.jpg",
+    image: "assets/products/saodimallsu-womens-button-cardigan-sweat.jpg",
     tags: ["Cardigan", "Chunky Knit", "Fall Fashion", "Quiet Luxury"],
     shortDesc: "Chunky-knit button-front cardigan sweater with a cozy fall-ready drape. An easy layering piece over tees, dresses, and turtlenecks.",
     features: [
