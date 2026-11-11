@@ -10,12 +10,17 @@ today = date.today().isoformat()
 core_pages = [
     ("", "daily", "1.0"),
     ("shop.html", "daily", "0.95"),
+    ("holiday-event-shop.html", "daily", "0.95"),
+    ("top-sellers.html", "weekly", "0.9"),
+    ("catalog.html", "weekly", "0.9"),
+    ("freebie-25-finds-under-50.html", "weekly", "0.8"),
     ("look-for-less.html", "weekly", "0.9"),
     ("lookbook.html", "weekly", "0.85"),
     ("guides.html", "weekly", "0.8"),
     ("about.html", "monthly", "0.6"),
     ("contact.html", "monthly", "0.5"),
     ("privacy-policy.html", "yearly", "0.3"),
+    ("disclosure.html", "yearly", "0.3"),
 ]
 
 urls = []
