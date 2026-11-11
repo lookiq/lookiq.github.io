@@ -5454,3 +5454,323 @@ html, body {
 @media (max-width:560px){.holiday-top-banner{gap:7px;padding:9px 12px}.holiday-top-banner .htb-text{font-size:12.5px;width:100%}.holiday-top-banner .htb-btn{font-size:12px;padding:6px 14px}}
 .nav-link-event{background:linear-gradient(135deg,#E75480,#C7436F)!important;color:#fff!important;border-radius:999px;font-weight:700}
 .nav-link-event:hover{filter:brightness(1.07)}
+
+/* ============================================================
+   SEARCH & WISHLIST — usability fix (2026-11-11)
+   The spotlight markup injected by js/app.js uses classes that
+   were never styled (.spotlight-header era drift); these rules
+   complete the set and re-skin accents to the PURE PINK palette.
+   ============================================================ */
+.spotlight-dialog {
+  background: #1B0710;
+  border-color: rgba(239, 149, 185, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(142, 17, 80, 0.35);
+}
+
+.spotlight-icon { color: #EF95B9; }
+
+.spotlight-input { font-size: 16px; } /* 16px stops iOS focus auto-zoom */
+
+.spotlight-close-btn {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(239, 149, 185, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  color: #FADCE9;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.spotlight-close-btn:hover {
+  background: #8E1150;
+  color: #ffffff;
+}
+
+.spotlight-tag {
+  border-color: rgba(239, 149, 185, 0.35);
+  color: #EF95B9;
+}
+
+.spotlight-tag:hover {
+  background: rgba(142, 17, 80, 0.45);
+  border-color: #EF95B9;
+  color: #ffffff;
+}
+
+.spotlight-item:hover,
+.spotlight-item.highlighted {
+  background: rgba(142, 17, 80, 0.32);
+  border-color: rgba(239, 149, 185, 0.4);
+}
+
+.spotlight-item img { border-color: rgba(239, 149, 185, 0.25); }
+
+.spotlight-item-price { color: #EF95B9; }
+
+.spotlight-item-action {
+  flex-shrink: 0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #EF95B9;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(239, 149, 185, 0.35);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.spotlight-item-action:hover {
+  background: #8E1150;
+  color: #ffffff;
+}
+
+.spotlight-empty-state {
+  text-align: center;
+  color: #d6cdd2;
+  padding: 26px 16px;
+  font-size: 0.9rem;
+}
+
+.spotlight-empty-state strong { color: #ffffff; }
+
+.spotlight-empty-hint {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #a89aa2;
+}
+
+@media (max-width: 640px) {
+  .spotlight-modal-overlay { padding-top: 5vh; }
+  .spotlight-dialog { width: 94%; }
+  .spotlight-results { max-height: 52vh; }
+  .spotlight-item-action { display: none; } /* whole row is the link on small screens */
+}
+
+/* ---------- Wishlist page (wishlist.html) ---------- */
+.wishlist-page-main { padding-bottom: 72px; }
+
+.wishlist-page-hero {
+  text-align: center;
+  padding: 46px 20px 8px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.wishlist-page-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8E1150;
+  margin-bottom: 10px;
+}
+
+.wishlist-page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 12px;
+}
+
+.wishlist-page-sub { color: #6F6357; font-size: 1rem; line-height: 1.6; }
+
+.wishlist-page-count-line {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #630A38;
+}
+
+#wishlist-page-items {
+  max-width: 1080px;
+  margin: 28px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.wl-card {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #E5B7CE;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 24px rgba(99, 10, 56, 0.07);
+}
+
+.wl-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #E5B7CE;
+  background: #FADCE9;
+  color: #8E1150;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.wl-remove:hover { background: #8E1150; color: #ffffff; }
+
+.wl-card-img { flex-shrink: 0; display: block; }
+
+.wl-card-img img {
+  width: 104px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #E5B7CE;
+}
+
+.wl-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+
+.wl-card-title {
+  font-size: 0.98rem;
+  line-height: 1.35;
+  margin: 2px 26px 8px 0;
+}
+
+.wl-card-title a { color: inherit; text-decoration: none; }
+.wl-card-title a:hover { color: #8E1150; }
+
+.wl-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  color: #6F6357;
+  margin-bottom: 8px;
+}
+
+.wl-card-rating .stars { color: #8E1150; display: inline-flex; gap: 1px; }
+
+.wl-card-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #630A38;
+  margin-bottom: 12px;
+}
+
+.wl-card-was {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #a08b97;
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+.wl-card-actions { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+
+.wl-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #E75480, #C7436F);
+  color: #ffffff !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.18s ease;
+}
+
+.wl-btn-primary:hover { filter: brightness(1.08); }
+
+.wl-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid #8E1150;
+  color: #8E1150 !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.wl-btn-secondary:hover { background: #FADCE9; }
+
+.wl-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 56px 24px;
+  background: #ffffff;
+  border: 1px dashed #E5B7CE;
+  border-radius: 16px;
+}
+
+.wl-empty-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #FADCE9;
+  color: #8E1150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wl-empty h3 { font-size: 1.35rem; margin-bottom: 8px; }
+.wl-empty p { color: #6F6357; margin-bottom: 20px; }
+
+.wl-empty-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+.wishlist-page-note {
+  max-width: 720px;
+  margin: 26px auto 0;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #a08b97;
+  line-height: 1.6;
+}
+
+/* ---------- Product page wishlist toggle (injected by app.js) ---------- */
+.pdp-wishlist-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 13px 20px;
+  border-radius: 999px;
+  border: 1.5px solid #8E1150;
+  background: #ffffff;
+  color: #8E1150;
+  font-size: 0.92rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.pdp-wishlist-btn:hover { background: #FADCE9; }
+
+.pdp-wishlist-btn.saved {
+  background: linear-gradient(135deg, #E75480, #C7436F);
+  border-color: transparent;
+  color: #ffffff;
+}

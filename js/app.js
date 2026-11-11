@@ -35,6 +35,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const outfitModal = document.getElementById("outfit-modal");
   const modalCloseButtons = document.querySelectorAll(".modal-close-btn");
 
+  // Site base path ("" at root, "../" inside products/ and guides/), derived
+  // from this script's own <script> tag so links/images built in JS resolve
+  // correctly from any folder depth.
+  const SITE_BASE = (() => {
+    const tag = document.querySelector('script[src*="js/app.js"]');
+    if (!tag) return "";
+    const srcAttr = tag.getAttribute("src") || "";
+    const idx = srcAttr.indexOf("js/app.js");
+    return idx > 0 ? srcAttr.slice(0, idx) : "";
+  })();
+
+  // Lazily load the catalogue (js/data.js) on pages that carry the header
+  // search/wishlist buttons without loading data.js themselves.
+  let catalogPromise = null;
+  function ensureCatalog() {
+    if (typeof PRODUCTS !== "undefined") return Promise.resolve(true);
+    if (!catalogPromise) {
+      catalogPromise = new Promise(resolve => {
+        const s = document.createElement("script");
+        s.src = SITE_BASE + "js/data.js?v=6.3";
+        s.onload = () => resolve(typeof PRODUCTS !== "undefined");
+        s.onerror = () => resolve(false);
+        document.head.appendChild(s);
+      });
+    }
+    return catalogPromise;
+  }
+
+  function siteUrl(path) { return SITE_BASE + path; }
+  function productThumb(p) { return SITE_BASE + thumbSrc(p.image); }
+  function productImg(p) {
+    if (!p.image) return "";
+    return p.image.startsWith("http") ? p.image : SITE_BASE + p.image;
+  }
+
   function escapeHtml(str) {
     if (!str) return "";
     return str.replace(/[&<>"']/g, m => ({
@@ -250,7 +285,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderScrollState();
   initTrustBadge();
   initSpotlightSearch();
-  initWishlistDrawer();
+  initWishlistNav();
+  initPdpWishlistButton();
   setupEventListeners();
   handleDeepLink();
   window.addEventListener("hashchange", handleDeepLink);
@@ -711,7 +747,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hash = window.location.hash.replace("#", "");
     const targetId = urlParams.get("product") || (hash.startsWith("prod-") ? hash : null);
 
-    if (targetId && PRODUCTS.some(p => p.id === targetId)) {
+    if (targetId && typeof PRODUCTS !== "undefined" && PRODUCTS.some(p => p.id === targetId)) {
       setTimeout(() => {
         const el = document.getElementById(targetId);
         if (el) {
@@ -743,6 +779,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("lookiq_wishlist", JSON.stringify(wishlist));
     updateWishlistCount();
     renderProducts();
+    renderWishlistPage();
   };
 
   function updateWishlistCount() {
@@ -1060,10 +1097,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * Luxury Spotlight Quick Search Modal
+   * Spotlight Quick Search Modal (header search)
+   * FIX 2026-11-11: css/styles.css reveals this overlay with the `.open`
+   * class — the old code toggled `.active`, so the modal stayed
+   * visibility:hidden forever and header search appeared dead. All links
+   * and images are built with SITE_BASE so results work from guides/ and
+   * products/ pages too (previously every result link 404'd from subfolders).
    */
   function initSpotlightSearch() {
-    // Check if modal already in DOM, else inject
     let overlay = document.getElementById("spotlight-modal");
     if (!overlay) {
       overlay = document.createElement("div");
@@ -1074,27 +1115,27 @@ document.addEventListener("DOMContentLoaded", () => {
       overlay.setAttribute("aria-label", "Search Curated Collection");
       overlay.innerHTML = `
         <div class="spotlight-dialog">
-          <div class="spotlight-header">
+          <div class="spotlight-search-bar">
             <svg class="spotlight-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="spotlight-search-input" class="spotlight-input" placeholder="Search curated staples, dupes, bags, shoes..." autocomplete="off" />
-            <span class="spotlight-kbd">ESC</span>
+            <input type="text" id="spotlight-search-input" class="spotlight-input" placeholder="Search dresses, bags, shoes, brands..." autocomplete="off" />
+            <span class="spotlight-esc-hint">ESC</span>
             <button class="spotlight-close-btn" id="spotlight-close" aria-label="Close search">&times;</button>
           </div>
-          <div class="spotlight-body">
-            <div class="spotlight-quick-tags">
-              <span class="quick-tag-label">Popular:</span>
-              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Trench')">Trench</button>
-              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Dupe')">Dupe</button>
-              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Watch')">Watch</button>
-              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Sneakers')">Sneakers</button>
-              <button class="spotlight-tag-btn" onclick="runSpotlightSearch('Under $25')">Under $25</button>
+          <div class="spotlight-popular">
+            <div class="spotlight-popular-title">Popular right now</div>
+            <div class="spotlight-tags">
+              <button class="spotlight-tag" onclick="runSpotlightSearch('Sequin Dress')">Sequin Dress</button>
+              <button class="spotlight-tag" onclick="runSpotlightSearch('Trench')">Trench</button>
+              <button class="spotlight-tag" onclick="runSpotlightSearch('Sweater Dress')">Sweater Dress</button>
+              <button class="spotlight-tag" onclick="runSpotlightSearch('Sneakers')">Sneakers</button>
+              <button class="spotlight-tag" onclick="runSpotlightSearch('Under $25')">Under $25</button>
             </div>
-            <div class="spotlight-results" id="spotlight-results-list">
-              <!-- Dynamically populated -->
-            </div>
+          </div>
+          <div class="spotlight-results" id="spotlight-results-list">
+            <!-- Dynamically populated -->
           </div>
         </div>
       `;
@@ -1106,19 +1147,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("spotlight-close");
 
     function openSearch() {
-      overlay.classList.add("active");
+      overlay.classList.add("open");
       document.body.style.overflow = "hidden";
+      renderSpotlightResults(searchInput ? searchInput.value : "");
       setTimeout(() => {
         if (searchInput) {
           searchInput.focus();
           searchInput.select();
         }
-      }, 100);
-      renderSpotlightResults(searchInput ? searchInput.value : "");
+      }, 80);
     }
 
     function closeSearch() {
-      overlay.classList.remove("active");
+      overlay.classList.remove("open");
       document.body.style.overflow = "";
       if (searchInput) searchInput.value = "";
     }
@@ -1136,48 +1177,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderSpotlightResults(query) {
       if (!resultsContainer) return;
-      const q = (query || "").trim().toLowerCase();
+      if (typeof PRODUCTS === "undefined") {
+        resultsContainer.innerHTML = `<div class="spotlight-empty-state"><p>Loading the collection&hellip;</p></div>`;
+        ensureCatalog().then(() => renderSpotlightResults(searchInput ? searchInput.value : ""));
+        return;
+      }
+      const q = (query || "").trim();
 
-      let matchedProducts = [];
+      let matched = [];
       if (!q) {
-        matchedProducts = PRODUCTS.slice(0, 5);
-      } else if (q === "under $25") {
-        matchedProducts = PRODUCTS.filter(p => p.price <= 25).slice(0, 6);
+        // Sensible defaults: highest-rated, most-reviewed pieces first
+        matched = [...PRODUCTS]
+          .sort((a, b) => (b.rating - a.rating) || ((b.reviewsCount || 0) - (a.reviewsCount || 0)))
+          .slice(0, 6);
+      } else if (q.toLowerCase() === "under $25") {
+        matched = PRODUCTS.filter(p => p.price <= 25).slice(0, 8);
       } else {
-        matchedProducts = PRODUCTS.filter(p => {
-          return (p.title && p.title.toLowerCase().includes(q)) ||
-                 (p.category && p.category.toLowerCase().includes(q)) ||
-                 (p.badge && p.badge.toLowerCase().includes(q)) ||
-                 (p.features && p.features.some(f => f.toLowerCase().includes(q))) ||
-                 (p.tags && p.tags.some(t => t.toLowerCase().includes(q)));
-        }).slice(0, 8);
+        matched = PRODUCTS.filter(p => matchSearch(p, q)).slice(0, 8);
       }
 
-      if (matchedProducts.length === 0) {
+      if (matched.length === 0) {
         resultsContainer.innerHTML = `
           <div class="spotlight-empty-state">
-            <p>No curated pieces found matching "<strong>${escapeHtml(query)}</strong>"</p>
-            <a href="shop.html" class="btn-secondary" onclick="closeSpotlightSearch()" style="margin-top: 10px; display: inline-block;">Browse Full Shop Catalog &rarr;</a>
+            <p>No curated pieces found matching "<strong>${escapeHtml(q)}</strong>".</p>
+            <p class="spotlight-empty-hint">Try a category (&ldquo;dress&rdquo;, &ldquo;sneakers&rdquo;), a brand, or a price like &ldquo;under $25&rdquo;.</p>
+            <a href="${siteUrl("shop.html")}" class="btn-secondary" onclick="closeSpotlightSearch()" style="margin-top: 10px; display: inline-block;">Browse Full Shop Catalog &rarr;</a>
           </div>
         `;
         return;
       }
 
-      resultsContainer.innerHTML = matchedProducts.map(p => {
+      resultsContainer.innerHTML = matched.map(p => {
         const affLink = getAffiliateLink(p.asin, p.amazonLink);
         return `
-          <a href="products/${p.id}.html" class="spotlight-item" onclick="closeSpotlightSearch()">
-            <img src="${thumbSrc(p.image)}" onerror="this.onerror=null;this.src='${p.image}'" alt="${p.title}" loading="lazy" />
+          <a href="${siteUrl("products/" + p.id + ".html")}" class="spotlight-item" onclick="closeSpotlightSearch()">
+            <img src="${productThumb(p)}" onerror="this.onerror=null;this.src='${productImg(p)}'" alt="${escapeHtml(p.altText || p.title)}" loading="lazy" />
             <div class="spotlight-item-content">
-              <div class="spotlight-item-title">${p.title}</div>
-              <div class="spotlight-item-meta">
-                <span class="spotlight-item-price">${p.price.toFixed(2)}</span>
+              <div class="spotlight-item-title">${escapeHtml(p.title)}</div>
+              <div class="spotlight-item-sub">
+                <span class="spotlight-item-price">$${p.price.toFixed(2)}</span>
                 <span>&bull;</span>
-                <span>${p.rating} ★</span>
+                <span>${p.rating} \u2605</span>
                 <span>(${(p.reviewsCount || 0).toLocaleString()})</span>
               </div>
             </div>
-            <span class="spotlight-item-action" onclick="event.stopPropagation(); window.open('${affLink}', '_blank');">Shop Prime &rarr;</span>
+            <span class="spotlight-item-action" onclick="event.preventDefault(); event.stopPropagation(); window.open('${affLink}', '_blank');">Shop Prime &rarr;</span>
           </a>
         `;
       }).join("");
@@ -1197,11 +1241,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Keyboard Shortcuts: '/' or 'Ctrl+K' or 'Cmd+K' to open; 'Escape' to close
     document.addEventListener("keydown", (e) => {
-      const isInput = ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement.tagName);
+      const activeTag = document.activeElement ? document.activeElement.tagName : "";
+      const isInput = ["INPUT", "TEXTAREA", "SELECT"].includes(activeTag);
       if ((e.key === "/" && !isInput) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k")) {
         e.preventDefault();
         openSearch();
-      } else if (e.key === "Escape" && overlay.classList.contains("active")) {
+      } else if (e.key === "Escape" && overlay.classList.contains("open")) {
         closeSearch();
       }
     });
@@ -1217,145 +1262,129 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * Luxury Slide-Out Wishlist Drawer (Offline localStorage Synchronized)
+   * Wishlist navigation — the header heart now opens the dedicated
+   * wishlist page (wishlist.html), which renders saved items from
+   * localStorage. FIX 2026-11-11: the old slide-out drawer toggled the
+   * `.active` class while its CSS only defined `.open`, so the drawer
+   * could never appear; on product pages the heart was a plain link to
+   * shop.html. A real page is simpler, shareable and works everywhere.
    */
-  function initWishlistDrawer() {
-    let overlay = document.getElementById("wishlist-drawer-overlay");
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.id = "wishlist-drawer-overlay";
-      overlay.className = "wishlist-drawer-overlay";
-      overlay.setAttribute("role", "dialog");
-      overlay.setAttribute("aria-modal", "true");
-      overlay.setAttribute("aria-label", "Your Saved Favorites");
-      overlay.innerHTML = `
-        <div class="wishlist-drawer">
-          <div class="wishlist-drawer-header">
-            <div class="wishlist-drawer-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-              </svg>
-              <h3>Curated Wishlist (<span id="drawer-wishlist-count">0</span>)</h3>
-            </div>
-            <button class="wishlist-drawer-close" id="wishlist-drawer-close" aria-label="Close wishlist">&times;</button>
-          </div>
-          <div class="wishlist-drawer-body" id="wishlist-drawer-items">
-            <!-- Populated dynamically -->
-          </div>
-          <div class="wishlist-drawer-footer">
-            <a href="shop.html" class="btn-drawer-continue" onclick="closeWishlistDrawer()">Explore More Finds</a>
-          </div>
-        </div>
-      `;
-      document.body.appendChild(overlay);
-    }
-
-    const drawerBody = document.getElementById("wishlist-drawer-items");
-    const closeBtn = document.getElementById("wishlist-drawer-close");
-
-    function openDrawer() {
-      overlay.classList.add("active");
-      document.body.style.overflow = "hidden";
-      renderWishlistDrawerItems();
-    }
-
-    function closeDrawer() {
-      overlay.classList.remove("active");
-      document.body.style.overflow = "";
-    }
-
-    window.openWishlistDrawer = openDrawer;
-    window.closeWishlistDrawer = closeDrawer;
-
-    if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) closeDrawer();
+  function initWishlistNav() {
+    const goToWishlist = () => { window.location.href = siteUrl("wishlist.html"); };
+    document.querySelectorAll("#wishlist-header-btn, .action-btn[title='Saved Favorites']").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        goToWishlist();
+      });
     });
+    // Legacy aliases — older inline handlers referenced the drawer names.
+    window.openWishlistDrawer = goToWishlist;
+    window.closeWishlistDrawer = function() {};
+    renderWishlistPage();
+  }
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && overlay.classList.contains("active")) {
-        closeDrawer();
-      }
-    });
+  /**
+   * Wishlist page renderer (wishlist.html only — no-ops elsewhere).
+   * Reads the same `lookiq_wishlist` localStorage key as the card hearts,
+   * resolves IDs against the live catalogue and skips stale IDs.
+   */
+  function renderWishlistPage() {
+    const wrap = document.getElementById("wishlist-page-items");
+    if (!wrap) return;
+    ensureCatalog().then(ok => {
+      const saved = ok ? PRODUCTS.filter(p => wishlist.includes(p.id)) : [];
+      const countEl = document.getElementById("wishlist-page-count");
+      if (countEl) countEl.textContent = saved.length;
 
-    function renderWishlistDrawerItems() {
-      if (!drawerBody) return;
-      const countEl = document.getElementById("drawer-wishlist-count");
-      if (countEl) countEl.textContent = wishlist.length;
-
-      if (wishlist.length === 0) {
-        drawerBody.innerHTML = `
-          <div class="wishlist-empty-state">
-            <div class="wishlist-empty-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      if (saved.length === 0) {
+        wrap.innerHTML = `
+          <div class="wl-empty">
+            <div class="wl-empty-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
               </svg>
             </div>
-            <h4>Your Closet is Empty</h4>
-            <p>Curate your personal capsule wardrobe by tapping the heart icon on any piece.</p>
-            <a href="shop.html" class="btn-primary" onclick="closeWishlistDrawer()" style="padding: 8px 18px; font-size: 0.8rem; text-decoration: none;">Browse Curated Finds</a>
+            <h3>Your wishlist is empty</h3>
+            <p>Tap the heart on any piece you love and it will be waiting for you here.</p>
+            <div class="wl-empty-actions">
+              <a href="${siteUrl("shop.html")}" class="wl-btn-primary">Browse the Shop</a>
+              <a href="${siteUrl("holiday-event-shop.html")}" class="wl-btn-secondary">Holiday Event Shop</a>
+            </div>
           </div>
         `;
         return;
       }
 
-      const savedProducts = PRODUCTS.filter(p => wishlist.includes(p.id));
-
-      if (savedProducts.length === 0) {
-        drawerBody.innerHTML = `
-          <div class="wishlist-empty-state">
-            <div class="wishlist-empty-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-              </svg>
-            </div>
-            <h4>Your Closet is Empty</h4>
-            <p>Curate your personal capsule wardrobe by tapping the heart icon on any piece.</p>
-            <a href="shop.html" class="btn-primary" onclick="closeWishlistDrawer()" style="padding: 8px 18px; font-size: 0.8rem; text-decoration: none;">Browse Curated Finds</a>
-          </div>
-        `;
-        return;
-      }
-
-      drawerBody.innerHTML = savedProducts.map(p => {
+      wrap.innerHTML = saved.map(p => {
         const affLink = getAffiliateLink(p.asin, p.amazonLink);
         return `
-          <div class="wishlist-item" id="wishlist-item-${p.id}">
-            <img src="${thumbSrc(p.image)}" onerror="this.onerror=null;this.src='${p.image}'" alt="${p.title}" />
-            <div class="wishlist-item-details">
-              <h4>${p.title}</h4>
-              <div class="wishlist-item-price">$${p.price.toFixed(2)}</div>
-              <div class="wishlist-item-actions">
-                <a href="${affLink}" target="_blank" rel="nofollow sponsored" class="btn-wishlist-buy">
-                  <span>Shop Prime</span>
-                  <span>&rarr;</span>
-                </a>
-                <a href="products/${p.id}.html" class="btn-wishlist-details" onclick="closeWishlistDrawer()">Details</a>
-                <button class="btn-wishlist-remove" onclick="removeWishlistItem('${p.id}', event)" title="Remove from Wishlist" aria-label="Remove">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="3 6 5 6 21 6"></polyline>
-                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                  </svg>
-                </button>
+          <article class="wl-card">
+            <button class="wl-remove" onclick="removeWishlistItem('${p.id}', event)" aria-label="Remove from wishlist" title="Remove">&times;</button>
+            <a class="wl-card-img" href="${siteUrl("products/" + p.id + ".html")}">
+              <img src="${productThumb(p)}" onerror="this.onerror=null;this.src='${productImg(p)}'" alt="${escapeHtml(p.altText || p.title)}" loading="lazy" />
+            </a>
+            <div class="wl-card-body">
+              <h3 class="wl-card-title"><a href="${siteUrl("products/" + p.id + ".html")}">${escapeHtml(p.title)}</a></h3>
+              <div class="wl-card-rating"><span class="stars">${renderStarRating(p.rating)}</span><span class="wl-card-rating-num">${p.rating.toFixed(1)} (${(p.reviewsCount || 0).toLocaleString()} reviews)</span></div>
+              <div class="wl-card-price">$${p.price.toFixed(2)}${p.originalPrice ? ` <span class="wl-card-was">$${p.originalPrice.toFixed(2)}</span>` : ""}</div>
+              <div class="wl-card-actions">
+                <a href="${affLink}" target="_blank" rel="nofollow sponsored noopener" class="wl-btn-primary" onclick="trackClick('${p.id}', 'wishlist_page')">View on Amazon</a>
+                <a href="${siteUrl("products/" + p.id + ".html")}" class="wl-btn-secondary">Details</a>
               </div>
             </div>
-          </div>
+          </article>
         `;
       }).join("");
-    }
+    });
+  }
 
-    window.removeWishlistItem = function(id, event) {
-      if (event) event.stopPropagation();
-      toggleWishlist(id);
-      renderWishlistDrawerItems();
-    };
+  window.removeWishlistItem = function(id, event) {
+    if (event) event.stopPropagation();
+    toggleWishlist(id);
+    renderWishlistPage();
+  };
 
-    const wishlistBtns = document.querySelectorAll(".action-btn[title='Saved Favorites'], #wishlist-header-btn");
-    wishlistBtns.forEach(btn => {
-      btn.onclick = function(e) {
-        if (e) e.preventDefault();
-        openWishlistDrawer();
+  /**
+   * Product pages: inject a "Save to Wishlist" toggle directly under the
+   * main Amazon CTA. PDP templates ship without any wishlist control of
+   * their own (their only heart was the header link), so saving the very
+   * product you are viewing was impossible.
+   */
+  function initPdpWishlistButton() {
+    const match = window.location.pathname.match(/\/products\/([a-z0-9-]+)\.html/i);
+    if (!match) return;
+    const productId = match[1];
+    ensureCatalog().then(ok => {
+      if (!ok || document.getElementById("pdp-wishlist-btn")) return;
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+      const cta = document.querySelector(".btn-amazon-cta-large");
+      const title = document.querySelector("h1.product-page-title");
+      if (!cta && !title) return;
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.id = "pdp-wishlist-btn";
+      btn.className = "pdp-wishlist-btn";
+      const paint = () => {
+        const saved = wishlist.includes(productId);
+        btn.classList.toggle("saved", saved);
+        btn.setAttribute("aria-pressed", saved ? "true" : "false");
+        btn.innerHTML = `
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="${saved ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span>${saved ? "Saved to Wishlist" : "Save to Wishlist"}</span>
+        `;
       };
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        toggleWishlist(productId);
+        paint();
+      });
+      paint();
+      if (cta) cta.insertAdjacentElement("afterend", btn);
+      else title.insertAdjacentElement("afterend", btn);
     });
   }
 
