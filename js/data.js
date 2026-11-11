@@ -2354,6 +2354,71 @@ const PRODUCTS = [
       "Amazon Prime eligible with fast shipping and free 30-day returns"
     ],
     amazonLink: "https://www.amazon.com/dp/B0C7KGJK71/?tag=likeefashionh-20"
+  },
+  {
+    id: "grace-karin-cap-sleeve-sequin-midi-dress-rose-gold",
+    asin: "B0D31PV5FC",
+    title: "GRACE KARIN Cap Sleeve Sequin Midi Dress \u2014 Rose Gold",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 59.99,
+    rating: 4.0,
+    reviewsCount: 685,
+    image: "assets/products/grace-karin-cap-sleeve-sequin-midi-dress-rose-gold.jpg",
+    tags: ["Amazon Fashion", "Holiday Dresses", "Party Dresses", "Sequin Dress"],
+    shortDesc: "Rose-gold sequins, plain cap sleeves and a fully lined body \u2014 the sparkly midi for Christmas parties and New Year's Eve, with an elastic waist that keeps it comfortable all night.",
+    features: [
+      "All-over sequin shell in a polyester-elastane blend with real stretch \u2014 fully lined, so the sparkle never feels scratchy",
+      "Plain cap sleeves, a crew neckline and a button keyhole back on an above-knee midi cut",
+      "Elastic waistline and a hips-wrapped silhouette that flatters without restricting",
+      "Made for cocktail parties, weddings, birthdays, Christmas and New Year's Eve \u2014 one dress for the whole season"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D31PV5FC/?tag=likeefashionh-20"
+  },
+  {
+    id: "grace-karin-cap-sleeve-bodycon-midi-dress-royal-blue",
+    asin: "B0FM23WPT5",
+    title: "GRACE KARIN Cap Sleeve Bodycon Midi Dress \u2014 Royal Blue",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Hanukkah Evening Pick",
+    price: 43.69,
+    originalPrice: 45.99,
+    rating: 4.3,
+    reviewsCount: 486,
+    image: "assets/products/grace-karin-cap-sleeve-bodycon-midi-dress-royal-blue.jpg",
+    tags: ["Amazon Fashion", "Holiday Dresses", "Midi Dresses", "Work Dresses"],
+    shortDesc: "A royal-blue cap-sleeve bodycon midi with a ruched waist and hidden back zip \u2014 polished enough for Hanukkah dinners, the office and formal gatherings, in the festival's own blue.",
+    features: [
+      "Cap sleeves and a crew neckline on a bodycon midi cut with a ruched waist",
+      "Hidden back zip and a centre back slit for easy movement",
+      "95% polyester, 5% elastane with a soft lining \u2014 comfortable all day",
+      "Sizes S to 2XL, with the seller's size chart on the listing for accurate fit"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0FM23WPT5/?tag=likeefashionh-20"
+  },
+  {
+    id: "ekouaer-satin-button-down-nightshirt-dark-pink",
+    asin: "B0BBQV871Z",
+    title: "Ekouaer Satin Button-Down Nightshirt \u2014 Dark Pink",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Christmas Gift Pick",
+    price: 16.99,
+    originalPrice: 19.99,
+    rating: 4.4,
+    reviewsCount: 6485,
+    image: "assets/products/ekouaer-satin-button-down-nightshirt-dark-pink.jpg",
+    tags: ["Amazon Fashion", "Christmas Gifts", "Sleepwear", "Satin Nightshirt"],
+    shortDesc: "Soft satin, a classic button-down collar and a relaxed boyfriend fit \u2014 the under-$25 satin nightshirt that makes a genuinely useful Christmas gift, rated 4.4 by 6,485 buyers.",
+    features: [
+      "100% polyester satin \u2014 soft, lightweight, breathable and skin-friendly",
+      "Notch collar, full button front and 3/4 sleeves in a loose boyfriend fit",
+      "High-low hem that covers comfortably \u2014 a nightshirt, not lingerie",
+      "A listed gift pick for girlfriend, wife, mother, sister or friends \u2014 Christmas, birthdays and beyond"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0BBQV871Z/?tag=likeefashionh-20"
   }
 ];
 
