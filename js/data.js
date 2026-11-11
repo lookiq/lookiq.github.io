@@ -2289,6 +2289,71 @@ const PRODUCTS = [
       "Amazon Prime eligible with fast shipping and free 30-day returns"
     ],
     amazonLink: "https://www.amazon.com/dp/B09LDD9Q1X/?tag=likeefashionh-20"
+  },
+  {
+    id: "grace-karin-sequin-cocktail-party-dress",
+    asin: "B0FC6PM3XP",
+    title: "GRACE KARIN Sequin Cocktail Party Dress — Lake Green, Sparkly Glitter Sleeves",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 53.99,
+    originalPrice: 59.99,
+    rating: 4.0,
+    reviewsCount: 702,
+    image: "assets/products/grace-karin-sequin-cocktail-party-dress.jpg",
+    tags: ["Amazon Fashion", "Holiday Dresses", "Party Dresses", "Sequin Dress"],
+    shortDesc: "All-over sequins in deep lake green with flutter sleeves and a wrap hem — the Christmas party and New Year's Eve dress, fully lined so the sparkle stays comfortable all night.",
+    features: [
+      "All-over sequin shell in a polyester-elastane blend with real stretch — fully lined, so the sparkle never feels scratchy",
+      "Flutter cap sleeves with mesh ruffle detail, a crew neckline and a button keyhole back",
+      "Elastic waist and a wrap-style hem on an above-knee bodycon cut that moves easily all night",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0FC6PM3XP/?tag=likeefashionh-20"
+  },
+  {
+    id: "berylove-sequin-midi-bodycon-holiday-dress",
+    asin: "B0FWRR5R52",
+    title: "BeryLove Sequin Midi Bodycon Holiday Party Dress — Lavender",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 42.55,
+    originalPrice: 44.79,
+    rating: 4.0,
+    reviewsCount: 283,
+    image: "assets/products/berylove-sequin-midi-bodycon-holiday-dress.jpg",
+    tags: ["Amazon Fashion", "Holiday Dresses", "Party Dresses", "Evening Dresses"],
+    shortDesc: "Lavender sequins on a cowl-neck bodycon midi with front ruching and a side slit — a romantic holiday party dress that reads formal, not flashy, at under $45.",
+    features: [
+      "Shimmery sequin fabric that is skin-friendly and stretchy, with the sequins sewn in so they stay put while you dance",
+      "Cowl neckline on slim spaghetti straps with a figure-skimming bodycon cut",
+      "Front ruching and a side slit on a midi length that keeps the look formal-occasion appropriate",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0FWRR5R52/?tag=likeefashionh-20"
+  },
+  {
+    id: "prettygarden-knit-sweater-maxi-dress",
+    asin: "B0C7KGJK71",
+    title: "PRETTYGARDEN Knit Sweater Maxi Dress — Army Green, Lantern Sleeve V-Neck",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Thanksgiving Pick",
+    price: 26.99,
+    rating: 4.4,
+    reviewsCount: 842,
+    image: "assets/products/prettygarden-knit-sweater-maxi-dress.jpg",
+    tags: ["Amazon Fashion", "Sweater Dresses", "Fall Fashion", "Thanksgiving Outfit"],
+    shortDesc: "A ribbed-knit maxi sweater dress in army green with lantern sleeves and a tie waist — cosy enough for Thanksgiving dinner, polished enough for the family photo.",
+    features: [
+      "Soft and stretchy knit fabric that feels comfortable against the skin all day",
+      "Flattering V-neckline with long lantern sleeves and ribbed cuffs",
+      "Self-tie belt defines the waist; the maxi bodycon length pairs with boots or heels",
+      "Amazon Prime eligible with fast shipping and free 30-day returns"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0C7KGJK71/?tag=likeefashionh-20"
   }
 ];
 
