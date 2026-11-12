@@ -2419,6 +2419,70 @@ const PRODUCTS = [
       "A listed gift pick for girlfriend, wife, mother, sister or friends \u2014 Christmas, birthdays and beyond"
     ],
     amazonLink: "https://www.amazon.com/dp/B0BBQV871Z/?tag=likeefashionh-20"
+  },
+  {
+    id: "grace-karin-velvet-cowl-neck-dress-wine-red",
+    asin: "B0D7HXG3B9",
+    title: "GRACE KARIN Velvet Cowl Neck Dress \u2014 Wine Red",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 39.97,
+    rating: 4.3,
+    reviewsCount: 793,
+    image: "assets/products/grace-karin-velvet-cowl-neck-dress-wine-red.jpg",
+    tags: ["Amazon Fashion", "Holiday Dresses", "Party Dresses", "Velvet Dress"],
+    shortDesc: "Wine-red velvet, a draped cowl neckline and a ruched mermaid hem \u2014 the holiday party dress that looks far more expensive than $39.97.",
+    features: [
+      "Vintage cowl neckline with a sleeveless cut and zipper closure \u2014 a polished, feminine neckline with vintage-inspired charm",
+      "Fitted bodycon shape with a ruched waist and mermaid hem \u2014 follows your curves, with stretchy fabric for comfortable movement",
+      "Soft, stretchy velvet with a rich sheen and beautiful drape \u2014 the depth of wine red reads expensive in party light",
+      "Made for weddings, cocktail parties, date nights, graduations, birthdays, holiday parties and formal dinners \u2014 one dress for the whole season"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D7HXG3B9/?tag=likeefashionh-20"
+  },
+  {
+    id: "sissyaki-velvet-maxi-dress-caramel",
+    asin: "B0CBKGZSY2",
+    title: "Sissyaki Velvet Maxi Dress \u2014 Caramel",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 59.99,
+    rating: 4.3,
+    reviewsCount: 603,
+    image: "assets/products/sissyaki-velvet-maxi-dress-caramel.jpg",
+    tags: ["Amazon Fashion", "Holiday Dresses", "Party Dresses", "Velvet Dress"],
+    shortDesc: "Caramel ribbed velvet, a V-neck twist front and a flowing pleated A-line skirt \u2014 the Thanksgiving-to-New-Year's-Eve maxi with pockets.",
+    features: [
+      "Flattering V-neck with a twisted knot front and short puff sleeves \u2014 highlights the collarbone and pairs with any necklace",
+      "Ruched waist and a high-waist A-line skirt with two deep side pockets \u2014 holds a phone, keys or lipstick discreetly",
+      "Soft ribbed velvet in warm caramel \u2014 comfortable, stretchy and warm for winter weddings and holiday parties",
+      "Easy pull-on closure with no stiff zippers \u2014 made for corporate holiday parties, Thanksgiving dinners and New Year\u2019s Eve"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CBKGZSY2/?tag=likeefashionh-20"
+  },
+  {
+    id: "dream-pairs-slingback-kitten-heels-gold",
+    asin: "B0D93F7R6S",
+    title: "DREAM PAIRS Women Slingback Kitten Heels \u2014 Gold",
+    category: "women",
+    subCategory: "Footwear",
+    badge: "Holiday Party Pick",
+    price: 29.99,
+    originalPrice: 33.99,
+    rating: 4.2,
+    reviewsCount: 343,
+    image: "assets/products/dream-pairs-slingback-kitten-heels-gold.jpg",
+    tags: ["Amazon Fashion", "Holiday Dresses", "Party Heels", "Gold Heels"],
+    shortDesc: "Metallic gold slingback kitten heels with a padded insole and a 2.95-inch heel \u2014 the comfortable party heel for every holiday dress.",
+    features: [
+      "Timeless single-strap open-toe slingback in metallic gold \u2014 understated chic that goes with every party dress",
+      "Padded 4mm latex insole cushions your feet and supports your arch \u2014 comfortable through a whole evening",
+      "2.95-inch kitten heel lengthens the leg without compromising comfort",
+      "Adjustable ankle strap with a buckle \u2014 a customized, secure fit that stays put while you dance"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D93F7R6S/?tag=likeefashionh-20"
   }
 ];
 
