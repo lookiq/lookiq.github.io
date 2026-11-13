@@ -2483,6 +2483,48 @@ const PRODUCTS = [
       "Adjustable ankle strap with a buckle \u2014 a customized, secure fit that stays put while you dance"
     ],
     amazonLink: "https://www.amazon.com/dp/B0D93F7R6S/?tag=likeefashionh-20"
+  },
+  {
+    id: "grace-karin-two-piece-sequin-dress-blue",
+    asin: "B0DNF9GM3Y",
+    title: "GRACE KARIN Two Piece Sequin Dress with Jacket \u2014 Blue",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 46.99,
+    rating: 4.1,
+    reviewsCount: 409,
+    image: "assets/products/grace-karin-two-piece-sequin-dress-blue.jpg",
+    tags: ["Amazon Fashion", "Holiday Dresses", "Party Dresses", "Sequin Dress"],
+    shortDesc: "Royal-blue sequins with a matching chiffon jacket \u2014 the two-piece holiday dress that covers Christmas parties and New Year's Eve in one elegant set.",
+    features: [
+      "Two-piece set: sequin dress with a matching chiffon jacket \u2014 sequin material with a comfy lining",
+      "Sleeveless V-neck A-line dress, hits at ankle, hidden back zip",
+      "3/4-sleeve open-front chiffon shrug with sequin sleeve cuff",
+      "Made for wedding parties, birthdays, dating, homecoming and evening parties \u2014 one set for the whole season"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DNF9GM3Y/?tag=likeefashionh-20"
+  },
+  {
+    id: "ekouaer-satin-pajama-set-striped-blue",
+    asin: "B0CJJ6MPKS",
+    title: "Ekouaer Satin Pajama Set \u2014 Striped Blue",
+    category: "women",
+    subCategory: "Basics & Loungewear",
+    badge: "Christmas Gift Pick",
+    price: 16.91,
+    rating: 4.5,
+    reviewsCount: 2927,
+    image: "assets/products/ekouaer-satin-pajama-set-striped-blue.jpg",
+    tags: ["Amazon Fashion", "Christmas Gifts", "Sleepwear", "Satin Pajamas"],
+    shortDesc: "Light-blue striped satin, a button-down notch-collar top and drawstring shorts \u2014 the gift-ready Christmas-morning pajama set for $16.91.",
+    features: [
+      "95% polyester, 5% spandex silky satin \u2014 soft, smooth, breathable and skin-friendly",
+      "Short-sleeve button-down top with notch collar and full button front",
+      "Boxer shorts with drawstring elastic waist and ruffle hem",
+      "A listed gift pick for Christmas Day, New Year, birthdays and beyond"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CJJ6MPKS/?tag=likeefashionh-20"
   }
 ];
 
