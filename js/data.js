@@ -2525,6 +2525,49 @@ const PRODUCTS = [
       "A listed gift pick for Christmas Day, New Year, birthdays and beyond"
     ],
     amazonLink: "https://www.amazon.com/dp/B0CJJ6MPKS/?tag=likeefashionh-20"
+  },
+  {
+    id: "grace-karin-mock-neck-dress-peacock-blue",
+    asin: "B0DDHBLM8X",
+    title: "GRACE KARIN Mock Neck Business Work Dress — Peacock Blue",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 39.99,
+    originalPrice: 49.99,
+    rating: 4.3,
+    reviewsCount: 694,
+    image: "assets/products/grace-karin-mock-neck-dress-peacock-blue.jpg",
+    tags: ["Amazon Fashion", "Holiday Dresses", "Work Dresses", "Mock Neck Dress"],
+    shortDesc: "Peacock-blue mock neck, gold double-breasted buttons and a hips-wrapped bodycon midi cut — the office-party dress that works the room and the boardroom.",
+    features: [
+      "Mock neck, hidden back zip, front buttons and center back slit — hits below the knee",
+      "Double-breasted bodycon midi with a hips-wrapped silhouette, moderately stretchy",
+      "Contrast fabric: anti-wrinkle, lined, moderately thick and breathable",
+      "Made for business cocktail parties and a day at the office"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DDHBLM8X/?tag=likeefashionh-20"
+  },
+  {
+    id: "tindtop-formal-evening-clutch-black",
+    asin: "B0C3LC21LY",
+    title: "TINDTOP Formal Evening Clutch — Black",
+    category: "women",
+    subCategory: "Bags",
+    badge: "Christmas Gift Pick",
+    price: 15.99,
+    rating: 4.5,
+    reviewsCount: 1126,
+    image: "assets/products/tindtop-formal-evening-clutch-black.jpg",
+    tags: ["Amazon Fashion", "Christmas Gifts", "Evening Bags", "Clutch Bags"],
+    shortDesc: "Black satin, a rhinestone-covered flap and a detachable silver chain — the $15.99 evening clutch that finishes every holiday dress in this edit.",
+    features: [
+      "Satin fabric with a clear rhinestone overlay — sparkly rhinestones in varied sizes on the flap",
+      "Front flap with magnetic button closure; 8.6 × 4.7 × 2.1 in — roomy for phone, cards, keys and lipstick",
+      "3-in-1 style: evening bag, crossbody or shoulder bag with a detachable silver chain",
+      "Perfect for weddings, birthdays, homecoming, prom, parties and cocktails"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0C3LC21LY/?tag=likeefashionh-20"
   }
 ];
 
