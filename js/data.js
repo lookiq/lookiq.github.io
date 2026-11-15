@@ -2568,6 +2568,50 @@ const PRODUCTS = [
       "Perfect for weddings, birthdays, homecoming, prom, parties and cocktails"
     ],
     amazonLink: "https://www.amazon.com/dp/B0C3LC21LY/?tag=likeefashionh-20"
+  },
+  {
+    id: "missnine-bow-flap-evening-bag-gold",
+    asin: "B0DBZJ5HRJ",
+    title: "Missnine Bow Flap Evening Bag — Gold",
+    category: "women",
+    subCategory: "Bags",
+    badge: "Christmas Gift Pick",
+    price: 12.99,
+    originalPrice: 43.99,
+    rating: 4.2,
+    reviewsCount: 69,
+    image: "assets/products/missnine-bow-flap-evening-bag-gold.jpg",
+    tags: ["Amazon Fashion", "Christmas Gifts", "Evening Bags", "Clutch Bags"],
+    shortDesc: "Gold satin, a big bow flap with rhinestone strips and a detachable chain — the $12.99 evening bag that turns any holiday dress into a party look.",
+    features: [
+      "Gold satin clutch with a large bow flap and rhinestone strips — sparkle that catches the light",
+      "Magnetic closure; 9 × 1.7 × 5 in — roomy for phone, lipstick, cards, keys and cash",
+      "Detachable chain — carry it as a clutch, shoulder bag or crossbody",
+      "Made for weddings, parties, proms, cocktail parties and formal events"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DBZJ5HRJ/?tag=likeefashionh-20"
+  },
+  {
+    id: "m-mooham-gold-initial-bracelet-letter-a",
+    asin: "B08CHHM5DJ",
+    title: "M MOOHAM Gold Initial Bracelet — Letter A, 14K Gold Plated",
+    category: "women",
+    subCategory: "Jewelry",
+    badge: "Stocking Stuffer Pick",
+    price: 7.99,
+    originalPrice: 9.99,
+    rating: 4.6,
+    reviewsCount: 1568,
+    image: "assets/products/m-mooham-gold-initial-bracelet-letter-a.jpg",
+    tags: ["Amazon Fashion", "Christmas Gifts", "Gold Bracelets", "Initial Bracelets", "Stocking Stuffers"],
+    shortDesc: "A gold love-knot chain with an engraved letter-A disc — the $7.99 stocking stuffer that reads like a much more personal gift.",
+    features: [
+      "Love-knot bracelet with an engraved initial disc — letter A, 14K gold plated",
+      "Adjustable knot closure, 2.6 in inner diameter — fits most wrists",
+      "Premium 316L stainless steel — hypoallergenic, lead free, nickel free, never fades or tarnishes",
+      "Arrives in a gift box with a message card — ready for giving"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B08CHHM5DJ/?tag=likeefashionh-20"
   }
 ];
 
