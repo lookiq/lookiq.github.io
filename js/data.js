@@ -2612,6 +2612,49 @@ const PRODUCTS = [
       "Arrives in a gift box with a message card — ready for giving"
     ],
     amazonLink: "https://www.amazon.com/dp/B08CHHM5DJ/?tag=likeefashionh-20"
+  },
+  {
+    id: "bbonlinedress-halter-cocktail-hi-lo-dress-red",
+    asin: "B0D5B38Q3K",
+    title: "Bbonlinedress Halter Cocktail Hi-Lo Prom Dress — Red",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 39.99,
+    originalPrice: 46.54,
+    rating: 4.3,
+    reviewsCount: 1633,
+    image: "assets/products/bbonlinedress-halter-cocktail-hi-lo-dress-red.jpg",
+    tags: ["Amazon Fashion", "Christmas Party", "Holiday Dresses", "Red Dresses", "Cocktail Dresses"],
+    shortDesc: "A red halter-neck cocktail dress with a ruffled hi-lo hem — the $39.99 party dress that turns a December night into an entrance.",
+    features: [
+      "Halter neckline with a ruffled hem — the red dress that owns the room",
+      "Hi-lo hemline: shorter in front, longer at the back, made to move",
+      "Made for cocktail parties, proms, weddings, dates, homecoming and holiday evenings",
+      "Ruffled hem adds a playful, feminine finish to a classic cocktail shape"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D5B38Q3K/?tag=likeefashionh-20"
+  },
+  {
+    id: "dream-pairs-strappy-stiletto-lace-up-heeled-sandals-hot-pink",
+    asin: "B0D3DFZ4PY",
+    title: "DREAM PAIRS Strappy Stiletto Lace-Up Heeled Sandals — Hot Pink",
+    category: "women",
+    subCategory: "Shoes",
+    badge: "Party Heels Pick",
+    price: 24.99,
+    rating: 4.4,
+    reviewsCount: 444,
+    image: "assets/products/dream-pairs-strappy-stiletto-lace-up-heeled-sandals-hot-pink.jpg",
+    tags: ["Amazon Fashion", "Party Heels", "Holiday Party", "Heeled Sandals", "Date Night"],
+    shortDesc: "Hot pink strappy stilettos with lace-up ankle ties and a 3.93-inch heel — the $24.99 party shoes that finish every holiday dress in this edit.",
+    features: [
+      "Square open toe with thin crisscross straps and lace-up ankle ties",
+      "3.93-inch stiletto heel — height that still lets you dance all night",
+      "Padded 4mm latex insole cushions the foot and supports the arch",
+      "Made for proms, parties, dates and every holiday night out"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0D3DFZ4PY/?tag=likeefashionh-20"
   }
 ];
 
