@@ -1,27 +1,47 @@
 # LOOKIQ
 
-> LOOKIQ (lookiqfashion.com) is a US-focused fashion curation site that reviews and recommends women's fashion finds from Amazon — clothing, shoes, bags, jewelry and accessories chosen for a quiet-luxury look at accessible prices. Every product page carries an honest editorial review with sizing and fit notes, materials and care details, styling advice, and shopper rating summaries, so readers can decide before they buy. The audience is primarily women in the United States shopping for everyday outfits, capsule wardrobe staples, designer-inspired pieces and gifts.
+> LOOKIQ (lookiqfashion.com) is a curated Amazon fashion destination for US women shoppers — quiet-luxury and designer-inspired finds, honest buying guides with prices from the product listings, and outfit ideas.
+> LOOKIQ is an Amazon Associate: product links on the site are affiliate links, and LOOKIQ earns from qualifying purchases.
 
-## Main sections
+## Main Pages
 
-- [Home](https://lookiqfashion.com/): The latest curated fashion finds and featured guides from LOOKIQ.
-- [Shop](https://lookiqfashion.com/shop.html): The full LOOKIQ catalog of reviewed Amazon fashion products — dresses, skirts, sweaters, coats, boots, bags, jewelry and more, newest finds first.
-- [Guides](https://lookiqfashion.com/guides.html): All LOOKIQ buying guides and gift guides, comparing the best Amazon fashion picks by category, budget and occasion.
-- [Lookbook](https://lookiqfashion.com/lookbook.html): Styled outfit inspiration built around LOOKIQ's curated Amazon finds.
-- [Look for Less](https://lookiqfashion.com/look-for-less.html): Designer-inspired styles and quiet-luxury looks for less, sourced from Amazon.
-- [About](https://lookiqfashion.com/about.html): What LOOKIQ is and how our editors select and review products.
+- [Home](https://lookiqfashion.com/): Curated Amazon fashion finds for women — quiet-luxury and designer-inspired pieces, buying guides and outfit ideas.
+- [Shop](https://lookiqfashion.com/shop.html): The full LOOKIQ catalogue of curated Amazon fashion products for women, newest first.
+- [Guides](https://lookiqfashion.com/guides.html): All LOOKIQ buying guides and reviews — honest picks with prices and ratings taken from the product listings.
+- [Top Sellers](https://lookiqfashion.com/top-sellers.html): LOOKIQ's most popular and best-rated Amazon fashion picks in one place.
+- [Holiday Event Shop](https://lookiqfashion.com/holiday-event-shop.html): Holiday and event outfits — Thanksgiving, Black Friday, Christmas parties, Hanukkah and New Year's Eve picks.
+- [Look for Less](https://lookiqfashion.com/look-for-less.html): Designer-inspired looks for less — high-end styles matched with affordable Amazon alternatives.
+- [Lookbook](https://lookiqfashion.com/lookbook.html): Outfit inspiration and styled looks built from LOOKIQ's Amazon fashion finds.
+- [Free Guide — 25 Finds Under $50](https://lookiqfashion.com/freebie-25-finds-under-50.html): A free guide to 25 Amazon fashion finds under $50 from the LOOKIQ Style Club.
 
-## Top gift guides
+## Guides
 
-- [Best Gifts for Her Under $50 on Amazon (2026)](https://lookiqfashion.com/guides/best-gifts-for-her-under-50-2026.html): Thoughtful, expensive-looking gifts for women, all under $50.
-- [Best Stocking Stuffers for Women Under $25 (2026)](https://lookiqfashion.com/guides/stocking-stuffers-for-women-under-25.html): Small, high-rated fashion and beauty-adjacent stocking stuffers under $25.
-- [Black Friday Fashion Deals 2026](https://lookiqfashion.com/guides/black-friday-fashion-deals-2026.html): The best Amazon fashion deals for women during Black Friday 2026.
-- [Best Winter Essentials on Amazon (2026)](https://lookiqfashion.com/guides/best-winter-essentials-2026.html): Cozy layers and cold-weather staples that look expensive.
-- [Designer Bag Dupes on Amazon](https://lookiqfashion.com/guides/amazon-designer-bag-dupes-guide.html): High-end-looking bags and designer-inspired alternatives on Amazon.
-- [Best Gold Hoop Earrings on Amazon (2026)](https://lookiqfashion.com/guides/best-gold-hoop-earrings-amazon-2026.html): The best-rated gold hoop earrings for women, from huggies to chunky hoops.
-- [Best Crossbody Bags Under $50 on Amazon (2026)](https://lookiqfashion.com/guides/best-crossbody-bags-under-50-amazon-2026.html): Everyday crossbody bags under $50, reviewed and compared.
-- [Quiet Luxury Outfit Ideas on Amazon](https://lookiqfashion.com/guides/quiet-luxury-chic-outfit-ideas-amazon.html): Understated, expensive-looking outfits built from affordable Amazon pieces.
+- [Designer Bag Dupes on Amazon That Look High-End](https://lookiqfashion.com/guides/amazon-designer-bag-dupes-guide.html): Shop the best designer bag dupes on Amazon: a $28.90 slouchy hobo, a $19.59 woven straw tote and leather crossbody picks checked for hardware and stitching.
+- [Best Fall Capsule Wardrobe on Amazon for Under $150](https://lookiqfashion.com/guides/amazon-fall-capsule-wardrobe-under-150.html): Build a fall capsule wardrobe on Amazon for $140.96: a trench coat, an oversized turtleneck, wide-leg trousers and white sneakers styled into 10+ outfits.
+- [5 Best Cardigans on Amazon (2026): From Chunky Knits to Cropped Fits](https://lookiqfashion.com/guides/best-cardigans-amazon-2026.html): The 5 best cardigans on Amazon for 2026 — from chunky knits to lightweight layers, with verified buyer ratings and fit notes.
+- [Best Chunky Chelsea Boots for Women on Amazon 2026](https://lookiqfashion.com/guides/best-chunky-chelsea-boots-women-amazon-2026.html): Shop the best chunky Chelsea boots for women on Amazon in 2026 — lug-sole picks from $39.98, with honest traction, heel and comfort advice from LOOKIQ.
+- [Best Crossbody Bags Under $50 on Amazon (2026)](https://lookiqfashion.com/guides/best-crossbody-bags-under-50-amazon-2026.html): The honest best crossbody bags under $50 on Amazon guide for 2026 — one verified pick at $28.90, plus two splurges we refuse to mislabel as under $50.
+- [Best Faux Leather Jackets for Women on Amazon 2026](https://lookiqfashion.com/guides/best-faux-leather-jackets-women-amazon-2026.html): Shop the best faux leather jackets for women on Amazon in 2026 — honest picks from $39.99, plus a real lambskin upgrade, with fit, care and styling advice.
+- [8 Best Gifts for Her Under $50 on Amazon (2026): Thoughtful Picks That Look Expensive](https://lookiqfashion.com/guides/best-gifts-for-her-under-50-2026.html): 8 thoughtful gifts for her under $50 on Amazon — jewelry, bags, cozy essentials and more, all highly rated by verified buyers.
+- [7 Best Gold Hoop Earrings on Amazon for Women 2026](https://lookiqfashion.com/guides/best-gold-hoop-earrings-amazon-2026.html): Shop the 7 best gold hoop earrings on Amazon for 2026 — top-rated huggies, chunky hoops and real 14K picks from $9.99, with a size guide and styling tips.
+- [Best Oversized Sweaters for Women on Amazon 2026](https://lookiqfashion.com/guides/best-oversized-sweaters-women-2026.html): Shop the best oversized sweaters for women in 2026 — 4 top-rated Amazon picks from $25.99, with honest sizing, knit and care advice from LOOKIQ editors.
+- [Best Oversized Trench Coats for Women on Amazon](https://lookiqfashion.com/guides/best-oversized-trench-coats-amazon-2026.html): Shop the best oversized trench coats for women on Amazon for 2026 — 4 top-rated picks from $39.99, with honest fit, fabric and rain-readiness advice from LOOKIQ.
+- [7 Best Winter Essentials on Amazon (2026): Cozy Layers That Look Expensive](https://lookiqfashion.com/guides/best-winter-essentials-2026.html): The 7 best winter fashion essentials on Amazon for 2026 — verified ratings, honest reviews, and styling tips for a cozy cold-weather wardrobe.
+- [8 Best Winter Coats and Jackets for Women (2026): Warm Layers That Look Expensive](https://lookiqfashion.com/guides/best-winter-fashion-2026.html): The 8 best winter coats for women on Amazon (2026) — top-rated trenches, faux leather jackets and layering essentials, with a comparison table and buying advice.
+- [Black Friday Fashion Deals 2026: Best Amazon Picks](https://lookiqfashion.com/guides/black-friday-fashion-deals-2026.html): Your Black Friday fashion deals 2026 watchlist: Amazon best sellers in coats, boots, bags and knitwear to check first when prices drop in late November.
+- [DRESSTELLS Wedding Guest Dress Review: The $44 Find](https://lookiqfashion.com/guides/dresstells-review.html): Our wedding guest dress review: the $43.99 DRESSTELLS vintage A-line dress — fit notes, its non-wrinkle fabric and travel-friendly design, in sizes XS to 3XL and 40+ colors.
+- [Fall Capsule Wardrobe, Two Ways: The Designer Blueprint and the Amazon Version Under $185](https://lookiqfashion.com/guides/fall-capsule-two-ways-2026.html): The fall capsule in two tiers: the designer blueprint — trench, turtleneck, pleated trousers, white sneakers, slouchy bag, gold hoops — and the same six slots on Amazon for $182.81 total, every piece rated 4.6 stars or higher.
+- [Best Gifts for Him Under $35 on Amazon (2026): 4 Picks He Will Actually Wear](https://lookiqfashion.com/guides/gifts-for-him-under-35-2026.html): 4 gifts for him under $35 on Amazon: a minimalist leather watch, a heavyweight fleece hoodie, stretch chinos and white sneakers — each rated 4.5 stars or higher.
+- [Minimalist Men's Street Style: 4 Amazon Essentials](https://lookiqfashion.com/guides/minimalist-mens-street-style-outfit-amazon.html): Build a minimalist men's street style outfit on Amazon for about $112: a heavyweight fleece hoodie, slim stretch chinos, a leather watch and white sneakers.
+- [Quiet Luxury Outfit Ideas on Amazon: Look Expensive](https://lookiqfashion.com/guides/quiet-luxury-chic-outfit-ideas-amazon.html): Quiet luxury outfit ideas on Amazon: pleated wide-leg trousers, a square-neck bodysuit, a slouchy hobo bag, gold huggies and oval sunglasses, each under $40.
+- [Best Quiet Luxury Gifts on Amazon (2026): For Mum, Sister & the Friend Who Has Everything](https://lookiqfashion.com/guides/quiet-luxury-gift-guide-2026.html): The quiet luxury gift guide for Christmas 2026: 9 Amazon gifts for Mum, your sister and the friend who has everything — real materials, honest ratings, from $7.99.
+- [Best Stocking Stuffers for Women Under $25 (2026)](https://lookiqfashion.com/guides/stocking-stuffers-for-women-under-25.html): The 12 best stocking stuffers for women under $25 on Amazon — gold hoop earrings, cozy tights, thermals and basics from $7.50, all top-rated and Prime-ready.
+- [The Quiet Edit No. 1: Soft Structure — 5 Quiet-Luxury Pieces for November 2026](https://lookiqfashion.com/guides/the-quiet-edit-01-soft-structure.html): The first edition of LOOKIQ's recurring Quiet Edit series: five quiet-luxury pieces on one theme — a waterproof belted trench, an oversized knit, a cashmere-blend wrap, a full-grain leather belt and a gold mesh watch.
+- [Square Neck Bodysuit Review: The Viral QINSEN Dupe](https://lookiqfashion.com/guides/viral-tiktok-square-neck-bodysuit-review.html): Our square neck bodysuit review: the viral $24.99 QINSEN one-piece — its double-layer opacity, sizing, snap closures and wash care, plus five ways to style it.
 
-## Disclosure
+## About and Policies
 
-LOOKIQ is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate I earn from qualifying purchases. Product prices and availability shown in reviews are as verified at the time of writing and can change on Amazon; ratings cited on product pages summarize Amazon customer ratings.
+- [About](https://lookiqfashion.com/about.html): What LOOKIQ is, how products are picked, and how the site works.
+- [Contact](https://lookiqfashion.com/contact.html): How to contact LOOKIQ.
+- [Affiliate Disclosure](https://lookiqfashion.com/disclosure.html): How LOOKIQ earns from affiliate links, including its Amazon Associates disclosure.
+- [Privacy Policy](https://lookiqfashion.com/privacy-policy.html): How LOOKIQ handles data, cookies and advertising, including Google AdSense.
