@@ -2655,6 +2655,49 @@ const PRODUCTS = [
       "Made for proms, parties, dates and every holiday night out"
     ],
     amazonLink: "https://www.amazon.com/dp/B0D3DFZ4PY/?tag=likeefashionh-20"
+  },
+  {
+    id: "perzeal-bow-tie-neck-peplum-bodycon-midi-dress-burgundy",
+    asin: "B095X7NVGB",
+    title: "PerZeal Bow Tie Neck Peplum Bodycon Midi Dress — Burgundy",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Date Night Pick",
+    price: 26.39,
+    originalPrice: 32.99,
+    rating: 4.2,
+    reviewsCount: 3083,
+    image: "assets/products/perzeal-bow-tie-neck-peplum-bodycon-midi-dress-burgundy.jpg",
+    tags: ["Amazon Fashion", "Burgundy Dress", "Peplum Dress", "Date Night", "Holiday Dresses"],
+    shortDesc: "A burgundy bow-neck peplum bodycon midi dress with a knee-length pencil skirt — the $26.39 date-night dress rated 4.2 by 3,083 Amazon buyers.",
+    features: [
+      "Bow tie neckline with a peplum waist — the burgundy dress that flatters every curve",
+      "Bodycon pencil skirt with a side ruffle, knee length and short sleeves",
+      "Back zipper closure; stretchy spandex and polyester that moves with you",
+      "Made for evening, party, prom, weddings, business and formal occasions"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B095X7NVGB/?tag=likeefashionh-20"
+  },
+  {
+    id: "berylove-formal-flutter-sleeve-wedding-guest-long-dress-army-green",
+    asin: "B0H14521TY",
+    title: "BeryLove Formal Flutter Sleeve Wedding Guest Long Dress — Army Green",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 55.99,
+    rating: 4.0,
+    reviewsCount: 519,
+    image: "assets/products/berylove-formal-flutter-sleeve-wedding-guest-long-dress-army-green.jpg",
+    tags: ["Amazon Fashion", "Wedding Guest Dress", "Holiday Dresses", "Green Dress", "Cocktail Dresses"],
+    shortDesc: "An army-green flutter-sleeve long dress with a layered ruffle hem — the $55.99 wedding-guest dress that works for every December party.",
+    features: [
+      "Flutter sleeves and a fitted bodice — elegance without trying too hard",
+      "Layered ruffles and an asymmetrical hem that moves as you walk",
+      "Flared skirt, flattering and sophisticated, made for weddings and cocktails",
+      "Army green — the deep, festive shade that photographs beautifully"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0H14521TY/?tag=likeefashionh-20"
   }
 ];
 
