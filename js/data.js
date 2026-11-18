@@ -2698,6 +2698,27 @@ const PRODUCTS = [
       "Army green — the deep, festive shade that photographs beautifully"
     ],
     amazonLink: "https://www.amazon.com/dp/B0H14521TY/?tag=likeefashionh-20"
+  },
+  {
+    id: "ever-pretty-sequin-mermaid-formal-dress-silver",
+    asin: "B07T42DFQT",
+    title: "Ever-Pretty Sequin Mermaid Double V-Neck Sleeveless Formal Dress — Silver",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 89.89,
+    rating: 4.1,
+    reviewsCount: 3114,
+    image: "assets/products/ever-pretty-sequin-mermaid-formal-dress-silver.jpg",
+    tags: ["Amazon Fashion", "Sequin Dress", "Mermaid Dress", "Holiday Dresses", "Formal Dress"],
+    shortDesc: "A silver sequin mermaid gown with a double V-neck and floor-length fishtail — the $89.89 formal dress rated 4.1 by 3,114 Amazon buyers.",
+    features: [
+      "Double V-neck and sleeveless bodice — embroidered sequins that catch the light from every angle",
+      "Bodycon fishtail mermaid silhouette, floor length with a concealed zipper up the back",
+      "Silver sequins on a smooth lining — glamour without the scratch",
+      "Made for glamorous evenings, proms, military balls and cruise formal nights"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B07T42DFQT/?tag=likeefashionh-20"
   }
 ];
 
