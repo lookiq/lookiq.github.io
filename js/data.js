@@ -2719,6 +2719,50 @@ const PRODUCTS = [
       "Made for glamorous evenings, proms, military balls and cruise formal nights"
     ],
     amazonLink: "https://www.amazon.com/dp/B07T42DFQT/?tag=likeefashionh-20"
+  },
+  {
+    id: "btfbm-high-neck-ruched-bodycon-mini-dress-peacock-blue",
+    asin: "B0DTDVYV5F",
+    title: "BTFBM High Neck Ruched Bodycon Mini Dress — Peacock Blue",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 9.99,
+    originalPrice: 45.99,
+    rating: 4.2,
+    reviewsCount: 160,
+    image: "assets/products/btfbm-high-neck-ruched-bodycon-mini-dress-peacock-blue.jpg",
+    tags: ["Amazon Fashion", "Bodycon Dress", "Mini Dress", "Holiday Dresses", "Party Dress"],
+    shortDesc: "A peacock-blue high-neck ruched bodycon mini dress — the $9.99 party dress rated 4.2 by 160 Amazon buyers.",
+    features: [
+      "High mock neck and sleeveless bodice — a clean, elegant line that dresses up with gold jewellery",
+      "Ruched side detailing that skims the waist — bodycon without the squeeze",
+      "Lightweight, breathable fabric — comfortable from the office party to the last dance",
+      "Made for cocktail nights, date nights, club evenings and wedding-guest moments"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DTDVYV5F/?tag=likeefashionh-20"
+  },
+  {
+    id: "prettygarden-floral-puff-sleeve-mini-dress-black-white-flower",
+    asin: "B0BPM98FWC",
+    title: "PRETTYGARDEN Floral Puff Sleeve Mini Dress — Black White Flower",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 16.99,
+    originalPrice: 49.99,
+    rating: 4.4,
+    reviewsCount: 520,
+    image: "assets/products/prettygarden-floral-puff-sleeve-mini-dress-black-white-flower.jpg",
+    tags: ["Amazon Fashion", "Floral Dress", "Mini Dress", "Holiday Dresses", "Party Dress"],
+    shortDesc: "A black-white floral puff-sleeve mini dress with a square neck and ruffle hem — the $16.99 party dress rated 4.4 by 520 Amazon buyers.",
+    features: [
+      "Square neckline and short puff sleeves — a romantic line that flatters shoulders and collarbones",
+      "Smocked, ruched bodice that hugs without pinching — bodycon with give",
+      "Flared ruffle hem that moves — the mini that dances back",
+      "Black base with a small white floral print — reads dressy at a party, easy at brunch"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0BPM98FWC/?tag=likeefashionh-20"
   }
 ];
 
