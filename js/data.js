@@ -2763,6 +2763,50 @@ const PRODUCTS = [
       "Black base with a small white floral print — reads dressy at a party, easy at brunch"
     ],
     amazonLink: "https://www.amazon.com/dp/B0BPM98FWC/?tag=likeefashionh-20"
+  },
+  {
+    id: "prettygarden-strapless-tube-bodycon-ruched-maxi-dress-dark-blue",
+    asin: "B0DQT3CXXP",
+    title: "PRETTYGARDEN Strapless Tube Bodycon Ruched Maxi Dress — Dark Blue",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 14.99,
+    originalPrice: 57.99,
+    rating: 4.1,
+    reviewsCount: 138,
+    image: "assets/products/prettygarden-strapless-tube-bodycon-ruched-maxi-dress-dark-blue.jpg",
+    tags: ["Amazon Fashion", "Bodycon Dress", "Maxi Dress", "Holiday Dresses", "Party Dress"],
+    shortDesc: "A dark-blue strapless tube bodycon ruched maxi dress with a back slit — the $14.99 party dress rated 4.1 by 138 Amazon buyers.",
+    features: [
+      "Strapless tube bodice with ruched sides — a clean, sculpted line that dresses up with gold jewellery",
+      "Bodycon maxi with a back slit — floor-length drama that still lets you walk and dance",
+      "Soft, stretchy fabric — comfortable from the office party to the last dance",
+      "Made for cocktail nights, date nights, weddings and evening parties"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0DQT3CXXP/?tag=likeefashionh-20"
+  },
+  {
+    id: "dkny-balloon-sleeve-twist-front-chiffon-midi-dress-midnight-navy",
+    asin: "B0BRRPQMX3",
+    title: "DKNY Balloon Sleeve Twist Front Chiffon Midi Dress — Midnight Navy",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 59.50,
+    originalPrice: 129.00,
+    rating: 4.1,
+    reviewsCount: 106,
+    image: "assets/products/dkny-balloon-sleeve-twist-front-chiffon-midi-dress-midnight-navy.jpg",
+    tags: ["Amazon Fashion", "Chiffon Dress", "Midi Dress", "Holiday Dresses", "Date Night Dress"],
+    shortDesc: "A midnight-navy balloon-sleeve twist-front chiffon midi dress — the $59.50 day-to-night dress rated 4.1 by 106 Amazon buyers.",
+    features: [
+      "Sheer 3/4 balloon sleeves and a surplice V-neck — soft structure with movement",
+      "Front twist at the waist and a fit-and-flare silhouette — definition without a belt",
+      "Asymmetric hi-lo hem with a sheer chiffon overlay — the midi that floats when you walk",
+      "Day-to-night by design — from the office to date night with a shoe change"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0BRRPQMX3/?tag=likeefashionh-20"
   }
 ];
 
