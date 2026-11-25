@@ -2807,6 +2807,27 @@ const PRODUCTS = [
       "Day-to-night by design — from the office to date night with a shoe change"
     ],
     amazonLink: "https://www.amazon.com/dp/B0BRRPQMX3/?tag=likeefashionh-20"
+  },
+  {
+    id: "memoriesea-one-shoulder-high-split-maxi-dress-shallow-apricot",
+    asin: "B0CN65VHKZ",
+    title: "Memoriesea One-Shoulder High-Split Maxi Dress — Shallow Apricot",
+    category: "women",
+    subCategory: "Dresses",
+    badge: "Holiday Party Pick",
+    price: 49.99,
+    rating: 4.3,
+    reviewsCount: 6485,
+    image: "assets/products/memoriesea-one-shoulder-high-split-maxi-dress-shallow-apricot.jpg",
+    tags: ["Amazon Fashion", "One Shoulder Dress", "Maxi Dress", "Holiday Dresses", "Date Night Dress"],
+    shortDesc: "A shallow-apricot one-shoulder high-split maxi dress with a draped ruched bodice — the $49.99 party dress rated 4.3 by 6,485 Amazon buyers.",
+    features: [
+      "One-shoulder draped bodice with ruched detailing — a sculpted satin line that dresses up with gold jewellery",
+      "High side slit over a floor-length maxi — drama that still lets you walk and dance",
+      "Lightweight, soft, shiny satin-look fabric — smooth and comfortable from dinner to the last dance",
+      "Made for date nights, holiday parties, cocktails, weddings and Christmas evenings"
+    ],
+    amazonLink: "https://www.amazon.com/dp/B0CN65VHKZ/?tag=likeefashionh-20"
   }
 ];
 
